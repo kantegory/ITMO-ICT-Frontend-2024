@@ -63,11 +63,11 @@
 
 - https://flexboxfroggy.com/#ru  
 - https://cssgridgarden.com/#ru
-- https://learngitbranching.js.org/?locale=ru_RU (основы работы с git, достаточно выполнить первые 4 урока)
+- https://learngitbranching.js.org/?locale=ru_RU (основы работы с git, достаточно выполнить первые 4 урока + все уроки по удалённым репозиториям)
 
 Собрать отчёт по шаблону (https://docs.google.com/document/d/1zgXRYAh9iO21NDcp5Cua3mOiNRWbAVZJBfgGiqGsMsU/edit?usp=sharing). Экспортировать в pdf и открыть Pull Request в этот репозиторий.
 
-Дедлайн: -
+Дедлайн: 27.09.2024
 
 ### Язык CSS: изоляция стилей
 
