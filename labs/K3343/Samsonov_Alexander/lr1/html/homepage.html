@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website - Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Recipe Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end search-custom" aria-labelledby="accountDropdown" style="width: 350px">
+                            <li>
+                                <form class="px-4 py-3">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </form>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="register.html">New around here? <strong>Register</strong></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="container my-4">
+    <form class="d-flex" action="search.html" method="get">
+        <input class="form-control me-2 search-custom" type="search" name="search" id="form-global-search"
+               placeholder="Search for recipe..."
+               aria-label="Search" required>
+        <button class="btn btn-outline-success search-custom" type="submit">Search</button>
+    </form>
+</section>
+
+
+
+<div class="container my-5">
+    <h2 class="text-center">Our Featured Recipes</h2>
+    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 1</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 2</h5>
+                                <p class="card-text">Integer nec odio. Praesent libero. Sed cursus ante dapibus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 3</h5>
+                                <p class="card-text">Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 4</h5>
+                                <p class="card-text">Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 5</h5>
+                                <p class="card-text">Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://placekitten.com/50/50" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe 6</h5>
+                                <p class="card-text">Class aptent taciti sociosqu ad litora torquent per conubia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

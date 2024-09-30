@@ -1,0 +1,36 @@
+body {
+    background-color: #FEFAE0;
+}
+
+.bg-custom {
+    background-color: #DDA15E;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    background-color: white;
+    color: #283618;
+}
+
+.form-control[disabled] {
+    background-color: #FEFAE0;
+    color: #283618;
+    border: 1px solid #DDA15E;
+}
+
+.navbar-brand, .nav-link {
+    color: #283618 !important;
+}
+
+.navbar-toggler {
+    border-color: #283618;
+}
+
+.search-custom{
+    background-color:  #FEFAE0 !important;
+    border-color: #DDA15E !important;
+    color: #283618;
+}
