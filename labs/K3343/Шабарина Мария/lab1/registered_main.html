@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Platform</title>
+    <link rel="stylesheet" href="css/registered_main.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="registered_main.html">Fitness</a>
+    <nav>
+        <a href="blog.html">Blog</a>
+        <a href="trainings.html">Trainings</a>
+        <a href="account.html">Account</a>
+    </nav>
+</header>
+
+<hr>
+
+<section class="main-banner">
+    <div class="main-banner-content">
+        <h1>Start your training now!</h1>
+        <p>Track your progress, improve your stats and reach your goal with a wide range of our workouts</p>
+        <div class="buttons">
+            <a href="account.html" class="button-green" >Enter account</a>
+            <a href="trainings.html" class="button-black">See trainings</a>
+        </div>
+    </div>
+    <div class="main-banner-image">
+        <img src="images/main-images/main_banner.jpg" alt="Fitness" />
+    </div>
+</section>
+
+<hr class="semi-hr">
+
+<section class="popular-exercises">
+    <h1>Popular Exercises</h1>
+    <div class="exercise-grid">
+        <div class="exercise-card">
+            <img src="images/main-images/treadmill.jpg" alt="Treadmill">
+            <h2 class="video-title" video-id="ufhM_9eLU-s">Treadmill</h2>
+        </div>
+        <div class="exercise-card">
+            <img src="images/main-images/stretching.jpeg" alt="Stretching">
+            <h2 class="video-title" video-id="p7th1SMAsAY">Stretching</h2>
+        </div>
+        <div class="exercise-card">
+            <img src="images/main-images/yoga.jpg" alt="Yoga" />
+            <h2 class="video-title" video-id="65KVj8EMJIc">Yoga</h2>
+        </div>
+        <div class="exercise-card">
+            <img src="images/main-images/running.jpg" alt="Running">
+            <h2 class="video-title" video-id="Y3uK06zHmVU">Running</h2>
+        </div>
+        <div class="exercise-card">
+            <img src="images/main-images/lifting.jpg" alt="Lifting">
+            <h2 class="video-title" video-id="rqJpSSL0kB8">Lifting</h2>
+        </div>
+        <div class="exercise-card">
+            <img src="images/main-images/pushup.jpg" alt="Push up">
+            <h2 class="video-title" video-id="BSyuWMnsmJ0">Push up</h2>
+        </div>
+    </div>
+</section>
+
+<hr class="semi-hr">
+
+<div id="video-modal" class="video-modal">
+    <div class="video-modal-content">
+        <span class="video-modal-close-button">х</span>
+        <div class="video-container">
+            <iframe
+                    id="youtube-video"
+                    width="100%"
+                    height="350"
+                    src=""
+                    frameborder=0
+                    allowfullscreen="">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<section class="final-info">
+    <div class="final-info-content">
+        <h2>Nothing is impossible!</h2>
+        <p>Our platform allows you to train with special programs from the best experts from all over the world. The training process is intelligently built, so you can find the best programs for your desires and capabilities. We strive to popularize sports around the world, join us!</p>
+        <div class="buttons">
+            <a href="trainings.html" class="button-black">Trainings</a>
+            <a href="blog.html" class="button-black">Blog</a>
+        </div>
+    </div>
+    <div class="main-banner-image">
+        <img src="images/main-images/final.png" alt="Fitness Man" />
+    </div>
+</section>
+
+<footer>
+    <hr>
+    <div class="footer-info">
+        <img src="images/main-images/logo.jpeg" alt="logo"/>
+        <p>FITNESS MK is your key to success! <br> Made by Ekaterina Makhotkina and Maria Shabarina</p>
+    </div>
+</footer>
+
+<script src="js/video-modal.js"></script>
+</body>
+</html>
