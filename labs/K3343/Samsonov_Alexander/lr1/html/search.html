@@ -36,7 +36,7 @@
                             Account
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown"
-                            style="width: 350px">
+                            style="width: 350px; z-index: 200">
                             <li>
                                 <form class="px-4 py-3">
                                     <div class="mb-3">
@@ -74,19 +74,179 @@
     </form>
 </section>
 
-<main class="container">
-    <p id="search-result"></p>
+<main class="container-fluid">
+    <p id="search-result" class="text-center"></p>
+    <div class="row">
+        <!-- Filter Column -->
+        <div class="col-md-2 col-xxl-1 p-3 accent-background h-25" style="height: 100vh">
+            <div class="filter-column">
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#priceRangeCollapse" role="button"
+                        aria-expanded="false" aria-controls="priceRangeCollapse">
+                        Price Range <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="priceRangeCollapse">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <label class="form-check-label" for="priceRange1">Price range 1</label>
+                                <input class="form-check-input" type="checkbox" id="priceRange1">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="priceRange2">Price range 2</label>
+                                <input class="form-check-input" type="checkbox" id="priceRange2">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="priceRange3">Price range 3</label>
+                                <input class="form-check-input" type="checkbox" id="priceRange3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#productsCollapse" role="button"
+                        aria-expanded="false" aria-controls="productsCollapse">
+                        Products <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="productsCollapse">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product1">
+                                <label class="form-check-label" for="product1">Product 1</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product2">
+                                <label class="form-check-label" for="product2">Product 2</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product3">
+                                <label class="form-check-label" for="product3">Product 3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#cuisineCollapse" role="button"
+                        aria-expanded="false" aria-controls="cuisineCollapse">
+                        Cuisine <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="cuisineCollapse">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine1">
+                                <label class="form-check-label" for="cuisine1">Cuisine 1</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine2">
+                                <label class="form-check-label" for="cuisine2">Cuisine 2</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine3">
+                                <label class="form-check-label" for="cuisine3">Cuisine 3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-10 col-xxl-9 my-4">
+            <div class=" mb-4">
+                <div class="card">
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Recipe 1</h5>
+                        <p class="card-text">Brief description of the recipe.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="card">
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Recipe 2</h5>
+                        <p class="card-text">Brief description of the recipe.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="card">
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Recipe 2</h5>
+                        <p class="card-text">Brief description of the recipe.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="card">
+                    <img src="https://placehold.co/300x200" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Recipe 2</h5>
+                        <p class="card-text">Brief description of the recipe.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
-<script>
-    const params = new URLSearchParams(document.location.search);
-    let search = params.get('search')
-    console.log(search)
-    if (search) {
-        document.getElementById('search-result').textContent = `results for ${search}`;
-        document.getElementById('form-global-search').placeholder = search
-    } else {
-        document.getElementById('search-result').textContent = "No search term provided.";
-    }
-</script>
+
+<div class="container">
+    <footer class="row row-cols-5 py-5 my-5 border-top">
+        <div class="col">
+            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <p class="text-muted">© 2021</p>
+        </div>
+
+        <div class="col">
+
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script src="../js/substitute_search_bar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
