@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Детали ресторана</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Бронирование столиков</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#registration" data-toggle="modal">Регистрация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#login" data-toggle="modal">Вход</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Личный кабинет
+                </a>
+                <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="profile.html">Профиль</a>
+                    <a class="dropdown-item" href="order-history.html">История заказов</a>
+                    <a class="dropdown-item" href="favorites.html">Избранное</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+    <h2 id="restaurant-name">Название ресторана</h2>
+    <p id="restaurant-cuisine"> </p>
+    <p id="restaurant-details"> </p>
+    <p id="restaurant-description">Описание ресторана</p>
+    <p id="restaurant-phone">☏ <span id="phone-number"></span></p>
+    <p id="restaurant-working-hours">Время работы: <span id="working-hours"></span></p>
+    <img id="restaurant-photo" src="" alt="Фото ресторана" style="max-width: 30%; height: auto;">
+
+    <div id="restaurant-menu">
+        <h3>Меню</h3>
+        <ul id="menu-items"></ul>
+    </div>
+
+    <button id="book-table" class="button-container" data-toggle="modal" data-target="#bookingModal">Забронировать</button>
+    <button id="add-to-favorites" class="button-container">Добавить в избранное</button>
+
+    <div id="restaurant-reviews">
+        <h3>Отзывы</h3>
+        <ul id="reviews-list"></ul>
+    </div>
+
+</div>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Бронирование стола</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="booking-date">Дата</label>
+                        <input type="date" class="form-control" id="booking-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="number-of-people">Количество человек</label>
+                        <input type="number" class="form-control" id="number-of-people" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Имя Фамилия</label>
+                        <input type="text" class="form-control" id="name_book" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Пожелания</label>
+                        <textarea class="form-control" id="comments"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="button-b">Оформить бронь</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const restaurantId = params.get('id');
+
+        const restaurants = {
+            1: {
+                name: 'Mircuccio Osteria',
+                cuisine:'Итальянская',
+                details: '📌 ул.Моисеенко, д.27',
+                phone: '+7 (812) 407-1908',
+                workingHours: 'Пн - Вс: 12:00 - 23:00',
+                description: 'Mircuccio — остерия с итальянской атмосферой, тёплым интерьером и авторскими блюдами. Название Mircuccio содержит в себе много приятных смыслов ресторанной группы Zanini. Во-первых, оно созвучно с Меркуцио — героем пьесы Уильяма Шекспира и лучшим другом Ромео. А во-вторых, комбинирует в себе основателя заведения — Мирко Дзанини. Здесь есть всё для романтичного вечера: от отсылки к знаменитой пьесе про любовь до лучшего вина Италии.',
+                menu: ['Блюдо 1', 'Блюдо 2', 'Блюдо 3'],
+                photo: 'photo/mercuccio1.jpg',
+                reviews: ['Отличный сервис. Раздобудьте только соевое или овсяное молоко, как добавку к кофе.', 'Добрый день! Случайно гуляли с сыном по городу и увидели это заведение!Скажу точно- одно из лучших заведений,в которых довелось побывать. Шикарная кухня (брали Виттело Тоннато ,крем-суп из сельдерея(ребенок 3х лет сказал : «Вау» ,пасту с гребешками и рислинг) Шикарный интерьер! Шикарный сервис!???? Спасибо! Если будем снова в Петербурге,первым делом к вам!']
+            },
+            2: {
+                name: 'My Asiatique',
+                cuisine:'Китайская, Японская, Индийская',
+                details: '📌 ул.Разъезжая, д.3',
+                phone: '+7 (812) 407-1908',
+                workingHours: 'Пн - Чт, Вс: 12:00 - 23:00 <span class="working-hours-separator"></span> Пт - Сб: 12:00 - 1:00',
+                description: 'Ресторан создан от команды старейшего ресторана национальной индийской кухни Tandoor. Меню представляет собой микс самых востребованных на сегодня направлений: ароматная Индия, пряный Тайланд, островатый Китай и свежая Япония сочетаются с другими странами Азии. Стильная подача традиционных блюд с востока на западный манер. «My Asiatique» созвучно переводится именно с утонченного французского. Ненавязчивое обслуживание с уже привычным для гостей «Tandoor» радушием и восточным гостеприимством.',
+                menu: ['Блюдо 1', 'Блюдо 2', 'Блюдо 3'],
+                photo: 'photo/my_asiatique1.jpg',
+                reviews: ['Индийский веганский плов - заказали средне-острый. Он оказался совершенно пресным и никаким. Вок с креветками понравился. Хорош, если любишь сладковатый соусы. А вот лимонад вообще волшебный. Вроде бы этт был манго с ромашкой. Прям ну очень вкусный.', 'Прекрасное заведение, очень стильный интерьер, гостеприимный персонал, яркая подача и вкуснейшие блюда! Собрана вся Азия и адаптирована для взыскательного питерского гурмана! Черные пельмешки с креветками просто бомба, спасибо вам!']
+            },
+            3: {
+                name: 'Roze & Dance',
+                cuisine:'Французская',
+                details: '📌 ул.Инженерная, д.13',
+                phone: '+7 (812) 407-1908',
+                workingHours: 'Пн - Чт, Вс: 12:00 - 00:00 <span class="working-hours-separator"></span> Пт - Сб: 12:00 - 3:00',
+                description: 'ROZÉ & Dance: fine dining-ЗОЖ от шеф-повара Ульяны Суздалкиной, танцы и, конечно, розе в самом центре Петербурга. Новая звезда готова зажечься (и зажечь!) на гастрономической карте Санкт-Петербурга. 11 июня 2022 года винный ресторан ROZÉ & Dance официально распахнул свои двери рядом с набережной реки Фонтанки по адресу Инженерная, 13. Яркий и игривый, ROZÉ & Dance примечателен винной картой с колоссальным выбором розовых и шампанских вин и меню, поставленным известным шеф-поваром Ульяной Суздалкиной.',
+                menu: ['Блюдо 1', 'Блюдо 2', 'Блюдо 3'],
+                photo: 'photo/roze1.jpg',
+                reviews: ['Потрясающее меню! Недешево, но вкусно и необычно']
+            },
+            4: {
+                name: 'Meal',
+                cuisine:'Европейская, Скандинавская',
+                details: '📌 Литейный пр-т, 17-19',
+                phone: '+7 (812) 407-1908',
+                workingHours: 'Пн - Вс: 13:00 - 23:00',
+                description: 'Meal на Литейном – ресторан-гастробистро в центре города, с авторскими блюдами от шеф-повара, философским подходом к кухне и любовью к ферментированным продуктам. Интерьер заведения минималистичен и органично соединяет в себе Скандинавию и Японию разом. В ресторане есть своя сиеста, поэтому один послеобеденный час заведение не работает. Всем гостям доступна беспроводная сеть интернет. Meal на Литейном – новое место с приятной атмосферой, где можно не спеша знакомиться с современными трендами мировой кухни, открывать для себя необычные продукты и напитки – в компании друзей, второй половинки или коллег.',
+                menu: ['Блюдо 1', 'Блюдо 2', 'Блюдо 3'],
+                photo: 'photo/meal1.jpg',
+                reviews: ['Пока нет :(']
+            },
+            5: {
+                name: 'Тбилисо',
+                cuisine:'Грузинская, Кавказская',
+                details: '📌 ул.Сытнинская, д.10',
+                phone: '+7 (812) 407-1908',
+                workingHours: 'Пн - Вс: 12:00 - 23:00',
+                description: '«Тбилисо» – это залитый мягким светом уголок грузинского дворика, окруженный уютными домами, стены которых сложены из белого ракушечника. Пол в виде старой мостовой, раритетная чеканка, изображающая виды старого Тбилиси при входе, декоративные композиции из металла, авторские светильники. Уютные кабинки, в которых располагаются гости, отделены друг от друга невесомыми шторами из органзы, украшенными репродукциями картин гениального художника Нико Пиросмани. «Тбилисо» вызывает в памяти образ маленького музея, в котором хранятся главные шедевры коллекции – отменная кухня и традиционное грузинское гостеприимство.',
+                menu: ['Блюдо 1', 'Блюдо 2', 'Блюдо 3'],
+                photo: 'photo/тбилисо1.jpg',
+                reviews: ['Вкусно! Быстро! Очень комфортная атмосфера! С большим удовольствием еще зайдем! Спасибо большое за хороший отдых!', 'Был на бизнес-ланче. Оформление стилизовано под Грузию. Еда вкусная. Ценник 430 руб за обед. Меню на фото. Не понравился персонал. Какое-то надменное отношение что при встрече гостей, что у официантки. Может устали, но это не повод для такого отношения к гостям. За это только 4. Но покушать в этом ресторане рекомендую.']
+            },
+        };
+
+        if (restaurantId && restaurants[parseInt(restaurantId)]) {
+            const restaurant = restaurants[parseInt(restaurantId)];
+            document.getElementById('restaurant-name').innerText = restaurant.name;
+            document.getElementById('restaurant-details').innerText = restaurant.details;
+            document.getElementById('phone-number').innerText = restaurant.phone;
+            document.getElementById('working-hours').innerHTML = restaurant.workingHours;
+            document.getElementById('restaurant-description').innerText = restaurant.description;
+            document.getElementById('restaurant-photo').src = restaurant.photo;
+
+            restaurant.menu.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                document.getElementById('menu-items').appendChild(li);
+            });
+
+            restaurant.reviews.forEach(review => {
+                const li = document.createElement('li');
+                li.innerText = review;
+                document.getElementById('reviews-list').appendChild(li);
+            });
+        } else {
+            document.getElementById('restaurant-name').innerText = 'Ресторан не найден';
+            document.getElementById('restaurant-details').innerText = '';
+            document.getElementById('phone-number').innerText = '';
+            document.getElementById('working-hours').innerHTML = restaurant.workingHours;
+            document.getElementById('restaurant-description').innerText = '';
+        }
+
+        document.getElementById('add-to-favorites').addEventListener('click', function() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const restaurantId = params.get('id');
+
+            if (!favorites.some(restaurant => restaurant.id === parseInt(restaurantId))) {
+                const restaurant = {
+                    id: restaurantId,
+                    name: document.getElementById('restaurant-name').innerText,
+                    cuisine: document.getElementById('restaurant-cuisine').innerText,
+                    location: document.getElementById('restaurant-details').innerText,
+                };
+                favorites.push(restaurant);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                alert(`${restaurant.name} добавлен в избранное!`);
+            } else {
+                alert(`${document.getElementById('restaurant-name').innerText} уже в избранном!`);
+            }
+        });
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Бронирование оформлено!');
+            $('#bookingModal').modal('hide');
+        });
+    });
+</script>
+
+<div class="modal fade" id="registration" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Регистрация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" class="form-control" id="regEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light" id="button-reg">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Вход</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name_ver" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light" id="button-uni">Войти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="footer3 cid-seI3I6s46u" id="footer3-r">
+    <div class="footer-line"></div>
+    <div class="container">
+        <div class="media-container-row align-center">
+            <div class="row row-links justify-content-center">
+                <ul class="foot-menu">
+                    <li class="foot-menu-item"><a href="#" class="text-dark">О проекте</a></li>
+                    <li class="foot-menu-item"><a href="#" class="text-dark">Ресторанам/партнёрам</a></li>
+                    <li class="foot-menu-item"><a href="#" class="text-dark">Свяжитесь с нами</a></li>
+                </ul>
+            </div>
+
+            <div class="row row-copyright justify-content-center">
+                <p class="mbr-text mb-0 align-center text-dark">
+                    Last updated on
+                    <time itemprop="dateModified" datetime="2024-10-23T15:16:13.003Z">2024-10-23</time><br>
+                    © Copyright 2024 Бронирование столиков. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
