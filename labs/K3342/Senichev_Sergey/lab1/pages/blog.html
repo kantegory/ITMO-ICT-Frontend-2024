@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - Фитнес-центр</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container mt-5" role="main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Главная</a>
+                </li>
+                <li class="breadcrumb-item active">Блог</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-4">Блог</h1>
+
+        <section class="blog-filters mb-4">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Поиск по блогу..." aria-label="Поиск по блогу">
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h2 class="h6">Категории:</h2>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="all-categories" checked>
+                        <label class="form-check-label" for="all-categories">
+                            Все категории
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="news">
+                        <label class="form-check-label" for="news">
+                            Новости
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="articles">
+                        <label class="form-check-label" for="articles">
+                            Статьи
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="promotions">
+                        <label class="form-check-label" for="promotions">
+                            Акции
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h2 class="h6">Дата:</h2>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="date" id="all-time" checked>
+                        <label class="form-check-label" for="all-time">
+                            За всё время
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="date" id="last-month">
+                        <label class="form-check-label" for="last-month">
+                            За последний месяц
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="date" id="last-week">
+                        <label class="form-check-label" for="last-week">
+                            За последнюю неделю
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row blog-list">
+            <article class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <img src="/api/placeholder/400/225" class="card-img-top" alt="Новый зал" width="400" height="225">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Открытие нового зала в нашем центре</h2>
+                        <div class="blog-meta">
+                            <span class="badge bg-primary me-2">10 октября 2023</span>
+                            <span class="badge bg-info">Новости</span>
+                        </div>
+                        <p class="card-text">
+                            Мы рады сообщить об открытии нового зала на втором этаже нашего фитнес-центра.
+                            Теперь у нас больше возможностей для тренировок!
+                        </p>
+                        <a href="/blog/new-gym" class="btn btn-primary mt-2">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <!-- TODO добавить видео -->
+                    <img src="/api/placeholder/400/225" class="card-img-top" alt="Групповые занятия" width="400" height="225">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Новые групповые занятия</h2>
+                        <div class="blog-meta">
+                            <span class="badge bg-primary me-2">5 октября 2023</span>
+                            <span class="badge bg-info">Занятия</span>
+                        </div>
+                        <p class="card-text">
+                            С октября мы запускаем новые групповые занятия: йога, пилатес и интенсивный тренинг.
+                            Присоединяйтесь к команде!
+                        </p>
+                        <a href="/blog/new-classes" class="btn btn-primary mt-2">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <!-- TODO добавить видео -->
+                    <img src="/api/placeholder/400/225" class="card-img-top" alt="Сезонная акция" width="400" height="225">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Сезонная акция: скидка 20% на абонементы</h2>
+                        <div class="blog-meta">
+                            <span class="badge bg-primary me-2">1 октября 2023</span>
+                            <span class="badge bg-warning">Акции</span>
+                        </div>
+                        <p class="card-text">
+                            Не упустите шанс! Только в октябре вы можете приобрести абонемент со скидкой 20%.
+                        </p>
+                        <a href="/blog/discounts" class="btn btn-primary mt-2">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="text-center mt-4 mb-5">
+            <button class="btn btn-outline-primary">Загрузить ещё</button>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <div id="modals"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/workouts.js"></script>
+
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
