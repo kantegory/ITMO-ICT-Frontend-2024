@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe | Recipe App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center my-4">Fish and Chips</h2>
+    <div class="recipe-content">
+      <img src="../img/fish-chips-bowl-with-lemon-clipboard.jpg" class="img-fluid mb-3" alt="Recipe Image">
+      <p>You have to try it!</p>
+      <h5>Ingredients:</h5>
+      <ul>
+        <li>Fish</li>
+        <li>Potatoes</li>
+        <li>Batter</li>
+      </ul>
+      <h5>Steps:</h5>
+      <ol>
+        <li>Prepare potatoes: Cut potatoes into fries. Soak in water, then dry and fry at 325°F until soft. Set aside.</li>
+        <li>Make batter: Mix flour, baking powder, salt, and cold beer (or sparkling water) into a thick batter.</li>
+        <li>Prepare fish: Season fish fillets (cod or haddock) with salt and pepper, then dip in the batter.</li>
+        <li>Fry fish: Deep-fry battered fish in hot oil (350°F) until golden and crispy, about 4-5 minutes.</li>
+        <li>Double-fry chips: Fry the potatoes again at 375°F until crispy.</li>
+        <li>Serve: Plate the fish and chips with tartar sauce and lemon wedges.</li>
+      </ol>
+      <div class="mt-4 d-flex align-items-center">
+        <button class="btn btn-primary me-2" id="likeBtn">Like <span id="likeCount">0</span></button>
+        <button class="btn btn-secondary" data-toggle="modal" data-target="#commentModal">Comment</button>
+        <div class="me-3">
+          <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </div>
+        <button class="btn btn-secondary" id="subscribeBtn">Subscribe to Author</button>
+      </div>
+
+      <h5 class="mt-4">Comments:</h5>
+      <div id="commentsList" class="border p-3">
+        <!-- Здесь будут отображаться комментарии -->
+      </div>
+    </div>
+
+    <!-- Модальное окно для комментариев -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel">Add Comment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitCommentBtn">Submit Comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../js/recipe.js"></script> <!-- Подключаем JavaScript файл -->
+</body>
+</html>
