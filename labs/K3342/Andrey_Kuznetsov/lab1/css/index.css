@@ -1,0 +1,71 @@
+header.index-header{
+    background-color: transparent;
+}
+
+.index-menu li{
+    display: inline-block;
+}
+
+.index-menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid white;
+    transition: 0.6s ease;
+}
+
+.index-menu li a:hover{
+    background-color: white;
+    color: black;
+}
+
+.index-background{
+    position: fixed;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/index/brooklyn.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.index-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.index-title h1{
+    text-transform: uppercase;
+    color: white;
+    font-size: 70px;
+}
+
+.index-title h2{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.index-button{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.index-btn{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+
+.index-btn:hover{
+    background-color: white;
+    color: black;
+}
