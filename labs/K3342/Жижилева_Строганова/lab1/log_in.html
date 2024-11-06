@@ -58,25 +58,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    // Анимация для плавного появления контента
-    function fadeIn() {
-      document.querySelector('.fade-in').style.opacity = 1;
-    }
-
-    // Обработчик события отправки формы
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Останавливаем отправку формы
-
-      // Показываем модальное окно
-      $('#loginModal').modal('show');
-
-      // Перенаправляем на страницу профиля после закрытия модального окна
-      $('#loginModal').on('hidden.bs.modal', function () {
-        window.location.href = 'profile.html';
-      });
-    });
-  </script>
+  <script src="js/log_in_modal.js"></script>
 </body>
 </html>
