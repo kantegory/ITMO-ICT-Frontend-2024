@@ -1,5 +1,5 @@
 const recipes = [
-      {
+ {
         title: 'Lasagna',
         image: 'img/high-angle-view-tablecloth-fresh-ingredient-delicious-lasagna.jpg',
         link: 'recipe_lasagna.html',
@@ -63,59 +63,55 @@ const recipes = [
         type: 'breakfast',
         difficulty: 2
       },
-    ];
+];
 
-    // Функция отрисовки рецептов
-    function renderRecipes(filteredRecipes) {
-      const container = document.getElementById('recipesContainer');
-      container.innerHTML = ''; // Очищаем контейнер
+function renderRecipes(filteredRecipes) {
+  const container = document.getElementById('recipesContainer');
+  container.innerHTML = '';
 
-      filteredRecipes.forEach(recipe => {
-        const recipeCard = `
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <a href="${recipe.link}">
-                <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">${recipe.title}</h5>
-                <p class="card-text">Difficulty: ${recipe.difficulty}</p>
-              </div>
-            </div>
+  filteredRecipes.forEach(recipe => {
+    const recipeCard = `
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <a href="${recipe.link}">
+            <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${recipe.title}</h5>
+            <p class="card-text">Difficulty: ${recipe.difficulty}</p>
           </div>
-        `;
-        container.insertAdjacentHTML('beforeend', recipeCard);
-      });
-    }
+        </div>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', recipeCard);
+  });
+}
 
-    // Функция фильтрации рецептов
-    function filterRecipes() {
-      const searchQuery = document.getElementById('searchQuery').value.toLowerCase();
-      const ingredientQuery = document.getElementById('ingredientQuery').value.toLowerCase();
-      const dishType = document.getElementById('dishType').value;
-      const difficulty = document.getElementById('difficulty').value;
+function filterRecipes() {
+  const searchQuery = document.getElementById('searchQuery').value.toLowerCase();
+  const ingredientQuery = document.getElementById('ingredientQuery').value.toLowerCase();
+  const dishType = document.getElementById('dishType').value;
+  const difficulty = document.getElementById('difficulty').value;
 
-      const filtered = recipes.filter(recipe => {
-        const matchesSearch = recipe.title.toLowerCase().includes(searchQuery);
-        const matchesDishType = dishType === '' || recipe.type === dishType;
-        const matchesDifficulty = difficulty === '' || recipe.difficulty === parseInt(difficulty);
+  const filtered = recipes.filter(recipe => {
+    const matchesSearch = recipe.title.toLowerCase().includes(searchQuery);
+    const matchesDishType = dishType === '' || recipe.type === dishType;
+    const matchesDifficulty = difficulty === '' || recipe.difficulty === parseInt(difficulty);
 
-        // Фильтрация по ингредиентам
-        const matchesIngredients = ingredientQuery === '' || recipe.ingredients.some(ingredient =>
-          ingredient.toLowerCase().includes(ingredientQuery)
-        );
+    // Фильтрация по ингредиентам
+    const matchesIngredients = ingredientQuery === '' || recipe.ingredients.some(ingredient =>
+      ingredient.toLowerCase().includes(ingredientQuery)
+    );
 
-        return matchesSearch && matchesDishType && matchesDifficulty && matchesIngredients;
-      });
+    return matchesSearch && matchesDishType && matchesDifficulty && matchesIngredients;
+  });
 
-      renderRecipes(filtered);
-    }
+  renderRecipes(filtered);
+}
 
-    // Обработчик формы поиска
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Предотвращаем перезагрузку страницы
-      filterRecipes(); // Вызываем фильтрацию
-    });
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  filterRecipes();
+});
 
-    // Изначальная отрисовка всех рецептов
-    renderRecipes(recipes);
+renderRecipes(recipes);
