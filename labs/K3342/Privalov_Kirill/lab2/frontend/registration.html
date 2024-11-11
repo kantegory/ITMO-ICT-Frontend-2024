@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Регистрация пользователя</h2>
+    <form id="registrationForm">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Введите вашу фамилию" required>
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Пол</label>
+            <select id="gender" class="form-select" required>
+                <option value="">Выберите пол</option>
+                <option value="Мужской">Мужской</option>
+                <option value="Женский">Женский</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">Дата рождения</label>
+            <input type="date" class="form-control" id="dob" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Номер телефона</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Введите ваш номер телефона" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+    <!-- Сообщение об ошибке -->
+    <div id="registration-error" class="alert alert-danger mt-3 d-none" role="alert">
+        Произошла ошибка при регистрации. Пожалуйста, попробуйте позже.
+    </div>
+    <!-- Сообщение об успешной регистрации (опционально) -->
+    <div id="registration-success" class="alert alert-success mt-3 d-none" role="alert">
+        Регистрация прошла успешно! Перенаправление...
+    </div>
+    <div class="text-center mt-2">
+        <a href="login.html">Уже есть аккаунт? Войти</a>
+    </div>
+    <!-- Индикатор загрузки -->
+    <div id="loading-indicator" class="d-none text-center mt-3">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+        <p>Регистрация...</p>
+    </div>
+</div>
+<div id="footer"></div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/include.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkAuthentication = () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                window.location.href = 'account.html';
+            }
+        };
+
+        checkAuthentication();
+
+        const registrationForm = document.getElementById('registrationForm');
+        const registrationError = document.getElementById('registration-error');
+        const registrationSuccess = document.getElementById('registration-success');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        const showError = (message) => {
+            registrationError.textContent = message;
+            registrationError.classList.remove('d-none');
+            registrationSuccess.classList.add('d-none');
+        };
+
+        const showSuccess = (message) => {
+            registrationSuccess.textContent = message;
+            registrationSuccess.classList.remove('d-none');
+            registrationError.classList.add('d-none');
+        };
+
+        const hideMessages = () => {
+            registrationError.classList.add('d-none');
+            registrationSuccess.classList.add('d-none');
+        };
+
+        const showLoading = () => {
+            loadingIndicator.classList.remove('d-none');
+        };
+
+        const hideLoading = () => {
+            loadingIndicator.classList.add('d-none');
+        };
+
+        registrationForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            hideMessages();
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const gender = document.getElementById('gender').value;
+            const dob = document.getElementById('dob').value;
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!firstName || !lastName || !gender || !dob || !phone || !email || !password) {
+                showError('Пожалуйста, заполните все поля.');
+                return;
+            }
+
+            showLoading();
+
+            try {
+                const response = await fetch('http://localhost:3000/api/v1/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        sex: gender,
+                        birthDate: dob,
+                        phone,
+                        email,
+                        password
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const token = data.token;
+                    if (token) {
+                        localStorage.setItem('token', token);
+                        localStorage.setItem('email', email);
+                        showSuccess('Регистрация прошла успешно! Перенаправление...');
+                        setTimeout(() => {
+                            window.location.href = 'account.html';
+                        }, 2000);
+                    } else {
+                        showError('Не удалось получить токен аутентификации.');
+                    }
+                } else {
+                    const errorData = await response.json();
+                    const errorMessage = errorData.message || 'Ошибка при регистрации.';
+                    showError(errorMessage);
+                }
+            } catch (error) {
+                console.error('Ошибка при регистрации:', error);
+                showError('Не удалось подключиться к серверу. Попробуйте позже.');
+            } finally {
+                hideLoading();
+            }
+        });
+
+        const inputFields = ['firstName', 'lastName', 'gender', 'dob', 'phone', 'email', 'password'];
+        inputFields.forEach(fieldId => {
+            document.getElementById(fieldId).addEventListener('input', hideMessages);
+        });
+    });
+</script>
+
+</body>
+</html>

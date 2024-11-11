@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const historyContainer = document.getElementById('history');
 
-// В качестве примера введем вот эти данные.
     const visitHistory = [
         { date: '2023-06-12', doctor: 'Иванов И.И.', service: 'Лечение кариеса' },
         { date: '2023-05-10', doctor: 'Сидорова О.О.', service: 'Удаление зуба' },
