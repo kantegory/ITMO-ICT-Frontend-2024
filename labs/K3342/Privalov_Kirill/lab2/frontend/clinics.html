@@ -9,13 +9,15 @@
 </head>
 <body>
 
-<div id="header"></div>
-<div class="container mt-4">
+<header id="header"></header>
+
+<main class="container mt-4" role="main">
     <h1 class="text-center mb-4">Клиники Санкт-Петербурга</h1>
 
     <div class="row mb-4">
         <div class="col-md-4">
-            <select id="districtFilter" class="form-select">
+            <label for="districtFilter" class="form-label">Выберите район:</label>
+            <select id="districtFilter" class="form-select" aria-label="Фильтр по районам">
                 <option value="all">Все районы</option>
                 <option value="Центральный район">Центральный район</option>
                 <option value="Василеостровский район">Василеостровский район</option>
@@ -25,14 +27,14 @@
         </div>
     </div>
 
-    <div class="row" id="clinics-list">
+    <div class="row" id="clinics-list" role="list">
         <div class="col-12 text-center">
             <p>Загрузка клиник...</p>
         </div>
     </div>
-</div>
+</main>
 
-<div id="footer"></div>
+<footer id="footer"></footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/include.js"></script>
@@ -79,15 +81,15 @@
                 clinicCard.setAttribute('data-district', clinic.district);
 
                 clinicCard.innerHTML = `
-            <div class="card h-100">
-                <img src="images/${clinic.image}" class="card-img-top" alt="${clinic.name}">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${clinic.name}</h5>
-                    <p class="card-text">${clinic.district}, ${clinic.address}</p>
-                    <a href="${clinic.detailsUrl || '#'}" class="btn btn-primary mt-auto">Подробнее</a>
-                </div>
-            </div>
-        `;
+                        <div class="card h-100">
+                            <img src="images/${clinic.image}" class="card-img-top" alt="Изображение ${clinic.name}">
+                            <div class="card-body d-flex flex-column">
+                                <h2 class="card-title">${clinic.name}</h2>
+                                <p class="card-text">${clinic.district}, ${clinic.address}</p>
+                                <a href="${clinic.detailsUrl || '#'}" class="btn btn-primary mt-auto" role="button" aria-label="Подробнее о ${clinic.name}">Подробнее</a>
+                            </div>
+                        </div>
+                    `;
 
                 clinicsList.appendChild(clinicCard);
             });

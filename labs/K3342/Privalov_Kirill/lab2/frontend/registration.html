@@ -9,22 +9,24 @@
 </head>
 <body>
 
-<div id="header"></div>
+<header id="header"></header>
 
-<div class="container my-5">
-    <h2 class="text-center mb-4">Регистрация пользователя</h2>
-    <form id="registrationForm">
+<main class="container my-5" role="main">
+    <h1 class="text-center mb-4">Регистрация пользователя</h1>
+    <form id="registrationForm" aria-labelledby="registrationFormHeading">
         <div class="mb-3">
             <label for="firstName" class="form-label">Имя</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Введите ваше имя" required>
+            <input type="text" class="form-control" id="firstName" placeholder="Введите ваше имя" required
+                   aria-required="true">
         </div>
         <div class="mb-3">
             <label for="lastName" class="form-label">Фамилия</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Введите вашу фамилию" required>
+            <input type="text" class="form-control" id="lastName" placeholder="Введите вашу фамилию" required
+                   aria-required="true">
         </div>
         <div class="mb-3">
             <label for="gender" class="form-label">Пол</label>
-            <select id="gender" class="form-select" required>
+            <select id="gender" class="form-select" required aria-required="true">
                 <option value="">Выберите пол</option>
                 <option value="Мужской">Мужской</option>
                 <option value="Женский">Женский</option>
@@ -32,42 +34,43 @@
         </div>
         <div class="mb-3">
             <label for="dob" class="form-label">Дата рождения</label>
-            <input type="date" class="form-control" id="dob" required>
+            <input type="date" class="form-control" id="dob" required aria-required="true">
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">Номер телефона</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Введите ваш номер телефона" required>
+            <input type="tel" class="form-control" id="phone" placeholder="Введите ваш номер телефона" required
+                   aria-required="true">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required
+                   aria-required="true">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required
+                   aria-required="true">
         </div>
         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </form>
-    <!-- Сообщение об ошибке -->
-    <div id="registration-error" class="alert alert-danger mt-3 d-none" role="alert">
+    <div id="registration-error" class="alert alert-danger mt-3 d-none" role="alert" aria-live="assertive">
         Произошла ошибка при регистрации. Пожалуйста, попробуйте позже.
     </div>
-    <!-- Сообщение об успешной регистрации (опционально) -->
-    <div id="registration-success" class="alert alert-success mt-3 d-none" role="alert">
+    <div id="registration-success" class="alert alert-success mt-3 d-none" role="alert" aria-live="polite">
         Регистрация прошла успешно! Перенаправление...
     </div>
     <div class="text-center mt-2">
         <a href="login.html">Уже есть аккаунт? Войти</a>
     </div>
-    <!-- Индикатор загрузки -->
-    <div id="loading-indicator" class="d-none text-center mt-3">
+    <div id="loading-indicator" class="d-none text-center mt-3" aria-hidden="true">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
         <p>Регистрация...</p>
     </div>
-</div>
-<div id="footer"></div>
+</main>
+
+<footer id="footer"></footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/include.js"></script>

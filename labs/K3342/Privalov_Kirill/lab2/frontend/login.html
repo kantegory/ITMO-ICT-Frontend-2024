@@ -9,36 +9,38 @@
 </head>
 <body>
 
-<div id="header"></div>
+<header id="header"></header>
 
-<div class="container">
-    <h2 class="text-center mt-4">Вход в личный кабинет</h2>
-    <form id="loginForm">
+<main class="container" role="main">
+    <h1 class="text-center mt-4">Вход в личный кабинет</h1>
+    <form id="loginForm" aria-labelledby="loginFormHeading">
         <div class="form-group mt-3">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Введите email" required>
+            <input type="email" class="form-control" id="email" placeholder="Введите email" required
+                   aria-required="true">
         </div>
         <div class="form-group mt-3">
             <label for="password">Пароль:</label>
-            <input type="password" class="form-control" id="password" placeholder="Введите пароль" required>
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль" required
+                   aria-required="true">
         </div>
         <button type="submit" class="btn btn-primary btn-block mt-4" id="loginButton">Войти</button>
     </form>
-    <div id="login-error" class="alert alert-danger mt-3 d-none" role="alert">
+    <div id="login-error" class="alert alert-danger mt-3 d-none" role="alert" aria-live="assertive">
         Неправильный email или пароль!
     </div>
     <div class="text-center mt-2">
         <a href="registration.html">Нет аккаунта? Зарегистрироваться</a>
     </div>
-    <!-- Индикатор загрузки -->
-    <div id="loading-indicator" class="d-none text-center mt-3">
+    <div id="loading-indicator" class="d-none text-center mt-3" aria-hidden="true">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
         <p>Проверка данных...</p>
     </div>
-</div>
-<div id="footer"></div>
+</main>
+
+<footer id="footer"></footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/include.js"></script>

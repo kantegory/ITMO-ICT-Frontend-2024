@@ -9,27 +9,28 @@
 </head>
 <body>
 
-<div id="header"></div>
+<header id="header"></header>
 
-<div class="container mt-4">
+<main class="container mt-4" role="main">
     <h1 class="text-center mb-4">Стоматологические услуги</h1>
 
     <div class="row mb-4">
         <div class="col-12 text-center">
-            <select id="serviceFilter" class="form-select w-50 mx-auto">
+            <label for="serviceFilter" class="form-label visually-hidden">Фильтр услуг</label>
+            <select id="serviceFilter" class="form-select w-50 mx-auto" aria-label="Фильтр услуг">
                 <option value="all">Все услуги</option>
             </select>
         </div>
     </div>
 
-    <div class="row" id="services-list">
+    <div class="row" id="services-list" role="list">
         <div class="col-12 text-center">
             <p>Загрузка услуг...</p>
         </div>
     </div>
-</div>
+</main>
 
-<div id="footer"></div>
+<footer id="footer"></footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/include.js"></script>
