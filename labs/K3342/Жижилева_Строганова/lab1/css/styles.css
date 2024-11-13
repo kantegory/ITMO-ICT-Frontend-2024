@@ -177,8 +177,8 @@ body.onload .fade-in {
 }
 
 .btn-danger:hover {
-  background-color: #ed6ca7 ;
-  border-color: #ed6ca7 ;
+  background-color: #ff0000 ;
+  border-color: #f80000 ;
 }
 
     /* Дополнительный стиль для иконок рядом с полями */
@@ -191,4 +191,9 @@ body.onload .fade-in {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+.text-uniform {
+  font-family: Arial, sans-serif; /* Выберите желаемый шрифт */
+  font-size: 16px; /* Настройте размер шрифта под общий стиль */
+  color: #333; /* Единый цвет текста */
 }

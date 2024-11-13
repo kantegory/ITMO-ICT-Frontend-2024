@@ -9,26 +9,39 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="text-center my-4">Register on Recipe App</h2>
-    <form class="col-md-6 mx-auto" id="registerForm">
+    <header class="text-center my-4">
+      <h2 id="registerTitle">Register on Recipe App</h2>
+    </header>
+
+    <!-- Start of Registration Form -->
+    <form class="col-md-6 mx-auto" id="registerForm" aria-labelledby="registerTitle" aria-describedby="formDescription">
+      <section aria-labelledby="formDescription" class="mb-4">
+        <p id="formDescription">Please provide your information to create an account on Recipe App.</p>
+      </section>
+
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" aria-required="true" required>
       </div>
+
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" aria-required="true" required>
       </div>
+
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <input type="password" class="form-control" id="password" placeholder="Enter password" aria-required="true" required>
       </div>
+
       <div class="mb-3">
         <label for="confirm-password" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password">
+        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" aria-required="true" required>
       </div>
-      <button type="submit" class="btn btn-primary w-100">Register</button>
+
+      <button type="submit" class="btn btn-primary w-100" aria-label="Submit the registration form">Register</button>
     </form>
+    <!-- End of Registration Form -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

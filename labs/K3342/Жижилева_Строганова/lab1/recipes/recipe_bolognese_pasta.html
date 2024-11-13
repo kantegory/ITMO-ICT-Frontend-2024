@@ -8,66 +8,86 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="container">
+
+  <main class="container">
+    <header>
     <h2 class="text-center my-4">Bolognese Pasta</h2>
+    </header>
 
-  <div class="author-section">
-      <div class="me-3">
-        <strong>Author:</strong> <span id="authorName">John Doe</span>
-      </div>
-      <!-- Кнопка подписки с классом btn-primary -->
-      <button class="btn btn-primary" id="subscribeBtn">Subscribe to Author</button>
-    </div>
+    <section aria-labelledby="recipeTitle">
+      <h2 id="recipeTitle" class="visually-hidden">Recipe Details</h2>
 
-    <div class="recipe-content mt-4">
-      <img src="../img/delicious-plate-with-spaghetii-bolognese-desk.jpg" class="img-fluid mb-3" alt="Recipe Image">
-      <p>Spaghetti bolognese time</p>
-
-      <h5>Ingredients:</h5>
-      <ul>
-        <li>Spaghetti</li>
-        <li>Ground beef</li>
-        <li>Tomato sauce</li>
-        <li>Onion</li>
-        <li>Garlic</li>
-      </ul>
-
-      <h5>Steps:</h5>
-      <ol>
-        <li>Cook pasta: Boil your choice of pasta (spaghetti, tagliatelle) in salted water until al dente.</li>
-        <li>Sauté base: In a pan, sauté diced onions, garlic, and carrots in olive oil until soft.</li>
-        <li>Add meat</li>
-        <li>Add liquids: Stir in tomato paste, canned tomatoes, red wine, and beef stock. Simmer for 30-40 minutes.</li>
-        <li>Season: Add salt, pepper, and Italian herbs to taste. Optionally, stir in a splash of milk or cream for richness.</li>
-        <li>Serve: Toss the sauce with pasta and top with grated Parmesan.</li>
-      </ol>
-
-       <div class="mt-4 d-flex align-items-center">
-        <!-- Кнопка "Like" с классом btn-primary -->
-        <button class="btn btn-custom-beige" id="likeBtn">Like <span id="likeCount">0</span></button>
-        <!-- Кнопка комментариев остается серой -->
-        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal">Comment</button>
+      <div class="author-section d-flex align-items-center mb-4">
+        <p class="me-3 mb-0">
+          <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </p>
+        <button class="btn btn-primary" id="subscribeBtn" aria-label="Subscribe to Author">
+          Subscribe to Author
+        </button>
       </div>
 
-      <h5 class="mt-4">Comments:</h5>
-      <div id="commentsList" class="border p-3"></div>
-    </div>
+      <article class="recipe-content">
+        <figure class="text-center">
+          <img src="../img/delicious-plate-with-spaghetii-bolognese-desk.jpg" class="img-fluid mb-3" alt="Top view of apple pie with coffee">
+          <figcaption>Spaghetti bolognese time</figcaption>
+        </figure>
+
+        <section aria-labelledby="ingredientsHeading">
+          <h3 id="ingredientsHeading">Ingredients</h3>
+          <ul>
+            <li>Spaghetti</li>
+            <li>Ground beef</li>
+            <li>Tomato sauce</li>
+            <li>Onion</li>
+            <li>Garlic</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="stepsHeading">
+          <h3 id="stepsHeading">Steps</h3>
+          <ol>
+            <li>Cook pasta: Boil your choice of pasta (spaghetti, tagliatelle) in salted water until al dente.</li>
+            <li>Sauté base: In a pan, sauté diced onions, garlic, and carrots in olive oil until soft.</li>
+            <li>Add meat</li>
+            <li>Add liquids: Stir in tomato paste, canned tomatoes, red wine, and beef stock. Simmer for 30-40 minutes.</li>
+            <li>Season: Add salt, pepper, and Italian herbs to taste. Optionally, stir in a splash of milk or cream for richness.</li>
+            <li>Serve: Toss the sauce with pasta and top with grated Parmesan.</li>
+          </ol>
+        </section>
+
+        <div class="mt-4 d-flex align-items-center" role="region" aria-label="Recipe actions">
+          <button class="btn btn-custom-beige me-2" id="likeBtn" aria-pressed="false" aria-label="Like this recipe">
+            Like <span id="likeCount">0</span>
+          </button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal" aria-label="Add a comment">
+            Comment
+          </button>
+        </div>
+
+        <section aria-labelledby="commentsHeading" class="mt-4">
+          <h3 id="commentsHeading">Comments</h3>
+          <div id="commentsList" class="border p-3" tabindex="0" aria-live="polite"></div>
+        </section>
+      </article>
+    </section>
 
     <!-- Модальное окно для комментариев -->
     <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="commentModalLabel">Add Comment</h5>
+            <h2 class="modal-title fs-5" id="commentModalLabel">Add Comment</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name">
+                <label for="commentAuthor" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name" required>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment"></textarea>
+                <label for="commentText" class="form-label">Comment</label>
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment" required></textarea>
               </div>
             </form>
           </div>
@@ -78,11 +98,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/recipe.js"></script> <!-- Подключаем JavaScript файл -->
+  <script src="../js/recipe.js"></script>
 </body>
 </html>

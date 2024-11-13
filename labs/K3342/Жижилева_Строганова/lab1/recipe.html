@@ -9,38 +9,51 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="text-center my-4" id="recipeTitle">Recipe Name</h2>
+    <header class="text-center my-4">
+      <h2 id="recipeTitle">Recipe Name</h2>
+    </header>
 
-    <div class="author-section">
-      <div class="me-3">
-        <strong>Author:</strong> <span id="authorName">John Doe</span>
-      </div>
-      <!-- Кнопка подписки с классом btn-primary -->
-      <button class="btn btn-primary" id="subscribeBtn">Subscribe to Author</button>
+    <div class="author-section d-flex align-items-center mb-4">
+        <p class="me-3 mb-0">
+          <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </p>
+        <button class="btn btn-primary" id="subscribeBtn" aria-label="Subscribe to Author">
+          Subscribe to Author
+        </button>
     </div>
 
-    <div class="recipe-content mt-4">
-      <img id="recipeImage" class="img-fluid mb-3" alt="Recipe Image">
-      <p id="recipeDescription">Description</p>
+    <article class="recipe-content mt-4">
+      <figure>
+        <img id="recipeImage" class="img-fluid mb-3" alt="Recipe Image" aria-describedby="recipeDescription">
+        <figcaption id="recipeDescription">Description</figcaption>
+      </figure>
 
-      <h5>Ingredients:</h5>
-      <ul id="ingredientsList"></ul>
+      <section>
+        <h3>Ingredients:</h3>
+        <ul id="ingredientsList" role="list"></ul>
+      </section>
 
-      <h5>Steps:</h5>
-      <ol id="instructionsList"></ol>
+      <section>
+        <h3>Steps:</h3>
+        <ol id="instructionsList" role="listitem"></ol>
+      </section>
 
-      <div class="mt-4 d-flex align-items-center">
-        <!-- Кнопка "Like" с классом btn-primary -->
-        <button class="btn btn-custom-beige" id="likeBtn">Like <span id="likeCount">0</span></button>
-        <!-- Кнопка комментариев остается серой -->
-        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal">Comment</button>
-      </div>
+      <section class="mt-4 d-flex align-items-center">
+        <button class="btn btn-custom-beige" id="likeBtn" aria-label="Like this recipe">
+          Like <span id="likeCount">0</span>
+        </button>
+        <button class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#commentModal" aria-label="Add a comment">
+          Comment
+        </button>
+      </section>
 
-      <h5 class="mt-4">Comments:</h5>
-      <div id="commentsList" class="border p-3"></div>
-    </div>
+      <section aria-labelledby="commentsSection">
+        <h3 id="commentsSection" class="mt-4">Comments:</h3>
+        <div id="commentsList" class="border p-3" role="region" aria-live="polite"></div>
+      </section>
+    </article>
 
-    <!-- Модальное окно для комментариев -->
+    <!-- Modal for Comments -->
     <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -49,18 +62,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form aria-labelledby="commentModalLabel">
               <div class="mb-3">
-                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name">
+                <label for="commentAuthor" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Enter your name" aria-describedby="commentAuthorHelp">
+                <small id="commentAuthorHelp" class="form-text text-muted">Please provide your name to add a comment.</small>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment"></textarea>
+                <label for="commentText" class="form-label">Your Comment</label>
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment" aria-describedby="commentTextHelp"></textarea>
+                <small id="commentTextHelp" class="form-text text-muted">Enter your thoughts on this recipe.</small>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="submitCommentBtn">Submit Comment</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+            <button type="button" class="btn btn-primary" id="submitCommentBtn" aria-label="Submit your comment">Submit Comment</button>
           </div>
         </div>
       </div>
@@ -99,7 +116,7 @@
           });
 
         } catch (error) {
-          console.error("Error with loading of the recipe:", error);
+          console.error("Error with loading the recipe:", error);
         }
       }
     });
