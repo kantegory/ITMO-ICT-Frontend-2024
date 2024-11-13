@@ -127,3 +127,56 @@ body.onload .fade-in {
 #subscribeBtn:hover {
   background-color: #138496;
 }
+.author-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.btn-custom-like, .btn-custom-subscribe {
+  background-color: #D2B48C; /* Бежевый */
+  color: #fff;
+}
+.btn-custom-comment {
+  background-color: #6c757d; /* Серый */
+  color: #fff;
+}
+
+.comment {
+  margin-bottom: 10px;
+  border-left: 3px solid #D2B48C;
+  padding-left: 10px;
+  font-size: 0.9em;
+}
+.comment-author {
+  font-weight: bold;
+  color: #556B2F; /* Зеленый цвет для автора */
+}
+/* Пример стилей для улучшения внешнего вида */
+.card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding-left: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #f082b5;
+  border-color: #f082b5;
+}
+
+.btn-danger:hover {
+  background-color: #ed6ca7 ;
+  border-color: #ed6ca7 ;
+}

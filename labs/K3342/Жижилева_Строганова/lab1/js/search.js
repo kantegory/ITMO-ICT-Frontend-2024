@@ -1,5 +1,3 @@
-// js/search.js
-
 document.getElementById('searchForm').addEventListener('submit', function(e) {
   e.preventDefault();
   fetchRecipesFromAPI();
@@ -9,20 +7,20 @@ async function fetchRecipesFromAPI() {
   const searchQuery = document.getElementById('searchQuery').value;
   const ingredientQuery = document.getElementById('ingredientQuery').value;
   const dishType = document.getElementById('dishType').value;
-  const difficulty = document.getElementById('difficulty').value;
 
-  const apiKey = "90dc5499f6a840bbaaf8032bd107e59e"; // Замените YOUR_API_KEY на ваш ключ Spoonacular
+  const apiKey = "5dd1386749f244ef9a0086b4666adc28"; // Ваш API-ключ Spoonacular
   const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 
   // Формирование строки запроса для API
   let query = `${apiUrl}&query=${searchQuery}&includeIngredients=${ingredientQuery}&type=${dishType}`;
-  if (difficulty) query += `&minComplexity=${difficulty}`;
 
   try {
+    console.log("Отправка запроса:", query); // Логирование запроса для отладки
     const response = await fetch(query);
-    if (!response.ok) throw new Error("Ошибка получения данных от API");
+    if (!response.ok) throw new Error(`Ошибка получения данных от API: ${response.status}`);
 
     const data = await response.json();
+    console.log("Ответ API:", data); // Логирование ответа для отладки
     renderRecipes(data.results);
   } catch (error) {
     console.error("Ошибка:", error);
@@ -34,12 +32,12 @@ function renderRecipes(recipes) {
   container.innerHTML = ''; // Очистка контейнера перед отображением результатов
 
   if (!recipes || recipes.length === 0) {
-    container.innerHTML = "<p class='text-center'>Recipies not found</p>";
+    container.innerHTML = "<p class='text-center'>Рецепты не найдены</p>";
     return;
   }
 
   recipes.forEach(recipe => {
-    // Формирование ссылки на вашу страницу рецепта
+    // Формирование ссылки на страницу рецепта
     const recipeLink = `recipe.html?recipeId=${recipe.id}`;
 
     const recipeCard = `
@@ -58,4 +56,3 @@ function renderRecipes(recipes) {
     container.insertAdjacentHTML('beforeend', recipeCard);
   });
 }
-
