@@ -111,21 +111,21 @@ body.onload .fade-in {
 }
 
 #likeBtn {
-  background-color: #28a745;
+  background-color: #D2B48C;
   color: white;
 }
 
 #likeBtn:hover {
-  background-color: #218838;
+  background-color: #7b9e6e;
 }
 
 #subscribeBtn {
-  background-color: #17a2b8;
+  background-color: #D2B48C;
   color: white;
 }
 
 #subscribeBtn:hover {
-  background-color: #138496;
+  background-color: #7b9e6e;
 }
 .author-section {
   display: flex;

@@ -10,7 +10,16 @@
 <body>
   <div class="container">
     <h2 class="text-center my-4" id="recipeTitle">Recipe Name</h2>
-    <div class="recipe-content">
+
+    <div class="author-section">
+      <div class="me-3">
+        <strong>Author:</strong> <span id="authorName">John Doe</span>
+      </div>
+      <!-- Кнопка подписки с классом btn-primary -->
+      <button class="btn btn-primary" id="subscribeBtn">Subscribe to Author</button>
+    </div>
+
+    <div class="recipe-content mt-4">
       <img id="recipeImage" class="img-fluid mb-3" alt="Recipe Image">
       <p id="recipeDescription">Description</p>
 
@@ -21,16 +30,39 @@
       <ol id="instructionsList"></ol>
 
       <div class="mt-4 d-flex align-items-center">
-        <button class="btn btn-primary me-2" id="likeBtn">Like <span id="likeCount">0</span></button>
+        <!-- Кнопка "Like" с классом btn-primary -->
+        <button class="btn btn-custom-beige" id="likeBtn">Like <span id="likeCount">0</span></button>
+        <!-- Кнопка комментариев остается серой -->
         <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal">Comment</button>
-        <div class="me-3">
-          <strong>Author:</strong> <span id="authorName">John Doe</span>
-        </div>
-        <button class="btn btn-secondary" id="subscribeBtn">Subscribe to Author</button>
       </div>
 
       <h5 class="mt-4">Comments:</h5>
-      <div id="commentsList" class="border p-3">
+      <div id="commentsList" class="border p-3"></div>
+    </div>
+
+    <!-- Модальное окно для комментариев -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel">Add Comment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitCommentBtn">Submit Comment</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
