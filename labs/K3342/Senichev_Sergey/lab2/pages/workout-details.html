@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали тренировки</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/workouts.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container mt-5" role="main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+                <li class="breadcrumb-item"><a href="workouts.html">Тренировки</a></li>
+                <li class="breadcrumb-item active">Детали тренировки</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="workout-video mb-4">
+                    <div class="ratio ratio-16x9">
+                        <img src="/api/placeholder/800/450" alt="Видео тренировки" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="workout-info">
+                    <h1 class="mb-3"></h1>
+                    <div class="workout-meta mb-4"></div>
+
+                    <h3>Описание</h3>
+                    <div class="workout-info">
+                        <p></p>
+                    </div>
+
+                    <h3 class="mt-4">Программа тренировки</h3>
+                    <div class="workout-program">
+                        <div class="accordion" id="workoutSteps">
+                            <!-- загрузка данных из БД -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Тренер</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Фото тренера">
+                            <div>
+                                <h5 class="mb-0"></h5>
+                                <span class="small"></span>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Что потребуется</h4>
+                        <ul>
+                            <!-- загрузка данных из БД -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <!-- загрузка данных из БД -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="similar-workouts mt-5">
+            <h3>Похожие тренировки</h3>
+            <div class="row">
+                <!-- загрузка данных из БД -->
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/workout-details.js"></script>
+    <script src="../js/header.js"></script>
+
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
