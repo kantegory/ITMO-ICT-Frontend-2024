@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateHeaderUI();
             }
 
-            window.location.href = '../pages/profile1.html';
+            window.location.href = '../pages/profile.html';
         } catch (error) {
             alert(error.message);
         }

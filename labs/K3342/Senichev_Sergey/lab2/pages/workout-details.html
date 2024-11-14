@@ -9,7 +9,7 @@
     <link href="../css/workouts.css" rel="stylesheet">
 </head>
 <body>
-    <div id="header"></div>
+    <header id="header"></header>
 
     <div class="container mt-5" role="main">
         <nav aria-label="breadcrumb">
@@ -30,17 +30,17 @@
 
                 <div class="workout-info">
                     <h1 class="mb-3"></h1>
-                    <div class="workout-meta mb-4"></div>
+                    <div class="workout-meta mb-4">
+                    </div>
 
                     <h3>Описание</h3>
-                    <div class="workout-info">
+                    <div class="workout-description">
                         <p></p>
                     </div>
 
                     <h3 class="mt-4">Программа тренировки</h3>
                     <div class="workout-program">
-                        <div class="accordion" id="workoutSteps">
-                            <!-- загрузка данных из БД -->
+                        <div class="accordion">
                         </div>
                     </div>
                 </div>
@@ -65,14 +65,12 @@
                     <div class="card-body">
                         <h4 class="card-title">Что потребуется</h4>
                         <ul>
-                            <!-- загрузка данных из БД -->
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body">
-                        <!-- загрузка данных из БД -->
                     </div>
                 </div>
             </div>
@@ -81,17 +79,16 @@
         <div class="similar-workouts mt-5">
             <h3>Похожие тренировки</h3>
             <div class="row">
-                <!-- загрузка данных из БД -->
             </div>
         </div>
     </div>
 
-    <div id="footer"></div>
+    <footer id="footer"></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/workout-details.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/workout-details.js"></script>
 
     <script>
         fetch('../components/header.html')

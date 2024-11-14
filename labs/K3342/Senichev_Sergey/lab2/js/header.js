@@ -14,7 +14,7 @@ function updateHeaderUI() {
 
         if (currentUser) {
             authButtons.innerHTML = `
-                <a href="../pages/profile1.html" class="btn btn-outline-light me-2">Личный кабинет</a>
+                <a href="../pages/profile.html" class="btn btn-outline-light me-2">Личный кабинет</a>
                 <button onclick="handleLogout()" class="btn btn-outline-light">Выход</button>
             `;
         } else {

@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const response = await fetch(`http://localhost:3000/workouts/${workoutId}`);
             const workout = await response.json();
+            console.log(workout)
 
             let isFavorite = false;
+            let isCompleted = false;
             if (currentUser) {
                 const favResponse = await fetch(
                     `http://localhost:3000/favorites?userId=${currentUser.id}&workoutId=${workoutId}`
@@ -15,20 +17,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 const favData = await favResponse.json();
                 isFavorite = favData.length > 0;
             }
+            if (currentUser) {
+                const complResponse = await fetch(
+                    `http://localhost:3000/userWorkouts?userId=${currentUser.id}&workoutId=${workoutId}`
+                );
+                const complData = await complResponse.json();
+                isCompleted = complData.length > 0;
+            }
 
             const similarResponse = await fetch(
                 `http://localhost:3000/workouts?type=${workout.type}&id_ne=${workoutId}&_limit=3`
             );
             const similarWorkouts = await similarResponse.json();
 
-            updateUI(workout, isFavorite, similarWorkouts);
+            updateUI(workout, isFavorite, isCompleted, similarWorkouts);
         } catch (error) {
             console.error('Ошибка при загрузке данных тренировки:', error);
         }
     }
 
-    function updateUI(workout, isFavorite, similarWorkouts) {
+    function updateUI(workout, isFavorite, isCompleted, similarWorkouts) {
         document.querySelector('.breadcrumb li:last-child').textContent = workout.title;
+
+        const xxx = document.querySelector(".h1");
+        console.log(xxx);
 
         document.querySelector('h1').textContent = workout.title;
         document.querySelector('.workout-meta').innerHTML = `
@@ -36,14 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="badge bg-success me-2">${workout.difficulty} уровень</span>
             <span class="badge bg-info">${workout.type}</span>
         `;
+        document.querySelector('.workout-description').textContent = workout.description;
 
-        document.querySelector('.workout-info p').textContent = workout.description;
-
-        const accordionContainer = document.getElementById('workoutSteps');
-        accordionContainer.innerHTML = workout.program.map((section, index) => `
+        document.querySelector('.workout-program').innerHTML = workout.program.map((section, index) => `
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" 
+                    <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button"
                             data-bs-toggle="collapse" data-bs-target="#step${section.id}">
                         ${section.title} (${section.duration})
                     </button>
@@ -71,13 +81,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 .join('');
         }
 
-        // Обновление кнопок действий
         const actionButtons = document.querySelector('.card:last-child .card-body');
         actionButtons.innerHTML = `
             ${currentUser ? `
                 <button class="btn btn-outline-primary w-100 ${isFavorite ? 'active' : ''}" 
                         onclick="toggleFavorite(${workout.id})">
                     ${isFavorite ? 'Убрать из избранного' : 'Добавить в избранное'}
+                </button>
+                <p></p>
+                <button class="btn btn-outline-primary w-100 ${isCompleted ? 'active' : ''}" 
+                        onclick="toggleCompleted(${workout.id})">
+                    ${isCompleted ? 'Удалить из выполненных' : 'Отметить как выполненное'}
                 </button>
             ` : `
                 <a href="../pages/login.html" class="btn btn-primary w-100">Войдите, чтобы начать</a>
@@ -126,6 +140,47 @@ document.addEventListener('DOMContentLoaded', function() {
                         userId: currentUser.id,
                         workoutId: workoutId,
                         createdAt: new Date().toISOString()
+                    })
+                });
+            }
+
+            loadWorkoutDetails();
+        } catch (error) {
+            console.error('Ошибка при обновлении избранного:', error);
+        }
+    };
+
+    window.toggleCompleted = async function(workoutId) {
+        if (!currentUser) {
+            window.location.href = '../pages/login.html';
+            return;
+        }
+
+        try {
+            const complResponse = await fetch(
+                `http://localhost:3000/userWorkouts?userId=${currentUser.id}&workoutId=${workoutId}`
+            );
+            const complData = await complResponse.json();
+
+            if (complData.length > 0) {
+                await fetch(`http://localhost:3000/userWorkouts/${complData[0].id}`, {
+                    method: 'DELETE'
+                });
+            } else {
+                const response = await fetch(`http://localhost:3000/workouts/${workoutId}`);
+                const workout = await response.json();
+
+                await fetch('http://localhost:3000/userWorkouts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        title: workout.title,
+                        userId: currentUser.id,
+                        workoutId: workoutId,
+                        completedAt: new Date().toISOString(),
+                        duration: workout.duration
                     })
                 });
             }

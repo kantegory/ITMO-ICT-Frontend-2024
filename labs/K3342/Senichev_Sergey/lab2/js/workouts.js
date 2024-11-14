@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
   async function fetchWorkouts() {
     let queryParams = new URLSearchParams();
     
-    // Добавляем параметры фильтрации
     if (activeFilters.difficulty !== 'Все уровни') {
       queryParams.append('difficulty', activeFilters.difficulty);
     }
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
       queryParams.append('q', activeFilters.search);
     }
     
-    // Добавляем пагинацию
     queryParams.append('_page', currentPage);
     queryParams.append('_limit', perPage);
     
@@ -91,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Обработчики событий
   document.querySelectorAll('input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', function() {
       currentPage = 1;
