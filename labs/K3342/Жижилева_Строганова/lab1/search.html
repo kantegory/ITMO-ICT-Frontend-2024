@@ -9,40 +9,48 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="text-center my-4">Search for Recipes</h2>
+    <header class="text-center my-4">
+      <h1 id="pageTitle">Search for Recipes</h1>
+    </header>
 
-    <form class="row g-3 mb-4" id="searchForm">
-      <div class="col-md-3">
-        <input type="text" class="form-control" placeholder="Search by keyword" id="searchQuery">
-      </div>
-      <div class="col-md-3">
-        <input type="text" class="form-control" placeholder="Search by ingredients" id="ingredientQuery">
-      </div>
-      <div class="col-md-2">
-        <select class="form-select" id="dishType">
-          <option value="">Dish Type</option>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <select class="form-select" id="difficulty">
-          <option value="">Difficulty</option>
-          <option value="1">1 (Easy)</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5 (Hard)</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-primary w-100">Search</button>
-      </div>
-    </form>
+    <section aria-labelledby="searchSection">
+      <h2 id="searchSection" class="visually-hidden">Search Filters</h2>
 
-    <div class="row" id="recipesContainer">
-    </div>
+      <form class="row g-3 mb-4" id="searchForm" aria-describedby="formDescription">
+        <p id="formDescription" class="visually-hidden">Use the search form to find recipes by keyword, ingredients, or dish type.</p>
+
+        <div class="col-md-3">
+          <label for="searchQuery" class="form-label">Search by keyword</label>
+          <input type="text" class="form-control" id="searchQuery" placeholder="Enter keywords" aria-label="Search recipes by keyword" aria-required="true">
+        </div>
+
+        <div class="col-md-3">
+          <label for="ingredientQuery" class="form-label">Search by ingredients</label>
+          <input type="text" class="form-control" id="ingredientQuery" placeholder="Enter ingredients" aria-label="Search recipes by ingredients">
+        </div>
+
+        <div class="col-md-3">
+          <label for="dishType" class="form-label">Dish Type</label>
+          <select class="form-select" id="dishType" aria-label="Select a dish type">
+            <option value="" aria-label="Choose a dish type">Dish Type</option>
+            <option value="breakfast" aria-label="Breakfast">Breakfast</option>
+            <option value="lunch" aria-label="Lunch">Lunch</option>
+            <option value="dinner" aria-label="Dinner">Dinner</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100" aria-label="Submit search form">Search</button>
+        </div>
+      </form>
+    </section>
+
+    <section aria-labelledby="recipesSection">
+      <h2 id="recipesSection" class="visually-hidden">Recipes</h2>
+      <div class="row" id="recipesContainer" role="region" aria-live="polite">
+        <!-- Recipes will be loaded here -->
+      </div>
+    </section>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -111,19 +111,89 @@ body.onload .fade-in {
 }
 
 #likeBtn {
-  background-color: #28a745;
+  background-color: #D2B48C;
   color: white;
 }
 
 #likeBtn:hover {
-  background-color: #218838;
+  background-color: #7b9e6e;
 }
 
 #subscribeBtn {
-  background-color: #17a2b8;
+  background-color: #D2B48C;
   color: white;
 }
 
 #subscribeBtn:hover {
-  background-color: #138496;
+  background-color: #7b9e6e;
+}
+.author-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.btn-custom-like, .btn-custom-subscribe {
+  background-color: #D2B48C; /* Бежевый */
+  color: #fff;
+}
+.btn-custom-comment {
+  background-color: #6c757d; /* Серый */
+  color: #fff;
+}
+
+.comment {
+  margin-bottom: 10px;
+  border-left: 3px solid #D2B48C;
+  padding-left: 10px;
+  font-size: 0.9em;
+}
+.comment-author {
+  font-weight: bold;
+  color: #556B2F; /* Зеленый цвет для автора */
+}
+/* Пример стилей для улучшения внешнего вида */
+.card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding-left: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #f082b5;
+  border-color: #f082b5;
+}
+
+.btn-danger:hover {
+  background-color: #ff0000 ;
+  border-color: #f80000 ;
+}
+
+    /* Дополнительный стиль для иконок рядом с полями */
+.input-group-text i {
+  font-size: 1.1rem; /* Размер иконок */
+  color: #556B2F; /* Зеленый цвет для иконок */
+}
+    /* Центровка кнопки Login */
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.text-uniform {
+  font-family: Arial, sans-serif; /* Выберите желаемый шрифт */
+  font-size: 16px; /* Настройте размер шрифта под общий стиль */
+  color: #333; /* Единый цвет текста */
 }

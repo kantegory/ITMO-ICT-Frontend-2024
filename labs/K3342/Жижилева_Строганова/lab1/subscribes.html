@@ -10,68 +10,74 @@
 <body>
 
   <div class="container my-4">
-    <h2 class="text-center mb-4">Subscriptions</h2>
+    <header class="text-center mb-4">
+      <h2 id="pageTitle">Subscribed Authors</h2>
+    </header>
 
-    <!-- List of Authors -->
-    <div class="row">
+    <section aria-labelledby="subscriptionsSection">
+      <h2 id="subscriptionsSection" class="visually-hidden">List of Subscribed Authors</h2>
 
-      <!-- Author 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="row g-0">
-            <div class="col-4">
-              <img src="img/cute-leaf-cartoon-illustration.jpg" class="img-fluid rounded-circle" alt="Author 1" width="100">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">John Doe</h5>
-                <p class="card-text">A passionate food lover who shares delicious recipes with the world.</p>
-                <button class="btn btn-danger">Unsubscribe</button>
+      <!-- List of Authors -->
+      <div class="row" aria-live="polite">
+
+        <!-- Author 1 -->
+        <article class="col-md-4 mb-4" role="listitem">
+          <div class="card" aria-labelledby="author1Title">
+            <div class="row g-0">
+              <div class="col-4">
+                <img src="img/cute-leaf-cartoon-illustration.jpg" class="img-fluid rounded-circle" alt="Portrait of Author 1: John Doe" width="100" aria-describedby="author1Desc">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h3 class="card-title" id="author1Title">John Doe</h3>
+                  <p class="card-text" id="author1Desc">A passionate food lover who shares delicious recipes with the world.</p>
+                  <button class="btn btn-danger" aria-label="Unsubscribe from John Doe's recipes">Unsubscribe</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- Author 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="row g-0">
-            <div class="col-4">
-              <img src="img/author2.jpeg" class="img-fluid rounded-circle" alt="Author 2" width="100">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Jane Smith</h5>
-                <p class="card-text">A chef with a love for international cuisine and simple, healthy meals.</p>
-                <button class="btn btn-danger">Unsubscribe</button>
+        <!-- Author 2 -->
+        <article class="col-md-4 mb-4" role="listitem">
+          <div class="card" aria-labelledby="author2Title">
+            <div class="row g-0">
+              <div class="col-4">
+                <img src="img/author2.jpeg" class="img-fluid rounded-circle" alt="Portrait of Author 2: Jane Smith" width="100" aria-describedby="author2Desc">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h3 class="card-title" id="author2Title">Jane Smith</h3>
+                  <p class="card-text" id="author2Desc">A chef with a love for international cuisine and simple, healthy meals.</p>
+                  <button class="btn btn-danger" aria-label="Unsubscribe from Jane Smith's recipes">Unsubscribe</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- Author 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="row g-0">
-            <div class="col-4">
-              <img src="img/author3.jpg" class="img-fluid rounded-circle" alt="Author 3" width="100">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Alice Johnson</h5>
-                <p class="card-text">Specializes in quick and easy recipes for busy families.</p>
-                <button class="btn btn-danger">Unsubscribe</button>
+        <!-- Author 3 -->
+        <article class="col-md-4 mb-4" role="listitem">
+          <div class="card" aria-labelledby="author3Title">
+            <div class="row g-0">
+              <div class="col-4">
+                <img src="img/author3.jpg" class="img-fluid rounded-circle" alt="Portrait of Author 3: Alice Johnson" width="100" aria-describedby="author3Desc">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h3 class="card-title" id="author3Title">Alice Johnson</h3>
+                  <p class="card-text" id="author3Desc">Specializes in quick and easy recipes for busy families.</p>
+                  <button class="btn btn-danger" aria-label="Unsubscribe from Alice Johnson's recipes">Unsubscribe</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </article>
+
+        <!-- Add more authors here following the same structure -->
+
       </div>
-
-      <!-- Add more authors here following the same structure -->
-
-    </div>
+    </section>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -9,32 +9,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body onload="fadeIn()">
-  <div class="container fade-in">
-    <h2 class="text-center my-4">Login to Recipe App</h2>
-    <form class="col-md-6 mx-auto" id="loginForm">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-          </div>
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-lock"></i></span>
-          </div>
-          <input type="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Login</button>
-      <a href="register.html" class="d-block text-center mt-3">Don't have an account? Register here</a>
-    </form>
-  </div>
 
+  <main class="container fade-in">
+    <h2 class="text-center my-4" id="loginTitle">Login to Recipe App</h2>
+
+    <form class="col-md-6 mx-auto" id="loginForm" aria-labelledby="loginTitle" aria-describedby="loginFormDesc">
+      <p id="loginFormDesc" class="visually-hidden">Please enter your email and password to log in to the Recipe App.</p>
+
+      <!-- Email Field -->
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" required aria-required="true" aria-describedby="emailHelp">
+        </div>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-lock" aria-hidden="true"></i></span>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" required aria-required="true" aria-describedby="passwordHelp">
+        </div>
+        <div id="passwordHelp" class="form-text">Make sure your password is secure and at least 8 characters long.</div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary w-100" aria-label="Submit login form">Login</button>
+      </div>
+
+      <!-- Registration Link -->
+      <div class="mt-3 text-center">
+        <a href="register.html" class="d-block" aria-label="Register for a new account">Don't have an account? Register here</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Login Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -46,14 +60,13 @@
           Welcome back! You are being redirected to your profile.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close and continue">Close</button>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <script src="js/log_in_modal.js"></script>
 </body>
 </html>

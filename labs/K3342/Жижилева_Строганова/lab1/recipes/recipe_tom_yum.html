@@ -8,51 +8,83 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="container">
+
+  <main class="container">
+    <header>
     <h2 class="text-center my-4">Tom Yum</h2>
-    <div class="recipe-content">
-      <img src="../img/thai-food-tom-yum-seafood-seafood-spicy-soup.jpg" class="img-fluid mb-3" alt="Recipe Image">
-      <p>Favorite dish from Thailand</p>
-      <h5>Ingredients:</h5>
-      <ul>
-        <li>Shrimp</li>
-        <li>Lemon grass</li>
-        <li>mushroom</li>
-      </ul>
-      <h5>Steps:</h5>
-      <ol>
-        <li>Boil broth: Heat shrimp broth with lemongrass, galangal, and lime leaves.</li>
-        <li>Add aromatics: Stir in Thai chili paste, fish sauce, and lime juice.</li>
-        <li>Cook protein: Add shrimp or chicken and cook until done.</li>
-        <li>Add veggies: Toss in mushrooms and tomatoes, simmer for a few minutes.</li>
-        <li>Finish: Garnish with fresh cilantro and chili.</li>
-      </ol>
+    </header>
 
-      <div class="mt-4 d-flex align-items-center">
-        <button class="btn btn-primary me-2" id="likeBtn">Like <span id="likeCount">0</span></button>
-        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal">Comment</button>
-        <div class="me-3">
+    <section aria-labelledby="recipeTitle">
+      <h2 id="recipeTitle" class="visually-hidden">Recipe Details</h2>
+
+      <div class="author-section d-flex align-items-center mb-4">
+        <p class="me-3 mb-0">
           <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </p>
+        <button class="btn btn-primary" id="subscribeBtn" aria-label="Subscribe to Author">
+          Subscribe to Author
+        </button>
+      </div>
+
+      <article class="recipe-content">
+        <figure class="text-center">
+          <img src="../img/thai-food-tom-yum-seafood-seafood-spicy-soup.jpg" class="img-fluid mb-3" alt="Top view of apple pie with coffee">
+          <figcaption>Favorite dish from Thailand</figcaption>
+        </figure>
+
+        <section aria-labelledby="ingredientsHeading">
+          <h3 id="ingredientsHeading">Ingredients</h3>
+          <ul>
+            <li>Shrimp</li>
+            <li>Lemon grass</li>
+            <li>mushroom</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="stepsHeading">
+          <h3 id="stepsHeading">Steps</h3>
+          <ol>
+            <li>Boil broth: Heat shrimp broth with lemongrass, galangal, and lime leaves.</li>
+            <li>Add aromatics: Stir in Thai chili paste, fish sauce, and lime juice.</li>
+            <li>Cook protein: Add shrimp or chicken and cook until done.</li>
+            <li>Add veggies: Toss in mushrooms and tomatoes, simmer for a few minutes.</li>
+            <li>Finish: Garnish with fresh cilantro and chili.</li>
+          </ol>
+        </section>
+
+        <div class="mt-4 d-flex align-items-center" role="region" aria-label="Recipe actions">
+          <button class="btn btn-custom-beige me-2" id="likeBtn" aria-pressed="false" aria-label="Like this recipe">
+            Like <span id="likeCount">0</span>
+          </button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal" aria-label="Add a comment">
+            Comment
+          </button>
         </div>
-        <button class="btn btn-secondary" id="subscribeBtn">Subscribe to Author</button>
-      </div>
 
-      <h5 class="mt-4">Comments:</h5>
-      <div id="commentsList" class="border p-3">
-      </div>
-    </div>
+        <section aria-labelledby="commentsHeading" class="mt-4">
+          <h3 id="commentsHeading">Comments</h3>
+          <div id="commentsList" class="border p-3" tabindex="0" aria-live="polite"></div>
+        </section>
+      </article>
+    </section>
 
+    <!-- Модальное окно для комментариев -->
     <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="commentModalLabel">Add Comment</h5>
+            <h2 class="modal-title fs-5" id="commentModalLabel">Add Comment</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment"></textarea>
+                <label for="commentAuthor" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="commentText" class="form-label">Comment</label>
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment" required></textarea>
               </div>
             </form>
           </div>
@@ -63,7 +95,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/recipe.js"></script>
