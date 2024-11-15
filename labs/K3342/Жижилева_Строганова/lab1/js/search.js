@@ -8,19 +8,18 @@ async function fetchRecipesFromAPI() {
   const ingredientQuery = document.getElementById('ingredientQuery').value;
   const dishType = document.getElementById('dishType').value;
 
-  const apiKey = "e8b2351e1a0a4037a5bf7805d0dc48d0"; // Ваш API-ключ Spoonacular
+  const apiKey = "e8b2351e1a0a4037a5bf7805d0dc48d0";
   const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 
-  // Формирование строки запроса для API
   let query = `${apiUrl}&query=${searchQuery}&includeIngredients=${ingredientQuery}&type=${dishType}`;
 
   try {
-    console.log("Отправка запроса:", query); // Логирование запроса для отладки
+    console.log("Отправка запроса:", query);
     const response = await fetch(query);
     if (!response.ok) throw new Error(`Ошибка получения данных от API: ${response.status}`);
 
     const data = await response.json();
-    console.log("Ответ API:", data); // Логирование ответа для отладки
+    console.log("Ответ API:", data);
     renderRecipes(data.results);
   } catch (error) {
     console.error("Ошибка:", error);
@@ -29,7 +28,7 @@ async function fetchRecipesFromAPI() {
 
 function renderRecipes(recipes) {
   const container = document.getElementById('recipesContainer');
-  container.innerHTML = ''; // Очистка контейнера перед отображением результатов
+  container.innerHTML = '';
 
   if (!recipes || recipes.length === 0) {
     container.innerHTML = "<p class='text-center'>Рецепты не найдены</p>";
@@ -37,7 +36,6 @@ function renderRecipes(recipes) {
   }
 
   recipes.forEach(recipe => {
-    // Формирование ссылки на страницу рецепта
     const recipeLink = `recipe.html?recipeId=${recipe.id}`;
 
     const recipeCard = `
