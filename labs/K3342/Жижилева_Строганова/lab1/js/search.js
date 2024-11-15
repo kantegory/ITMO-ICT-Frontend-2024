@@ -8,7 +8,7 @@ async function fetchRecipesFromAPI() {
   const ingredientQuery = document.getElementById('ingredientQuery').value;
   const dishType = document.getElementById('dishType').value;
 
-  const apiKey = "5dd1386749f244ef9a0086b4666adc28"; // Ваш API-ключ Spoonacular
+  const apiKey = "e8b2351e1a0a4037a5bf7805d0dc48d0"; // Ваш API-ключ Spoonacular
   const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 
   // Формирование строки запроса для API
