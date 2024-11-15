@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Platform</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg">
+  <a href="main.html">Fitness</a>
+    <nav class="navbar-nav">
+      <a href="blog.html">Blog</a>
+      <a href="trainings.html">Trainings</a>
+      <button id="openLoginModal">Login</button>
+    </nav>
+</header>
+<hr>
+<div id="loginModal" class="login-modal">
+  <div class="login-modal-content">
+    <button type="button" class="close" id="closeLogin">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2>Welcome!</h2>
+    <form id="loginForm">
+      <input type="text" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit" class="login-button-green">Log in</button>
+      <button type="button" id="openRegisterModal" class="login-button-grey">Register</button>
+    </form>
+  </div>
+</div>
+
+<div id="registerModal" class="login-modal">
+  <div class="login-modal-content">
+    <button type="button" class="close" id="closeRegister">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2>Create account!</h2>
+    <form id="registerForm">
+      <input type="text" id="registerEmail" placeholder="Email" required>
+      <input type="password" id="registerPassword" placeholder="Password" required>
+      <input type="text" id="name" placeholder="Name" required>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Gender</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <input type="number" id="age" placeholder="Age" required>
+      <input type="number" id="startWeight" placeholder="Start weight" required>
+      <input type="number" id="goalWeight" placeholder="Goal Weight" required>
+      <button type="submit" class="login-button-green">Register</button>
+    </form>
+  </div>
+</div>
+<section class="main-banner">
+  <div class="container">
+    <h1>Start your training now!</h1>
+    <p>Track your progress, improve your stats and reach your goal with a wide range of our workouts.</p>
+    <a href="trainings.html">See trainings</a>
+  </div>
+  <div class="main-banner-image">
+    <img src="images/main-images/main_banner.jpg" alt="Main poster"/>
+  </div>
+</section>
+<hr class="semi-hr">
+<section class="popular-exercises">
+  <div class="container-fluid">
+    <h2>Popular Exercises</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="card mb-4 exercise-button" data-video-id="RjqTbaLeCUs">
+          <img src="images/main-images/treadmill.jpg" class="card-img-top" alt="Treadmill">
+          <div class="card-body">
+            <h3 class="video-title">Treadmill</h3>
+          </div>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button class="card mb-4 exercise-button" data-video-id="p7th1SMAsAY">
+          <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
+          <div class="card-body">
+            <h3 class="video-title">Stretching</h3>
+          </div>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button class="card mb-4 exercise-button" data-video-id="65KVj8EMJIc">
+          <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
+          <div class="card-body">
+            <h3 class="video-title">Yoga</h3>
+          </div>
+        </button>
+      </div>
+                <div class="col-md-4">
+            <button class="card mb-4 exercise-button" data-video-id="Y3uK06zHmVU">
+              <img src="images/main-images/running.jpg" class="card-img-top" alt="Running">
+              <div class="card-body">
+                <h3 class="video-title">Running</h3>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button class="card mb-4 exercise-button" data-video-id="rqJpSSL0kB8">
+              <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Lifting">
+              <div class="card-body">
+                <h3 class="video-title">Lifting</h3>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button class="card mb-4 exercise-button" data-video-id="9SMDmCE58uI">
+              <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Push up">
+              <div class="card-body">
+                <h3 class="video-title">Push up</h3>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+</section>
+<div id="video-modal" class="video-modal">
+  <div class="video-modal-content">
+    <button type="button" class="close" id="closeVideo">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="video-container">
+      <iframe
+              id="youtube-video"
+              width="100%"
+              height="350"
+              src=""
+              frameborder=0
+              allowfullscreen="">
+      </iframe>
+    </div>
+  </div>
+</div>
+<hr class="semi-hr">
+<section class="final-info">
+  <div class="container">
+    <h2>Nothing is impossible!</h2>
+    <p>Our platform allows you to train with special programs from the best experts from all over the world. The training process is intelligently built, so you can find the best programs for your desires and capabilities. We strive to popularize sports around the world, join us!</p>
+  </div>
+  <div class="main-banner-image">
+    <img src="images/main-images/final.png" alt="Fitness Man" />
+  </div>
+</section>
+<hr>
+<footer class="footer-info">
+    <img src="images/main-images/logo.jpeg" alt="logo" class="mb-2" width="100">
+    <p>FITNESS MK is your key to success! <br> Made by Ekaterina Makhotkina and Maria Shabarina</p>
+</footer>
+
+<script src="js/video-modal.js"></script>
+<script src="js/login-modal.js"></script>
+<script src="js/registration-modal.js"></script>
+</body>
+</html>
