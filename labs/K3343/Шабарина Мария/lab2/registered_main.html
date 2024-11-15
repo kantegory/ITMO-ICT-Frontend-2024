@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registered_main.css">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg">
+    <a href="registered_main.html">Fitness</a>
+    <nav class="navbar-nav">
+        <a href="blog.html">Blog</a>
+        <a href="trainings.html">Trainings</a>
+        <a href="account.html">Account</a>
+    </nav>
+</header>
+<hr>
+<section class="main-banner">
+    <div class="container">
+        <h1>Start your training now!</h1>
+        <p>Track your progress, improve your stats and reach your goal with a wide range of our workouts.</p>
+        <a href="trainings.html" class="btn button-green">See trainings</a>
+    </div>
+    <div class="main-banner-image">
+        <img src="images/main-images/main_banner.jpg" alt="Main poster"/>
+    </div>
+</section>
+<hr class="semi-hr">
+<section class="popular-exercises">
+    <div class="container-fluid">
+        <h2>Popular Exercises</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/treadmill.jpg" class="card-img-top" alt="Treadmill">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="RjqTbaLeCUs">Treadmill</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="p7th1SMAsAY">Stretching</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="65KVj8EMJIc">Yoga</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/running.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="Y3uK06zHmVU">Running</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="rqJpSSL0kB8">Lifting</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="9SMDmCE58uI">Push up</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="semi-hr">
+<div id="video-modal" class="video-modal">
+    <div class="video-modal-content">
+        <button type="button" class="close" id="closeVideo">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="video-container">
+            <iframe
+                    id="youtube-video"
+                    width="100%"
+                    height="350"
+                    src=""
+                    frameborder=0
+                    allowfullscreen="">
+            </iframe>
+        </div>
+    </div>
+</div>
+<section class="final-info">
+    <div class="container">
+        <h2>Nothing is impossible!</h2>
+        <p>Our platform allows you to train with special programs from the best experts from all over the world. The training process is intelligently built, so you can find the best programs for your desires and capabilities. We strive to popularize sports around the world, join us!</p>
+    </div>
+    <div class="main-banner-image">
+        <img src="images/main-images/final.png" alt="Fitness Man" />
+    </div>
+</section>
+<footer>
+    <hr>
+    <div class="footer-info">
+        <img src="images/main-images/logo.jpeg" alt="logo"/>
+        <p>FITNESS MK is your key to success! <br> Made by Ekaterina Makhotkina and Maria Shabarina</p>
+    </div>
+</footer>
+
+<script src="js/video-modal.js"></script>
+</body>
+</html>
