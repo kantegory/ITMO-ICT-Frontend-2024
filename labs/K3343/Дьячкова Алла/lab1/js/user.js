@@ -1,11 +1,29 @@
-document.addEventListener('DOMContentLoaded', fillUserInfo);
+document.addEventListener('DOMContentLoaded', function () {
+    fillUserInfo();
+});
 
 function fillUserInfo() {
-    document.getElementById('firstName').textContent = localStorage.getItem('firstName') || 'Не указано';
-    document.getElementById('lastName').textContent = localStorage.getItem('lastName') || 'Не указано';
-    document.getElementById('dob').textContent = localStorage.getItem('dob') || 'Не указано';
-    document.getElementById('phone').textContent = localStorage.getItem('phone') || 'Не указано';
-    document.getElementById('email').textContent = localStorage.getItem('email') || 'Не указано';
+    const loggedInUserId = localStorage.getItem('loggedInUserId');
+
+    if (loggedInUserId) {
+        // Fetch the user data from json-server using the user ID
+        fetch(`http://localhost:3000/users/${loggedInUserId}`)
+            .then(response => response.json())
+            .then(userData => {
+                // Display the user's information on the page
+                document.getElementById('firstName').textContent = userData.firstName || 'Не указано';
+                document.getElementById('lastName').textContent = userData.lastName || 'Не указано';
+                document.getElementById('dob').textContent = userData.dob || 'Не указано';
+                document.getElementById('phone').textContent = userData.phone || 'Не указано';
+                document.getElementById('email').textContent = userData.email || 'Не указано';
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+                alert('An error occurred while fetching your data.');
+            });
+    } else {
+        alert('No user logged in.');
+    }
 }
 
 function editUserInfo() {
@@ -14,19 +32,24 @@ function editUserInfo() {
     document.getElementById('editInfo').style.display = 'block';
     document.getElementById('changePassword').style.display = 'none';
 
-    // Populate edit form fields with localStorage data
-    document.getElementById('editFirstName').value = localStorage.getItem('firstName') || '';
-    document.getElementById('editLastName').value = localStorage.getItem('lastName') || '';
-    document.getElementById('editDob').value = localStorage.getItem('dob') || '';
-    document.getElementById('editPhone').value = localStorage.getItem('phone') || '';
-    document.getElementById('editEmail').value = localStorage.getItem('email') || '';
+    // Fetch and populate the form fields with current user data
+    fetch('http://localhost:3000/user', {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken'),
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('editFirstName').value = data.firstName || '';
+        document.getElementById('editLastName').value = data.lastName || '';
+        document.getElementById('editDob').value = data.dob || '';
+        document.getElementById('editPhone').value = data.phone || '';
+        document.getElementById('editEmail').value = data.email || '';
+    })
+    .catch(error => console.error('Error fetching user data for edit:', error));
 }
-
-// function changePassword() {
-//     document.getElementById('userInfo').style.display = 'none';
-//     document.getElementById('changePassword').style.display = 'block';
-//     document.getElementById('editInfo').style.display = 'none';
-// }
 
 function cancelEdit() {
     document.getElementById('userInfo').style.display = 'block';
@@ -35,7 +58,6 @@ function cancelEdit() {
 }
 
 function validateUserInfo() {
-    // Validate and save edited information
     const phone = document.getElementById('editPhone').value;
     const phonePattern = /^\+?[0-9\s\-\(\)]{10,15}$/;
     if (!phonePattern.test(phone)) {
@@ -50,17 +72,35 @@ function validateUserInfo() {
         return false;
     }
 
-    // Save data to localStorage
-    localStorage.setItem('firstName', document.getElementById('editFirstName').value);
-    localStorage.setItem('lastName', document.getElementById('editLastName').value);
-    localStorage.setItem('dob', document.getElementById('editDob').value);
-    localStorage.setItem('phone', phone);
-    localStorage.setItem('email', email);
+    const userData = {
+        firstName: document.getElementById('editFirstName').value,
+        lastName: document.getElementById('editLastName').value,
+        dob: document.getElementById('editDob').value,
+        phone: phone,
+        email: email
+    };
 
-    // Update static display
-    fillUserInfo();
-    alert('Информация успешно обновлена');
-    cancelEdit();
+    // Send PUT request to update user data
+    fetch('http://localhost:3000/user', {
+        method: 'PUT',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken'),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('User info updated:', data);
+        fillUserInfo(); // Update UI with new data
+        alert('Информация успешно обновлена');
+        cancelEdit();
+    })
+    .catch(error => {
+        console.error('Error updating user data:', error);
+        alert('Ошибка обновления информации');
+    });
+
     return false; // Prevents form submission reloading the page
 }
 
@@ -71,15 +111,27 @@ function validatePassword() {
         return false;
     }
 
-    alert('Пароль успешно обновлен');
-    cancelEdit();
+    // Send PUT request to update password
+    fetch('http://localhost:3000/password', {
+        method: 'PUT',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken'),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ newPassword: newPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Пароль успешно обновлен');
+        cancelEdit();
+    })
+    .catch(error => {
+        console.error('Error updating password:', error);
+        alert('Ошибка обновления пароля');
+    });
+
     return false;
 }
-
-// function toggleChatHistory() {
-//     const chatHistory = document.querySelector('.chat-history');
-//     chatHistory.style.display = chatHistory.style.display === 'none' || chatHistory.style.display === '' ? 'block' : 'none';
-// }
 
 document.getElementById('editInfoForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -92,6 +144,19 @@ document.getElementById('changePasswordForm').addEventListener('submit', functio
 });
 
 function logout() {
-            // Логика выхода пользователя
-    window.location.href = 'logout.html'; // Замените 'logout.html' на нужный путь
+    // Logic for logging out
+    fetch('http://localhost:3000/logout', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        localStorage.removeItem('authToken');
+        window.location.href = 'logout.html'; // Redirect to logout page
+    })
+    .catch(error => {
+        console.error('Error logging out:', error);
+    });
 }

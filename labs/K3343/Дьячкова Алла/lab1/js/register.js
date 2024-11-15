@@ -15,33 +15,59 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     const confirmPassword = document.getElementById('confirmPassword').value;
     const dob = document.getElementById('dob').value;
 
+    // Validate email format
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-        alert("Пожалуйста, введите корректный email.");
+        alert("Please enter a valid email.");
         return;
     }
 
+    // Validate phone number format (10 digits)
     if (!/^\d{10}$/.test(phone)) {
-        alert("Пожалуйста, введите корректный номер телефона (10 цифр).");
+        alert("Please enter a valid phone number (10 digits).");
         return;
     }
 
+    // Validate password length
     if (password.length < 8) {
-        alert("Пароль должен содержать не менее 8 символов.");
+        alert("Password must be at least 8 characters long.");
         return;
     }
 
+    // Validate password confirmation
     if (password !== confirmPassword) {
-        alert("Пароли не совпадают.");
+        alert("Passwords do not match.");
         return;
     }
 
-    localStorage.setItem('firstName', firstName);
-    localStorage.setItem('lastName', lastName);
-    localStorage.setItem('email', email);
-    localStorage.setItem('phone', phone);
-    localStorage.setItem('password', password);
-    localStorage.setItem('dob', dob);
+    const registrationData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        password: password,  // Send plaintext password
+        dob: dob
+    };
 
-    window.location.href = 'user.html';
+    fetch('http://localhost:3000/register', { // Make sure this URL matches the server endpoint
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(registrationData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.id) {
+            // User registered successfully
+            localStorage.setItem('loggedInUserId', data.id);
+            window.location.href = 'user.html';  // Redirect to user dashboard or home page
+        } else {
+            alert('Registration error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Registration error:', error);
+        alert('An error occurred during registration. Please try again.');
+    });
 });
