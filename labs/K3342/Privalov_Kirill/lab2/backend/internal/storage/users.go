@@ -56,6 +56,7 @@ func (s *UsersStorage) AddUser(u models.User) (int, error) {
 	defer s.mu.Unlock()
 
 	u.Id = len(s.users) + 1
+	u.DoctorVisits = make([]models.DoctorVisits, 0)
 	s.users = append(s.users, u)
 
 	if err := s.saveUsers(); err != nil {
