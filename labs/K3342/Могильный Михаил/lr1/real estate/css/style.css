@@ -1,0 +1,91 @@
+/* general styles */
+
+body {
+    margin: 0;
+    font-size: 30px;
+    color: #e1e0dd;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+h1, h2, h3 {
+    color: #35342f
+}
+
+.back-button {
+    border: none;
+}
+.back-button img {
+    width: 20px; 
+    height: 20px;
+    transform: scale(-1, -1);
+}
+.back-button:hover {
+    background-color: #f8f9fa;
+}
+
+a {
+    text-decoration: none;
+    color:#35342f
+}
+
+
+
+/* index.html */
+
+.hero {
+    margin-top: 200px;
+    min-height: 450px;
+    padding: 0;
+    display: flex; 
+    align-items: center; 
+    position: relative;
+    top: 200px;
+}
+
+.hero-text{
+    color: #35342f
+}
+
+.hero-image
+{
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+}
+
+
+/* sign-in.html */
+.sign-up-image{
+    width: 150px;
+    height: auto;
+}
+
+
+
+/* account.html */
+
+
+.form-label {
+    color:#35342f
+}
+
+.text-check-label {
+    color:#35342f
+}
+
+
+/* property-page.html */
+.property-desc {
+    color:#35342f;
+    font-size: 16px;
+}
+
+.property-price {
+    color: #37bbe4;
+    font-size: 24px;
+}
+
+/* property-search.html */
+
+
