@@ -1,0 +1,11 @@
+site_name: 'Frontend разработка, лабораторная 1'
+theme:
+  name: 'material'
+nav:
+  - Главная: index.md
+  - CSS файл для всего сайта: css.md
+  - Вход: chapter1.md
+  - Регистрация: chapter2.md
+  - Личный кабинет пользователя: chapter3.md
+  - Поиск рецептов с фильтрацией: chapter4.md
+  - Страница рецепта: chapter5.md
