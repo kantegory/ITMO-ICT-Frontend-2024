@@ -13,11 +13,31 @@ body, html {
     color: #fff;
 }
 
+#saveButton:hover, #login-btn:hover, #register-btn:hover {
+    background-color: #90EE90;
+    border-color: #90EE90;
+    color: #222;
+}
+
 
 #editButton {
     background-color: #8FBC8F;
     border-color: #8FBC8F;
     color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    #editButton {
+        margin-bottom: 20px;
+    }
+}
+
+
+#editButton:hover {
+    background-color: #90EE90;
+    border-color: #90EE90;
+    color: #222;
 }
 
 
@@ -127,4 +147,33 @@ body, html {
     grid-template-columns: 482px 1fr 10fr;
     grid-gap: 10px; 
     margin-bottom: 20px; 
+}
+
+#recipes-content {
+    margin-top: 20px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+.large-card {
+    grid-column: 3 / 10;
+}
+
+.medium-card {
+    grid-column: span 4;
+}
+
+.small-card {
+    grid-column: span 3;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
