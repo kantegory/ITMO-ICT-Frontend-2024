@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск ресторана</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main-style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="main">
+                <a href="main.html">Бронь столиков Букин</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <div class="container">
+                <h2 class="text-center mb-4">Поиск ресторана</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="cuisineSelect">Кухня</label>
+                            <select class="form-control" id="cuisineSelect">
+                                <option value="">Все кухни</option>
+                                <option value="итальянская">Итальянская</option>
+                                <option value="японская">Японская</option>
+                                <option value="русская">Русская</option>
+                                <option value="мексиканская">Мексиканская</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="locationSelect">Город</label>
+                            <select class="form-control" id="locationSelect">
+                                <option value="">Все города</option>
+                                <option value="">Москва</option>
+                                <option value="">Санкт-Петербург</option>
+                                <option value="">Казань</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="priceSelect">Цена</label>
+                            <select class="form-control" id="priceSelect">
+                                <option value="">Любая цена</option>
+                                <option value="">До 1000 за блюдо</option>
+                                <option value="">До 2000 за блюдо</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Найти</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="restaurants">
+            <div class="container">
+                <h2 class="text-center mb-4">Результаты поиска</h2>
+                <div class="row">
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="images/italy.jpg" class="card-img-top" alt="La Piazza">
+                            <div class="card-body">
+                                <h5 class="card-title">La Piazza</h5>
+                                <p class="card-text">Итальянская кухня. Красивый интерьер, вкусные блюда.</p>
+                                <a href="restaurant.html" class="btn btn-primary">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="images/japan.jpg" class="card-img-top" alt="Сайко">
+                            <div class="card-body">
+                                <h5 class="card-title">Сайко</h5>
+                                <p class="card-text">Японская кухня. Атмосферное место с уютной обстановкой.</p>
+                                <a href="restaurant.html" class="btn btn-primary">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>
