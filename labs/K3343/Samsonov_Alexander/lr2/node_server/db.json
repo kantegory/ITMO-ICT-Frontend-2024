@@ -11,6 +11,18 @@
       "password": "$2a$10$4gtrXs0iRDRfKU9UCo8YqeP5iXenpZOd8W5VqelvetXzEB735KD8S",
       "name": "acc2",
       "id": 2
+    },
+    {
+      "email": "acc3@me.com",
+      "password": "$2a$10$p12o8Fh0RpEYyrzuv8qsCOj8dnhb7ZnCg73ZJ6YVKlcxXHdQFdFCm",
+      "name": "acc3",
+      "id": 3
+    },
+    {
+      "email": "acc4@me.com",
+      "password": "$2a$10$LqN2CtriJyyYWX/r7Qj/cexMcZESfRSuUGV6iSrxIQAXGfEk4a8Py",
+      "name": "acc4",
+      "id": 4
     }
   ],
   "recipes": [
@@ -1116,6 +1128,30 @@
       "th_up": 0,
       "th_down": 0,
       "id": 7
+    },
+    {
+      "post_id": 1,
+      "author_name": "acc3",
+      "comment_text": "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.",
+      "th_up": 0,
+      "th_down": 0,
+      "id": 8
+    },
+    {
+      "post_id": 1,
+      "author_name": "acc1",
+      "comment_text": "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "th_up": 0,
+      "th_down": 0,
+      "id": 9
+    },
+    {
+      "post_id": 1,
+      "author_name": "acc4",
+      "comment_text": "acc4 comment",
+      "th_up": 0,
+      "th_down": 0,
+      "id": 10
     }
   ]
 }

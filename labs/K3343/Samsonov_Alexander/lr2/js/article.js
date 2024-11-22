@@ -1,5 +1,5 @@
 async function get_recipe_description(id) {
-    const api_url = `http://localhost:3000/recipes/${id}`
+    const api_url = `http://127.0.0.1:8000/api/recipes/${id}/`
     const options = {
         method: "GET"
     }
@@ -14,7 +14,7 @@ async function get_recipe_description(id) {
 }
 
 async function get_comments(id) {
-    const api_url = `http://localhost:3000/comments?post_id=${id}`
+    const api_url = `http://127.0.0.1:8000/api/comments/?recipe_id=${id}`
     const options = {
         method: "GET"
     }
@@ -28,12 +28,10 @@ async function get_comments(id) {
     }
 }
 
-function get_table_entry(recipe_data, n_row) {
-    if (n_row < 1 || n_row > 20) {
-        return null
-    }
-    let product = recipe_data[`strIngredient${n_row}`]
-    let quant = recipe_data[`strMeasure${n_row}`]
+function get_table_entry(ingredient) {
+
+    let product = ingredient[`ingredient_name`]
+    let quant = `${ingredient['quantity_si']} ${ingredient['unit_si']}`
 
     if (!product || !quant) {
         return null
@@ -61,25 +59,34 @@ async function create_youtube_embed(youtube_link) {
 
 }
 
-function get_comment_html({post_id, author_name, comment_text, th_up, th_down}) {
+function generate_stars(n_stars) {
+    let buffer = ''
+    for (let i = 0; i < 10; i++) {
+        if (i < n_stars) {
+            buffer += '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">\n' +
+                '  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>\n' +
+                '</svg>'
+        } else {
+            buffer += '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">\n' +
+                '  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>\n' +
+                '</svg>'
+        }
+    }
+    return buffer
+}
+
+function get_comment_html({id, rating, header, content_text, author}) {
     return `<div class="row pt-3" style="border: 1px solid black;">
-        <div class="col-2" data-card-id="${post_id}">
+        <div class="col-2" data-card-id="${id}">
             <img alt="" class="img-fluid" src="https://thispersondoesnotexist.com/" style="border-radius: 50px;">
         </div>
         <div class="col">
-            <div class="row"><strong>${author_name}</strong></div>
-            <div class="row"><i>${comment_text}</i></div>
+            <div class="row"><strong>${header}</strong></div>
+            <div class="row"><i>${author['username']}</i></div>
+            <div class="row"><i>${content_text}</i></div>
             <div class="row float-end">
                 <p>
-                    ${th_up}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"></path>
-                    </svg>
-
-                    ${th_down}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
-                        <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591"></path>
-                    </svg>
+                    ${generate_stars(rating)}
                 </p>
             </div>
         </div>
@@ -91,10 +98,42 @@ function checkAuth() {
         document.getElementById('sign-in').remove()
         const acc_info = document.getElementById('acc-info')
         acc_info.className = ''
-        acc_info.innerHTML = `<p>Welcome back, ${JSON.parse(localStorage.user).name}!</p>`
+        acc_info.innerHTML = `<p>Welcome back!</p>`
         return
     }
     document.getElementById('comment-form').remove()
+
+}
+
+async function login(event) {
+    event.preventDefault()
+
+    const inputs = Array.from(event.target.querySelectorAll('input'))
+
+    const loginData = {}
+
+    for (const input of inputs) {
+        loginData[input.name] = input.value
+    }
+
+    console.log('login data', loginData)
+
+    const response = await fetch('http://localhost:8000/api/auth/token/login/', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData)
+    })
+
+    const responseJson = await response.json()
+
+
+    console.log('response', responseJson)
+
+    localStorage.accessToken = responseJson['auth_token']
+
+    window.location.href = "homepage.html"
 }
 
 async function post_comment(event) {
@@ -103,24 +142,25 @@ async function post_comment(event) {
     const urlParams = new URLSearchParams(queryString);
     const productId = parseInt(urlParams.get('id'))
 
+    // determine who we are commenting
+
     const fields = Array.from(event.target.querySelectorAll('input'))
     console.log(fields)
 
     const comment_data = {
-        "post_id": productId,
-        "author_name": JSON.parse(localStorage.user).name,
-        "comment_text": fields[0].value,
-        "th_up": 0,
-        "th_down": 0
+        "header": fields[0].value,
+        "content_text": fields[1].value,
+        'rating': fields[2].value
     }
 
     console.log('comment:', comment_data)
 
-    const response = await fetch(`http://localhost:3000/comments`, {
+    const response = await fetch(`http://127.0.0.1:8000/api/comments/?recipe_id=${productId}`, {
         method: "POST",
         body: JSON.stringify(comment_data),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${localStorage.accessToken}`
         }
     })
 
@@ -137,31 +177,34 @@ async function main() {
     const urlParams = new URLSearchParams(queryString);
     const productId = parseInt(urlParams.get('id'))
 
+    // detect what recipe we are looking at
+
     let contents = await get_recipe_description(productId)
     let comments = await get_comments(productId)
 
-    document.getElementById('article_header').innerText = contents['strMeal']
-    document.getElementById('article_image').src = contents['strMealThumb']
-    document.getElementById('product_table_sm').src = contents['strMealThumb']
 
-    for (let i = 1; i <= 20; i++) {
-        let table_entry = get_table_entry(contents, i)
-        if (table_entry === null) {
-            break
-        }
+    // fetch all necessary info
+
+    document.getElementById('article_header').innerText = contents['header']
+    document.getElementById('article_image').src = contents['thumbnail_link']
+    document.getElementById('article_author').innerText = contents['author']['username']
+
+
+    for (let ingredient of contents['ingredients']) {
+        let table_entry = get_table_entry(ingredient)
+
         document.getElementById('product_table').tBodies[0].innerHTML += table_entry
         document.getElementById('product_table_sm').tBodies[0].innerHTML += table_entry
     }
+
+    document.getElementById('article_text').innerText = contents['content_json']['text']
+
+    // finished building recipe
+
     for (let i of comments) {
         document.getElementById('comments').innerHTML += get_comment_html(i)
     }
-
-    document.getElementById('article_text').innerText = contents['strInstructions']
-    if (contents['strYoutube']) {
-        document.getElementById('main_contents').innerHTML += await create_youtube_embed(contents['strYoutube'])
-    }
 }
-
 
 
 document.addEventListener('DOMContentLoaded', () => checkAuth())

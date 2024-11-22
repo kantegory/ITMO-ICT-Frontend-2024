@@ -25,28 +25,12 @@ async function substitute_src(div_id) {
     }
 }
 
-async function get_recipe_description(id) {
-    const api_url = `http://localhost:3000/recipes/${id}`
-    const options = {
-        method: "GET"
-    }
-    let response = await fetch(api_url, options)
-
-    if (response.status === 200) {
-        return await response.json()
-    } else {
-        console.log("HTTP-Error: " + response.status)
-        return 'Lorem ipsum dolor sit amet.'
-    }
-
-}
-
 function checkAuth() {
     if (localStorage.accessToken) {
         document.getElementById('sign-in').remove()
         const acc_info = document.getElementById('acc-info')
         acc_info.className = ''
-        acc_info.innerHTML = `<p>Welcome back, ${JSON.parse(localStorage.user).name}!</p>`
+        acc_info.innerHTML = `<p>Welcome back!</p>`
     }
 }
 
@@ -63,60 +47,88 @@ async function login(event) {
 
     console.log('login data', loginData)
 
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('http://localhost:8000/api/auth/token/login/', {
         method: "POST",
-        body: JSON.stringify(loginData),
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify(loginData)
     })
 
     const responseJson = await response.json()
 
-    const { accessToken, user } = responseJson
 
     console.log('response', responseJson)
 
-    localStorage.accessToken = accessToken
-    localStorage.user = JSON.stringify(user)
+    localStorage.accessToken = responseJson['auth_token']
 
     window.location.href = "homepage.html"
 }
 
-async function create_card_markup(recipe_id) {
-    let meal_description = await get_recipe_description(recipe_id)
-    if (meal_description['strMealThumb'] === '') {
-        meal_description['strMealThumb'] = await get_rand_img_url()
+
+async function get_recipe_collections() {
+    const url = `http://127.0.0.1:8000/api/lists/`
+
+    let response = await fetch(url)
+
+    if (response.status === 200) {
+        return await response.json()
+    }
+    console.log("Had a problem, no such collection:")
+    console.log(response)
+}
+
+
+async function create_category_markup(category_json) {
+    const recipe_array = [];
+
+    for (let recipe of category_json['recipes']) {
+        const _ = await create_card_markup(recipe)
+        recipe_array.push(_)
+    }
+
+
+    return `
+    <div class="my-5 border-top">
+        <h1>${category_json['header']}</h1>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center" id="forYou">
+            ${recipe_array.join('\n')
+    }
+        </div>
+    </div>
+    `
+}
+
+
+async function create_card_markup(recipe_json) {
+    if (recipe_json['strMealThumb'] === '') {
+        recipe_json['strMealThumb'] = await get_rand_img_url()
 
     }
     return `<div class="col">
-        <a href="recipe.html?id=${meal_description['id']}"><div class="card h-100 data-card-id="${meal_description['id']}"" style="max-height: 200px; overflow: hidden;">
-                    <img src="${meal_description['strMealThumb']}" class="card-img-top" alt="Card image"
+        <a href="recipe.html?id=${recipe_json['id']}"><div class="card h-100 data-card-id="${recipe_json['id']}"" style="max-height: 200px; overflow: hidden;">
+                    <img src="${recipe_json['thumbnail_link']}" class="card-img-top" alt="Card image"
                          style="max-height: 100px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">${meal_description['strMeal']}</h5>
-                            <p class="card-text">${meal_description['strInstructions']}</p>
+                            <div class="h5 card-title fw-bold">${recipe_json['header']}</div>
                         </div>
                 </div></a>
     </div>`
 }
 
-async function insert_card(div_id, n_cards = 1, range_start = 1) {
-    div_element = document.getElementById(div_id)
-    for (let i = 0; i < n_cards; i++) {
-        let stringHtml = await create_card_markup(range_start + i)
-        div_element.innerHTML += stringHtml.trim()
-    }
-}
 
 
 async function main() {
-    await insert_card('trending', 4, 5)
-    await insert_card('forYou', 4)
-    await insert_card('cheapneasy', 4, 9)
-    substitute_src('carouselExample')
-    substitute_src('big_card')
+    const page_contents = await get_recipe_collections()
+    const categories_div = document.getElementById('categories_div')
+
+    for (let category of page_contents) {
+        categories_div.innerHTML += await create_category_markup(category)
+    }
+
+    await substitute_src('carouselExample')
+    await substitute_src('big_card')
     checkAuth()
 }
 
-main()
+main().then()

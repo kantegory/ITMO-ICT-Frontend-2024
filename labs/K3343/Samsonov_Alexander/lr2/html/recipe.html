@@ -123,7 +123,7 @@
             </table>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col-md-4 col-lg-2 sticky-top d-sm-none d-md-block" style="align-self: flex-start; top: 50px">
                 <table class="table table-bordered table-sm" id="product_table_sm">
@@ -195,7 +195,7 @@
                         </svg>
                     </button>
                     <a href="mailto:?body=https://bootstrapclasses.com/pattern/custom-social-media-share-buttons/&amp;subject=Read this good article"
-                       id="share-em" class="sharer button">
+                       id="share-email" class="sharer button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-envelope-fill" viewBox="0 0 16 16">
                             <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path>
@@ -207,8 +207,13 @@
         </div>
         <div class="row">
             <form class="form-group my-3" id="comment-form" onsubmit="post_comment(event)">
-                <label for="comment_text">Leave comment</label>
-                <input class="form-control" id="comment_text" name="comment_text" rows="3">
+                <div class="h5">Leave a comment</div>
+                <label for="comment-header">Header</label>
+                <input id="comment-header" class="form-control" type="text" name="comment-header">
+                <label for="content_text">What did you think?</label>
+                <input class="form-control" id="content_text" name="content_text" rows="3">
+                <label for="rating">How did you like it?</label>
+                <input type="number" id="rating" name="rating" class="form-control">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
