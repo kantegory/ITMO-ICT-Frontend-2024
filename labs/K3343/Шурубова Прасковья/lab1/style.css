@@ -1,0 +1,371 @@
+body {
+    background-color: #F4E2DB;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    margin-left: 85px;
+}
+
+.restaurant-card {
+    flex: 1 1 calc(30% - 20px);
+    width: 30%;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.dropdown-menu {
+    width: fit-content;
+    min-width: 100%;
+    left: 0;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+}
+
+.close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-control {
+    border: 2px solid #F2D4CA;
+    transition: border-color 0.3s;
+    width: 100%;
+    max-width: 450px;
+    height: 45px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #F2D4CA;
+    outline: none;
+}
+
+.form-control:focus-visible {
+    outline: none;
+}
+
+.btn-custom {
+    font-size: 0.8rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.btn-custom {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    #add-to-favorites {
+        font-size: 0.9rem;
+        padding: 5px 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    #add-to-favorites {
+        font-size: 0.8rem;
+        padding: 5px 0.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-control {
+        margin-bottom: 10px;
+    }
+}
+
+.working-hours-separator {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+.footer3 {
+    background-color: #F4E2DB;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.row-links {
+    display: flex;
+    justify-content: center;
+}
+
+.foot-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.foot-menu-item {
+    margin: 0 15px;
+}
+
+.text-dark {
+    color: #000;
+}
+
+.footer-line {
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .foot-menu {
+        flex-direction: column;
+    }
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.review-card {
+    flex: 1 1 300px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.review-image {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    background-color: transparent;
+    border-radius: 0 0 15px 15px;
+}
+
+.card-title, .card-text {
+    margin: 0;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        flex: 1 1 100%;
+    }
+}
+
+.close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close:focus {
+    outline: none;
+}
+
+#button-uni {
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-uni:hover {
+    background-color: #F2D4CA;
+}
+
+#button-reg {
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-reg:hover {
+    background-color: #F2D4CA;
+}
+
+#button-det{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-det:hover {
+    background-color: #F2D4CA;
+}
+
+#button-save{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 40px;
+}
+
+#button-save:hover {
+    background-color: #F2D4CA;
+}
+
+#button-del{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #DC143C;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-del:hover {
+    background-color: #DC143C;
+}
+
+#button-logout{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #DC143C;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-logout:hover {
+    background-color: #DC143C;
+}
+
+#button-find {
+    color: #000000;
+    background-color: transparent;
+    border: 5px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-find:hover {
+    background-color: #F2D4CA;
+}
+
+#button-book, #button-b {
+    color: #000000;
+    background-color: transparent;
+    border: 5px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#button-book:hover, #button-b:hover{
+    background-color: #F2D4CA;
+}
+
+#restaurant-photo {
+    max-width: 25px;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#restaurant-photo:hover {
+    transform: scale(1.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#add-to-favorites, #book-table {
+    border-color: #352894;
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 5px 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+#add-to-favorites:hover, #book-table:hover {
+    background-color: #F2D4CA;
+}
