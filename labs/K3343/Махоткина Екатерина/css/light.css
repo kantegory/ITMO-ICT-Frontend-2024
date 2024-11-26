@@ -1,0 +1,81 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar a, button {
+    background-color: #989898;
+    color: var(--text-color);
+}
+
+.container p {
+    color: #333333;
+}
+
+.card {
+    background-color: #989898;
+    border-color: #989898;
+}
+
+.modal-content {
+    background-color: #989898;
+}
+
+.filter-section {
+    background-color: #989898;
+    color: black;
+}
+
+.post-card {
+    background-color: #989898;
+}
+
+.comment-list li {
+    color: black;
+}
+
+.filter-section select {
+    background-color: #333333;
+}
+
+.frequent-workouts ul li {
+    background-color: #989898;
+}
+
+.circle::before {
+    background-color: var(--bg-color);
+}
+
+.circle-text {
+    color: var(--text-color);
+}
+
+.training-card {
+    background-color: #989898;
+}
+
+.profile-details p {
+    color: #333333;
+}
+
+table {
+    background-color: #989898;
+}
+
+thead {
+    background-color: #595959;
+}
+
+.measures {
+    background-color: #989898;
+}
+
+footer {
+    background-color: #989898;
+    color: white;
+}
