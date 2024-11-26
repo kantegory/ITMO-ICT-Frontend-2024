@@ -16,19 +16,23 @@ body {
     margin: 1% 3% 1% 3%;
 }
 
-.navbar a {
-    color: #fff;
-    margin: 0.5%;
-    text-decoration: none;
-    text-align: center;
-    background-color: #333333;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
+.navbar a, button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 0.5%;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333333;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.navbar a:hover {
-    background-color: #555555;
+.navbar a:hover, button:hover {
+  background-color: #555555;
 }
 
 .main-banner {
@@ -41,6 +45,7 @@ body {
 
 .container p {
     margin-top: 1%;
+    text-align: left;
     color: #bbb;
 }
 
@@ -70,10 +75,6 @@ hr {
     gap: 1%;
 }
 
-.post-card {
-    flex: 1 1 calc(33.333% - 1%);
-}
-
 .card {
     background-color: #333333;
     border: none;
@@ -84,16 +85,19 @@ hr {
     height: 100%;
 }
 
-.card h3{
-    text-align: center;
-}
-
-.card p{
+.card h3, p{
     text-align: center;
 }
 
 .posts {
     margin: 3% 3% 3% 3%;
+}
+
+@media (min-width: 1200px) {
+    .post-card {
+        flex: 0 0 32.6%;
+        max-width: 32.6%;
+    }
 }
 
 .post-card button {
@@ -104,13 +108,11 @@ hr {
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    font-size: 1rem;
 }
 
 .post-card button:hover {
     background-color: #555;
 }
-
 
 .filters {
     margin: 3% 3% 0 3%;
@@ -126,7 +128,7 @@ hr {
     background-color: #333333;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .filter-section label {
@@ -136,16 +138,16 @@ hr {
 }
 
 .filter-section input {
-    margin-right: 5px;
+    margin-right: 1%;
     background-color: #555555;
 }
 
 .filter-section-date {
     background-color: #333333;
-    border-radius: 10px;
+    border-radius: 5px;
     border-style: none;
     color: white;
-    padding: 5px;
+    padding: 0.5%;
 }
 
 .filter-section select {
@@ -158,88 +160,45 @@ hr {
 
 .post-card {
     background-color: #333333;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 2%;
+    padding: 2%;
     margin: 1% 0 0 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.post-modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: none;
-}
-
-.post-modal.show {
-    display: block;
-    opacity: 1;
-}
-
-.post-modal-content {
-    background-color: #333333;
-    margin: auto;
-    padding: 2%;
-    border: none;
-    width: 70%;
-    transition: transform 0.3s ease;
-    transform: scale(0.7);
-    color: white;
-    display: flex;
-    flex-direction: row;
-}
-
-.post-modal-info {
-    flex: 1;
-    background-color: #555;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 2% 0 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-
-.title {
-    padding: 5% 5% 0 5%;
-}
-
 .modal-text {
-    font-size: 1.5vw;
     text-align: left;
-    padding: 5% 5% 5% 5%;
+}
+
+.modal-title {
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body {
+    padding: 3%;
+}
+
+.modal-body hr {
+    background-color: white;
+    width: 100%;
 }
 
 .post-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 5% 0 5%;
-
-}
-.post-modal-info hr {
-    background-color: white;
-    border: none;
-    height: 2px;
-    margin: 2% 0 2% 0;
 }
 
 .comment-list li {
     color: #bbbbbb;
-    margin: 5px 0;
+    margin: 1% 0;
 }
 
 #comment-input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 1%;
+    margin-bottom: 1%;
 }
 
 #comment-submit {
@@ -249,18 +208,10 @@ hr {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 #comment-submit:hover {
     background-color: #333333;
-}
-
-
-.close {
-    position: relative;
-    color: white;
-    cursor: pointer;
 }
 
 footer {
@@ -283,3 +234,26 @@ footer {
     object-fit: contain;
 }
 
+.modal-content {
+    background-color: #333333;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
+
+.btn-close:hover {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    fill: #333;
+    margin: 5%;
+    flex-shrink: 0;
+}

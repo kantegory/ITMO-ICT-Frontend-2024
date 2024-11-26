@@ -57,9 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(user)
-                    }).then(response => {
-                        if (response.ok) alert('Changes saved' + user.waistCircumference);
-                    });
+                    })
                 });
 
                 document.getElementById('currentWeight').textContent = user.currentWeight + " kg";

@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Platform</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/trainings.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
 </head>
 <body>
 
 <header class="navbar navbar-expand-lg">
-    <a href="main.html">Fitness</a>
-    <nav class="navbar-nav">
-        <a href="blog.html">Blog</a>
-        <a href="trainings.html">Trainings</a>
-        <a href="account.html">Account</a>
-    </nav>
+  <a href="registered_main.html">
+    <svg class="icon"><use href="images/images.svg#icon-home"></use></svg>
+    Fitness
+  </a>
+  <nav class="navbar-nav">
+    <a href="blog.html">
+      <svg class="icon"><use href="images/images.svg#icon-blog"></use></svg>
+      Blog
+    </a>
+    <a href="trainings.html">
+      <svg class="icon"><use href="images/images.svg#icon-trainings"></use></svg>
+      Trainings
+    </a>
+    <a href="account.html">
+      <svg class="icon"><use href="images/images.svg#icon-account-logged"></use></svg>
+      Account
+    </a>
+  </nav>
 </header>
+
 <hr>
+
 <section class="main-banner">
     <div class="container">
         <h1>Trainings</h1>
@@ -52,101 +68,27 @@
 
 <section class="trainings">
     <div class="column">
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Stretching">
-                <img src="images/trainings-images/training-1.jpg" alt="Training-1">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="huSX0LFkcyA">How to warm up before a workout</h2>
-                    <hr>
-                    <p> Join us to learn how to do some of the best gym warm-ups for a powerful and productive gym session with pro trainer Corey Ashe. <br> When learning how to warm up in the gym, don’t overexert yourself. The warmup is not where you want to extend all your energy.
-                    You should warm up for 5-10 minutes before diving into your workout. The warmup created by Ashe is full-body and dynamic. Dynamic exercises are controlled movements that prep your muscles for peak performance.
-                    Ashe explained that dynamic movements are best to do before training or games. These movements mimic the exact movements you will be making in your workout or sport.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Lifting">
-                <img src="images/trainings-images/training-2.jpg" alt="Training-2">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="UIrgg5bBVzI">Elevate your strength training</h2>
-                    <hr>
-                    <p> Wanna see how Mapule gets REAL strong? She's going to help get you there with this deadlift masterclass.
-                        Breakdown of exercise below: <br>
-                        Conventional Deadlift – 3-4 sets 6-8 reps <br>
-                        Romanian Deadlift – 3-4 sets 6-8 reps <br>
-                        Sumo Deadlift – 3-4 sets 6-8 reps <br>
-                        Single Leg RDL - 3-4 sets 6-8 reps </p>
-                </div>
-            </div>
-        </div>
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Yoga">
-                <img src="images/trainings-images/training-3.png" alt="Training-3">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="L4ndhd-0mqU">Softball stretch warmup</h2>
-                    <hr>
-                    <p>Taking care of your body is an important step in your athletic career—take it from two-time All American Amanda Lorenz. <br>
-                        Watch as she takes us through eight softball stretches that will get your entire body moving with a mix of dynamic and static stretches. Key areas she’ll focus on are your wrists, rotator cuffs and triceps for hitting and throwing, as well as your hamstrings and hips for base running and fielding. <br>
-                        Whether you’re on the field or in the gym, put on some music and enjoy your reps while warming up your body and prepping your mind for performance. </p>
-                </div>
-            </div>
-        </div>
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Push up">
-                <img src="images/trainings-images/training-4.jpg" alt="Training-4">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="UyyJy9m82po">15 minute BODYCOMBAT workout</h2>
-                    <hr>
-                    <p>Unleash it all as you punch and kick through this quick 15-min <br>
-                        BODYCOMBAT™ workout created by the fitness powerhouse LES MILLS to make you move for the planet. <br>
-                        BODYCOMBAT is a science-backed high-energy martial arts workout that builds strength, speed and agility. It is loved in gyms all over the planet – and now you can try BODYCOMBAT at home.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Running">
-                <img src="images/trainings-images/training-5.jpg" alt="Training-5">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="LFDhjkyuldY">How to increase hip mobility</h2>
-                    <hr>
-                    <p>Increase your hip mobility in this commonly tight area to experience more flexibility and comfort in your everyday life. <br>
-                        Follow along as Dave Connor, a professional trainer at the adidas gym walks you through 10 essential hip stretches and exercises to improve your mobility. <br>
-                        Learning how to improve your hip mobility may seem daunting if this is a perpetually tight area for you. Many people suffer from stiff and inflexible hips due to sitting for extended periods and getting a little exercise. <br>
-                        "Lack of movement causes poor hip mobility," said Connor. "Whether that means sitting or standing at your desk all day, regardless, it is not moving enough in various positions." You can work to increase your hip mobility by incorporating the ten strength and flexibility exercises featured in this video into your fitness routine.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row-md-2">
-            <div class="training-card" data-sport="Treadmill">
-                <img src="images/trainings-images/training-6.jpg" alt="Training-6">
-                <div class="training-content">
-                    <h2 class="training-title" training-id="sGT44Np0cHw">7 baseball workouts & conditioning drills</h2>
-                    <hr>
-                    <p>To continue training to be a great baseball or softball player, first you need to avoid getting injured. These baseball conditioning drills and workouts train for explosive movement, lateral power, and strength and integrity of your core, glutes, hamstrings, and arms. <br>
-                        Training team deficits to become stronger as a whole is top of mind for the Miami Hurricanes’ Strength and Conditioning Coach, H.R. Powell. Powell’s set of seven baseball workouts target key areas that players routinely use during a game no matter their position. <br>
-                        In the off-season and pre-season, Powell recommends amping up your strength conditioning. Once the season starts, he shifts his focus to maintaining strength, range of motion and full-body recovery between games.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
-
-<div id="training-modal" class="training-modal">
-    <div class="training-modal-content">
-        <button type="button" class="close" id="closeVideo">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="training-container">
-            <iframe
-                    id="youtube-video"
-                    width="100%"
-                    height="350"
-                    src=""
-                    frameborder=0
-                    allowfullscreen="">
-            </iframe>
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Title</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                            id="youtube-video"
+                            src=""
+                            title="YouTube video"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -159,8 +101,9 @@
     </div>
 </footer>
 
-<script src="js/training-modal.js"></script>
-<script src="js/training-filter.js"></script>
+<script src="js/trainings.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 

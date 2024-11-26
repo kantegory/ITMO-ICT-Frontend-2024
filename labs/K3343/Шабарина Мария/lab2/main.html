@@ -4,57 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitness Platform</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
 </head>
 <body>
 
 <header class="navbar navbar-expand-lg">
-  <a href="main.html">Fitness</a>
-    <nav class="navbar-nav">
-      <a href="blog.html">Blog</a>
-      <a href="trainings.html">Trainings</a>
-      <button id="openLoginModal">Login</button>
-    </nav>
-</header>
-<hr>
-<div id="loginModal" class="login-modal">
-  <div class="login-modal-content">
-    <button type="button" class="close" id="closeLogin">
-      <span aria-hidden="true">&times;</span>
+  <a href="main.html">
+    <svg class="icon"><use href="images/images.svg#icon-home"></use></svg>
+    Fitness
+  </a>
+  <nav class="navbar-nav">
+    <a href="blog.html">
+      <svg class="icon"><use href="images/images.svg#icon-blog"></use></svg>
+      Blog
+    </a>
+    <a href="trainings.html">
+      <svg class="icon"><use href="images/images.svg#icon-trainings"></use></svg>
+      Trainings
+    </a>
+    <button id="openLoginModal">
+      <svg class="icon"><use href="images/images.svg#icon-account"></use></svg>
+      Login
     </button>
-    <h2>Welcome!</h2>
-    <form id="loginForm">
-      <input type="text" id="loginEmail" placeholder="Email" required>
-      <input type="password" id="loginPassword" placeholder="Password" required>
-      <button type="submit" class="login-button-green">Log in</button>
-      <button type="button" id="openRegisterModal" class="login-button-grey">Register</button>
-    </form>
+  </nav>
+</header>
+
+
+<hr>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="loginModalLabel">Welcome!</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3 w-50">
+            <input type="email" class="form-control" id="loginEmail" placeholder="Email" required>
+          </div>
+          <div class="mb-3 w-50">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-success w-50">Log in</button>
+          <button type="button" class="btn btn-dark w-50 mt-2" id="openRegisterModal">Register</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="registerModal" class="login-modal">
-  <div class="login-modal-content">
-    <button type="button" class="close" id="closeRegister">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <h2>Create account!</h2>
-    <form id="registerForm">
-      <input type="text" id="registerEmail" placeholder="Email" required>
-      <input type="password" id="registerPassword" placeholder="Password" required>
-      <input type="text" id="name" placeholder="Name" required>
-      <select id="gender" name="gender" required>
-        <option value="" disabled selected>Gender</option>
-        <option value="male">male</option>
-        <option value="female">female</option>
-      </select>
-      <input type="number" id="age" placeholder="Age" required>
-      <input type="number" id="startWeight" placeholder="Start weight" required>
-      <input type="number" id="goalWeight" placeholder="Goal Weight" required>
-      <button type="submit" class="login-button-green">Register</button>
-    </form>
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center w-100" id="registerModalLabel">Create Account!</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-2 w-50">
+            <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-2 w-50">
+            <input type="password" class="form-control" id="registerPassword" placeholder="Create a password" required>
+          </div>
+          <div class="mb-2 w-50">
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-2 w-50">
+            <select id="gender" class="form-select" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="mb-2 w-50">
+            <input type="number" class="form-control" id="age" placeholder="Enter your age" required>
+          </div>
+          <div class="mb-2 w-50">
+            <input type="number" class="form-control" id="startWeight" placeholder="Your current weight" required>
+          </div>
+          <div class="mb-2 w-50">
+            <input type="number" class="form-control" id="goalWeight" placeholder="Your goal weight" required>
+          </div>
+          <button type="submit" class="btn btn-success w-50">Register</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
+
 <section class="main-banner">
   <div class="container">
     <h1>Start your training now!</h1>
@@ -65,80 +109,89 @@
     <img src="images/main-images/main_banner.jpg" alt="Main poster"/>
   </div>
 </section>
+
 <hr class="semi-hr">
+
 <section class="popular-exercises">
   <div class="container-fluid">
     <h2>Popular Exercises</h2>
     <div class="row">
       <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="RjqTbaLeCUs">
+        <div class="card mb-4">
           <img src="images/main-images/treadmill.jpg" class="card-img-top" alt="Treadmill">
           <div class="card-body">
-            <h3 class="video-title">Treadmill</h3>
-          </div>
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="p7th1SMAsAY">
-          <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
-          <div class="card-body">
-            <h3 class="video-title">Stretching</h3>
-          </div>
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="65KVj8EMJIc">
-          <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
-          <div class="card-body">
-            <h3 class="video-title">Yoga</h3>
-          </div>
-        </button>
-      </div>
-                <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="Y3uK06zHmVU">
-              <img src="images/main-images/running.jpg" class="card-img-top" alt="Running">
-              <div class="card-body">
-                <h3 class="video-title">Running</h3>
-              </div>
-            </button>
-          </div>
-          <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="rqJpSSL0kB8">
-              <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Lifting">
-              <div class="card-body">
-                <h3 class="video-title">Lifting</h3>
-              </div>
-            </button>
-          </div>
-          <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="9SMDmCE58uI">
-              <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Push up">
-              <div class="card-body">
-                <h3 class="video-title">Push up</h3>
-              </div>
-            </button>
+            <h3 class="video-title" video-id="RjqTbaLeCUs">Treadmill</h3>
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
+          <div class="card-body">
+            <h3 class="video-title" video-id="p7th1SMAsAY">Stretching</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
+          <div class="card-body">
+            <h3 class="video-title" video-id="65KVj8EMJIc">Yoga</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="images/main-images/running.jpg" class="card-img-top" alt="Yoga">
+          <div class="card-body">
+            <h3 class="video-title" video-id="Y3uK06zHmVU">Running</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Yoga">
+          <div class="card-body">
+            <h3 class="video-title" video-id="rqJpSSL0kB8">Lifting</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Yoga">
+          <div class="card-body">
+            <h3 class="video-title" video-id="9SMDmCE58uI">Push up</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<div id="video-modal" class="video-modal">
-  <div class="video-modal-content">
-    <button type="button" class="close" id="closeVideo">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <div class="video-container">
-      <iframe
-              id="youtube-video"
-              width="100%"
-              height="350"
-              src=""
-              frameborder=0
-              allowfullscreen="">
-      </iframe>
+
+<div class="modal fade" id="video-modal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Title</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe
+                  id="youtube-video"
+                  src=""
+                  title="YouTube video"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 <hr class="semi-hr">
+
 <section class="final-info">
   <div class="container">
     <h2>Nothing is impossible!</h2>
@@ -148,7 +201,11 @@
     <img src="images/main-images/final.png" alt="Fitness Man" />
   </div>
 </section>
+
+
+
 <hr>
+
 <footer class="footer-info">
     <img src="images/main-images/logo.jpeg" alt="logo" class="mb-2" width="100">
     <p>FITNESS MK is your key to success! <br> Made by Ekaterina Makhotkina and Maria Shabarina</p>
@@ -157,5 +214,7 @@
 <script src="js/video-modal.js"></script>
 <script src="js/login-modal.js"></script>
 <script src="js/registration-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6t8gFxK6ta1j5r78t6yK3DqZ4DihCkR8JrLczUphsYeJdXJ4" crossorigin="anonymous"></script>
 </body>
 </html>

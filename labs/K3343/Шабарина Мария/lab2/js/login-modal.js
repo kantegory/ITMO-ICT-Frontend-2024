@@ -1,3 +1,15 @@
+document.getElementById('openLoginModal').addEventListener('click', function() {
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    loginModal.show();
+});
+
+document.querySelector('#loginForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    await loginUser(email, password);
+});
+
 async function loginUser(email, password) {
     fetch('http://localhost:3000/users')
         .then(response => response.json())
@@ -15,21 +27,3 @@ async function loginUser(email, password) {
             console.error('Error:', error);
         });
 }
-
-
-function openLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
-}
-
-function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-}
-
-document.getElementById('openLoginModal').addEventListener('click', openLoginModal);
-document.getElementById('closeLogin').addEventListener('click', closeLoginModal);
-document.querySelector('#loginForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    await loginUser(email, password);
-});
