@@ -1,0 +1,442 @@
+body {
+    background-color: #F4E2DB;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+    font-family: 'Cormorant';
+    font-size: 25px;
+    font-style: italic;
+}
+
+.booking-history-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.restaurant-card {
+    max-width: 330px;
+    padding: 15px;
+    margin: 13px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.favorite-card {
+    max-width: 350px;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.dropdown-menu {
+    width: fit-content;
+    min-width: 100%;
+    left: 0;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+}
+
+.close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-control {
+    border: 2px solid #F2D4CA;
+    transition: border-color 0.3s;
+    width: 100%;
+    max-width: 450px;
+    height: 45px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #F2D4CA;
+    outline: none;
+}
+
+.form-control:focus-visible {
+    outline: none;
+}
+
+.btn-custom {
+    font-size: 0.8rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.btn-custom {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .form-control {
+        margin-bottom: 10px;
+    }
+}
+
+.working-hours-separator {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+/* footer */
+
+.footer3 {
+    background-color: #F4E2DB;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.row-links {
+    display: flex;
+    justify-content: center;
+}
+
+.foot-menu {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.foot-menu-item {
+    margin: 0 15px;
+}
+
+.foot-menu-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.foot-menu-item a:hover {
+    text-decoration: underline;
+}
+
+.text-dark {
+    color: #000;
+}
+
+.footer-line {
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .foot-menu {
+        flex-direction: column;
+    }
+}
+
+.rating {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    font-size: 24px;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.star.text-warning {
+    color: gold;
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.review-card {
+    flex: 1 1 300px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+
+.review-image {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    background-color: transparent;
+    border-radius: 0 0 15px 15px;
+}
+
+.card-title, .card-text {
+    margin: 0;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close:focus {
+    outline: none;
+}
+
+.button-uni, .button-reg{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-uni:hover, .button-reg:hover {
+    background-color: #F2D4CA;
+    box-shadow: 0 0 3px 2px rgba(209, 139, 121, 0.6);
+}
+
+.button-det{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-det:hover {
+    background-color: #F2D4CA;
+}
+
+.button-save{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-save:hover {
+    background-color: #F2D4CA;
+}
+.button-del{
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #DC143C;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-del:hover {
+    background-color: #DC143C;
+}
+
+.button-find, .button-det {
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-find:hover, .button-det:hover {
+    background-color: #F2D4CA;
+    box-shadow: 0 0 3px 2px rgba(209, 139, 121, 0.6);
+}
+
+.button-book, .button-b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-book:hover, .button-b:hover{
+    background-color: #F2D4CA;
+}
+
+.button-b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button-b:hover{
+    background-color: #F2D4CA;
+}
+
+.button-book:active {
+    border-color: #F2D4CA;
+    box-shadow: 0 0 3px 2px rgba(209, 139, 121, 0.6);
+}
+
+.restaurant-photo {
+    max-width: 25px;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.modal-content {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3;
+    height: 100%;
+    text-align: center;
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+}
+
+.modal-im {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.add-to-favorites, .book-table, .write-review, .sent{
+    border-color: #352894;
+    color: #000000;
+    background-color: transparent;
+    border: 3px solid #F2D4CA;
+    border-radius: 10px;
+    padding: 5px 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.add-to-favorites:hover, .book-table:hover, .write-review:hover, .sent:hover {
+    background-color: #F2D4CA;
+}
+
+button:focus {
+    outline: 2px solid blue;
+}
+
+.dropdown-item.active {
+    background-color: #F2D4CA;
+}
