@@ -17,19 +17,23 @@ body {
     align-items: center;
 }
 
-.navbar a {
-    color: #fff;
-    margin: 0.5%;
-    text-decoration: none;
-    text-align: center;
-    background-color: #333333;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
+.navbar a, button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 0.5%;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333333;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.navbar a:hover {
-    background-color: #555555;
+.navbar a:hover, button:hover {
+  background-color: #555555;
 }
 
 hr {
@@ -218,4 +222,12 @@ footer {
     width: 10%;
     height: 10%;
     object-fit: contain;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    fill: #333;
+    margin: 5%;
+    flex-shrink: 0;
 }

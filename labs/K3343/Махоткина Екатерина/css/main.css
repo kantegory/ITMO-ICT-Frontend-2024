@@ -17,6 +17,9 @@ body {
 }
 
 .navbar a, button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   margin: 0.5%;
   text-decoration: none;
@@ -25,9 +28,10 @@ body {
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
-.navbar a:hover, button:hover{
+.navbar a:hover, button:hover {
   background-color: #555555;
 }
 
@@ -38,7 +42,6 @@ body {
   margin: 5% 3% 5% 3%;
   height: auto;
 }
-
 
 .container p {
   margin-top: 1%;
@@ -107,40 +110,40 @@ hr {
   background-color: #333333;
 }
 
-.video-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
+.modal-content {
+  background-color: #000;
+  color: #fff;
 }
 
-.video-modal-content {
-  position: relative;
-  width: 80%;
-  max-width: 800px;
+.btn-close-white {
+  filter: invert(1);
 }
 
-.login-modal {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+.btn-close:hover {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
 }
 
-.login-modal-content {
-  margin: auto;
-  background-color: #333333;
-  border-radius: 5px;
-  padding: 40px;
-  width: 60%;
-  max-width: 800px;
+.btn-success {
+  background-color: #1d7e33;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.btn-dark {
+  background-color: #000;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.modal-title {
   text-align: center;
+  width: 100%;
+}
+
+#gender {
+  margin-top: 20px;
 }
 
 .close {
@@ -155,7 +158,7 @@ form {
   align-items: center;
 }
 
-form input, select {
+form input {
   width: 100%;
   padding: 15px;
   border-radius: 5px;
@@ -167,7 +170,6 @@ form input, select {
 .login-button-green {
   background-color: #1d7e33;
   color: #fff;
-  text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
@@ -180,7 +182,6 @@ form input, select {
 .login-button-grey {
   background-color: #000;
   color: #fff;
-  text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
@@ -189,6 +190,7 @@ form input, select {
   margin-top: 15px;
   width: 30%;
 }
+
 
 footer {
   text-align: center;
@@ -206,3 +208,13 @@ footer {
   height: 10%;
   object-fit: contain;
 }
+
+.icon {
+  width: 15px;
+  height: 15px;
+  fill: #333;
+  margin: 5%;
+  flex-shrink: 0;
+}
+
+

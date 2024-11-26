@@ -4,105 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Platform</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/registered_main.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/light.css" media="(prefers-color-scheme: light)">
 </head>
 <body>
 
 <header class="navbar navbar-expand-lg">
-    <a href="registered_main.html">Fitness</a>
-    <nav class="navbar-nav">
-        <a href="blog.html">Blog</a>
-        <a href="trainings.html">Trainings</a>
-        <a href="account.html">Account</a>
-    </nav>
+  <a href="main.html">
+    <svg class="icon"><use href="images/images.svg#icon-home"></use></svg>
+    Fitness
+  </a>
+  <nav class="navbar-nav">
+    <a href="blog.html">
+      <svg class="icon"><use href="images/images.svg#icon-blog"></use></svg>
+      Blog
+    </a>
+    <a href="trainings.html">
+      <svg class="icon"><use href="images/images.svg#icon-trainings"></use></svg>
+      Trainings
+    </a>
+    <a href="account.html">
+      <svg class="icon"><use href="images/images.svg#icon-account-logged"></use></svg>
+      Account
+    </a>
+  </nav>
 </header>
+
 <hr>
+
 <section class="main-banner">
     <div class="container">
         <h1>Start your training now!</h1>
         <p>Track your progress, improve your stats and reach your goal with a wide range of our workouts.</p>
-        <a href="trainings.html" class="btn button-green">See trainings</a>
+        <a href="trainings.html">See trainings</a>
     </div>
     <div class="main-banner-image">
         <img src="images/main-images/main_banner.jpg" alt="Main poster"/>
     </div>
 </section>
+
 <hr class="semi-hr">
-<hr class="semi-hr">
+
 <section class="popular-exercises">
-  <div class="container-fluid">
-    <h2>Popular Exercises</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="RjqTbaLeCUs">
-          <img src="images/main-images/treadmill.jpg" class="card-img-top" alt="Treadmill">
-          <div class="card-body">
-            <h3 class="video-title">Treadmill</h3>
-          </div>
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="p7th1SMAsAY">
-          <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
-          <div class="card-body">
-            <h3 class="video-title">Stretching</h3>
-          </div>
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button class="card mb-4 exercise-button" data-video-id="65KVj8EMJIc">
-          <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
-          <div class="card-body">
-            <h3 class="video-title">Yoga</h3>
-          </div>
-        </button>
-      </div>
-                <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="Y3uK06zHmVU">
-              <img src="images/main-images/running.jpg" class="card-img-top" alt="Running">
-              <div class="card-body">
-                <h3 class="video-title">Running</h3>
-              </div>
-            </button>
-          </div>
-          <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="rqJpSSL0kB8">
-              <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Lifting">
-              <div class="card-body">
-                <h3 class="video-title">Lifting</h3>
-              </div>
-            </button>
-          </div>
-          <div class="col-md-4">
-            <button class="card mb-4 exercise-button" data-video-id="9SMDmCE58uI">
-              <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Push up">
-              <div class="card-body">
-                <h3 class="video-title">Push up</h3>
-              </div>
-            </button>
-          </div>
+    <div class="container-fluid">
+        <h2>Popular Exercises</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/treadmill.jpg" class="card-img-top" alt="Treadmill">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="RjqTbaLeCUs">Treadmill</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/stretching.jpeg" class="card-img-top" alt="Stretching">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="p7th1SMAsAY">Stretching</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/yoga.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="65KVj8EMJIc">Yoga</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/running.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="Y3uK06zHmVU">Running</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/lifting.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="rqJpSSL0kB8">Lifting</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/main-images/pushup.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-body">
+                        <h3 class="video-title" video-id="9SMDmCE58uI">Push up</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 </section>
-<hr class="semi-hr">
-<div id="video-modal" class="video-modal">
-    <div class="video-modal-content">
-        <button type="button" class="close" id="closeVideo">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="video-container">
-            <iframe
-                    id="youtube-video"
-                    width="100%"
-                    height="350"
-                    src=""
-                    frameborder=0
-                    allowfullscreen="">
-            </iframe>
+
+<div class="modal fade" id="video-modal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Title</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                            id="youtube-video"
+                            src=""
+                            title="YouTube video"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <section class="final-info">
     <div class="container">
         <h2>Nothing is impossible!</h2>
@@ -112,6 +134,7 @@
         <img src="images/main-images/final.png" alt="Fitness Man" />
     </div>
 </section>
+
 <footer>
     <hr>
     <div class="footer-info">
@@ -121,5 +144,7 @@
 </footer>
 
 <script src="js/video-modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6t8gFxK6ta1j5r78t6yK3DqZ4DihCkR8JrLczUphsYeJdXJ4" crossorigin="anonymous"></script>
 </body>
 </html>

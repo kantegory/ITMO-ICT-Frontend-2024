@@ -20,6 +20,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.profile-details p:nth-child(4)').textContent = "Current Weight: " + user.currentWeight + " kg";
                 document.querySelector('.profile-details p:nth-child(5)').textContent = "Completed Workouts: " + user.completedWorkouts;
 
+                const tableBody = document.querySelector('table');
+                const measurements = [
+                    { label: 'Current weight', value: user.currentWeight },
+                    { label: 'Waist circumference', value: user.waistCircumference || 0 },
+                    { label: 'Hip circumference', value: user.hipCircumference || 0 },
+                    { label: 'Chest circumference', value: user.chestCircumference || 0 }
+                ];
+
+                measurements.forEach(measurement => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                    <td>${measurement.label}</td>
+                    <td class="measures" contenteditable="true">${measurement.value}</td>
+                `;
+                    tableBody.appendChild(row);
+                });
+
+                document.getElementById('saveChangesButton').addEventListener('click', () => {
+                    const updatedMeasurements = Array.from(tableBody.rows).map(row => ({
+                        label: row.cells[0].textContent,
+                        value: parseFloat(row.cells[1].textContent)
+                    }));
+
+                    updatedMeasurements.forEach(measurement => {
+                        if (measurement.label === 'Current weight') user.currentWeight = measurement.value;
+                        if (measurement.label === 'Current weight') user.weightProgress.push(measurement.value);
+                        if (measurement.label === 'Waist circumference') user.waistCircumference = measurement.value;
+                        if (measurement.label === 'Hip circumference') user.hipCircumference = measurement.value;
+                        if (measurement.label === 'Chest circumference') user.chestCircumference = measurement.value;
+                    });
+
+                    fetch(`${usersURL}/${userId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    })
+                });
+
                 document.getElementById('currentWeight').textContent = user.currentWeight + " kg";
                 const progressPercent = Math.round(((user.startWeight - user.currentWeight) / (user.startWeight - user.goalWeight)) * 100);
                 document.getElementById('progressPercent').textContent = progressPercent + "%";
@@ -89,47 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }
                     }
-                });
-                const tableBody = document.querySelector('table');
-                const measurements = [
-                    { label: 'Current weight', value: user.currentWeight },
-                    { label: 'Waist circumference', value: user.waistCircumference || 0 },
-                    { label: 'Hip circumference', value: user.hipCircumference || 0 },
-                    { label: 'Chest circumference', value: user.chestCircumference || 0 }
-                ];
-
-                measurements.forEach(measurement => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                    <td>${measurement.label}</td>
-                    <td class="measures" contenteditable="true">${measurement.value}</td>
-                `;
-                    tableBody.appendChild(row);
-                });
-
-                document.getElementById('saveChangesButton').addEventListener('click', () => {
-                    const updatedMeasurements = Array.from(tableBody.rows).map(row => ({
-                        label: row.cells[0].textContent,
-                        value: parseFloat(row.cells[1].textContent)
-                    }));
-
-                    updatedMeasurements.forEach(measurement => {
-                        if (measurement.label === 'Current Weight') user.currentWeight = measurement.value;
-                        if (measurement.label === 'Current Weight') user.weightProgress.push(measurement.value);
-                        if (measurement.label === 'Waist Circumference') user.waistCircumference = measurement.value;
-                        if (measurement.label === 'Hip Circumference') user.hipCircumference = measurement.value;
-                        if (measurement.label === 'Chest Circumference') user.chestCircumference = measurement.value;
-                    });
-
-                    fetch(`${usersURL}/${userId}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(user)
-                    }).then(response => {
-                        if (response.ok) alert('Changes saved');
-                    });
                 });
             }
         })

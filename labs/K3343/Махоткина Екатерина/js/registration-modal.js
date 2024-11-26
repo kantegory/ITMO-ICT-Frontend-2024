@@ -1,29 +1,45 @@
 function openRegisterModal() {
-    closeLoginModal();
-    document.getElementById('registerModal').style.display = 'block';
+    const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+    const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+    if (loginModal) loginModal.hide();
+    registerModal.show();
 }
 
 function closeRegisterModal() {
-    document.getElementById('registerModal').style.display = 'none';
+    const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+    if (registerModal) registerModal.hide();
 }
 
 document.getElementById('openRegisterModal').addEventListener('click', openRegisterModal);
-document.getElementById('closeRegister').addEventListener('click', closeRegisterModal);
+
 document.querySelector('#registerForm').addEventListener('submit', async (event) => {
     event.preventDefault();
+    const email = document.getElementById('registerEmail').value.trim();
+    const password = document.getElementById('registerPassword').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const gender = document.getElementById('gender').value;
+    const age = parseInt(document.getElementById('age').value);
+    const startWeight = parseInt(document.getElementById('startWeight').value);
+    const goalWeight = parseInt(document.getElementById('goalWeight').value);
+
+    if (!email || !password || !name || !gender || isNaN(age) || isNaN(startWeight) || isNaN(goalWeight)) {
+        alert('Fill all required fields');
+        return;
+    }
+
     const newUser = {
-        email: document.getElementById('registerEmail').value,
-        password: document.getElementById('registerPassword').value,
+        email,
+        password,
         dateRegistration: new Date(),
-        name: document.getElementById('name').value,
-        gender: document.getElementById('gender').value,
-        age: parseInt(document.getElementById('age').value),
-        startWeight: parseInt(document.getElementById('startWeight').value),
-        currentWeight: parseInt(document.getElementById('startWeight').value),
-        goalWeight: parseInt(document.getElementById('goalWeight').value),
+        name,
+        gender,
+        age,
+        startWeight,
+        currentWeight: startWeight,
+        goalWeight,
         completedWorkouts: 0,
         frequentWorkouts: [],
-        weightProgress: [parseInt(document.getElementById('startWeight').value)],
+        weightProgress: [startWeight],
         waistCircumference: 0,
         hipCircumference: 0,
         chestCircumference: 0,
@@ -33,9 +49,9 @@ document.querySelector('#registerForm').addEventListener('submit', async (event)
 
 async function registerUser(user) {
     try {
-        console.log("Попытка регистрации пользователя:", user);
         const response = await fetch(`http://localhost:3000/users?email=${user.email}`);
         const existingUser = await response.json();
+
         if (existingUser.length > 0) {
             alert('User already exists');
             return;
@@ -45,13 +61,16 @@ async function registerUser(user) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         });
+
         if (registerResponse.ok) {
-            alert('Registration successful');
+            alert('Registration was successful');
             closeRegisterModal();
+            document.getElementById('registerForm').reset();
         } else {
             alert('Registration failed');
         }
     } catch (error) {
         console.error('Error:', error);
+        alert('Error');
     }
 }
