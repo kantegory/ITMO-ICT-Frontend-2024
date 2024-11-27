@@ -1,0 +1,32 @@
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    background-image: url('../images/dental-header.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-light {
+    color: #007bff;
+    background-color: #fff;
+    border-color: #fff;
+}

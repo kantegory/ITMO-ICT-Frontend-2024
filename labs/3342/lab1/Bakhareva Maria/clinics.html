@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиники Санкт-Петербурга</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/clinics.css">
+</head>
+<body>
+
+    <div id="header"></div>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Клиники Санкт-Петербурга</h1>
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select id="districtFilter" class="form-select">
+                    <option value="all">Все районы</option>
+                    <option value="Центральный">Центральный район</option>
+                    <option value="Василеостровский">Василеостровский район</option>
+                    <option value="Адмиралтейский">Адмиралтейский район</option>
+                    <option value="Петроградский">Петроградский район</option>
+                    <!-- Добавьте другие районы -->
+                </select>
+            </div>
+        </div>
+
+        <div class="row" id="clinics-list">
+            <div class="col-md-4 mb-4 clinic-card" data-district="Центральный">
+                <div class="card">
+                    <img src="images/clinic1.png" class="card-img-top" alt="Клиника 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Клиника "Дентал СПб"</h5>
+                        <p class="card-text">Центральный район, ул. Невский проспект, д. 32</p>
+                        <a href="#" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 clinic-card" data-district="Василеостровский">
+                <div class="card">
+                    <img src="images/clinic2.png" class="card-img-top" alt="Клиника 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Клиника "Ортодент"</h5>
+                        <p class="card-text">Василеостровский район, 5-я линия В.О., д. 12</p>
+                        <a href="#" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 clinic-card" data-district="Адмиралтейский">
+                <div class="card">
+                    <img src="images/clinic3.png" class="card-img-top" alt="Клиника 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Клиника "Стома Плюс"</h5>
+                        <p class="card-text">Адмиралтейский район, ул. Гороховая, д. 20</p>
+                        <a href="#" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/clinics.js"></script>
+    <script src="js/include.js"></script>
+
+</body>
+</html>

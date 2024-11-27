@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Личный кабинет</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Информация о пользователе</h5>
+                <p class="card-text"><strong>Имя:</strong> <span id="firstName"></span></p>
+                <p class="card-text"><strong>Отчество:</strong> <span id="lastName"></span></p>
+                <p class="card-text"><strong>Пол:</strong> <span id="gender"></span></p>
+                <p class="card-text"><strong>Дата рождения:</strong> <span id="dob"></span></p>
+                <p class="card-text"><strong>Телефон:</strong> <span id="phone"></span></p>
+                <p class="card-text"><strong>Email:</strong> <span id="email"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+            <a href="history.html" class="btn btn-info">Посмотреть историю посещений</a>
+        </div>
+
+
+    <div id="footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/include.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstName = localStorage.getItem('firstName');
+            const lastName = localStorage.getItem('lastName');
+            const gender = localStorage.getItem('gender');
+            const dob = localStorage.getItem('dob');
+            const phone = localStorage.getItem('phone');
+            const email = localStorage.getItem('email');
+
+            document.getElementById('firstName').textContent = firstName || 'Не указано';
+            document.getElementById('lastName').textContent = lastName || 'Не указано';
+            document.getElementById('gender').textContent = gender || 'Не указано';
+            document.getElementById('dob').textContent = dob || 'Не указано';
+            document.getElementById('phone').textContent = phone || 'Не указано';
+            document.getElementById('email').textContent = email || 'Не указано';
+        });
+    </script>
+
+</body>
+</html>
