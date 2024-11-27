@@ -1,20 +1,20 @@
 body {
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #343a40;
+    color: var(--header-text-color);
 }
 
 .card {
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Легкая тень для карточек */
+    box-shadow: 0 0 15px var(--card-shadow);
+    background-color: var(--card-bg-color);
 }
 
 .card-img-top {
-    height: 200px;
-    object-fit: cover; /* Обрезка изображения по размеру карточки */
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -29,10 +29,10 @@ h1 {
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border: none;
+    background-color: var(--btn-primary-bg-color);
+    border: var(--btn-primary-border-color);
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: var(--btn-primary-hover-bg-color);
 }

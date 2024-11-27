@@ -6,21 +6,22 @@
     <title>Вход в личный кабинет</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/themes.css">
+
 </head>
 <body>
-
 <header id="header"></header>
 
 <main class="container" role="main">
     <h1 class="text-center mt-4">Вход в личный кабинет</h1>
     <form id="loginForm" aria-labelledby="loginFormHeading">
         <div class="form-group mt-3">
-            <label for="email">Email:</label>
+            <label for="email" class="form-label">Email:</label>
             <input type="email" class="form-control" id="email" placeholder="Введите email" required
                    aria-required="true">
         </div>
         <div class="form-group mt-3">
-            <label for="password">Пароль:</label>
+            <label for="password" class="form-label">Пароль:</label>
             <input type="password" class="form-control" id="password" placeholder="Введите пароль" required
                    aria-required="true">
         </div>
@@ -44,6 +45,7 @@
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/include.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const loginForm = document.getElementById('loginForm');
