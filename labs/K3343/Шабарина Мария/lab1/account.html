@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="css/account.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+  <a href="main.html">Fitness</a>
+  <nav>
+    <a href="blog.html">Blog</a>
+    <a href="trainings.html">Trainings</a>
+    <a href="account.html">Account</a>
+  </nav>
+</header>
+
+<hr>
+
+<section class="profile-section">
+    <div class="profile-info">
+        <img src="images/account-images/masha.jpg" alt="Avatar" class="profile-avatar">
+        <div class="profile-details">
+            <h1>Maria The Best</h1>
+            <p>Age: 19</p>
+            <p>Current Weight: 60 kg</p>
+            <p>Completed Workouts: 45</p>
+        </div>
+    </div>
+
+    <div class="frequent-workouts">
+        <h2>Most Frequent Workouts</h2>
+        <ul id="workout-list">
+        </ul>
+    </div>
+</section>
+
+<hr class="semi-hr">
+
+<section class="progress-section">
+    <div class="progress-section-chart">
+        <h2>Weight Progress</h2>
+        <canvas id="weightChart"></canvas>
+    </div>
+    <div class="progress-section-table">
+        <h2>Progress in Numbers</h2>
+        <table class="vertical-table">
+            <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Current Weight (kg)</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td>Starting Weight (kg)</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Goal Weight (kg)</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>Progress (%)</td>
+                <td>60.0%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <hr>
+    <div class="footer-info">
+        <img src="images/main-images/logo.jpeg" alt="logo"/>
+        <p>FITNESS MK is your key to success! <br> Made by Ekaterina Makhotkina and Maria Shabarina</p>
+    </div>
+</footer>
+
+<script src="js/account.js"></script>
+
+</body>
+</html>
