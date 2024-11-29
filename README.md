@@ -19,6 +19,7 @@
 3. MDN: https://developer.mozilla.org/ru/
 4. Мой YouTube: https://youtube.com/@dobryakov
 5. Мой телеграм-канал: https://t.me/davidobryakov
+6. Яндекс.Диск со всеми презентациями курса: https://disk.yandex.ru/i/4ZF_XDu25jmMUg
 
 ## Разделы
 
@@ -248,6 +249,7 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 ### Фреймворк Vue.JS: компонентный подход
 
+Презентация: https://disk.yandex.ru/i/4ZF_XDu25jmMUg
 Видео-лекция: https://youtu.be/0jPwrj5f8no  
 Примеры:
 - простая реализация роутера для понимания основных концепций - https://github.com/kantegory/mentoring/tree/master/19_frontend_router
