@@ -1,0 +1,606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter4/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Страница рецепта - Frontend разработка, лабораторная 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Frontend разработка, лабораторная 1" class="md-header__button md-logo" aria-label="Frontend разработка, лабораторная 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Frontend разработка, лабораторная 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Страница рецепта
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Frontend разработка, лабораторная 1" class="md-nav__button md-logo" aria-label="Frontend разработка, лабораторная 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Frontend разработка, лабораторная 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSS файл для всего сайта
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Вход
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Регистрация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Личный кабинет пользователя
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Поиск рецептов с фильтрацией
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Страница рецепта
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">Страница рецепта</h1>
+<p>Мы тестово добавили 8 рецептов: Apple pie, Bolognese pasta, Fish and chips, Full breakfast, Khinkali, Lasagna, Pancakes, Tom Yum.</p>
+<p>Html код для каждого рецепта одинаковый, отличается только список ингридиентов и шаги готовки. Для примера покажем код и скриншота рецепта Apple pie.</p>
+<p>На странице каждого рецепта можно поставить лайк, написать комменатрий и подписаться на автора. </p>
+<p><strong>код из файла recipe_apple_pie.html:</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Recipe | Recipe App&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h2 class=&quot;text-center my-4&quot;&gt;Autumn Apple Pie&lt;/h2&gt;
+    &lt;div class=&quot;recipe-content&quot;&gt;
+      &lt;img src=&quot;../img/top-view-pie-coffee.jpg&quot; class=&quot;img-fluid mb-3&quot; alt=&quot;Recipe Image&quot;&gt;
+      &lt;p&gt;Favorite autumn recipe&lt;/p&gt;
+      &lt;h5&gt;Ingredients:&lt;/h5&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Apples&lt;/li&gt;
+        &lt;li&gt;Sugar&lt;/li&gt;
+        &lt;li&gt;Cinnamon&lt;/li&gt;
+        &lt;li&gt;Pie crust&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h5&gt;Steps:&lt;/h5&gt;
+      &lt;ol&gt;
+        &lt;li&gt;Prepare crust: Roll out a pre-made or homemade pie crust and place it in a pie dish.&lt;/li&gt;
+        &lt;li&gt;Make apple filling: Peel, core, and slice about 6 apples. Mix with sugar, cinnamon, nutmeg, and flour.&lt;/li&gt;
+        &lt;li&gt;Pour the apple mixture into the pie crust.&lt;/li&gt;
+        &lt;li&gt;Cover with another layer of pie crust or a lattice. Trim excess dough and crimp edges.&lt;/li&gt;
+        &lt;li&gt;Bake: Preheat oven to 375°F (190°C). Bake for 50-60 minutes until the crust is golden brown and apples are tender.&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;div class=&quot;mt-4 d-flex align-items-center&quot;&gt;
+        &lt;button class=&quot;btn btn-primary me-2&quot; id=&quot;likeBtn&quot;&gt;Like &lt;span id=&quot;likeCount&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+        &lt;button class=&quot;btn btn-secondary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#commentModal&quot;&gt;Comment&lt;/button&gt;
+        &lt;div class=&quot;me-3&quot;&gt;
+          &lt;strong&gt;Author:&lt;/strong&gt; &lt;span id=&quot;authorName&quot;&gt;John Doe&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button class=&quot;btn btn-secondary&quot; id=&quot;subscribeBtn&quot;&gt;Subscribe to Author&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;h5 class=&quot;mt-4&quot;&gt;Comments:&lt;/h5&gt;
+      &lt;div id=&quot;commentsList&quot; class=&quot;border p-3&quot;&gt;
+        &lt;!-- Здесь будут отображаться комментарии --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Модальное окно для комментариев --&gt;
+    &lt;div class=&quot;modal fade&quot; id=&quot;commentModal&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;commentModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+          &lt;div class=&quot;modal-header&quot;&gt;
+            &lt;h5 class=&quot;modal-title&quot; id=&quot;commentModalLabel&quot;&gt;Add Comment&lt;/h5&gt;
+            &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+              &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;modal-body&quot;&gt;
+            &lt;form&gt;
+              &lt;div class=&quot;form-group&quot;&gt;
+                &lt;textarea class=&quot;form-control&quot; id=&quot;commentText&quot; rows=&quot;3&quot; placeholder=&quot;Enter your comment&quot;&gt;&lt;/textarea&gt;
+              &lt;/div&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;modal-footer&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; id=&quot;submitCommentBtn&quot;&gt;Submit Comment&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.slim.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;../js/recipe.js&quot;&gt;&lt;/script&gt; &lt;!-- Подключаем JavaScript файл --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>На странице каждого рецепта можно поставить лайк, написать комменатрий и подписаться на автора. 
+Для этого мы создали два js файла.</p>
+<p><strong>код из файла recipe.js:</strong></p>
+<pre><code class="language-javascript">// Инициализация переменной для хранения количества лайков
+let likeCount = 0;
+
+// Функция для обработки нажатия на кнопку &quot;Лайк&quot;
+document.getElementById('likeBtn').addEventListener('click', function() {
+    likeCount += 1; // Увеличиваем количество лайков на 1
+    document.getElementById('likeCount').textContent = likeCount; // Обновляем текст счетчика
+});
+
+// Функция для обработки нажатия на кнопку &quot;Подписаться&quot;
+document.getElementById('subscribeBtn').addEventListener('click', function() {
+    // Выводим модальное окно подписки
+    const subscriptionModalHtml = `
+        &lt;div class=&quot;modal fade&quot; id=&quot;subscribeModal&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;subscribeModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+            &lt;div class=&quot;modal-dialog&quot;&gt;
+                &lt;div class=&quot;modal-content&quot;&gt;
+                    &lt;div class=&quot;modal-header&quot;&gt;
+                        &lt;h5 class=&quot;modal-title&quot; id=&quot;subscribeModalLabel&quot;&gt;Subscribe to Author&lt;/h5&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;modal-body&quot;&gt;
+                        &lt;p&gt;You have successfully subscribed to &lt;strong&gt;John Doe&lt;/strong&gt;.&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;modal-footer&quot;&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    `;
+
+    // Вставляем модальное окно в DOM
+    document.body.insertAdjacentHTML('beforeend', subscriptionModalHtml);
+
+    // Открываем модальное окно
+    $('#subscribeModal').modal('show');
+
+    // Удаляем модальное окно после закрытия
+    $('#subscribeModal').on('hidden.bs.modal', function () {
+        $(this).remove(); // Удаляем модальное окно из DOM после закрытия
+    });
+});
+
+// Функция для обработки нажатия на кнопку &quot;Отправить комментарий&quot;
+document.getElementById('submitCommentBtn').addEventListener('click', function() {
+    const commentText = document.getElementById('commentText').value; // Получаем текст комментария
+    if (commentText) {
+        const commentsList = document.getElementById('commentsList');
+        const newComment = document.createElement('div'); // Создаем новый div для комментария
+        newComment.classList.add('comment'); // Класс для стилей
+        newComment.textContent = commentText; // Устанавливаем текст комментария
+        commentsList.appendChild(newComment); // Добавляем новый комментарий в список
+
+        // Очищаем поле ввода комментария
+        document.getElementById('commentText').value = '';
+
+        // Закрываем модальное окно после добавления комментария
+        $('#commentModal').modal('hide');
+    } else {
+        alert('Please enter a comment before submitting.'); // Предупреждение, если комментарий пустой
+    }
+});
+</code></pre>
+<p><strong>код из файла scripts.js:</strong></p>
+<pre><code class="language-javascript">// Валидация форм
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Логика валидации
+  alert(&quot;Login form submitted!&quot;);
+});
+
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let password = document.getElementById('password').value;
+  let confirmPassword = document.getElementById('confirm-password').value;
+
+  if (password !== confirmPassword) {
+    alert(&quot;Passwords do not match!&quot;);
+  } else {
+    alert(&quot;Registration form submitted!&quot;);
+  }
+});
+
+// Лайк на странице рецепта
+let likeCount = 0;
+document.getElementById('likeBtn').addEventListener('click', function() {
+  likeCount++;
+  document.getElementById('likeCount').innerText = likeCount;
+});
+
+</code></pre>
+<p><strong>Страница рецепта Apple pie на скриншоте</strong>
+<img alt="Страница рецепта на скриншоте" src="../images/recipe_apple_pie_pic.png" />
+<strong>Лайк и комментарий к рецепту Apple pie на скриншоте</strong>
+<img alt="Лайк и комментарий к рецепту Apple pie на скриншоте" src="../images/like_and_comment_of_recipe.png" />
+<strong>Подписка на автора рецепта Apple pie на скриншоте</strong>
+<img alt="Подписка на автора рецепта Apple pie на скриншоте" src="../images/Subscribe.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
