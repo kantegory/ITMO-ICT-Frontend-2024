@@ -249,7 +249,9 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 ### Фреймворк Vue.JS: компонентный подход
 
 Видео-лекция: https://youtu.be/0jPwrj5f8no  
-Пример: https://github.com/kantegory/mentoring/tree/master/19_frontend_router
+Примеры:
+- простая реализация роутера для понимания основных концепций - https://github.com/kantegory/mentoring/tree/master/19_frontend_router
+- простая реализация SPA для понимания основных концепций - https://github.com/kantegory/mentoring/tree/master/27_simple_spa_example
 
 ### Фреймворк Vue.JS: маршрутизация на клиентской части
 
