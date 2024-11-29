@@ -8,8 +8,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <button id="theme-toggle" class="btn btn-secondary">
+  Toggle Dark/Light Theme
+  </button>
+
 </head>
 <body onload="fadeIn()">
+
+
+  <style>
+    body.light-theme {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    body.dark-theme {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  </style>
 
   <main class="container fade-in">
     <h2 class="text-center my-4" id="loginTitle">Login to Recipe App</h2>
@@ -50,7 +66,7 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/theme.js"></script>
   <script>
   function fadeIn() {
     document.querySelector('.fade-in').style.opacity = 1;
