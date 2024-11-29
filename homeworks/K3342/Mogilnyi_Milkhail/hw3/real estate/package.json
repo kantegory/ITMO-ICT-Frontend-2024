@@ -1,0 +1,19 @@
+{
+  "name": "real-estate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  },
+  "scripts": {
+    "start": "json-server-auth db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "keywords": [],
+  "description": ""
+}

@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "email": "ilyamaddison@gmail.com",
+      "password": "$2a$10$jwRHyASRQ7agg9PjdKyemOfYOZ4diWup4mg0KHU.fJisMrOLX46W2",
+      "firstName": "Илья",
+      "lastName": "Мэддисон",
+      "phone": "+7 (926) 872-80-82",
+      "": "on",
+      "id": 1
+    },
+    {
+      "email": "ozongaming@gmai.com",
+      "password": "$2a$10$pEiFgAZTsj7cX4NnlgKnvu8fuZYdcVr1Csb2sYqYUoUCxP0phESO.",
+      "firstName": "Озон",
+      "lastName": "Гейминг",
+      "phone": "+7 (911) 111-11-11",
+      "": "on",
+      "id": 2
+    },
+    {
+      "email": "ivangaming@gmail.com",
+      "password": "$2a$10$JWtxOG8Ihw.b1wkU1S1wS.MJiW3770m18bAgsG9aJtztWwVTgwL4q",
+      "firstName": "Иван",
+      "lastName": "Гамаз",
+      "phone": "+7 (911) 111-11-11",
+      "": "on",
+      "id": 3
+    },
+    {
+      "email": "ivanzolo2004@gmail.com",
+      "password": "$2a$10$efFqtwTBCxFfv6y74vMT1efeILRI/yB2/LVeAzxY4oTj5oftpIqEy",
+      "firstName": "Иван",
+      "lastName": "Золо",
+      "phone": "+7 (999) 999-99-99",
+      "": "on",
+      "id": 4
+    }
+  ],
+  "owned_properties": [
+    {
+      "name": "2-комн. квартира 61 кв.м. м.Фрунзенская",
+      "desc": "Уютная квартира срочная продажа",
+      "price": 40000,
+      "userId": 1,
+      "id": 1,
+      "type": "Квартира",
+      "location": "Санкт-Петербург"
+    },
+    {
+      "name": "Студия 21 кв.м. м.Удельная",
+      "price": "30000",
+      "userId": 1,
+      "text": "Норм студия",
+      "id": 2
+    }
+  ]
+}
