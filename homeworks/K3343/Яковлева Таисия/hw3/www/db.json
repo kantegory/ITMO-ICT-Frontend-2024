@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "username": "Taisiia",
+      "email": "u2@mail.ru",
+      "password": "$2b$10$pZkVK.mRwBsBq1NPFsoVHOLU44WQD9KXW9uOEHF7VGIF6xRKw2sES",
+      "id": 1
+    },
+    {
+      "username": "Anya",
+      "email": "u1@mail.ru",
+      "password": "$2b$10$bcgSD4C9o1IsuEu.BYPkWuYlinT1o.Mt4pfqLva0L20bsgVcVfGIq",
+      "id": 2
+    },
+    {
+      "username": "Cook",
+      "email": "cook@yandex",
+      "password": "$2b$10$jJHjuKHwmlpckb89P09RgO1ei2OhZuFE1SyJlqfH3572/5je4dzae",
+      "id": 3
+    }
+  ]
+}
