@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/index/brooklyn.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.form-container {
+    position: fixed;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: white;
+    padding: 25px;
+}
+
+.form-container .button {
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.form-container .button:hover {
+    background-color: white;
+    color: black; 
+}
+
+.form-container h2 {
+    font-size: 22px;
+    color: black;
+    text-align: center;
+}
+
+.form-container a {
+    color: #000000;
+    font-size: 12px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* option field with checkbox */
+.option-field {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox {
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+}
+
+.checkbox input {
+    accent-color: black;
+}
+
+.checkbox label {
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+}
+
+.signup-form {
+    display: none;
+}
+
+.form-container.active .signup-form {
+    display: block;
+}
+
+.form-container.active .login-form {
+    display: none;
+}
+
+.form-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #0b0217;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.login-signup {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.input-box {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+
+.input-box input:focus {
+    border-color: black;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+
+.input-box i.email,
+.input-box i.password {
+    left: 0;
+}
+
+.input-box input:focus ~ i.email,
+.input-box input:focus ~ i.password {
+    color: black;
+}
+
+.input-box i.pw_hide {
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}

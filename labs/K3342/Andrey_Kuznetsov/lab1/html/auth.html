@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth form</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <script defer src="../js/auth.js"></script> 
+    <script defer src="../js/layout.js"></script> 
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <div class="form-container">
+        <i class="uil uil-times form-close"></i>
+
+        <div class="form login-form">
+            <!-- TBD: add action -->
+            <form action="#">
+                <h2>Login</h2>
+
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email" required />
+                    <i class="uil uil-envelope-alt email"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Enter your password" required />
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw-hide"></i>
+                </div>
+
+                <div class="option-field">
+                    <span class="checkbox">
+                        <input type="checkbox" id="check" />
+                        <label for="check">Remember me</label>
+                    </span>
+                    <!-- TBD: add links in case of forgot password -->
+                    <a href="#" class="forgot-pw">Forgot password?</a>
+                </div>
+
+                <button class="button">Login Now</button>
+
+                <!-- TBD: add link to sign up -->
+                <div class="login-signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+            </form>
+        </div>
+
+        <div class="form signup-form">
+            <!-- TBD: add action -->
+            <form action="#">
+                <h2>Signup</h2>
+
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email" required />
+                    <i class="uil uil-envelope-alt email"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Create password" required />
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw-hide"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Confirm password" required />
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw-hide"></i>
+                </div>
+
+                <button class="button">Signup Now</button>
+                
+                <!-- TBD: add link to login -->
+                <div class="login-signup">Already have an account? <a href="#" id="login">Login</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
