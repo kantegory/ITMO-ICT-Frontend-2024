@@ -1,0 +1,100 @@
+/* Основные переменные для темы */
+:root {
+    --background-color: #fbeaff;
+    --text-color: #333;
+    --card-background: #fff;
+    --heading-color: #6a0dad;
+    --button-background: #ff85c0;
+    --button-border: #ff85c0;
+}
+
+/* Альтернативная голубая тема */
+.blue-theme {
+    --background-color: #e0f7fa;
+    --text-color: #333; 
+    --card-background: #ffffff; 
+    --heading-color: #00796b;
+    --button-background: #00acc1;
+    --button-border: #00acc1; 
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.search-workouts {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: var(--card-background);
+    border-radius: 15px;
+}
+
+.workout-filter {
+    margin-bottom: 30px;
+}
+
+.form-select {
+    background-color: #f3e5f5;
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.form-label {
+    color: var(--heading-color);
+}
+
+.btn-primary {
+    background-color: var(--button-background);
+    border-color: var(--button-border);
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--heading-color);
+}
+
+.navigation-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-button {
+    font-size: 2rem;
+    padding: 15px; 
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+    color: #333; 
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+    color: #000; 
+}
+
+.theme-switcher i {
+    font-size: 2rem; 
+    color: #000; 
+    transition: color 0.3s ease; 
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 10px; 
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer; 
+}
+
+.theme-switcher:hover i {
+    color: #00796b; 
+}
