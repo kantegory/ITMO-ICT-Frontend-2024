@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineLink Main Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #252525;
+            font-family: 'Tenor Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .content-container {
+            padding-top: 70px;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #252525;
+            box-shadow: 0px 4px 39px rgba(59, 57, 53, 0.7);
+            width: 100%;
+            padding-right: 160px;
+        }
+        .logo {
+            width: 297px;
+            height: 43px;
+            margin-left: 147px;
+            margin-right: 34px;
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+            width: 387px;
+            
+        }
+        .search-input {
+            width: 100%;
+            height: 47px;
+            border: 2px solid #FFECC9;
+            border-radius: 10px;
+            padding-left: 10px;
+            color: #FFECC9;
+            background-color: #3B3935;
+            font-size: 28px;
+        }
+        .search-input::placeholder {
+            color: #FFECC9;
+            opacity: 0.7;
+        }
+        .search-button {
+            border: none;
+            background: none;
+            color: #FFECC9;
+            margin-left: -40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-button .bi-search {
+            font-size: 25px; /* Устанавливает размер иконки 25x25 */
+        }
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+        .nav-link {
+            color: #FFECC9;
+            font-size: 28px;
+            font-family: 'Tenor Sans', sans-serif;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #98C1D9;
+        }
+
+
+        .filters-button {
+            width: 270px;
+            height: 47px;
+            background-color: #3B3935;
+            border: 2px solid #FFECC9;
+            border-radius: 10px;
+            color: #FFECC9;
+            font-size: 28px;
+            font-family: 'Tenor Sans', sans-serif;
+            text-decoration: none;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Пространство между текстом и иконкой */
+            padding-left: 12px; /* Отступ слева для текста */
+            padding-right: 12px; /* Отступ справа для иконки */
+        }
+        .filter-icon {
+            margin-left: auto; /* Сдвигает иконку к правому краю */
+        }
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 20px;
+            justify-content: left;
+            max-width: 1200px;
+            margin: 10px auto 0; /* Центрирование сетки */
+            padding: 20px 0;
+        }
+        .movie-item {
+            width: 125px;
+            height: 190px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Основные стили для кнопок фильтров */
+        .filter-button {
+            height: 38px;
+            padding: 0 13px;
+            border: 2px solid #252525;
+            background-color: #FFECC9;
+            border-radius: 10px;
+            font-size: 25px;
+            color: #252525;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        /* Стили для выбранных кнопок */
+        .filter-button.selected {
+            border: 2px solid #252525;
+            background-color: #252525;
+            color: #FFECC9;
+        }
+
+        /* Стили для модального окна */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #FFECC9;
+            padding: 20px;
+            position: relative;
+            border-radius: 0;
+        }
+        .modal .genre, .modal .decade, .modal .imdb-rating {
+            font-family: 'Limelight', sans-serif;
+            font-size: 28px;
+            color: #252525;
+            margin-left: 5px;
+        }
+        .ratingButtons {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: nowrap;
+            gap: 5px;
+            overflow: auto;
+        }
+        .close-modal-button {
+            display: flex;
+            top: 10px; 
+            right: 10px; 
+            width: 60px;
+            height: 60px;
+            background-color: #FFECC9;
+            border: 3px solid #252525;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+        }
+        .close-modal-button i {
+            font-size: 22px;
+            color: #252525;
+        }
+        .filter-apply-button {
+            height: 60px;
+            padding: 0 20px;
+            background-color: #252525;
+            color: #FFECC9;
+            border-radius: 10px;
+            font-family: 'Limelight', sans-serif;
+            font-size: 28px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: none;
+        }
+        .filter-apply-button:hover {
+            background-color: #3B3935;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/smalllogo.png" alt="CineLink Logo" class="logo">
+        <form class="search-form">
+            <input type="text" id="searchInput" name="searchInput" class="search-input" placeholder="search">
+            <button type="submit" id="searchButton" name="searchButton" class="search-button">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+        <div class="nav-links">
+            <a href="main.html" class="nav-link active">main</a>
+            <a href="friends.html" class="nav-link">friends</a>
+            <a href="profile.html" class="nav-link">profile</a>
+        </div>
+    </header>
+    <div class="content-container">
+        <!-- Модальное окно для фильтров -->
+        <div id="filterModal" class="modal" style="display: none;">
+            <div class="modal-content" style="width: 790px; height: 720px; padding: 15px; background-color: #FFECC9; position: relative;">
+                <h2 class="genre" style="font-family: 'Limelight', sans-serif; color: #252525; font-size: 28px;">Genre</h2>
+                <div id="genreButtons" style="margin-bottom: 20px;"></div>
+                
+                <h2 class="decade" style="font-family: 'Limelight', sans-serif; color: #252525; font-size: 28px;">Decade</h2>
+                <div id="decadeButtons" style="margin-bottom: 20px;"></div>
+
+                <h2 class="imdb-rating" style="font-family: 'Limelight', sans-serif; color: #252525; font-size: 28px;">IMDb rating</h2>
+                <div id="ratingButtons"></div>
+
+                <!-- Кнопка закрытия -->
+                <button id="closeButton" class="close-modal-button">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <button id="applyFiltersButton" class="filter-apply-button">apply filters</button>
+            </div>
+        </div>
+
+        <!-- Кнопка для открытия модального окна фильтров -->
+        <a href="#" id="filterButton" class="filters-button">filters <i class="bi bi-sliders filter-icon"></i></a>
+
+        <!-- Сетка фильмов -->
+        <div class="movie-grid"></div>
+    </div>
+    
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Подключение JS Scripts -->
+    <script type="module" src="js/scripts.js"></script>
+    <script src="js/filters.js"></script>
+</body>
+</html>
+
