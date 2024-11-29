@@ -1,0 +1,34 @@
+body {
+    background-color: #fbeaff; 
+}
+.workout {
+    padding: 20px;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card-instructions {
+    background-color: #fff; 
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+h1, .card-title {
+    color: #6a0dad; 
+}
+.btn-primary {
+    background-color: #ff85c0; 
+    border-color: #ff85c0;
+}
+ol li {
+    margin-bottom: 10px;
+}

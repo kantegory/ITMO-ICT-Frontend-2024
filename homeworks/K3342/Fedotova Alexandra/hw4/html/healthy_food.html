@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Platform - Nutrition Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+<!-- Переключатель темы с иконкой (Солнце/Луна) -->
+<div class="theme-switcher text-center mb-3">
+    <i id="theme-toggle" class="fas fa-sun icon-button" aria-label="Switch Theme"></i> <!-- Иконка солнца по умолчанию -->
+</div>
+
+<div class="container blog-container" role="main">
+    <h1 class="text-center mb-4">Health and Nutrition Blog</h1>
+
+    <div class="row" role="list">
+        <!-- Пост 1 -->
+        <article class="col-md-4 mb-4 post1" role="listitem">
+            <div class="card-article">
+                <img src="../pictures/water.jpg" class="card-img-top" alt="Person drinking water to stay hydrated" aria-label="Hydration blog image">
+                <div class="card-body">
+                    <h2 class="card-title">The Benefits of Staying Hydrated</h2>
+                    <p class="card-text">Discover how proper hydration can enhance your physical performance and overall health.</p>
+                    <a href="#" class="btn btn-primary" aria-label="Read more about hydration benefits">Read More</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Пост 2 -->
+        <article class="col-md-4 mb-4 post2" role="listitem">
+            <div class="card-article">
+                <img src="../pictures/healthyfood.jpg" class="card-img-top" alt="Healthy snack options on a table" aria-label="Healthy snack options">
+                <div class="card-body">
+                    <h2 class="card-title">Top 10 Healthy Snacks</h2>
+                    <p class="card-text">Explore nutritious snack options that can keep your energy levels high throughout the day.</p>
+                    <a href="#" class="btn btn-primary" aria-label="Read more about healthy snacks">Read More</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Пост 3 -->
+        <article class="col-md-4 mb-4 post3" role="listitem">
+            <div class="card-article">
+                <img src="../pictures/pr.jpg" class="card-img-top" alt="Prepared meals in containers" aria-label="Meal prep for success">
+                <div class="card-body">
+                    <h2 class="card-title">Meal Prep for Success</h2>
+                    <p class="card-text">Learn how meal prepping can save you time and help you stick to your nutrition goals.</p>
+                    <a href="#" class="btn btn-primary" aria-label="Read more about meal prep">Read More</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="personal_acc.html" class="btn btn-secondary" aria-label="Back to profile page">Back to Profile</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/theme-switcher.js"></script>
+</body>
+</html>
