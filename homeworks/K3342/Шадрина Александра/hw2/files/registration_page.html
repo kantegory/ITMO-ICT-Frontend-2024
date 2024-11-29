@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Exchange - Регистрация</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/reg_page_styles.css">
+</head>
+<body>
+
+<main class="registration-container" role="main">
+    <h2 class="text-center">Регистрация</h2>
+    <form aria-label="Форма регистрации" action="main_page.html" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Имя пользователя</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Введите имя пользователя" required aria-required="true">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Электронная почта</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Введите email" required aria-required="true" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Ваш email останется конфиденциальным.</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Введите пароль" required aria-required="true">
+        </div>
+        <div class="mb-3">
+            <label for="confirm-password" class="form-label">Подтвердите пароль</label>
+            <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Подтвердите пароль" required aria-required="true">
+        </div>
+        <button type="submit" class="btn btn-primary register-btn" aria-label="Зарегистрироваться">Зарегистрироваться</button>
+    </form>
+
+    <div class="already-registered">
+        <p class="already-registered">Уже зарегистрированы? <a href="login_page.html" aria-label="Войти в существующий аккаунт">Войти</a></p>
+    </div>
+</main>
+
+</body>
+</html>
