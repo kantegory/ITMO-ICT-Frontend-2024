@@ -1,0 +1,151 @@
+/* Основные цвета и фон */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #1a001a; /* Тёмно-фиолетовый фон */
+  color: #e0d4ff; /* Светлый текст с фиолетовым оттенком */
+  margin: 0;
+  padding: 0;
+}
+
+/* Навигационная панель */
+.navbar {
+  background-color: #320040; /* Тёмно-фиолетовый цвет для навигации */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #e0d4ff !important;
+  font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+  color: #e0d4ff !important;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #c29fff !important; /* Лёгкий фиолетовый оттенок при наведении */
+}
+
+/* Заголовки */
+h1, h2 {
+  color: #d8b0ff; /* Мягкий фиолетовый для заголовков */
+  font-weight: bold;
+}
+
+/* Формы */
+.form-control {
+  background-color: #320040; /* Тёмно-фиолетовый */
+  color: #e0d4ff;
+  border: 1px solid #563a7d;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #a56eff;
+  box-shadow: 0 0 8px rgba(165, 110, 255, 0.6);
+}
+
+button, .btn-primary {
+  background-color: #5c1a72;
+  border: none;
+  color: #e0d4ff;
+  padding: 10px 25px;
+  border-radius: 8px; /* Мягкие углы */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn-primary:hover {
+  background-color: #853fb8;
+  transform: scale(1.05); /* Легкое увеличение */
+  box-shadow: 0 0 8px rgba(165, 110, 255, 0.6); /* Свечение */
+}
+
+/* Карточки */
+.card {
+  background-color: #2a0033;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(165, 110, 255, 0.6); /* Эффект свечения */
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d8b0ff;
+}
+
+.card-text {
+  color: #b5a2d1;
+}
+
+/* Модальные окна */
+.modal-content {
+  background-color: #320040;
+  color: #e0d4ff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(165, 110, 255, 0.6);
+}
+
+.modal-header {
+  background-color: #5c1a72;
+  color: #e0d4ff;
+  border-bottom: 1px solid #853fb8;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+/* Поле поиска */
+#searchInput {
+  background-color: #320040;
+  color: #e0d4ff;
+  border: 1px solid #563a7d;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #a56eff;
+  box-shadow: 0 0 8px rgba(165, 110, 255, 0.6);
+}
+
+/* Анимация свечения для магического эффекта */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(165, 110, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(165, 110, 255, 0.8);
+  }
+}
+
+/* Анимация для кнопок и элементов */
+button, .btn-primary, .card, #searchInput:focus {
+  animation: glow 1.5s infinite ease-in-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
