@@ -1,0 +1,27 @@
+ /*Background color for the entire page */
+body {
+    background-color: --bg-color;
+    color: --text-color; /* Default text color */
+}
+
+.special_border{
+    border: 1px solid RED;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+.search-custom {
+    --bs-primary: #283618;
+    --bs-btn-color: #283618;
+    --bs-btn-border-color: #283618;
+    --bs-btn-hover-bg: #283618;
+    --bs-btn-active-bg: #283618;
+    --bs-btn-active-border-color: #283618;
+}
+
+.icon {
+    stroke: none;
+    width: 16px;
+    height: 16px;
+}
