@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header"></header>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+                <li class="breadcrumb-item active">Блог</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-4">Блог</h1>
+
+        <div class="section blog-filters mb-4">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control blog-search" placeholder="Поиск по статьям...">
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h6>Дата публикации:</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="dateFilter" value="all" id="allTime" checked>
+                        <label class="form-check-label" for="allTime">
+                            За всё время
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="dateFilter" value="month" id="lastMonth">
+                        <label class="form-check-label" for="lastMonth">
+                            За последний месяц
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="dateFilter" value="week" id="lastWeek">
+                        <label class="form-check-label" for="lastWeek">
+                            За последнюю неделю
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="postsList">
+        </div>
+
+        <div class="text-center mt-4 mb-5">
+            <button class="btn btn-primary" id="loadMoreBtn">Загрузить ещё</button>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+    <div id="modals"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+    <script src="../js/header.js"></script>
+
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
