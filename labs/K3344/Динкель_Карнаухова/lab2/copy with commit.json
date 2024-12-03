@@ -1,0 +1,46 @@
+{
+    "users": [
+      { 
+        "id": 1, 
+        "username": "employer1",    // или мейл???
+        "password": "password123", 
+        "role": "employer",        //отличить юзера от работодателя
+        "companyName": "TechCorp" 
+      },
+      { 
+        "id": 2, 
+        "username": "user1", 
+        "password": "password456", 
+        "role": "candidate" 
+      }
+    ],
+    "vacancies": [
+      { 
+        "id": 1, 
+        "title": "Frontend Developer", 
+        "description": "Develop amazing UIs", 
+        "salary": 80000, 
+        "experience": "Middle",
+        "industry": "IT", 
+        "employerId": 1  //вроде можно отсюда получать название компании
+      },
+      { 
+        "id": 2, 
+        "title": "Backend Developer", 
+        "description": "Build scalable APIs",  //хз как быть с большим описанием на странице вакансии
+        "salary": 90000, 
+        "experience": "Senior", 
+        "employerId": 1 
+      }
+    ],
+    "applications": [
+      {
+        "id": 1, 
+        "vacancyId": 1, //отсюда вроже можно взять инфу по вакансии типа названия
+        "candidateId": 2, //а отсюда можно взять имя кандидата (??)
+        "email": "john@example.com",
+        "resumeLink": "https://example.com/resume.pdf"
+      }
+    ]
+  }
+  

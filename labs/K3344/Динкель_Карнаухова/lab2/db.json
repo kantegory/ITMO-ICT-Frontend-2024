@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "employer1@mail.ru",
+      "password": "password123",
+      "role": "employer"
+    },
+    {
+      "id": "2",
+      "username": "user1@mail.ru",
+      "password": "password456",
+      "role": "candidate"
+    },
+    {
+      "id": "202a",
+      "username": "employer2@mail.ru",
+      "password": "123",
+      "role": "employer"
+    }
+  ],
+  "vacancies": [
+    {
+      "id": "bcec",
+      "title": "Руболес",
+      "description": "Рубить лес",
+      "salary": "10.000",
+      "experience": "Middle",
+      "employerId": "202a"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "username": "employer2@mail.ru",
+      "name": "Сосенки",
+      "description": "Продажа сосен оптом, давно на рынке",
+      "contacts": "sosniforsale@mail.ru"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "1",
+      "username": "user1@mail.ru",
+      "e-mail": "user1@mail.ru"
+    }
+  ],
+  "resumes": [
+    {
+      "id": "1",
+      "name": "Елена",
+      "surname": "Головач",
+      "phone": "89104566789",
+      "email": "user1@mail.ru",
+      "skills": "Python, Excel",
+      "education": "ITMO",
+      "work-experience": "Middle",
+      "candidateId": "2"
+    }
+  ],
+  "responses": [
+    {
+      "id": "1",
+      "candidateName": "Иван Иванов",
+      "email": "ivanov@example.com",
+      "resumeLink": "https://example.com/resume1.pdf",
+      "jobTitle": "Руболес",
+      "employerId": "202a"
+    },
+    {
+      "id": "2",
+      "candidateName": "Петр Петров",
+      "email": "petrov@example.com",
+      "resumeLink": "https://example.com/resume2.pdf",
+      "jobTitle": "Менеджер",
+      "employerId": "1"
+    }
+  ]
+}
