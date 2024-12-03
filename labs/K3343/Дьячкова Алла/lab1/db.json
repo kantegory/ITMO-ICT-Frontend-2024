@@ -1,0 +1,100 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "My new post",
+      "author": "Alice",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "dob": "1990-01-01",
+      "phone": "+79001234567",
+      "email": "ivanov@example.com",
+      "password": "hashed_password",
+      "rentedProperties": [
+        1
+      ],
+      "rentalHistory": [
+        1,
+        2
+      ],
+      "messages": [
+        {
+          "id": 1,
+          "propertyId": 1,
+          "content": "Здравствуйте, когда можно посмотреть квартиру?",
+          "timestamp": "2024-10-01T12:00:00Z",
+          "sender": "Иван"
+        }
+      ]
+    },
+    {
+      "firstName": "drtfyguh",
+      "lastName": "refq",
+      "email": "a@a.com",
+      "phone": "5656512345",
+      "dob": "2024-11-13",
+      "password": "$2a$10$rb8FxPpsAe8TGa43MEsBlerXAPr/wHZCNah4zUc7iELYv40fGMi7O",
+      "id": "c8da5295-366d-4617-bf13-065b21d0d209"
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "title": "Квартира на ул. Пушкина",
+      "description": "Краткое описание объекта...",
+      "owner": "Петр Петров",
+      "price": 50000,
+      "location": "Москва",
+      "type": "Квартира",
+      "images": [
+        "image1.jpg",
+        "image2.jpg"
+      ]
+    }
+  ],
+  "rentalHistory": [
+    {
+      "id": 1,
+      "userId": 1,
+      "propertyId": 1,
+      "startDate": "2024-01-01",
+      "endDate": "2024-06-01"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "propertyId": 1,
+      "startDate": "2023-05-01",
+      "endDate": "2023-12-01"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "propertyId": 1,
+      "content": "Здравствуйте, когда можно посмотреть квартиру?",
+      "timestamp": "2024-10-01T12:00:00Z",
+      "sender": "Иван"
+    }
+  ]
+}
