@@ -1,0 +1,107 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffebce;
+}
+.header .brand {
+    font-family: Quicksand, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #946A49;
+}
+
+.header .icons {
+    display: flex;
+    gap: 20px;
+    color: #946A49;
+}
+.icons i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: Quicksand, sans-serif;
+    background-color: #FFFAF3;
+}
+
+.profile-title {
+    font-family: Quicksand, sans-serif;
+    color: #946A49;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.h2 {
+    font-family: Quicksand, sans-serif;
+    color: #CF9363;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.h3 {
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #CF9363;
+    margin-top: 10px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.user-info {
+    padding: 20px;
+    background-color: #FFF0E1;
+    color: #7C5B3C;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.user-info h3 {
+    margin-bottom: 15px;
+}
+
+.list-group{
+    margin-bottom: 20px;
+}
+
+.list-group .list-group-item {
+    color: #946A49;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #946A49;
+}
+
+.list-group-item a:hover {
+    color: #a0522d;
+}
+

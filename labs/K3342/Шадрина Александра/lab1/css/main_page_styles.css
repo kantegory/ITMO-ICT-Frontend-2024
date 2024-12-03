@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffebce;
+}
+.header .brand {
+    font-family: Quicksand, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #946A49;
+}
+
+.header .icons {
+    display: flex;
+    gap: 20px;
+    color: #946A49;
+}
+.icons i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: Quicksand, sans-serif;
+    background-color: #FFFAF3;
+}
+
+.divider {
+    color: #946A49;
+}
+
+.h2 {
+    font-family: Quicksand, sans-serif;
+    color: #CF9363;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.search-bar input:focus {
+    border-color: #a0522d;
+    box-shadow: 0 0 5px rgba(160, 82, 45, 0.8);
+    outline: none;
+}
+
+.square-image {
+    align-content: space-evenly;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel-item .col-md-3 {
+    margin: 0 30px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+    color: #9C7F68;
+}
+
+.h3{
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #946A49;
+    margin-top: 10px;
+}
+
+.text-recipe {
+    color: #9C7F68;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 80px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #946A49;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #F5E8D0;
+    border: 1px solid #946A49;
+    z-index: 1000;
+    width: auto;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #946A49;
+}
+
+.filter-item:hover {
+    background-color: #E2C8A7;
+}
