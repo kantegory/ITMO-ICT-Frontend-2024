@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Platform - User Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/acc.css"> 
+</head>
+<body>
+
+<div class="container us_panel" role="main">
+    <header class="us_panel-header">
+        <h1 id="welcomeHeader">Welcome, [Username]</h1>
+        <p id="userIntro">Track your fitness progress and view your workout plans.</p>
+    </header>
+
+    <!-- Прогресс -->
+    <div class="card us_progress" aria-labelledby="progressTracking">
+        <div class="card-body">
+            <h2 class="card-title" id="progressTracking">Progress Tracking</h2>
+            <div class="d-flex justify-content-center">
+                <!-- Вес -->
+                <div class="circle-progress" aria-labelledby="weightLost">
+                    <svg viewBox="0 0 36 36">
+                        <circle class="bg-circle" cx="18" cy="18" r="16" fill="none" stroke-width="3"></circle>
+                        <circle class="main-circle-weight" cx="18" cy="18" r="16" fill="none" stroke-width="3" stroke-dasharray="50,100"></circle>
+                        <text x="50%" y="50%" class="progress-text" text-anchor="middle" dy=".3em">5kg</text>
+                    </svg>
+                    <p id="weightLost">Weight Lost</p>
+                </div>
+
+                <!-- Завершенные тренировки -->
+                <div class="circle-progress" aria-labelledby="workoutsCompleted">
+                    <svg viewBox="0 0 36 36">
+                        <circle class="bg-circle" cx="18" cy="18" r="16" fill="none" stroke-width="3"></circle>
+                        <circle class="main-circle-workouts" cx="18" cy="18" r="16" fill="none" stroke-width="3" stroke-dasharray="75,100"></circle>
+                        <text x="50%" y="50%" class="progress-text" text-anchor="middle" dy=".3em">15/20</text>
+                    </svg>
+                    <p id="workoutsCompleted">Workouts Completed</p>
+                </div>
+
+                <!-- Калории -->
+                <div class="circle-progress" aria-labelledby="caloriesBurned">
+                    <svg viewBox="0 0 36 36">
+                        <circle class="bg-circle" cx="18" cy="18" r="16" fill="none" stroke-width="3"></circle>
+                        <circle class="main-circle-calories" cx="18" cy="18" r="16" fill="none" stroke-width="3" stroke-dasharray="64,100"></circle>
+                        <text x="50%" y="50%" class="progress-text" text-anchor="middle" dy=".3em">3200</text>
+                    </svg>
+                    <p id="caloriesBurned">Calories Burned</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Тренировки -->
+    <div class="card" aria-labelledby="workoutSchedule">
+        <div class="card-body">
+            <h2 class="card-workout-title" id="workoutSchedule">Your Workout Plans</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Workout Type</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Тренировка 1 -->
+                    <tr>
+                        <td>Day 1</td>
+                        <td>Strength Training</td>
+                        <td>
+                            <button class="btn btn-custom">Start</button>
+                            <button class="btn btn-custom">Mark Completed</button>
+                        </td>
+                    </tr>
+                    <!-- Тренировка 2 -->
+                    <tr>
+                        <td>Day 2</td>
+                        <td>Cardio</td>
+                        <td>
+                            <button class="btn btn-custom">Start</button>
+                            <button class="btn btn-custom">Mark Completed</button>
+                        </td>
+                    </tr>
+                    <!-- Тренировка 3 -->
+                    <tr>
+                        <td>Day 3</td>
+                        <td>Flexibility</td>
+                        <td>
+                            <button class="btn btn-custom">Start</button>
+                            <button class="btn btn-custom">Mark Completed</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Профиль -->
+    <div class="card" aria-labelledby="profileInfo">
+        <div class="card-body">
+            <h2 id="profileInfo">Profile Information</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Height</th>
+                            <td id="height">168</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td id="weight">59</td>
+                        </tr>
+                        <tr>
+                            <th>Fitness Level</th>
+                            <td id="fitnessLevel">Intermediate</td>
+                        </tr>
+                        <tr>
+                            <th>Goals</th>
+                            <td id="goals">Lose weight</td>
+                        </tr>
+                        <tr>
+                            <th>Progress</th>
+                            <td id="progress">Lost 5 kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-end mt-3">
+                <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Всплывающее окно для редактирования профиля -->
+    <div class="modal fade" id="editProfileModal" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal window"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Enter your name" aria-required="true">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="Enter email" aria-required="true">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userWeight" class="form-label">Weight</label>
+                            <input type="text" class="form-control" id="userWeight" placeholder="Enter your weight" aria-required="true">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userHeight" class="form-label">Height</label>
+                            <input type="text" class="form-control" id="userHeight" placeholder="Enter your height" aria-required="true">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fitnessLevelEdit" class="form-label">Fitness Level</label>
+                            <select class="form-control" id="fitnessLevelEdit">
+                                <option>Beginner</option>
+                                <option>Intermediate</option>
+                                <option>Advanced</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userGoals" class="form-label">Goals</label>
+                            <select class="form-control" id="userGoals">
+                                <option>Lose weight</option>
+                                <option>Gain weight</option>
+                                <option>Improve endurance</option>
+                                <option>Build muscle</option>
+                                <option>Increase flexibility</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userProgress" class="form-label">Progress</label>
+                            <input type="text" class="form-control" id="userProgress" placeholder="Enter your progress" aria-required="true">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="editProfileForm">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/acc.js"></script> 
+</body>
+</html>
