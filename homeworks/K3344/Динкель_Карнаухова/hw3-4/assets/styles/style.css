@@ -1,0 +1,150 @@
+:root {
+    --bg-color: #F6F6F6; /* Светлый фон */
+    --hd-color: #1D1D1D; /* Цвет заголовка */
+    --nav-bar: #FF7E61; /* Цвет навигационной панели */
+    --btn-color: #F6F6F6; /* Цвет кнопок */
+    --border-color: #1b1f15; /* Цвет границ */
+    --ft-bg-color: #ffffff; /* Цвет фона для карточек и форм */
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --hd-color: #E0E0E0;
+    --nav-bar: #BB86FC; 
+    --btn-color: #1F1F1F; 
+    --border-color: #333333; 
+    --ft-bg-color: #1E1E1E; 
+    --text-color: #FFFFFF; 
+    --label-color: #E0E0E0;
+}
+
+.body, .html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+.main {
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* Начало хедера */
+.header {
+    color: var(--text-color);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    color: var(--text-color);
+}
+
+    .navbar-brand:hover {
+        color: var(--nav-bar);
+    }
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.nav-item {
+    padding-left: 10px;
+}
+
+/* Конец хедера */
+
+/* Начало кнопок */
+.btn:focus, .btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline-width: 1px;
+    outline-style: solid;
+    border-color: var(--border-color);
+    border-radius: 7px;
+    background-color: var(--btn-color);
+    color: var(--text-color); 
+}
+
+.btn-custom:hover {
+   background-color: var(--nav-bar);
+}
+
+.btn-custom-primary {
+    background-color: var(--nav-bar);
+    outline-width: 1px;
+    outline-style: solid;
+    border-color: var(--border-color);
+    border-radius: 7px;
+    color: var(--text-color); 
+}
+
+/* Конец кнопок */
+
+.form-control, .form-select {
+    background-color: var(--bg-color);
+    border-radius: 7px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+}
+
+    .form-control:focus, .form-select:focus, .form-control:active, .form-select:active {
+        border-color: var(--border-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+.card-body, .vacancy-container, .login-container, .signup-container, .user-container, .employeraccount-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--ft-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+}
+
+footer {
+    width: 100%;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 10px 0;
+}
+
+.icon {
+    stroke: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+    fill: currentColor;
+}
+
+/* Цвет меток */
+label {
+    color: var(--label-color);
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+::placeholder {
+    color: #6c757d;
+}
+
+/* Тёмная тема */
+.dark-theme ::placeholder {
+    color: var(--text-color);
+}
+
+.modal-content {
+    background-color: var(--ft-bg-color); 
+    color: var(--text-color);
+}
