@@ -8,6 +8,23 @@ body, html {
     color: #fff;
 }
 
+
+.icon {
+    stroke: currentColor;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.icon--rotate {
+    transform: rotate(90deg);
+}
+
+.icon--fill {
+    fill: currentColor;
+}
+
+
 #saveButton, #login-btn, #register-btn {
     background-color: #556B2F;
     border-color: #556B2F;

@@ -204,8 +204,8 @@ body, html {
 }
 
 #savedRecipes .list-group-item {
-    background-color: #808080; /* Белый фон элемента */
-    border: 1px solid #333; /* Легкая граница */
+    background-color: #808080;
+    border: 1px solid #333;
     color: #fff
 }
 
