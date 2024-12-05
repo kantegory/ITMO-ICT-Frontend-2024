@@ -1,0 +1,16 @@
+body {
+    background-color: var(--background-color);
+}
+
+
+.container {
+    margin-top: 50px;
+}
+
+.list-group-item {
+    border-radius: 0.25rem;
+    background-color: var(--card-bg-color);
+    transition: background-color 0.3s;
+}
+
+
