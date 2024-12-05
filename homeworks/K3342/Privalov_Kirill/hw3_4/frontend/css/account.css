@@ -1,0 +1,14 @@
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+}
+
+
+#user-image {
+    width: 150px;
+    height: 150px;
+}
+
+p {
+    margin-bottom: 10px;
+}
