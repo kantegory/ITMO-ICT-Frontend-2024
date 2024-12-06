@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "0586",
+      "name": "Arina",
+      "email": "admin@yem.com",
+      "password": "admin123"
+    },
+    {
+      "id": "f2bc",
+      "name": "test",
+      "email": "test@test.ru",
+      "password": "12345678"
+    },
+    {
+      "id": "546c",
+      "name": "Heshtest",
+      "email": "test@testing.ru",
+      "password": "B1A+ifE/6bQXNf5ftJnd2/QcAalUP/GuqncjEX2OfAI="
+    }
+  ]
+}
