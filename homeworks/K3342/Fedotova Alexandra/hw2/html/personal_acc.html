@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Platform - User Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/acc.css">
+</head>
+<body>
+
+<div class="container us_panel" role="main">
+    <header class="us_panel-header">
+        <h1 id="welcomeHeader">Welcome, [Username]</h1>
+        <p id="userIntro">Track your fitness progress and view your workout plans.</p>
+    </header>
+
+    <!-- Прогресс-бар -->
+    <div class="card us_progress" aria-labelledby="progressTracking">
+        <div class="card-body">
+            <h2 class="card-title" id="progressTracking">Progress Tracking</h2>
+            <p class="card-text">View your overall progress below.</p>
+            <div class="progress mb-3" aria-live="polite">
+                <div class="progress-bar user_bar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="Progress to goal: 70%">
+                    70% to goal
+                </div>
+            </div>
+            <ul class="list-group" aria-labelledby="progressList">
+                <li class="list-group-item" role="listitem">Weight lost: 5kg</li>
+                <li class="list-group-item" role="listitem">Workouts completed: 15/20</li>
+                <li class="list-group-item" role="listitem">Calories burned this week: 3200 kcal</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Расписание тренировок -->
+    <div class="card" aria-labelledby="workoutSchedule">
+        <div class="card-body">
+            <h2 class="card-workout-title" id="workoutSchedule">Your Workout Plans</h2>
+            <p class="card-workout-text">Check your current workout schedule below.</p>
+            <ul class="list-group" aria-labelledby="workoutList">
+                <li class="list-group-item" role="listitem">
+                    <strong>Day 1 - Strength Training</strong>
+                    <p>Exercises: Squats, Bench Press, Deadlift</p>
+                </li>
+                <li class="list-group-item" role="listitem">
+                    <strong>Day 2 - Cardio</strong>
+                    <p>Exercises: Running, Cycling</p>
+                </li>
+                <li class="list-group-item" role="listitem">
+                    <strong>Day 3 - Flexibility & Stretching</strong>
+                    <p>Exercises: Yoga, Pilates</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+    <!-- Данные пользователя -->
+    <div class="card" aria-labelledby="profileInfo">
+        <div class="card-body">
+            <h2 class="card-profile-title" id="profileInfo">Profile Information</h2>
+            <ul class="list-group" aria-labelledby="profileList">
+                <li class="list-group-item" role="listitem">Name: [User Name]</li>
+                <li class="list-group-item" role="listitem">Email: [User Email]</li>
+                <li class="list-group-item" role="listitem">Membership: Premium</li>
+            </ul>
+            <div class="text-end mt-3 edit">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal" aria-label="Edit your profile information">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <div class="navigation-butt">
+        <a href="train_search.html" class="btn btn-primary" aria-label="Search for workout plans">Search Workouts</a>
+        <a href="healthy_food.html" class="btn btn-primary" aria-label="View health and nutrition blog">Health & Nutrition Blog</a>
+    </div>
+</div>
+
+<!-- Всплывающее окно изменить данные -->
+<div class="modal fade" id="editProfileModal" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal window"></button>
+            </div>
+            <div class="modal-body">
+                <form aria-labelledby="editProfileModalLabel">
+                    <div class="mb-3 name_input">
+                        <label for="userName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Enter your name" aria-required="true">
+                    </div>
+                    <div class="mb-3 email_input">
+                        <label for="userEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="userEmail" placeholder="Enter email" aria-required="true">
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Save your profile changes">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
