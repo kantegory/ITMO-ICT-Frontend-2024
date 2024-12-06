@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <header id="header"></header>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+                <li class="breadcrumb-item active">Личный кабинет</li>
+            </ol>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <div class="profile-image">
+                            <!-- TODO добавить фото -->
+                            <img src="/api/placeholder/150/150" alt="Фото профиля" class="rounded-circle">
+                        </div>
+
+                        <h4 class="profile-name"></h4>
+                        <div class="profile-email"></div>
+
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <div class="stat-number"></div>
+                                <div class="stat-label"></div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number"></div>
+                                <div class="stat-label"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="profile-content">
+                        <h2>Мой прогресс</h2>
+                        <div class="progress-chart mb-4">
+                            <!-- TODO график тренировок вперед -->
+                        </div>
+                        <h3>Последние тренировки</h3>
+                        <div class="workout-list">
+                            <!-- TODO график прошедших тренировок -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+    <div id="modals"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/header.js"></script>
+
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
