@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "1730",
+      "username": "alexa",
+      "email": "alexasha04@list.ru",
+      "password": "bibliophile2608"
+    },
+    {
+      "id": "e4d6",
+      "username": "natayesa",
+      "email": "natayesa@mail.ru",
+      "password": "natayesa21"
+    },
+    {
+      "id": "d879",
+      "username": "valera",
+      "email": "mohvalera@gmail.com",
+      "password": "mohvalera"
+    },
+    {
+      "id": "3598",
+      "username": "thisaleksa",
+      "email": "af2004@gmail.com",
+      "password": "thisaleksa"
+    },
+    {
+      "id": "02e5",
+      "username": "michael",
+      "email": "michellesh@mail.ru",
+      "password": "michelle",
+      "registrationDate": "2024-11-21T19:25:04.551Z"
+    }
+  ]
+}
