@@ -249,7 +249,8 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 ### Фреймворк Vue.JS: компонентный подход
 
-Презентация: https://disk.yandex.ru/i/4ZF_XDu25jmMUg
+Презентация: https://disk.yandex.ru/i/4ZF_XDu25jmMUg  
+Презентация основы Vue: https://disk.yandex.ru/i/EJa8QTvZfz8TGw  
 Видео-лекция: https://youtu.be/0jPwrj5f8no  
 Примеры:
 - простая реализация роутера для понимания основных концепций - https://github.com/kantegory/mentoring/tree/master/19_frontend_router
@@ -261,7 +262,7 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 ### Фреймворк Vue.JS: миксины, composable, маршрутизация (navigation guards, meta)
 
-Презентация: https://disk.yandex.ru/i/vB_CmxGKVxVvKA
+Презентация: https://disk.yandex.ru/i/tt0P5-p1LXJGFQ
 
 ### Фреймворк Vue.JS: управление состоянием
 
@@ -286,4 +287,4 @@ https://www.youtube.com/watch?v=8LFbS78a4Rw
 
 ### Контрольная работа 2
 
-Дата проведения: -
+Дата проведения: 27.12.2024
