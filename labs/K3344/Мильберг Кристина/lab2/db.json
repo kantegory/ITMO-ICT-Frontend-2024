@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "kristina",
+      "password": "12345",
+      "token": "mock-token"
+    },
+    {
+      "id": "5a48",
+      "username": "andrey",
+      "password": "12345",
+      "token": "token-1732367557873",
+      "birthdate": "2005-10-10",
+      "birthtime": "11:20",
+      "birthplace": "Тюмень, Россия",
+      "zodiac": "Весы"
+    }
+  ]
+}
