@@ -1,0 +1,27 @@
+.auth-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.auth-form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.auth-form .btn {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
