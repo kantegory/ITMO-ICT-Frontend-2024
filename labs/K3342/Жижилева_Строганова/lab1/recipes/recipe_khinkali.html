@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe | Recipe App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <button id="theme-toggle" class="btn btn-secondary">
+  Toggle Dark/Light Theme
+  </button>
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h2 class="text-center my-4">Khinkali</h2>
+    </header>
+
+    <section aria-labelledby="recipeTitle">
+      <h2 id="recipeTitle" class="visually-hidden">Recipe Details</h2>
+
+      <div class="author-section d-flex align-items-center mb-4">
+        <p class="me-3 mb-0">
+          <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </p>
+        <button class="btn btn-primary" id="subscribeBtn" aria-label="Subscribe to Author">
+          Subscribe to Author
+        </button>
+      </div>
+
+      <article class="recipe-content mt-4">
+        <figure class="text-center">
+          <img src="../img/side-close-up-view-khinkali-appetizing-khinkali-cutting-board.jpg" class="img-fluid mb-3" alt="Recipe Image">
+          <figcaption>Try it if you like Georgia</figcaption>
+        </figure>
+
+        <section aria-labelledby="ingredientsHeading">
+          <h3 id="ingredientsHeading">Ingredients</h3>
+          <ul>
+        <li>Flour</li>
+        <li>Meat</li>
+        <li>Water</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="stepsHeading">
+          <h3 id="stepsHeading">Steps</h3>
+          <ol>
+            <li>Make dough: Mix flour, water, and salt to form a smooth dough. Let it rest for 30 minutes.</li>
+            <li>Prepare filling: Mix ground beef or pork with onions, garlic, herbs, salt, pepper, and water or broth.</li>
+            <li>Shape dumplings: Roll out dough into circles. Place filling in the center, then pinch and twist the edges to seal.</li>
+            <li>Boil: Cook Khinkali in salted boiling water until they float, about 7-10 minutes.</li>
+            <li>Serve: Drain and serve hot, traditionally eaten by hand.</li>
+          </ol>
+        </section>
+
+        <div class="mt-4 d-flex align-items-center">
+          <button class="btn btn btn-custom-like me-2" id="likeBtn" aria-pressed="false" aria-label="Like this recipe">
+            Like <span id="likeCount">0</span>
+          </button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal" aria-label="Add a comment">
+            Comment
+          </button>
+        </div>
+
+        <section aria-labelledby="commentsHeading" class="mt-4">
+          <h3 id="commentsHeading">Comments</h3>
+          <div id="commentsList" class="border p-3" tabindex="0" aria-live="polite"></div>
+        </section>
+      </article>
+    </section>
+
+    <!-- Модальное окно для комментариев -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="commentModalLabel">Add Comment</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="commentAuthor" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="commentText" class="form-label">Comment</label>
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitCommentBtn">Submit Comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/recipe.js"></script>
+  <script src="../js/theme.js"></script>
+</body>
+</html>
