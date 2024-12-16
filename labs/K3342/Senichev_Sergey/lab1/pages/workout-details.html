@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали тренировки - FitLife</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/workouts.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+                <li class="breadcrumb-item"><a href="workouts.html">Тренировки</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Интенсивное кардио</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <!-- подробности тренировки -->
+            <div class="col-lg-8">
+                <div class="workout-video mb-4">
+                    <!-- TODO видео -->
+                    <div class="ratio ratio-16x9">
+                        <img src="/api/placeholder/800/450" class="img-fluid" alt="Видео тренировки">
+                    </div>
+                </div>
+
+                <div class="workout-info">
+                    <h1 class="mb-3">Интенсивное кардио</h1>
+                    <div class="workout-meta mb-4">
+                        <span class="badge bg-primary me-2">30 минут</span>
+                        <span class="badge bg-success me-2">Начальный уровень</span>
+                        <span class="badge bg-info">Кардио</span>
+                    </div>
+
+                    <h3>Описание</h3>
+                    <p class="mb-4">
+                        Интенсивная кардио-тренировка, направленная на сжигание жира и улучшение выносливости.
+                        Подходит для начинающих, включает разминку и заминку.
+                    </p>
+
+                    <h3>Программа тренировки</h3>
+                    <div class="workout-program">
+                        <div class="accordion" id="workoutSteps">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1">
+                                        Разминка (5 минут)
+                                    </button>
+                                </h2>
+                                <div id="step1" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Легкий бег на месте - 2 минуты</li>
+                                            <li>Круговые движения руками - 1 минута</li>
+                                            <li>Прыжки на месте - 1 минута</li>
+                                            <li>Растяжка - 1 минута</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2">
+                                        Основная часть (20 минут)
+                                    </button>
+                                </h2>
+                                <div id="step2" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Высокие колени - 3 минуты</li>
+                                            <li>Берпи - 2 минуты</li>
+                                            <li>Прыжки со скакалкой - 3 минуты</li>
+                                            <li>Отдых - 1 минута</li>
+                                            <li>Повторить 2 раза</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3">
+                                        Заминка (5 минут)
+                                    </button>
+                                </h2>
+                                <div id="step3" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Ходьба на месте - 2 минуты</li>
+                                            <li>Растяжка всего тела - 3 минуты</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Тренер</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <!-- TODO фото -->
+                            <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Фото тренера">
+                            <div>
+                                <h5 class="mb-0">Анна Петрова</h5>
+                                <small class="text-muted">Сертифицированный тренер</small>
+                            </div>
+                        </div>
+                        <p>5 лет опыта в проведении кардио-тренировок</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Что потребуется</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check me-2"></i>Удобная одежда</li>
+                            <li class="mb-2"><i class="fas fa-check me-2"></i>Скакалка</li>
+                            <li class="mb-2"><i class="fas fa-check me-2"></i>Бутылка воды</li>
+                            <li class="mb-2"><i class="fas fa-check me-2"></i>Коврик для упражнений</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Начать тренировку</h4>
+                        <button class="btn btn-primary btn-lg w-100">Начать</button>
+                        <button class="btn btn-outline-primary w-100 mt-2">Добавить в избранное</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="similar-workouts mt-5">
+            <h3>Похожие тренировки</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card workout-card">
+                        <!-- TODO фото -->
+                        <img src="/api/placeholder/400/225" class="card-img-top" alt="Тренировка">
+                        <div class="card-body">
+                            <h5 class="card-title">Кардио для начинающих</h5>
+                            <p class="card-text">
+                                <span class="badge bg-primary">20 минут</span>
+                                <span class="badge bg-success">Начальный уровень</span>
+                            </p>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TODO похожие тренировки -->
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/workouts.js"></script>
+
+    <script>
+        // Загрузка компонентов
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #eeeeee;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-color: rgba(0, 123, 255, 0.1);
+}
+
+[data-theme="dark"] {
+  --primary-color: #4dabf7;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #2d2d2d;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --hover-color: rgba(13, 110, 253, 0.15);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.profile-sidebar,
+.blog-filters,
+.workout-filters,
+.auth-form,
+.profile-content {
+  background: var(--surface-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.profile-name {
+  color: var(--text-primary);
+}
+
+.profile-email,
+.stat-label {
+  color: var(--text-secondary);
+}
+
+.profile-menu a {
+  color: var(--text-primary);
+}
+
+.profile-menu a:hover {
+  background: var(--hover-color);
+}
+
+.blog-card {
+  background: var(--surface-color);
+  border-color: var(--border-color);
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.auth-form {
+  background: var(--surface-color);
+}
+
+.auth-form .form-control {
+  background: var(--background-color);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.auth-links a {
+  color: var(--primary-color);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    fill: currentColor;
+}
+
+.sprite-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.nav-link:focus,
+.navbar-brand:focus,
+.btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle-icon,
+    .theme-toggle,
+    .nav-link,
+    .btn {
+        transition: none;
+    }
+}
+
+.btn-outline-light {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--text-primary);
+  color: var(--background-color);
+}
+
+.navbar-brand {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-toggler {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.navbar-toggler-icon {
+    background-color: var(--text-primary);
+}
+
+/* Стили для мобильного меню */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.theme-toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+    transform: rotate(180deg);
+}
+
+[data-theme="dark"] {
+    --text-primary: #ffffff;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-color: #4dabf7;
+    --hover-color: rgba(77, 171, 247, 0.15);
+}
+
+/* Добавьте в main.css */
+
+/* Навигация */
+.nav-link {
+    color: var(--text-primary);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Стили для страницы тренировок */
+.workout-filters {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+}
+
+.workout-card {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+/* Стили для блога */
+.blog-filters {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+}
+
+.blog-card {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+.blog-meta {
+    color: var(--text-secondary);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Стили для профиля */
+.profile-sidebar {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+.profile-content {
+    background: var(--surface-color);
+}
+
+.profile-name {
+    color: var(--text-primary);
+}
+
+.profile-menu a {
+    color: var(--text-primary);
+}
+
+.profile-menu a:hover {
+    background: var(--hover-color);
+}
+
+.profile-menu a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.stat-number {
+    color: var(--primary-color);
+}
+
+/* Общие стили для форм */
+.form-control {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.form-control:focus {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+}
+
+/* Фиксим навигацию */
+.nav-link,
+.navbar-brand,
+.theme-toggle {
+    color: var(--text-primary) !important;
+}
+
+.icon {
+    fill: var(--text-primary);
+}
+
+.profile-menu a {
+    color: var(--text-primary) !important;
+}
+
+.profile-menu a.active {
+    background: var(--primary-color);
+    color: white !important;
+}
+
+.btn-outline-light {
+    color: var(--text-primary) !important;
+    border-color: var(--text-primary) !important;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-primary) !important;
+    color: var(--background-color) !important;
+}
