@@ -1,73 +1,82 @@
 document.addEventListener('DOMContentLoaded', function() {
     const today = new Date();
-    const maxDate = today.toISOString().split('T')[0]; // YYYY-MM-DD
+    const maxDate = today.toISOString().split('T')[0];
     document.getElementById('dob').setAttribute('max', maxDate);
 });
 
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
+document.getElementById('registrationForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const dob = document.getElementById('dob').value;
+    try {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const dob = document.getElementById('dob').value;
 
-    // Validate email format
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email.");
-        return;
-    }
-
-    // Validate phone number format (10 digits)
-    if (!/^\d{10}$/.test(phone)) {
-        alert("Please enter a valid phone number (10 digits).");
-        return;
-    }
-
-    // Validate password length
-    if (password.length < 8) {
-        alert("Password must be at least 8 characters long.");
-        return;
-    }
-
-    // Validate password confirmation
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-    }
-
-    const registrationData = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        password: password,  // Send plaintext password
-        dob: dob
-    };
-
-    fetch('http://localhost:3000/register', { // Make sure this URL matches the server endpoint
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registrationData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.id) {
-            // User registered successfully
-            localStorage.setItem('loggedInUserId', data.id);
-            window.location.href = 'user.html';  // Redirect to user dashboard or home page
-        } else {
-            alert('Registration error: ' + data.message);
+        // Validate email format
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Пожалуйста, введите корректный email.");
+            return;
         }
-    })
-    .catch(error => {
+
+        // Validate phone number format (10 digits)
+        if (!/^\d{10}$/.test(phone)) {
+            alert("Пожалуйста, введите корректный номер телефона (10 цифр).");
+            return;
+        }
+
+        // Validate password length
+        if (password.length < 8) {
+            alert("Пароль должен быть не менее 8 символов.");
+            return;
+        }
+
+        // Validate password confirmation
+        if (password !== confirmPassword) {
+            alert("Пароли не совпадают.");
+            return;
+        }
+
+        console.log('Sending registration request...'); // Debug log
+
+        const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                firstName,
+                lastName,
+                email,
+                phone,
+                password,
+                dob
+            })
+        });
+
+        console.log('Response received:', response.status); // Debug log
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Server error');
+        }
+
+        const data = await response.json();
+        console.log('Registration successful:', data); // Debug log
+
+        if (data.success) {
+            localStorage.setItem('loggedInUserId', data.id);
+            localStorage.setItem('accessToken', data.accessToken);
+            window.location.href = 'user.html';
+        } else {
+            alert('Ошибка регистрации: ' + data.message);
+        }
+    } catch (error) {
         console.error('Registration error:', error);
-        alert('An error occurred during registration. Please try again.');
-    });
+        alert('Произошла ошибка при регистрации: ' + (error.message || 'Пожалуйста, попробуйте снова.'));
+    }
 });

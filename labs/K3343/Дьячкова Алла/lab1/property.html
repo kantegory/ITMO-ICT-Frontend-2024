@@ -17,32 +17,24 @@
 
     <main class="container mt-5">
         <article class="row">
-            <!-- Галерея изображений -->
             <section class="col-md-6" aria-labelledby="gallery-heading">
-                <h2 id="gallery-heading" class="visually-hidden">Фотографии объекта недвижимости</h2>
-                <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Галерея фотографий объекта">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/apartment1.jpg" class="d-block w-100" alt="Фото недвижимости 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/apartment2.jpg" class="d-block w-100" alt="Фото недвижимости 2">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev"
-                        aria-label="Предыдущий слайд">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Предыдущий</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next"
-                        aria-label="Следующий слайд">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Следующий</span>
-                    </button>
+            <h2 id="gallery-heading" class="visually-hidden">Фотографии объекта недвижимости</h2>
+            <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Галерея фотографий объекта">
+                <div class="carousel-inner">
                 </div>
-            </section>
+                <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev"
+                    aria-label="Предыдущий слайд">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next"
+                    aria-label="Следующий слайд">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </section>
 
-            <!-- Информация об объекте недвижимости -->
             <section class="col-md-6" aria-labelledby="property-details">
                 <h2 id="property-details">Детали объекта недвижимости</h2>
 
@@ -50,31 +42,38 @@
                 <p><strong>Расположение:</strong> <span id="property-location" aria-label="Адрес объекта">г. Москва, ул. Пушкина, д. 10</span></p>
                 <p><strong>Количество комнат:</strong> <span id="property-rooms" aria-label="Количество комнат">3</span></p>
                 <p id="property-description" aria-label="Описание объекта">Просторная 3-комнатная квартира, полностью меблирована, с отличной транспортной доступностью и рядом с парком.</p>
-
-                <h3>Условия аренды</h3>
-                <ul>
-                    <li>Минимальный срок аренды: 12 месяцев</li>
-                    <li>Залог: 1 месяц аренды</li>
-                    <li>Включены коммунальные услуги</li>
-                </ul>
-
-                <h3>Дополнительная информация</h3>
-                <ul>
-                    <li><strong>Тип собственности:</strong> частная</li>
-                    <li><strong>Этаж:</strong> 5 из 10</li>
-                    <li><strong>Площадь:</strong> 75 м²</li>
-                </ul>
-
                 <a href="search.html" class="btn btn-secondary mt-3" aria-label="Назад к результатам поиска">Назад к поиску</a>
-                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Открыть диалог с арендодателем">Диалог с арендодателем</button>
+                <button class="btn btn-primary mt-3" id='open-dialog' data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Открыть диалог с арендодателем">Диалог с арендодателем</button>
+                <button class="btn btn-primary mt-3" id='booking-btn' aria-label="Забронировать">Заявка на бронь</button>
+
             </section>
         </article>
     </main>
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Забронировать недвижимость</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="modalBookingForm">
+                        <div class="mb-3">
+                            <label for="stdate" class="form-label">Дата начала аренды</label>
+                            <input type="date" class="form-control" id="stdate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enddate" class="form-label">Дата окончания аренды</label>
+                            <input type="date" class="form-control" id="enddate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Подтвердить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Футер -->
-    <footer id="footer" class="footer" role="contentinfo" aria-label="Подвал сайта"></footer>
 
-    <!-- Модальное окно для авторизации -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -83,14 +82,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="modalLoginForm">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Имя пользователя</label>
-                            <input type="text" class="form-control" id="username" placeholder="Введите имя пользователя">
+                            <label for="modalEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="modalEmail" placeholder="Введите email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+                            <label for="modalPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="modalPassword" placeholder="Введите пароль" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Войти</button>
                     </form>
@@ -99,8 +98,13 @@
         </div>
     </div>
 
+    <footer id="footer" class="footer" role="contentinfo" aria-label="Подвал сайта"></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <script src="js/property.js"></script>
     <script src="js/layout.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

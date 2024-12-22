@@ -18,6 +18,10 @@
 
     <main class="container mt-5">
         <h2 class="text-center">Поиск недвижимости</h2>
+        <div class="mb-3">
+            <label for="titleSearch" class="form-label">Поиск по названию</label>
+            <input type="text" id="titleSearch" class="form-control" placeholder="Введите название недвижимости" aria-label="Поиск по названию">
+        </div>
         <div class="row">
             <aside class="col-md-3 sidebar" role="complementary">
                 <form id="searchForm" aria-labelledby="search-form-heading">
@@ -87,13 +91,11 @@
             <section class="col-md-9 results-container" role="region" aria-labelledby="search-results-heading">
                 <h3 id="search-results-heading" class="visually-hidden">Результаты поиска</h3>
                 <div id="searchResults" class="mt-5">
-                    <!-- Здесь будут отображаться результаты -->
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Футер -->
     <footer id="footer" class="footer" role="contentinfo" aria-label="Подвал сайта"></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>

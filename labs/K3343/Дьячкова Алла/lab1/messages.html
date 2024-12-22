@@ -18,28 +18,18 @@
     <main class="container mt-5">
         <section>
             <h1 class="text-center" id="messages-heading">История сообщений</h1>
-
-            <div id="messageList" class="mt-4">
-                <div class="list-group" role="list">
-                    <div class="list-group-item" role="listitem">
-                        <strong>Арендодатель:</strong>
-                        <p>Когда вы можете приехать посмотреть квартиру?</p>
-                        <small class="text-muted">15 Октября 2024, 14:32</small>
-                    </div>
-                    <div class="list-group-item" role="listitem">
-                        <strong>Вы:</strong>
-                        <p>Я могу прийти в субботу в 15:00.</p>
-                        <small class="text-muted">15 Октября 2024, 15:00</small>
-                    </div>
-                </div>
+            <div class="property-title" id="propertyTitle">
+                <a href="#" class="property-link" id="propertyLink">Название недвижимости</a>
+            </div>
+            <div id="messageList" class="messages-container">
             </div>
         </section>
 
         <section>
             <h3 class="mt-5">Отправить новое сообщение</h3>
-            <form id="sendMessageForm" onsubmit="return sendMessage()" aria-labelledby="sendMessageForm">
+            <form id="sendMessageForm" onsubmit="return sendMessage(event)" aria-labelledby="sendMessageForm">
                 <div class="mb-3">
-                    <label for="messageText" class="form-label">Ваше сообщение</label>
+                    <label for="messageText" class="form-label"></label>
                     <textarea class="form-control" id="messageText" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Отправить сообщение</button>
@@ -47,8 +37,29 @@
             </form>
         </section>
     </main>
-
-    <!-- Футер -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="modalLoginForm">
+                        <div class="mb-3">
+                            <label for="modalEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="modalEmail" placeholder="Введите email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="modalPassword" placeholder="Введите пароль" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer id="footer" class="footer" role="contentinfo" aria-label="Подвал сайта"></footer>
 
     <script src="js/layout.js"></script>
