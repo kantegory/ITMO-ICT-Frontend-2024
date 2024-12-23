@@ -1,0 +1,166 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "lina",
+      "password": "12345",
+      "token": "mock-token",
+      "birthdate": "2003-12-19",
+      "zodiac": "Стрелец",
+      "birthtime": "09:45",
+      "birthplace": "Ижевск, Россия"
+    },
+    {
+      "id": "30fe",
+      "username": "kristina",
+      "password": "54321",
+      "token": "token-1732366938597",
+      "birthdate": "2003-12-08",
+      "birthtime": "",
+      "birthplace": "Самара, Россия",
+      "zodiac": "Стрелец"
+    },
+    {
+      "id": "2122",
+      "username": "yulia",
+      "password": "123456",
+      "token": "token-1732396421966",
+      "birthdate": "1996-11-22",
+      "birthtime": "09:45",
+      "birthplace": "Ижевск, Россия",
+      "zodiac": "Скорпион"
+    },
+    {
+      "id": "0b50",
+      "username": "alina",
+      "password": "alina",
+      "token": "token-1734263804811"
+    },
+    {
+      "id": "61cf",
+      "username": "test",
+      "password": "testt",
+      "token": "mock-token-1734277558802",
+      "birthdate": "1111-11-11",
+      "zodiac": "Овен",
+      "birthplace": "Пермь",
+      "birthtime": "11:09"
+    }
+  ],
+  "arcanaList": [
+    {
+      "title": "Маг",
+      "description": "«Маг берет свободы столько, сколько может взять».Это динамичные и осознанные люди, способны \"вытащить\" себя из любой ситуации, т.к. очень уверены в себе и в своих силах...",
+      "image": "public/mag.png"
+    },
+    {
+      "title": "Верховная жрица",
+      "description": "Если Маг – это Мужчина-Творец...",
+      "image": "public/highpriestess.png"
+    },
+    {
+      "title": "Императрица",
+      "description": "Это аркан матери, жены, реализованной женщины. Императрица любит и любима. Знает толк в комфорте и достатке...",
+      "image": "public/imperatrica.png"
+    },
+    {
+      "title": "Император",
+      "description": "От таких людей веет абсолютной властью...",
+      "image": "public/theemperor.png"
+    },
+    {
+      "title": "Верховный жрец",
+      "description": "Если Император – это власть светская, земная, то Жрец – власть духовная, власть над убеждениями и верованиями...",
+      "image": "public/ierofant.png"
+    }
+  ],
+  "compatibilityMessages": [
+    {
+      "range": [
+        90,
+        100
+      ],
+      "message": "Вы прекрасно подходите друг другу! Это настоящая гармония."
+    },
+    {
+      "range": [
+        70,
+        89
+      ],
+      "message": "У вас много общего, но иногда могут возникать трудности. Главное — работать над отношениями!"
+    },
+    {
+      "range": [
+        50,
+        69
+      ],
+      "message": "Есть потенциал, но потребуется работа и терпение."
+    },
+    {
+      "range": [
+        0,
+        49
+      ],
+      "message": "Совместимость оставляет желать лучшего. Возможно, вам стоит пересмотреть свои отношения."
+    }
+  ],
+  "results": [
+    {
+      "gender": "male",
+      "message": "Вы прирождённый лидер, всё получится!"
+    },
+    {
+      "gender": "female",
+      "message": "Вы вдохновение для окружающих!"
+    }
+  ],
+  "sections": [
+    {
+      "category": "матрица судьбы",
+      "title": "Матрица судьбы",
+      "content": "Матрица судьбы — это метод самопознания человека. Он рассказывает о заложенном от рождения потенциале человека..."
+    },
+    {
+      "category": "натальная карта",
+      "title": "Натальная карта",
+      "content": "Натальная карта — это персональный гороскоп, который рассчитывается строго по дате, времени и месту рождения..."
+    },
+    {
+      "category": "проверка совместимости",
+      "title": "Проверка совместимости",
+      "content": "В начале отношений влюбленные искренне верят, что встретили вторую половинку, но когда страсти немного стихают..."
+    }
+  ],
+  "natal_cards": [
+    {
+      "name": "Тимати",
+      "image": "public/timati.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show?z=video-211232966_456240469%2Fclub211232966"
+    },
+    {
+      "name": "Бурунов",
+      "image": "public/burunov.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show/all?z=video-211232966_456240349%2Fclub211232966"
+    },
+    {
+      "name": "Мигель",
+      "image": "public/migel.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show/all?z=video-211232966_456239910%2Fclub211232966"
+    },
+    {
+      "name": "Артём Дзюба",
+      "image": "public/dzuba.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show/all?z=video-211232966_456240561%2Fclub211232966"
+    },
+    {
+      "name": "Роман Каграманов",
+      "image": "public/kagramanov.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show/all?z=video-211232966_456240203%2Fclub211232966"
+    },
+    {
+      "name": "Алексей Жидковский",
+      "image": "public/zhidkovskiy.png",
+      "link": "https://vk.com/video/@natalnaya_karta_show/all?z=video-211232966_456240051%2Fclub211232966"
+    }
+  ]
+}
