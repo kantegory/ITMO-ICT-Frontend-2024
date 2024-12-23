@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Рецепты</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
+  </head>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-weight: bold; color: darkgreen;">YUMMY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="personal-cabinet-link" href="index.html">
+                            <svg class="icon">
+                                <use xlink:href="#userIcon"></use>
+                            </svg>
+                            Личный кабинет
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="recipes-menu" href="recipes.html">
+                            <svg class="icon">
+                                <use xlink:href="#recipeIcon"></use>
+                            </svg>
+                            Рецепты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="list-of-chefs" href="chefs.html">
+                            <svg class="icon">
+                                <use xlink:href="#cookIcon"></use>
+                            </svg>
+                            Кулинары
+                        </a>
+                    </li>
+                </ul>
+                <a href="login.html" class="btn btn-danger" id="logoutButton">
+                    <svg class="icon">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                    Выйти
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none">
+    <symbol id="recipeIcon" viewBox="0 0 512 512" version="1.1" x="0px" y="0px">
+        <g><g><path d="M499.5,30.517h-7.386v-2.567c0-6.892-5.607-12.5-12.5-12.5h-38.911c-6.893,0-12.5,5.608-12.5,12.5v107.495 c0,3.731,1.652,7.076,4.253,9.369v241.842c0,0.066,0.009,0.131,0.01,0.197c0.001,0.067-0.005,0.135-0.003,0.202 c0.736,21.012,5.168,38.923,12.161,49.141c1.838,2.683,4.811,4.324,8.035,4.497v10.488c0,4.143,3.357,7.5,7.5,7.5 s7.5-3.357,7.5-7.5v-10.488c3.222-0.173,6.197-1.814,8.036-4.498c6.991-10.215,11.423-28.126,12.159-49.144 c0.002-0.065-0.004-0.131-0.003-0.196c0.002-0.066,0.01-0.132,0.01-0.199V144.814c2.601-2.293,4.253-5.638,4.253-9.369v-32.444 c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v29.943h-33.911V30.449h33.911v42.552c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5 V45.517H497v100.114c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5V43.017C512,36.123,506.393,30.517,499.5,30.517z M464.548,425.727h-8.776c-4.151-7.428-7.116-20.086-8.077-34.455h24.929C471.662,405.642,468.698,418.301,464.548,425.727z M447.456,147.944h25.405V376.27h-25.405V147.944z"/></g></g><g><g><path d="M402.556,14.888H21.184C9.503,14.888,0,24.303,0,35.876v398.021c0,11.573,9.503,20.988,21.184,20.988h8.688v28.689 c0,4.908,2.729,9.364,7.122,11.631c1.878,0.969,3.992,1.48,6.112,1.48c2.657,0,5.223-0.779,7.412-2.249L67.887,482.8 l19.797,12.309c2.109,1.311,4.542,2.004,7.035,2.004c2.199,0,4.383-0.55,6.306-1.586c4.272-2.294,6.927-6.71,6.927-11.524v-29.118 h288.165c7.907,0,14.341-6.39,14.341-14.244V249.676c2.805-2.294,4.599-5.778,4.599-9.676V27.388 C415.056,20.495,409.448,14.888,402.556,14.888z M92.951,480.723l-21.256-13.216c-1.214-0.755-2.587-1.131-3.96-1.131 c-1.457,0-2.913,0.424-4.174,1.269l-18.69,12.521v-25.279h48.08V480.723z M342.039,439.886H67.09v-67.885 c0-4.143-3.357-7.5-7.5-7.5c-4.143,0-7.5,3.357-7.5,7.5v67.885H21.184c-3.409,0-6.184-2.687-6.184-5.988V35.876 c0-3.302,2.774-5.988,6.184-5.988H52.09v313.113c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5V29.888h274.949V439.886z M395.457,439.886h-10.948V295.001c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v144.885h-12.47V252.501h12.47v10.5 c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5v-10.5h10.948V439.886z M400.056,237.501h-43.017v-55h43.017V237.501z M400.056,167.501h-43.017V108.68h43.017V167.501z M400.056,93.68h-43.017V29.888h43.017V93.68z"/></g></g><g><g><path d="M264.721,121.777c-10.462,0-20.349,3.677-28.161,10.417c-7.808-6.739-17.695-10.417-28.159-10.417 c-10.463,0-20.351,3.678-28.161,10.417c-7.808-6.738-17.696-10.417-28.16-10.417c-23.645,0-42.88,19.009-42.88,42.374 c0,21.91,17.221,40.224,38.99,42.189v63.86c0,4.143,3.357,7.5,7.5,7.5h105.42c4.143,0,7.5-3.357,7.5-7.5v-63.86 c21.767-1.964,38.99-20.278,38.99-42.189C307.6,140.787,288.364,121.777,264.721,121.777z M265.238,191.512 c-6.412,0.108-11.629,5.389-11.629,11.771v59.42h-20.621V227.78c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v34.922H198.81 V227.78c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v34.922h-20.621v-59.42c0-6.382-5.216-11.662-11.623-11.771 c-15.09-0.266-27.367-12.539-27.367-27.359c0-15.094,12.507-27.374,27.88-27.374c7.495,0,14.53,2.882,19.802,8.107 c2.231,2.219,5.2,3.44,8.358,3.44c3.155,0,6.123-1.221,8.352-3.434c5.278-5.231,12.313-8.113,19.81-8.113 c7.495,0,14.529,2.882,19.801,8.107c2.231,2.219,5.2,3.44,8.358,3.44c3.158,0,6.127-1.222,8.352-3.434 c5.278-5.231,12.313-8.113,19.81-8.113c15.372,0,27.879,12.28,27.879,27.374C292.6,178.973,280.323,191.246,265.238,191.512z"/></g></g><g><g><path d="M262.853,326.465H153.947c-4.143,0-7.5,3.357-7.5,7.5s3.357,7.5,7.5,7.5h108.905c4.143,0,7.501-3.358,7.501-7.5 C270.353,329.822,266.996,326.465,262.853,326.465z"/></g></g><g><g><path d="M244.889,360.503H171.91c-4.143,0-7.5,3.357-7.5,7.5c0,4.142,3.357,7.5,7.5,7.5h72.979c4.143,0,7.5-3.358,7.5-7.5 C252.389,363.86,249.032,360.503,244.889,360.503z"/></g></g><g><g><path d="M460.159,235.657c-4.143,0-7.5,3.357-7.5,7.5v70.622c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5v-70.622 C467.659,239.014,464.302,235.657,460.159,235.657z"/></g></g><g><g><path d="M460.159,200.691c-4.143,0-7.5,3.357-7.5,7.5v7.581c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5v-7.581 C467.659,204.048,464.302,200.691,460.159,200.691z"/></g></g>
+    </symbol>
+    <symbol id="cookIcon" viewBox="0 0 400 400" version="1.1" x="0px" y="0px">
+        <path d="M296.033,108.22c0-37.967-30.877-68.855-68.83-68.855c-1.649,0-3.314,0.062-4.987,0.187C205.884,14.997,178.215,0,148.5,0 c-29.714,0-57.383,15-73.715,39.552c-1.673-0.125-3.338-0.187-4.987-0.187c-37.954,0-68.831,30.888-68.831,68.855 c0,34.637,25.704,63.368,59.031,68.142v95.157c0,14.051,11.43,25.481,25.48,25.481h126.044c14.051,0,25.48-11.431,25.48-25.481 v-95.157C270.33,171.588,296.033,142.856,296.033,108.22z M211.522,277.399H85.479c-3.186,0-5.88-2.693-5.88-5.881v-95.147 c9.602-1.36,18.718-4.722,26.941-9.95c12.613,6.822,26.958,10.651,41.96,10.651s29.346-3.829,41.959-10.65 c8.225,5.227,17.342,8.589,26.943,9.949v95.147C217.402,274.706,214.709,277.399,211.522,277.399z M227.203,157.471 c-6.597,0-12.974-1.289-18.9-3.766c11.927-10.934,20.943-25.146,25.47-41.479c1.445-5.216-1.611-10.617-6.827-12.063 c-5.217-1.445-10.616,1.612-12.063,6.827c-8.236,29.723-35.534,50.481-66.383,50.481s-58.146-20.758-66.383-50.481 c-1.445-5.216-6.843-8.272-12.063-6.827c-5.216,1.445-8.272,6.847-6.827,12.063c4.526,16.333,13.543,30.546,25.47,41.479 c-5.926,2.477-12.303,3.766-18.899,3.766c-27.146,0-49.23-22.094-49.23-49.251c0-27.158,22.085-49.254,49.23-49.254 c2.744,0,5.569,0.246,8.397,0.73c4.082,0.696,8.17-1.247,10.2-4.861c12.205-21.733,35.236-35.234,60.104-35.234 s47.899,13.502,60.106,35.235c2.029,3.614,6.115,5.557,10.2,4.86c2.828-0.484,5.653-0.73,8.396-0.73 c27.145,0,49.229,22.096,49.229,49.254C276.433,135.377,254.348,157.471,227.203,157.471z"/>
+    </symbol>
+    <symbol id="userIcon" viewBox="0 0 512 512" version="1.1" x="0px" y="0px">
+        <path d="m240 0c-132.546875 0-240 107.453125-240 240s107.453125 240 240 240c7.230469 0 14.433594-.324219 21.601562-.96875 6.664063-.597656 13.269532-1.511719 19.824219-2.65625l2.519531-.445312c121.863282-22.742188 206.359376-134.550782 194.960938-257.996094-11.398438-123.445313-114.9375-217.8945315-238.90625-217.933594zm-19.28125 463.152344h-.566406c-6.222656-.550782-12.398438-1.382813-18.519532-2.449219-.351562-.0625-.703124-.101563-1.046874-.167969-5.984376-1.070312-11.90625-2.398437-17.769532-3.949218l-1.417968-.363282c-5.71875-1.550781-11.375-3.351562-16.949219-5.351562-.578125-.207032-1.160157-.390625-1.738281-.605469-5.464844-2.007813-10.832032-4.257813-16.117188-6.691406-.65625-.292969-1.3125-.574219-1.96875-.886719-5.183594-2.398438-10.265625-5.101562-15.25-7.945312-.703125-.398438-1.414062-.796876-2.117188-1.191407-4.90625-2.863281-9.699218-5.933593-14.402343-9.175781-.710938-.496094-1.429688-.976562-2.136719-1.472656-4.621094-3.277344-9.125-6.757813-13.511719-10.398438l-1.207031-1.054687v-67.449219c.058594-48.578125 39.421875-87.941406 88-88h112c48.578125.058594 87.941406 39.421875 88 88v67.457031l-1.0625.886719c-4.472656 3.734375-9.0625 7.265625-13.777344 10.601562-.625.4375-1.257812.855469-1.878906 1.285157-4.757812 3.304687-9.632812 6.414062-14.625 9.335937-.625.363282-1.265625.707032-1.886719 1.066406-5.058593 2.878907-10.203125 5.597657-15.449219 8.046876-.601562.28125-1.207031.542968-1.816406.800781-5.328125 2.457031-10.742187 4.71875-16.246094 6.742187-.546874.203125-1.097656.378906-1.601562.570313-5.601562 2.007812-11.28125 3.824219-17.03125 5.382812l-1.378906.34375c-5.871094 1.550781-11.796875 2.886719-17.789063 3.960938-.34375.0625-.6875.105469-1.03125.160156-6.128906 1.070313-12.3125 1.902344-18.539062 2.457031h-.566407c-6.398437.550782-12.800781.847656-19.28125.847656-6.480468 0-12.933593-.242187-19.320312-.792968zm179.28125-66.527344v-52.625c-.066406-57.410156-46.589844-103.933594-104-104h-112c-57.410156.066406-103.933594 46.589844-104 104v52.617188c-86.164062-87.941407-85.203125-228.9375 2.148438-315.699219 87.351562-86.757813 228.351562-86.757813 315.703124 0 87.351563 86.761719 88.3125 227.757812 2.148438 315.699219zm0 0"/><path d="m240 64c-44.183594 0-80 35.816406-80 80s35.816406 80 80 80 80-35.816406 80-80c-.046875-44.164062-35.835938-79.953125-80-80zm0 144c-35.347656 0-64-28.652344-64-64s28.652344-64 64-64 64 28.652344 64 64c-.039062 35.328125-28.671875 63.960938-64 64zm0 0"/>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M5 12H19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M10 7L5 12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M10 17L5 12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+</svg>
+
+    <!-- Блок для сохраненных рецептов -->
+    <div class="mt-4">
+        <h2 id="saved_recipes_header">Сохраненные рецепты</h2>
+        <ul id="savedRecipes" class="list-group"></ul>
+    </div>
+
+    <div class="container mt-5" id="recipes-content">
+        <h2>Список рецептов</h2>
+        
+        <!-- Поисковая форма -->
+        <form class="search-grid mb-4" id="recipe-search-form" role="search">
+            <input class="form-control me-2" id="search-input" type="search" placeholder="Поиск рецепта" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Поиск</button>
+        </form>
+
+        <div class="select-wrapper">
+            <h5>Выберите типы блюд:</h5>
+            <button id="toggle-type-btn" class="btn btn-secondary mb-2">Показать типы блюд</button>
+
+            <div id="type-checkboxes" style="display: none;">
+                <label><input type="checkbox" value="lunch"> Обед</label><br>
+                <label><input type="checkbox" value="main course"> Основное блюдо</label><br>
+                <label><input type="checkbox" value="main dish"> Горячее</label><br>
+                <label><input type="checkbox" value="dinner"> Ужин</label><br>
+                <label><input type="checkbox" value="antipasti"> Антипасти</label><br>
+                <label><input type="checkbox" value="soup"> Суп</label><br>
+                <label><input type="checkbox" value="starter"> Закуска</label><br>
+                <label><input type="checkbox" value="snack"> Снэк</label><br>
+                <label><input type="checkbox" value="appetizer"> Аппетайзер</label><br>
+                <label><input type="checkbox" value="antipasto"> Антипасто</label><br>
+                <label><input type="checkbox" value="condiment"> Приправа</label><br>
+                <label><input type="checkbox" value="dip"> Соус для макания</label><br>
+                <label><input type="checkbox" value="sauce"> Соус</label><br>
+                <label><input type="checkbox" value="spread"> Паста для намазывания</label><br>
+                <label><input type="checkbox" value="dessert"> Десерт</label><br>
+            </div>
+        </div>
+        
+
+        
+        <!-- Карточки рецептов-->
+        <div class="recipe-grid" id="recipe-grid"></div>
+    </div>
+    
+
+    
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const complexitySelect = document.getElementById('complexity-select');
+        //     const typeSelect = document.getElementById('type-select');
+        //     const ingredientCheckboxes = document.querySelectorAll('#ingredients-wrapper input[type="checkbox"]');
+        //     const recipeCards = document.querySelectorAll('.recipe');
+        //     const toggleBtn = document.getElementById('toggle-ingredients-btn');
+        //     const ingredientsWrapper = document.getElementById('ingredients-wrapper');
+
+        //     // Функция для получения выбранных ингредиентов
+        //     function getSelectedIngredients() {
+        //         let selectedIngredients = [];
+        //         ingredientCheckboxes.forEach(checkbox => {
+        //             if (checkbox.checked) {
+        //                 selectedIngredients.push(checkbox.value);
+        //             }
+        //         });
+        //         return selectedIngredients;
+        //     }
+
+        //     // Фильтрация рецептов
+        //     function filterRecipes() {
+            //     const selectedComplexity = complexitySelect.value;
+            //     const selectedType = typeSelect.value;
+            //     const selectedIngredients = getSelectedIngredients();
+
+            //     recipeCards.forEach(recipe => {
+            //         const recipeComplexity = recipe.getAttribute('data-complexity');
+            //         const recipeType = recipe.getAttribute('data-type');
+            //         const recipeIngredients = recipe.getAttribute('data-ingredients').split(',');
+
+            //         const matchesComplexity = selectedComplexity === 'all' || recipeComplexity === selectedComplexity;
+            //         const matchesType = selectedType === 'all' || recipeType === selectedType;
+            //         const matchesIngredients = selectedIngredients.length === 0 || selectedIngredients.every(ingredient => recipeIngredients.includes(ingredient));
+
+            //         if (matchesComplexity && matchesType && matchesIngredients) {
+            //             recipe.style.display = 'block';
+            //         } else {
+            //             recipe.style.display = 'none';
+            //         }
+            //     });
+            // }
+
+            // // Обработка кнопки "Показать ингредиенты" 
+            // toggleBtn.addEventListener('click', function() {
+            //     if (ingredientsWrapper.style.display === 'none') {
+            //         ingredientsWrapper.style.display = 'block';
+            //         toggleBtn.textContent = 'Скрыть ингредиенты';
+            //     } else {
+            //         ingredientsWrapper.style.display = 'none';
+        //             toggleBtn.textContent = 'Показать ингредиенты';
+        //         }
+        //     });
+
+        //     complexitySelect.addEventListener('change', filterRecipes);
+        //     typeSelect.addEventListener('change', filterRecipes);
+        //     ingredientCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterRecipes));
+        //     filterRecipes();
+        // });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleTypeBtn = document.getElementById('toggle-type-btn');
+        const typeCheckboxes = document.getElementById('type-checkboxes');
+
+        // Обработчик события для кнопки "Показать типы блюд"
+        toggleTypeBtn.addEventListener('click', function() {
+            if (typeCheckboxes.style.display === 'none' || typeCheckboxes.style.display === '') {
+                typeCheckboxes.style.display = 'block';
+                toggleTypeBtn.textContent = 'Скрыть типы блюд';
+            } else {
+                typeCheckboxes.style.display = 'none';
+                toggleTypeBtn.textContent = 'Показать типы блюд';
+            }
+        });
+    });
+
+// работа с кнопкой "показать тип блюд"
+document.addEventListener("DOMContentLoaded", function() {
+    const typeCheckboxes = document.querySelectorAll('#type-checkboxes input[type="checkbox"]');
+    const recipeGrid = document.getElementById('recipe-grid');
+
+    typeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterRecipes);
+    });
+
+    function filterRecipes() {
+        const selectedTypes = Array.from(typeCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value.toLowerCase());
+
+        const recipes = document.querySelectorAll('.recipe-card');
+
+        console.log('Выбранные типы блюд:', selectedTypes);
+
+        recipes.forEach(recipe => {
+            const recipeTypes = recipe.getAttribute('data-dish-types')
+                ? recipe.getAttribute('data-dish-types').toLowerCase().split(' ')
+                : [];
+
+            console.log('Типы блюда рецепта:', recipeTypes);
+
+            const matchesType = selectedTypes.length === 0 || selectedTypes.some(type => recipeTypes.includes(type));
+            recipe.style.display = matchesType ? 'block' : 'none';
+        });
+    }
+
+    // Получение рецептов из открытого API
+    async function getRecipes() {
+        const apiKey = '6493d47a8f304a9f8b81ef928402d09e';
+        const apiUrl = `https://api.spoonacular.com/recipes/random?number=8&apiKey=${apiKey}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Ошибка при получении данных');
+            }
+            const data = await response.json();
+            displayRecipes(data.recipes);
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    }
+
+    function displayRecipes(recipes) {
+        const container = document.getElementById('recipe-grid');
+        container.innerHTML = '';
+
+        recipes.forEach((recipe, index) => {
+            const card = document.createElement('div');
+            card.classList.add('recipe-card');
+
+            if (index === 0) {
+                card.classList.add('large-card');
+            } else if (index >= 1 && index <= 3) {
+                card.classList.add('medium-card');
+            } else {
+                card.classList.add('small-card');
+            }
+
+            const dataDishTypes = recipe.dishTypes ? recipe.dishTypes.join(' ') : ''; 
+
+            card.setAttribute('data-dish-types', dataDishTypes);
+
+            const ingredients = recipe.extendedIngredients;
+
+            const ingredientList = ingredients
+                    .map(ing => `${ing.amount} ${ing.unit} ${ing.name}`)
+                    .join(', ');
+
+            const fullSummary = recipe.summary
+
+            const readyInMinutes = recipe.readyInMinutes || 'Время не указано';
+            const servings = recipe.servings || 'Порции не указаны';
+
+            card.innerHTML = `
+                <div class="card">
+                    <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${recipe.title}</h5>
+                        <p class="card-text">${recipe.summary ? recipe.summary.substring(0, 100) : ''}...</p>
+                        <p class="card-text"><strong>Тип блюда:</strong> ${dataDishTypes}</p>
+                        <a href="recipe.html?img=${recipe.image}&title=${recipe.title}&ingredients=${ingredientList}&description=${encodeURIComponent(fullSummary)}&readyInMinutes=${recipe.readyInMinutes}&servings=${recipe.servings}" target="_blank" class="btn btn-recipe">Посмотреть рецепт</a>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        filterRecipes();
+    }
+
+    getRecipes();
+});
+
+    // Отображение сохраненных рецептов
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedRecipesList = document.getElementById('savedRecipes');
+
+            const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+
+            savedRecipes.forEach(function(recipe) {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item');
+                li.innerHTML = `
+                    <img src="${recipe.img}" alt="${recipe.title}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+                    <span>${recipe.title}</span>
+                    <a href="recipe.html?title=${encodeURIComponent(recipe.title)}&img=${encodeURIComponent(recipe.img)}&description=${encodeURIComponent(recipe.description)}" class="btn btn-recipe btn-sm float-end">Посмотреть</a>
+                `;
+                savedRecipesList.appendChild(li);
+            });
+        });
+    // обработка кнопки "выйти"
+    document.getElementById('logoutButton').addEventListener('click', function(event) {
+        event.preventDefault();
+        const userConfirmed = confirm('Вы уверены, что хотите выйти?');
+        if (userConfirmed) {
+            window.location.href = 'login.html';
+        }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
