@@ -1,0 +1,290 @@
+{
+  "users": [
+    {
+      "id": "18rt",
+      "email": "example@example.com",
+      "password": "password123",
+      "dateRegistration": "2024-05-21",
+      "name": "Michael Wilson",
+      "gender": "male",
+      "age": 25,
+      "startWeight": 80,
+      "currentWeight": 75,
+      "goalWeight": 65,
+      "completedWorkouts": 10,
+      "frequentWorkouts": [
+        "Running",
+        "Yoga",
+        "Weight Lifting"
+      ],
+      "weightProgress": [
+        80,
+        78,
+        76,
+        74,
+        72,
+        70,
+        73,
+        76,
+        76,
+        71,
+        70,
+        75
+      ],
+      "waistCircumference": 85,
+      "hipCircumference": 120,
+      "chestCircumference": 99
+    },
+    {
+      "id": "bed0",
+      "email": "masha1234@ynadex.ru",
+      "password": "M1234",
+      "dateRegistration": "2024-10-17",
+      "name": "Anastasia",
+      "gender": "female",
+      "age": 21,
+      "currentWeight": 80,
+      "goalWeight": 67,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        91,
+        80
+      ],
+      "waistCircumference": 100,
+      "hipCircumference": 130,
+      "chestCircumference": 110
+    },
+    {
+      "id": "5eb6",
+      "email": "rrr@gmail.com",
+      "password": "1234567890",
+      "dateRegistration": "2023-10-11",
+      "name": "Alex",
+      "gender": "male",
+      "age": 31,
+      "startWeight": 120,
+      "currentWeight": 117,
+      "goalWeight": 85,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        120,
+        117
+      ],
+      "waistCircumference": 130,
+      "hipCircumference": 126,
+      "chestCircumference": 101
+    },
+    {
+      "id": "7255",
+      "email": "petr1@gmail.com",
+      "password": "Petr111",
+      "dateRegistration": "2024-11-14T22:05:19.008Z",
+      "name": "Petr 1",
+      "gender": "male",
+      "age": 37,
+      "startWeight": 95,
+      "currentWeight": 95,
+      "goalWeight": 80,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        95
+      ],
+      "waistCircumference": 0,
+      "hipCircumference": 0,
+      "chestCircumference": 0
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Top-10 life hacks for fast running",
+      "authorId": "18rt",
+      "content": "Fast running is great for cardiovascular health. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Running",
+        "Stretching"
+      ],
+      "date": "2024-01-23"
+    },
+    {
+      "id": "2",
+      "title": "Exercise In The Morning Vs. Evening: Benefits, Drawbacks, And Optimal Timing",
+      "authorId": "bed0",
+      "content": "Whether performed in the day or night, exercise indeed does good for our body. However, we always find it difficult to decide whether to go to the gym in the morning or evening. There can be many reasons behind it, like a busy work schedule and social life among others. The debate, Exercise in morning vs evening, is ever going. Nonetheless, let’s just try to make things simple here!  \n\nThere is no denying the fact that exercise is essential for every individual. It improves our cardiovascular health, develops muscle mass, boosts the immune system, decreases stress, improves sleep, and impacts our overall well-being positively. As per research, a person should engage themselves in vigorous exercise for about 75 to 150 minutes and if doing moderate exercise, then they should indulge in 150 to 300 minutes each week. Not only does this help us get fit physically, but physical exercise indeed boosts our mental health and well-being.  ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "3",
+      "title": "How Creatine Transforms Your Gym Results ?",
+      "authorId": "18rt",
+      "content": "Creatine is a “legal steroid” that we all have heard of! It is a polarizing topic in the health and fitness industry. Creatine for muscle gain is one of the most researched supplements these days and everyone has some diverse opinions about it. Many people claim that they feel much better after they include creatine in their diets and believe that this supplement helps them get fit and build muscle.  \n\nGenerally, creatine is the best to opt for muscle gain. However, we understand that there can be lots of questions regarding creatine transformation. So, let us discuss this vast topic in detail! ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "4",
+      "title": "Energize, Recover, Repeat: Expert Tips On Pre & Post Workout Meal Nutrition",
+      "authorId": "bed0",
+      "content": "Keeping up with your exercise regime is good but what we need along with the workout is proper nutrition. What we eat before and after our workout makes a huge impact on our body, we can say that the pre & post workout meal is important to optimize the performance of our body. Let us dig deeper into this!  \n\nAt the most basic level, nutrition is all about having a regular and balanced diet. Whether you are an avid gym goer or someone who is just attempting to maintain their fitness, nutrition is the building block. Talking fundamentally, nutrients are substances found in foods that our bodies use to grow, reproduce, and survive.\n\nThe concept of nutrition includes having proper calories, units of energy, and important nutrients such as water, carbohydrates, vitamins, protein, fats, and minerals. Now, coming to its significance in pre- and pose-workout routines, here’s a detailed overview for you.  ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "5",
+      "title": "Sticking to an Exercise Program: 25 Tips to Achieve Exercise Success",
+      "authorId": "bed0",
+      "content": "This article describes effective fitness techniques. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Lifting",
+        "Push up"
+      ],
+      "date": "2024-10-02"
+    },
+    {
+      "id": "6",
+      "title": "Training Secrets of Olympians to Help You Stay Fit",
+      "authorId": "18rt",
+      "content": "Olympians share their secrets to staying fit. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-01-07"
+    },
+    {
+      "id": "7",
+      "title": "Green Exercise: The Benefits of Outdoor Exercise and How to Get Started",
+      "authorId": "bed0",
+      "content": "Studies have found that green exercise—or exercise performed in natural environments—can yield benefits beyond those seen with performing the same exercise indoors. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Treadmill"
+      ],
+      "date": "2024-09-17"
+    },
+    {
+      "id": "8",
+      "title": "What Is Behavior Change and How Does It Relate to Physical Activity?",
+      "authorId": "5eb6",
+      "content": "Humans are capable of, and familiar with, change. As we experience life, we grow and change—not just physically, but mentally, emotionally, socially, intellectually and spiritually, as well. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it. ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    }
+  ],
+  "comments": [
+    {
+      "id": "b692",
+      "postId": 1,
+      "userId": "1",
+      "text": "Great tips!"
+    },
+    {
+      "id": "wq4",
+      "postId": 1,
+      "userId": "1",
+      "text": "Thanks for sharing!"
+    },
+    {
+      "id": "v61d",
+      "postId": 3,
+      "userId": "bed0",
+      "text": "Thanks!"
+    },
+    {
+      "id": "rt53",
+      "postId": 2,
+      "userId": "bed0",
+      "text": "Nice info"
+    },
+    {
+      "id": "5bc9",
+      "postId": 1,
+      "userId": "7255",
+      "text": "quite interesting! thanks for post!"
+    },
+    {
+      "id": "85d0",
+      "postId": 1,
+      "userId": "7255",
+      "text": "good job!"
+    },
+    {
+      "id": "5b7b",
+      "postId": 2,
+      "userId": "18rt",
+      "text": "wow amazing!"
+    },
+    {
+      "id": "2543",
+      "postId": 2,
+      "userId": "bed0",
+      "text": "yeririuwexe"
+    },
+    {
+      "id": "38a6",
+      "postId": 8,
+      "userId": "18rt",
+      "text": "quite interesting"
+    }
+  ],
+  "trainings": [
+    {
+      "id": 1,
+      "image": "images/trainings-images/training-1.jpg",
+      "sport": "Stretching",
+      "title": "How to warm up before a workout",
+      "videoId": "huSX0LFkcyA",
+      "description": "Join us to learn how to do some of the best gym warm-ups for a powerful and productive gym session with pro trainer Corey Ashe. <br> When learning how to warm up in the gym, don’t overexert yourself. The warmup is not where you want to extend all your energy.\n                    You should warm up for 5-10 minutes before diving into your workout. The warmup created by Ashe is full-body and dynamic. Dynamic exercises are controlled movements that prep your muscles for peak performance.\n                    Ashe explained that dynamic movements are best to do before training or games. These movements mimic the exact movements you will be making in your workout or sport."
+    },
+    {
+      "id": 2,
+      "image": "images/trainings-images/training-2.jpg",
+      "sport": "Lifting",
+      "title": "Elevate your strength training",
+      "videoId": "UIrgg5bBVzI",
+      "description": " Wanna see how Mapule gets REAL strong? She's going to help get you there with this deadlift masterclass.\n                        Breakdown of exercise below: <br>\n                        Conventional Deadlift – 3-4 sets 6-8 reps <br>\n                        Romanian Deadlift – 3-4 sets 6-8 reps <br>\n                        Sumo Deadlift – 3-4 sets 6-8 reps <br>\n                        Single Leg RDL - 3-4 sets 6-8 reps "
+    },
+    {
+      "id": 3,
+      "image": "images/trainings-images/training-3.png",
+      "sport": "Yoga",
+      "title": "Softball stretch warmup",
+      "videoId": "L4ndhd-0mqU",
+      "description": "Taking care of your body is an important step in your athletic career—take it from two-time All American Amanda Lorenz. <br>\n                        Watch as she takes us through eight softball stretches that will get your entire body moving with a mix of dynamic and static stretches. Key areas she’ll focus on are your wrists, rotator cuffs and triceps for hitting and throwing, as well as your hamstrings and hips for base running and fielding. <br>\n                        Whether you’re on the field or in the gym, put on some music and enjoy your reps while warming up your body and prepping your mind for performance."
+    },
+    {
+      "id": 4,
+      "image": "images/trainings-images/training-4.jpg",
+      "sport": "Push up",
+      "title": "15 minute BODYCOMBAT workout",
+      "videoId": "UyyJy9m82po",
+      "description": "Unleash it all as you punch and kick through this quick 15-min <br>\nBODYCOMBAT™ workout created by the fitness powerhouse LES MILLS to make you move for the planet. <br>\n                        BODYCOMBAT is a science-backed high-energy martial arts workout that builds strength, speed and agility. It is loved in gyms all over the planet – and now you can try BODYCOMBAT at home."
+    },
+    {
+      "id": 5,
+      "image": "images/trainings-images/training-5.jpg",
+      "sport": "Running",
+      "title": "How to increase hip mobility",
+      "videoId": "LFDhjkyuldY",
+      "description": "Increase your hip mobility in this commonly tight area to experience more flexibility and comfort in your everyday life. <br>\n                        Follow along as Dave Connor, a professional trainer at the adidas gym walks you through 10 essential hip stretches and exercises to improve your mobility. <br>\n                        Learning how to improve your hip mobility may seem daunting if this is a perpetually tight area for you. Many people suffer from stiff and inflexible hips due to sitting for extended periods and getting a little exercise. <br>\n                        \"Lack of movement causes poor hip mobility,\" said Connor. \"Whether that means sitting or standing at your desk all day, regardless, it is not moving enough in various positions.\" You can work to increase your hip mobility by incorporating the ten strength and flexibility exercises featured in this video into your fitness routine."
+    },
+    {
+      "id": 6,
+      "image": "images/trainings-images/training-6.jpg",
+      "sport": "Treadmill",
+      "title": "7 baseball workouts & conditioning drills",
+      "videoId": "sGT44Np0cHw",
+      "description": "To continue training to be a great baseball or softball player, first you need to avoid getting injured. These baseball conditioning drills and workouts train for explosive movement, lateral power, and strength and integrity of your core, glutes, hamstrings, and arms. <br>\n                        Training team deficits to become stronger as a whole is top of mind for the Miami Hurricanes’ Strength and Conditioning Coach, H.R. Powell. Powell’s set of seven baseball workouts target key areas that players routinely use during a game no matter their position. <br>\n                        In the off-season and pre-season, Powell recommends amping up your strength conditioning. Once the season starts, he shifts his focus to maintaining strength, range of motion and full-body recovery between games."
+    }
+  ]
+}
