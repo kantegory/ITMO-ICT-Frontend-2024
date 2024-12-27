@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в личный кабинет</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<header id="header"></header>
+
+<main class="container" role="main">
+    <h1 class="text-center mt-4">Вход в личный кабинет</h1>
+    <form id="loginForm" aria-labelledby="loginFormHeading">
+        <div class="form-group mt-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите email" required
+                   aria-required="true">
+        </div>
+        <div class="form-group mt-3">
+            <label for="password">Пароль:</label>
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль" required
+                   aria-required="true">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4" id="loginButton">Войти</button>
+    </form>
+    <div id="login-error" class="alert alert-danger mt-3 d-none" role="alert" aria-live="assertive">
+        Неправильный email или пароль!
+    </div>
+    <div class="text-center mt-2">
+        <a href="registration.html">Нет аккаунта? Зарегистрироваться</a>
+    </div>
+    <div id="loading-indicator" class="d-none text-center mt-3" aria-hidden="true">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+        <p>Проверка данных...</p>
+    </div>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/include.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('login-error');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const loginButton = document.getElementById('loginButton');
+
+        const checkAuthentication = () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                window.location.href = 'account.html';
+            }
+        };
+
+        const showLoading = () => {
+            loadingIndicator.classList.remove('d-none');
+            loginButton.disabled = true;
+        };
+
+        const hideLoading = () => {
+            loadingIndicator.classList.add('d-none');
+            loginButton.disabled = false;
+        };
+
+        const showError = (message) => {
+            loginError.textContent = message;
+            loginError.classList.remove('d-none');
+        };
+
+        const hideError = () => {
+            loginError.classList.add('d-none');
+        };
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            hideError();
+
+            const enteredEmail = document.getElementById('email').value.trim();
+            const enteredPassword = document.getElementById('password').value;
+
+            if (!enteredEmail || !enteredPassword) {
+                showError('Пожалуйста, заполните все поля.');
+                return;
+            }
+
+            showLoading();
+
+            try {
+                const response = await fetch("http://localhost:8080/api/v1/signin", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: enteredEmail,
+                        password: enteredPassword
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const token = data.token;
+                    if (token) {
+                        localStorage.setItem('token', token);
+                        localStorage.setItem('email', enteredEmail);
+                        window.location.href = 'account.html';
+                    } else {
+                        showError('Не удалось получить токен аутентификации.');
+                    }
+                } else if (response.status === 401) {
+                    showError('Неправильный email или пароль!');
+                } else {
+                    const errorData = await response.json();
+                    const errorMessage = errorData.message || 'Произошла ошибка при входе.';
+                    showError(errorMessage);
+                }
+            } catch (error) {
+                showError('Не удалось подключиться к серверу. Попробуйте позже.');
+                console.error('Ошибка при выполнении запроса:', error);
+            } finally {
+                hideLoading();
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', hideError);
+        document.getElementById('password').addEventListener('input', hideError);
+
+        checkAuthentication();
+    });
+</script>
+
+</body>
+</html>
