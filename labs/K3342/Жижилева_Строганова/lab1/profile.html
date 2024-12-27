@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Recipe App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <button id="theme-toggle" class="btn btn-secondary">
+  Toggle Dark/Light Theme
+  </button>
+
+</head>
+<body>
+  <main class="container">
+    <h2 class="text-center my-4" id="profileTitle">My Profile</h2>
+
+    <!-- Profile Info -->
+    <section class="profile-info text-center">
+      <img src="img/cute-leaf-cartoon-illustration.jpg" class="rounded-circle" alt="Profile Picture of John Doe" width="150">
+      <h4>John Doe</h4>
+      <p>Followers: 120 | <a href="subscribes.html" class="text-decoration-none">Following: 80</a></p>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal" aria-label="Edit Profile">Edit Profile</button>
+    </section>
+
+    <hr>
+
+    <!-- Profile Tabs -->
+    <section aria-labelledby="profileTabsTitle">
+      <ul class="nav nav-tabs" id="profileTabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#saved-recipes" id="savedRecipesTab" aria-controls="saved-recipes" aria-selected="true">Saved Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#my-posts" id="myPostsTab" aria-controls="my-posts" aria-selected="false">My Posts</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Saved Recipes Tab -->
+        <div id="saved-recipes" class="tab-pane fade show active" aria-labelledby="savedRecipesTab">
+          <div class="row">
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_apple_pie.html">
+                  <img src="img/top-view-pie-coffee.jpg" class="card-img-top" alt="Apple Pie Recipe Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_apple_pie.html">
+                    <h5 class="card-title">Autumn Apple Pie</h5>
+                  </a>
+                  <p class="card-text">Autumn recipe for atmosphere.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_full_breakfast.html">
+                  <img src="img/traditional-full-english-breakfast-with-fried-eggs-sausage-tomato-beans-toast-bacon-plate.jpg" class="card-img-top" alt="Full English Breakfast Recipe Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_full_breakfast.html">
+                    <h5 class="card-title">Full English Breakfast</h5>
+                  </a>
+                  <p class="card-text">A hearty British meal consisting of sausages, bacon, eggs, baked beans, grilled tomatoes, mushrooms, toast, and sometimes black pudding or hash browns.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_bolognese_pasta.html">
+                  <img src="img/delicious-plate-with-spaghetii-bolognese-desk.jpg" class="card-img-top" alt="Bolognese Pasta Recipe Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_bolognese_pasta.html">
+                    <h5 class="card-title">Bolognese Pasta</h5>
+                  </a>
+                  <p class="card-text">An Italian dish featuring pasta served with a rich meat sauce made from ground beef, tomatoes, onions, garlic, and herbs, often topped with Parmesan cheese.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_pancakes.html">
+                  <img src="img/fresh-pancakes-table-studio.jpg" class="card-img-top" alt="Pancakes Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_pancakes.html">
+                    <h5 class="card-title">Pancakes</h5>
+                  </a>
+                  <p class="card-text">Fluffy, round cakes made from a simple batter of flour, milk, eggs, and baking powder, cooked on a griddle and typically served with syrup or toppings like fruit and butter.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- My Posts Tab -->
+        <div id="my-posts" class="tab-pane fade" aria-labelledby="myPostsTab">
+          <div class="row">
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_lasagna.html">
+                  <img src="img/high-angle-view-tablecloth-fresh-ingredient-delicious-lasagna.jpg" class="card-img-top" alt="Lasagna Recipe Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_lasagna.html">
+                    <h5 class="card-title">Lasagna</h5>
+                  </a>
+                  <p class="card-text">I'm in LOVE with this.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_tom_yum.html">
+                  <img src="img/thai-food-tom-yum-seafood-seafood-spicy-soup.jpg" class="card-img-top" alt="Tom Yum Recipe Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_tom_yum.html">
+                    <h5 class="card-title">Tom Yum</h5>
+                  </a>
+                  <p class="card-text">A hot and sour Thai soup made with shrimp or chicken, lemongrass, lime leaves, galangal, chili paste, and fresh herbs, offering a balance of spicy, tangy, and savory flavors.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_lasagna.html">
+                  <img src="img/fish-chips-bowl-with-lemon-clipboard.jpg" class="card-img-top" alt="Fish and Chips Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_fish_and_chips.html">
+                    <h5 class="card-title">Fish and Chips</h5>
+                  </a>
+                  <p class="card-text">A classic British dish of battered and deep-fried fish (usually cod or haddock) served with crispy fries, often accompanied by tartar sauce and vinegar.</p>
+                </div>
+              </div>
+            </article>
+            <article class="col-md-4">
+              <div class="card">
+                <a href="recipes/recipe_lasagna.html">
+                  <img src="img/side-close-up-view-khinkali-appetizing-khinkali-cutting-board.jpg" class="card-img-top" alt="Khinkali Image">
+                </a>
+                <div class="card-body">
+                  <a href="recipes/recipe_khinkali.html">
+                    <h5 class="card-title">Khinkali</h5>
+                  </a>
+                  <p class="card-text">Traditional Georgian dumplings filled with seasoned ground meat (beef, pork, or lamb), herbs, and sometimes broth, boiled and served hot, eaten by hand.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="editName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="editName" aria-labelledby="editName">
+              </div>
+              <div class="mb-3">
+                <label for="editEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="editEmail" aria-labelledby="editEmail">
+              </div>
+              <div class="mb-3">
+                <label for="editPassword" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="editPassword" aria-labelledby="editPassword">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button for showing other recipes -->
+    <div class="text-center my-4">
+      <a href="search.html" class="btn btn-primary" aria-label="Search for more recipes">Show other recipes</a>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>
