@@ -1,0 +1,31 @@
+body {
+    background-color: #fbeaff; 
+    color: #333;
+}
+.us_panel {
+    padding: 20px;
+}
+.us_panel-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.card {
+    margin-bottom: 20px;
+    background-color: #fff; 
+    border-radius: 15px;
+}
+.user_bar {
+    background-color: #ff2d55; 
+}
+.btn-primary {
+    background-color: #ff85c0; 
+    border-color: #ff85c0;
+}
+.card-workout-title {
+    color: #6a0dad; 
+}
+.navigation-butt {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
