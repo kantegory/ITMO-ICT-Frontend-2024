@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проверка совместимости</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1a001a; /* Тёмно-фиолетовый фон */
+      color: #e0d4ff; /* Светлый текст с фиолетовым оттенком */
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h2 class="text-center">Проверка совместимости</h2>
+
+  <!-- Форма совместимости -->
+  <div class="row align-items-center mt-4">
+    <!-- Первый столбик -->
+    <div class="col-md-5">
+      <h5>Вы</h5>
+      <form id="compatibilityForm">
+        <div class="mb-3">
+          <label for="yourName" class="form-label">Ваше имя</label>
+          <input type="text" class="form-control" id="yourName" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-3">
+          <label for="yourBirthday" class="form-label">Дата рождения</label>
+          <input type="date" class="form-control" id="yourBirthday" required>
+        </div>
+      </form>
+    </div>
+
+    <!-- Сердечко между столбцами -->
+    <div class="col-md-2 text-center">
+      <img src="images/heart.png" alt="Сердечко" class="img-fluid" style="max-width: 80px;">
+    </div>
+
+    <!-- Второй столбик -->
+    <div class="col-md-5">
+      <h5>Ваша половинка</h5>
+      <div class="mb-3">
+        <label for="partnerName" class="form-label">Имя партнера</label>
+        <input type="text" class="form-control" id="partnerName" placeholder="Введите имя партнера" required>
+      </div>
+      <div class="mb-3">
+        <label for="partnerBirthday" class="form-label">Дата рождения партнера</label>
+        <input type="date" class="form-control" id="partnerBirthday" required>
+      </div>
+    </div>
+  </div>
+
+  <!-- Кнопка проверки совместимости -->
+  <div class="row mt-3">
+    <div class="col text-center">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resultModal" onclick="checkCompatibility()">Проверить совместимость</button>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно результата -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultModalLabel">Результат совместимости</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center text-success">Совместимость 100%</h2>
+        <p class="text-center mt-3">
+          А вы точно еще не женаты? Вы прекрасно подходите друг другу! С каждым днем вы будете открывать в партнере все новые положительные качества. Глядя на вас, друзья не могут сдержать восхищения и по-хорошему завидуют вашей взаимной заботе и взаимопониманию.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
