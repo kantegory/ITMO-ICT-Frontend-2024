@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe - Culinarity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/recipe_page_styles.css">
+</head>
+<body>
+
+<header class="header d-flex justify-content-between align-items-center">
+    <div class="brand d-flex align-items-center">
+        <a href="main_page.html" class="d-flex align-items-center logo-link" tabindex="0">
+            <img src="images/recipe-book.png" alt="Logo" class="logo me-2">
+            <span>Culinarity</span>
+        </a>
+    </div>
+    <nav aria-label="User actions" class="icons">
+        <a href="user_profile.html" class="icons" aria-label="Профиль пользователя">
+            <i class="bi bi-person-circle"></i>
+        </a>
+        <a href="notifications.html" class="icons" aria-label="Уведомления">
+            <i class="bi bi-bell"></i>
+        </a>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="recipe-section">
+        <article class="row">
+            <div class="col-md-8">
+                <h1 class="recipe-title">Тыквенный суп-пюре</h1>
+                <p class="text-recipe">Автор: Irina Foodmaster</p>
+
+                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Фото рецепта">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/pumpkin1.jpg" class="d-block w-100" alt="Изображение рецепта 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/pumpkin2.jpg" class="d-block w-100" alt="Изображение рецепта 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/pumpkin3.jpg" class="d-block w-100" alt="Изображение рецепта 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev" aria-label="Предыдущий">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next" aria-label="Следующий">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <hr class="divider">
+
+                <section class="mt-4 ingredient-section rounded">
+                    <h3 class="h3">Ингредиенты</h3>
+                    <ul class="ingredient-list">
+                        <li class="text-recipe">500 г тыквы</li>
+                        <li class="text-recipe">1 морковь</li>
+                        <li class="text-recipe">2 картофелины</li>
+                        <li class="text-recipe">200 мл сливок</li>
+                        <li class="text-recipe">Соль и перец по вкусу</li>
+                        <li class="text-recipe">Семечки для подачи</li>
+                    </ul>
+                </section>
+
+                <section class="mt-4">
+                    <h3 class="h3">Описание по шагам</h3>
+                    <p class="text-recipe">1. Подготовьте тыкву, морковь и картофель, очистите и нарежьте кубиками.</p>
+                    <p class="text-recipe">2. Отварите овощи до мягкости.</p>
+                    <p class="text-recipe">3. Измельчите отваренные овощи в блендере, добавьте сливки и доведите до кипения.</p>
+                    <p class="text-recipe">4. Подавайте с семечками и свежим хлебом.</p>
+                </section>
+
+                <section class="mt-4">
+                    <h3 class="h3">Видео-рецепт</h3>
+                    <video width="100%" controls aria-label="Видео-рецепт">
+                        <source src="images/pumpkin-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+
+                <div class="mt-4">
+                    <h3 class="h4">Оцените рецепт</h3>
+
+                    <div class="rating-stars" aria-label="Оцените рецепт">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="save-recipe-btn" type="button" onclick="likeRecipe()">Сохранить рецепт</button>
+                </div>
+
+                <section class="comment-section">
+                    <h3 class="h4">Комментарии</h3>
+                    <a href="registration_page.html" class="link">Войдите или зарегистрируйтесь, чтобы оставить комментарий</a>
+                    <textarea rows="4" class="form-control" id="commentInput" placeholder="Ваш комментарий..."></textarea>
+                    <button type="button" class="comment-submit-btn" onclick="submitComment()">Отправить</button>
+                    <div id="commentsList" class="mt-3"></div>
+                </section>
+            </div>
+            <aside class="col-md-4 author-info">
+                <h3 class="h31">Информация об авторе</h3>
+                <div class="author-profile">
+                    <img src="images/profile.jpg" alt="Фото профиля" class="profile-image">
+                    <div class="author-details">
+                        <p class="author-name">Irina Foodmaster</p>
+                        <p class="author-followers">Подписчики: <span id="followerCount">158</span></p>
+                        <button id="subscribeButton" class="subscribe-btn" type="button" onclick="subscribeAuthor()">Подписаться</button>
+                    </div>
+                </div>
+                <h4 class="h4">Популярные рецепты</h4>
+                <ul class="popular-recipes">
+                    <li>
+                        <img src="images/pumpkin1.jpg" alt="Рецепт 1" class="recipe-image">
+                        <a href="recipe_page.html">Суп-пюре из тыквы</a>
+                    </li>
+                    <li>
+                        <img src="images/recipe9.jpg" alt="Рецепт 2" class="recipe-image">
+                        <a href="recipe_page.html">Паста с креветками</a>
+                    </li>
+                    <li>
+                        <img src="images/recipe10.jpg" alt="Рецепт 3" class="recipe-image">
+                        <a href="recipe_page.html">Шоколадный торт</a>
+                    </li>
+                </ul>
+            </aside>
+        </article>
+    </section>
+</main>
+
+<div class="modal fade" id="likeModal" tabindex="-1" aria-labelledby="likeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="likeModalLabel">Успех</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Рецепт сохранен в вашем профиле!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="noCommentModal" tabindex="-1" aria-labelledby="noCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noCommentModalLabel">Комментарий отсутствует</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-recipe">Пожалуйста, напишите комментарий, чтобы его отправить!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="javascript/comment.js"></script>
+<script src="javascript/like.js"></script>
+
+</body>
+</html>

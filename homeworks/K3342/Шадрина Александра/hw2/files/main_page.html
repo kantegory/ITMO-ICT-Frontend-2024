@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/main_page_styles.css">
+</head>
+<body>
+
+<header class="header d-flex justify-content-between align-items-center">
+    <div class="brand d-flex align-items-center">
+        <a href="main_page.html" class="d-flex align-items-center logo-link" tabindex="0">
+            <img src="images/recipe-book.png" alt="Logo" class="logo me-2">
+            <span>Culinarity</span>
+        </a>
+    </div>
+    <div class="search-bar w-50">
+        <input type="text" class="form-control" id="searchInput" placeholder="Поиск рецептов..." onclick="toggleDropdown()" aria-label="Поиск">
+        <div class="filter-dropdown" id="filterDropdown">
+            <div class="filter-item" onclick="filterRecipes('author')" role="button" tabindex="0">По автору</div>
+            <div class="filter-item" onclick="filterRecipes('name')" role="button" tabindex="0">По названию</div>
+            <div class="filter-item">
+                По уровню сложности
+                <select id="difficultySelect" class="form-select" aria-label="Выбор уровня сложности" onchange="filterRecipes('difficulty')" tabindex="0">
+                    <option value="">Все</option>
+                    <option value="легкий">Легкий</option>
+                    <option value="средний">Средний</option>
+                    <option value="сложный">Сложный</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="User actions" class="icons">
+        <a href="user_profile.html" class="icons" aria-label="Профиль пользователя">
+            <i class="bi bi-person-circle"></i>
+        </a>
+        <a href="notifications.html" class="icons" aria-label="Уведомления">
+            <i class="bi bi-bell"></i>
+        </a>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="popular-section" id="popularSection" aria-label="Популярные рецепты">
+        <h2 class="h2">Популярное на этой неделе</h2>
+        <div id="popularSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <article class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe1.jpg" class="square-image" alt="Recipe 1: Синабонны">
+                            </a>
+                            <p class="text-center">Синнабоны с персиком и орехами</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe2.jpg" class="square-image" alt="Recipe 2: Жюльен">
+                            </a>
+                            <p class="text-center">Жюльен в хлебной корзинке</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe3.jpg" class="square-image" alt="Recipe 3: Панкейки">
+                            </a>
+                            <p class="text-center">Панкейки с медом</p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe5.jpg" class="square-image" alt="Recipe 5: Штрудель">
+                            </a>
+                            <p class="text-center">Яблочный штрудель</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe6.jpg" class="square-image" alt="Recipe 6: Тарт">
+                            </a>
+                            <p class="text-center">Тарт с карамелью</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe7.jpg" class="square-image" alt="Recipe 7: Пирог">
+                            </a>
+                            <p class="text-center">Вишневый пирог</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#popularSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#popularSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <hr class="divider" id="divider">
+
+    <section class="suggestion-section" id="suggestionSection" aria-label="Рекомендации">
+        <h2 class="h2">Предложения</h2>
+        <article class="row mb-4">
+            <div class="col-12 col-md-3">
+                <a href="recipe_page.html">
+                    <img src="images/recipe4.jpg" class="square-image" alt="Recipe 4: Тыквенный суп">
+                </a>
+            </div>
+            <div class="col-12 col-md-9">
+                <h3 class="h3">Тыквенный суп-пюре</h3>
+                <p class="text-recipe">Автор: Irina Foodmaster</p>
+                <p class="text-recipe">Ингредиенты: тыква, картофель, морковь, чеснок, сливки...</p>
+            </div>
+        </article>
+
+        <article class="row mb-4">
+            <div class="col-12 col-md-3">
+                <img src="images/recipe8.jpg" class="square-image" alt="Recipe 8: Лосось">
+            </div>
+            <div class="col-12 col-md-9">
+                <h3 class="h3">Лосось на гриле, тушенный в сливочном соусе</h3>
+                <p class="text-recipe">Автор: Irina Foodmaster</p>
+                <p class="text-recipe">Ингредиенты: тыква, картофель, морковь, чеснок, сливки...</p>
+            </div>
+        </article>
+    </section>
+
+    <hr class="divider" id="divider1">
+
+    <section class="all-section" id="recipesSection" aria-label="Все рецепты">
+        <h2 class="h2">Все рецепты</h2>
+        <div class="row" id="recipeList">
+            <article class="col-md-3 recipe" data-author="Irina Foodmaster" data-name="Тыквенный суп-пюре" data-difficulty="легкий">
+                <a href="recipe_page.html">
+                    <img src="images/recipe4.jpg" class="square-image" alt="Recipe 4: Тыквенный суп">
+                </a>
+                <h3 class="h3-recipe">Тыквенный суп-пюре</h3>
+                <p class="text-recipe">Автор: Irina Foodmaster</p>
+                <p class="text-recipe">Ингредиенты: тыква, картофель, морковь, чеснок, сливки...</p>
+            </article>
+            <article class="col-md-3 recipe" data-author="Irina Foodmaster" data-name="Лосось на гриле, тушенный в сливочном соусе" data-difficulty="средний">
+                <a href="recipe_page.html">
+                    <img src="images/recipe8.jpg" class="square-image" alt="Recipe 8: Лосось">
+                </a>
+                <h3 class="h3-recipe">Лосось на гриле, тушенный в сливочном соусе</h3>
+                <p class="text-recipe">Автор: Irina Foodmaster</p>
+                <p class="text-recipe">Ингредиенты: лосось, сливки, специи...</p>
+            </article>
+            <article class="col-md-3 recipe" data-author="Anna Gourmet" data-name="Паста с креветками" data-difficulty="легкий">
+                <a href="recipe_page.html">
+                    <img src="images/recipe9.jpg" class="square-image" alt="Recipe 9: Паста с креветками">
+                </a>
+                <h3 class="h3-recipe">Паста с креветками</h3>
+                <p class="text-recipe">Автор: Anna Gourmet</p>
+                <p class="text-recipe">Ингредиенты: паста, креветки, чеснок, оливковое масло...</p>
+            </article>
+            <article class="col-md-3 recipe" data-author="Mark Chef" data-name="Шоколадный торт" data-difficulty="сложный">
+                <a href="recipe_page.html">
+                    <img src="images/recipe10.jpg" class="square-image" alt="Recipe 10: Шоколадный торт">
+                </a>
+                <h3 class="h3-recipe">Шоколадный торт</h3>
+                <p class="text-recipe">Автор: Mark Chef</p>
+                <p class="text-recipe">Ингредиенты: шоколад, яйца, сахар, мука...</p>
+            </article>
+            <article class="col-md-3 recipe" data-author="Mark Chef" data-name="Тарт" data-difficulty="сложный">
+                <a href="recipe_page.html">
+                    <img src="images/recipe6.jpg" class="square-image" alt="Recipe 6: Тарт">
+                </a>
+                <h3 class="h3-recipe">Тарт с карамелью</h3>
+                <p class="text-recipe">Автор: Mark Chef</p>
+                <p class="text-recipe">Ингредиенты: карамель, яйца, сахар, мука...</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<script src="javascript/search.js"></script>
+
+</body>
+</html>
