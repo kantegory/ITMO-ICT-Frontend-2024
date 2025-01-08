@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Регистрация пользователя</h2>
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Имя</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Введите ваше имя" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Фамилия</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Введите вашу фамилию" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Пол</label><br>
+                <select id="gender" class="form-control" required>
+                    <option value="Мужской">Мужской</option>
+                    <option value="Женский">Женский</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Дата рождения</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Номер телефона</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Введите ваш номер телефона" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/include.js"></script>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const gender = document.getElementById('gender').value;
+            const dob = document.getElementById('dob').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('dob', dob);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            window.location.href = 'account.html';
+        });
+    </script>
+
+</body>
+</html>
