@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск недвижимости</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="theme-toggle d-flex justify-content-end mt-3">
+            <button id="theme-toggler" class="btn btn-outline-secondary">Темная тема</button>
+        </div>        
+        <div class="row header pt-3 align-items-center justify-content-start">
+            <div class="col-2 header-search-image">
+                <img src="icons/search.svg" class="search-icon w-50" alt="Greeting Icon">
+            </div>
+            <div class="col-8 header-search-text">
+                <h1 class="text-center fw-bold">Поиск недвижимости</h1>
+            </div>
+            <div class="col header-buttons">
+                <a href="account.html" type="button"
+                    class="btn btn-outline-primary btn-primary-color custom-primary-btn-text">Аккаунт
+                </a>
+                <a href="property-archive.html" type="button"
+                    class="btn btn-outline-primary btn-primary-color custom-primary-btn-text">Архив
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <form onsubmit="filter(event)">
+                <div class="row filters justify-content-between text-center">
+                    <div class="col-3">
+                        <label for="type" class="form-label">Тип недвижимости</label>
+                        <select id="type" name="type" class="form-select">
+                            <option selected>Выберите тип...</option>
+                            <option value="apartment">Квартира</option>
+                            <option value="house">Дом</option>
+                            <option value="office">Офис</option>
+                            <option value="warehouse">Склад</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="price-range" class="form-label">Цена (руб/мес.)</label>
+                        <input type="range" class="form-range" min="10000" max="200000" step="5000" id="price-range" oninput="updatePriceDisplay()">
+                        <div class="d-flex justify-content-between">
+                            <span id="current-price">10 000 руб</span> 
+                        </div>
+                    </div>                    
+                    <div class="col-3">
+                        <label for="location" class="form-label">Расположение</label>
+                        <select id="location" name="location" class="form-select">
+                            <option selected>Выберите местоположение...</option>
+                            <option value="moscow">Москва</option>
+                            <option value="spb">Санкт-Петербург</option>
+                            <option value="ekb">Екатеринбург</option>
+                            <option value="kazan">Казань</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Найти</button>
+                </div>
+            </form>
+
+            <div class="mt-5">
+                <h2 class="text-center fw-light">Результаты поиска</h2>
+                <div class="card-group" id="searched">
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+        <script>
+            function updatePriceDisplay() {
+                const rangeValue = document.getElementById('price-range').value;
+                document.getElementById('current-price').textContent = `${rangeValue} руб`;
+            }
+
+
+            async function filter(event) {
+                document.querySelector("#searched").innerHTML = ""
+                event.preventDefault()
+
+                const type = document.getElementById('type').value
+                const location = document.getElementById('location').value
+                const priceRange = document.getElementById('price-range').value
+
+                const filterSearch = new URLSearchParams();
+
+                if (type && type !== 'Выберите тип...') {
+                    filterSearch.append('type', type);
+                }
+                if (location && location !== 'Выберите местоположение...') {
+                    filterSearch.append('location', location);
+                }
+                if (priceRange) {
+                    filterSearch.append('price_gte', priceRange);
+                }
+
+                try {
+                    const response = await fetch(`http://localhost:3000/owned_properties?${filterSearch.toString()}`, {
+                        headers: {
+                            "Authorization": `Bearer ${getAuthToken()}`
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Ошибка: ${response.status}`);
+                    }
+
+                    const responseJson = await response.json();
+
+                    const searchedContainer = document.querySelector("#searched");
+                    searchedContainer.innerHTML = "";
+
+                    for (const property of responseJson) {
+                        searchedContainer.innerHTML += getPropertyHtml(property);
+                    }
+            } catch (error) {
+                console.error('Ошибка при загрузке данных:', error);
+            }
+        }
+
+        document.querySelector('form').addEventListener('submit', filter);
+
+            function getAuthToken() {
+                return localStorage.accessToken
+            }
+            function getPropertyHtml({ id, name, desc, price }) {
+                return `
+            <div class="card" data-property-id = "${id}">
+                <img src="imgs/flat image.webp" class="card-img-top" alt="Офисное помещение м.Центр">
+                <div class="card-body">
+                    <h5 class="card-title">
+                       ${name}
+                    </h5>
+                    <p class="price"><small class='property-price text-body-secondary">${price} руб./мес.</small></p>
+                </div>
+            </div>
+            `
+            }
+
+            async function loadAllProperties() {
+                const response = await fetch("http://localhost:3000/owned_properties", {
+                    headers: {
+                        "Authorization": `Bearer ${getAuthToken()}`
+                    }
+                })
+
+                const responseJson = await response.json()
+
+                console.log('response', responseJson)
+
+                for (const property of responseJson) {
+                    document.querySelector("#searched").innerHTML += getPropertyHtml(property)
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                loadAllProperties()
+            })
+
+
+        </script>
+        <script src="theme.js"></script>
+</body>
+
+</html>
