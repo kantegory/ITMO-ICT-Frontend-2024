@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "id": "3452",
+      "user_id": 1732220963417,
+      "email": "bibliophile2609@gmail.com",
+      "password": "shadri",
+      "name": "Alexandra Shadrina",
+      "role": "client",
+      "created_at": "2024-11-21T20:29:23.417Z",
+      "updated_at": "2024-11-21T20:29:23.417Z",
+      "profiles": [
+        {
+          "profile_id": 1732289280503,
+          "user_id": "3452",
+          "height": "168",
+          "weight": "68",
+          "fitness_level": "Beginner",
+          "goals": "Lose weight",
+          "progress": "-"
+        }
+      ]
+    },
+    {
+      "id": "b662",
+      "user_id": 1732289710987,
+      "email": "a16f2004@gmail.com",
+      "password": "thisaleksa",
+      "name": "Alexandra Fedotova",
+      "role": "client",
+      "created_at": "2024-11-22T15:35:10.987Z",
+      "updated_at": "2024-11-22T15:35:10.987Z",
+      "profiles": [
+        {
+          "profile_id": 1732289755817,
+          "user_id": "b662",
+          "height": "168",
+          "weight": "60",
+          "fitness_level": "Advanced",
+          "goals": "Lose weight",
+          "progress": "-"
+        },
+        {
+          "profile_id": 1732289855700,
+          "user_id": "b662",
+          "height": "168",
+          "weight": "59",
+          "fitness_level": "Advanced",
+          "goals": "Lose weight",
+          "progress": "Lost 1 kg"
+        }
+      ]
+    },
+    {
+      "id": "cafb",
+      "user_id": 1732290093733,
+      "email": "drive@gmail.com",
+      "password": "1234567",
+      "name": "Rayan Gosling",
+      "role": "client",
+      "created_at": "2024-11-22T15:41:33.733Z",
+      "updated_at": "2024-11-22T15:41:33.733Z",
+      "profiles": [
+        {
+          "profile_id": 1732290132816,
+          "user_id": "cafb",
+          "height": "175",
+          "weight": "78",
+          "fitness_level": "Advanced",
+          "goals": "Build muscle",
+          "progress": "-"
+        }
+      ]
+    },
+    {
+      "id": "b440",
+      "user_id": 1732290443519,
+      "email": "jen@gmail.com",
+      "password": "12345",
+      "name": "Megan Fox",
+      "role": "client",
+      "created_at": "2024-11-22T15:47:23.519Z",
+      "updated_at": "2024-11-22T15:47:23.519Z"
+    },
+    {
+      "id": "d46e",
+      "user_id": 1732291028065,
+      "email": "toxis@gmail.com",
+      "password": "hurtz",
+      "name": "Liza Shemeleva",
+      "role": "client",
+      "created_at": "2024-11-22T15:57:08.065Z",
+      "updated_at": "2024-11-22T15:57:08.065Z",
+      "profiles": [
+        {
+          "profile_id": 1732291067845,
+          "user_id": "d46e",
+          "height": "173",
+          "weight": "59",
+          "fitness_level": "Advanced",
+          "goals": "Build muscle",
+          "progress": "-"
+        }
+      ]
+    }
+  ]
+}
