@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Регистрация профиля</title> 
+    <link rel="stylesheet" href="css/login-style.css"> 
+</head> 
+ 
+<body> 
+    <div class="container"> 
+        <h1>Регистрация</h1> 
+ 
+        <form id="signupForm"> 
+            <label for="name">Имя</label> 
+            <input type="text" id="name" name="text" placeholder="Введите имя"> 
+ 
+            <label for="email">Почта</label> 
+            <input type="email" id="email" name="email" required class="form-control" placeholder="Введите почту"> 
+ 
+            <label for="telephone">Телефон</label> 
+            <input type="tel" id="telephone" name="telephone" required class="form-control" placeholder="Введите телефон"> 
+ 
+            <label for="password">Пароль</label> 
+            <input type="password" id="password" name="password" required class="form-control" placeholder="Введите пароль"> 
+ 
+            <input type="submit" value="Создать аккаунт" class="btn btn-primary mt-3"> 
+        </form> 
+ 
+ 
+        <div class="already-signedup"> 
+            <p>У меня уже есть аккаунт <a href="login.html">Войти</a></p> 
+        </div> 
+    </div> 
+</body> 
+ 
+</html>
