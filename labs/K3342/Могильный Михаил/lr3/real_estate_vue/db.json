@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "email": "egorbetll@gmail.com",
+      "password": "$2a$10$cQVpSIgXy3DdTc29xBMegO6USYoOQrROl6jatrJYwbfnN5HaKeH2m",
+      "firstName": "Егор",
+      "lastName": "Жукович",
+      "phone": "89117154551",
+      "terms": true,
+      "id": 1
+    },
+    {
+      "email": "ozongaming@gmai.com",
+      "password": "$2a$10$0/1j30alcBTh8BGfp6SuZu08bSPP/f86OmSndqibnJAWlzH/hO6cG",
+      "firstName": "Озон",
+      "lastName": "Гейминг",
+      "phone": "+7 (926) 526-56-43",
+      "terms": true,
+      "id": 2
+    }
+  ],
+  "owned_properties": [
+  ],
+  "notes": []
+}

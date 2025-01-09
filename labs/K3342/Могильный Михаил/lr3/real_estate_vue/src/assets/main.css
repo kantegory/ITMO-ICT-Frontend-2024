@@ -1,0 +1,56 @@
+/* Светлая тема */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #35342f;
+  --link-color: #35342f;
+  --hero-text-color: #35342f;
+  --button-hover-bg: #f8f9fa;
+  --property-price-color: #0b0b0b;
+}
+
+/* Тёмная тема */
+.dark-theme {
+  --bg-color: #121212;
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--bg-color);
+  --text-color: #e1e0dd;
+  --link-color: #e1e0dd;
+  --hero-text-color: #e1e0dd;
+  --button-hover-bg: #1f1f1f;
+  --property-price-color: #5cc5ff;
+}
+
+/* Общие стили */
+body {
+  margin: 0;
+  font-size: 30px;
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif !important;
+  background-color: var(--bg-color);
+}
+
+header,
+footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+main {
+  background-color: var(--bg-color);
+}
+
+.hero {
+  background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
