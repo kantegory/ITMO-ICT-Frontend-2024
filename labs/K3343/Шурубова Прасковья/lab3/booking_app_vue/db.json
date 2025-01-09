@@ -1,0 +1,440 @@
+{
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Mircuccio Osteria",
+      "cuisine": "Итальянская",
+      "details": "ул.Моисеенко, д.27",
+      "station": "Площадь Александра Невского 2",
+      "price": "2000",
+      "restaurant-phone": "+7 (812) 407-1908",
+      "workingHours": "Пн - Вс: 12:00 - 23:00",
+      "description": "Mircuccio — остерия с итальянской атмосферой, тёплым интерьером и авторскими блюдами.",
+      "menu": [
+        "photo/mircuccio/menu1.png",
+        "photo/mircuccio/menu2.png",
+        "photo/mircuccio/menu3.png",
+        "photo/mircuccio/menu4.png",
+        "photo/mircuccio/menu6.png",
+        "photo/mircuccio/menu7.png"
+      ],
+      "restaurant-photo": "photo/mercuccio1.jpg",
+      "reviews": [
+        {
+          "user": "Christian",
+          "text": "Вкусные блюда по доступным ценам!",
+          "rating": 5,
+          "date": "2024-11-13T14:46:43.742Z"
+        },
+        {
+          "user": "Bobby",
+          "text": "Всё супер, но большое время ожидания",
+          "rating": 4,
+          "date": "2024-11-13T14:47:36.848Z"
+        },
+        {
+          "user": "Michael",
+          "text": "Атмосфера не понравилась, очень громко играла музыка",
+          "rating": 3,
+          "date": "2024-11-13T18:15:54.639Z"
+        },
+        {
+          "user": "Юлия",
+          "text": "Всё было здорово!",
+          "rating": 5,
+          "date": "2024-11-23T14:55:44.465Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "My Asiatique",
+      "cuisine": "Китайская, Японская, Индийская",
+      "details": "ул.Разъезжая, д.3",
+      "station": "Владимирская, Достоевская, Звенигородская",
+      "price": "1000",
+      "restaurant-phone": "+7 (812) 407-1908",
+      "workingHours": "Пн - Чт, Вс: 12:00 - 23:00  Пт - Сб: 12:00 - 1:00",
+      "description": "Ресторан создан от команды старейшего ресторана национальной индийской кухни Tandoor.",
+      "menu": [
+        "photo/my_asiatique/image (37).png",
+        "photo/my_asiatique/image (38).png",
+        "photo/my_asiatique/image (39).png",
+        "photo/my_asiatique/image (40).png",
+        "photo/my_asiatique/image (41).png",
+        "photo/my_asiatique/image (42).png",
+        "photo/my_asiatique/image (43).png",
+        "photo/my_asiatique/image (44).png",
+        "photo/my_asiatique/image (45).png",
+        "photo/my_asiatique/image (46).png",
+        "photo/my_asiatique/image (47).png",
+        "photo/my_asiatique/image (48).png",
+        "photo/my_asiatique/image (49).png",
+        "photo/my_asiatique/image (50).png",
+        "photo/my_asiatique/image (51).png",
+        "photo/my_asiatique/image (52).png",
+        "photo/my_asiatique/image (53).png"
+      ],
+      "restaurant-photo": "photo/my_asiatique1.jpg",
+      "reviews": [
+        {
+          "user": "Michael",
+          "text": "Очень громкая музыка",
+          "rating": 4,
+          "date": "2024-11-13T18:59:18.953Z"
+        },
+        {
+          "user": "Герберт",
+          "text": "Класс! просто восторг! я впечатлен до мурашек!",
+          "rating": 3,
+          "date": "2024-11-15T09:44:15.750Z"
+        },
+        {
+          "user": "Анна",
+          "text": "Классное место!",
+          "rating": 5,
+          "date": "2024-12-22T19:38:24.646Z"
+        },
+        {
+          "user": "Анна",
+          "text": "толот",
+          "rating": 4,
+          "date": "2024-12-24T08:22:26.297Z"
+        },
+        {
+          "user": "Анна",
+          "text": "Точно рекомендую",
+          "rating": 5,
+          "date": "2024-12-26T11:46:36.030Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Roze & Dance",
+      "cuisine": "Французская",
+      "details": "ул.Инженерная, д.13",
+      "station": "Гостиный двор, Невский проспект",
+      "price": "2500",
+      "restaurant-phone": "+7 (812) 407-1908",
+      "workingHours": "Пн - Чт, Вс: 12:00 - 00:00  Пт - Сб: 12:00 - 3:00",
+      "description": "ROZÉ & Dance: fine dining-ЗОЖ от шеф-повара Ульяны Суздалкиной.",
+      "menu": [
+        "photo/roze/image (31).png",
+        "photo/roze/image (32).png",
+        "photo/roze/image (33).png",
+        "photo/roze/image (34).png",
+        "photo/roze/image (35).png",
+        "photo/roze/image (36).png"
+      ],
+      "restaurant-photo": "photo/roze1.jpg",
+      "reviews": [
+        {
+          "user": "Юлия",
+          "text": "Превосходные блюда!",
+          "rating": 5,
+          "date": "2024-11-26T12:36:08.959Z"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Meal",
+      "cuisine": "Европейская, Скандинавская",
+      "details": "Литейный пр-т, 17-19",
+      "station": "Чернышевская",
+      "price": "1200",
+      "restaurant-phone": "+7 (812) 407-1908",
+      "workingHours": "Пн - Вс: 13:00 - 23:00",
+      "description": "Meal на Литейном – ресторан-гастробистро в центре города.",
+      "menu": [
+        "photo/meal/image (28).png",
+        "photo/meal/image (29).png",
+        "photo/meal/image (30).png"
+      ],
+      "restaurant-photo": "photo/meal1.jpg",
+      "reviews": [
+        {
+          "user": "Герберт",
+          "text": "Всё было классно!",
+          "rating": 5,
+          "date": "2024-11-15T11:43:00.123Z"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Тбилисо",
+      "cuisine": "Грузинская, Кавказская",
+      "details": "ул.Сытнинская, д.10",
+      "station": "Горьковская",
+      "price": "800",
+      "restaurant-phone": "+7 (812) 407-1908",
+      "workingHours": "Пн - Вс: 12:00 - 23:00",
+      "description": "«Тбилисо» – это залитый мягким светом уголок грузинского дворика.",
+      "menu": [
+        "photo/tbiliso/image (14).png",
+        "photo/tbiliso/image (15).png",
+        "photo/tbiliso/image (16).png",
+        "photo/tbiliso/image (17).png",
+        "photo/tbiliso/image (18).png",
+        "photo/tbiliso/image (19).png",
+        "photo/tbiliso/image (20).png",
+        "photo/tbiliso/image (21).png",
+        "photo/tbiliso/image (22).png",
+        "photo/tbiliso/image (23).png",
+        "photo/tbiliso/image (24).png",
+        "photo/tbiliso/image (25).png",
+        "photo/tbiliso/image (26).png",
+        "photo/tbiliso/image (27).png"
+      ],
+      "restaurant-photo": "photo/тбилисо1.jpg",
+      "reviews": [
+        {
+          "user": "Michael",
+          "text": "Классное место!",
+          "rating": 5,
+          "date": "2024-11-13T18:43:37.397Z"
+        },
+        {
+          "user": "Григорий",
+          "text": "Классное место!",
+          "rating": 5,
+          "date": "2024-12-26T14:26:12.125Z"
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Halloween в ресторанах Петербурга",
+      "image": "photo/haloween.jpg",
+      "description": ""
+    },
+    {
+      "id": "2",
+      "title": "Где устроить свадьбу в Петербурге",
+      "image": "photo/свадьба.jpg",
+      "description": ""
+    },
+    {
+      "id": "3",
+      "title": "Интересные мероприятия в ресторанах Петербурга",
+      "image": "photo/class.jpg",
+      "description": ""
+    }
+  ],
+  "users": [
+    {
+      "username": "Christian",
+      "surname": "Hemsworth",
+      "email": "chris@gmail.com",
+      "id": "dd7a",
+      "favorites": [
+        {
+          "id": "2",
+          "name": "My Asiatique",
+          "cuisine": "Китайская, Японская, Индийская",
+          "location": "ул.Разъезжая, д.3"
+        },
+        {
+          "id": "5",
+          "name": "Тбилисо",
+          "cuisine": "Грузинская, Кавказская",
+          "location": "ул.Сытнинская, д.10"
+        }
+      ]
+    },
+    {
+      "id": "c531",
+      "username": "Bobby",
+      "surname": "Brown",
+      "email": "bobby@gmail.com",
+      "password": "wooooooow",
+      "favorites": [
+        {
+          "id": "2",
+          "name": "My Asiatique",
+          "cuisine": "Китайская, Японская, Индийская",
+          "location": "ул.Разъезжая, д.3"
+        },
+        {
+          "id": "5",
+          "name": "Тбилисо",
+          "cuisine": "Грузинская, Кавказская",
+          "location": "ул.Сытнинская, д.10"
+        }
+      ]
+    },
+    {
+      "id": "6c44",
+      "token": "32617xsq1328xe18",
+      "username": "Michael",
+      "surname": "Jackson",
+      "email": "jackson@gmail.com",
+      "password": "123456789poiu",
+      "favorites": [
+        {
+          "id": "1",
+          "name": "Mircuccio Osteria",
+          "cuisine": "Итальянская",
+          "location": "ул.Моисеенко, д.27"
+        }
+      ],
+      "bookings": [
+        {
+          "date": "2024-11-23",
+          "restaurantName": "Roze & Dance",
+          "restaurantLocation": "ул.Инженерная, д.13",
+          "people": "4",
+          "name": "Михаил Сидоров",
+          "phone": "+7 (812) 1234567",
+          "email": "jackson@gmail.com",
+          "comments": "караоке"
+        }
+      ]
+    },
+    {
+      "id": "b7b5",
+      "username": "Герберт",
+      "surname": "Уэлс",
+      "email": "herbert@gmail.com",
+      "password": "123456789poiu",
+      "favorites": [
+        {
+          "id": "4",
+          "name": "Meal",
+          "cuisine": "Европейская, Скандинавская",
+          "location": "Литейный пр-т, 17-19"
+        },
+        {
+          "id": "5",
+          "name": "Тбилисо",
+          "cuisine": "Грузинская, Кавказская",
+          "location": "ул.Сытнинская, д.10"
+        }
+      ],
+      "bookings": [
+        {
+          "date": "2025-03-30",
+          "restaurantName": "My Asiatique",
+          "restaurantLocation": "ул.Разъезжая, д.3",
+          "people": "4",
+          "name": "Брюс Орбакайте",
+          "phone": "+1123456789",
+          "email": "cool@gmail.com",
+          "comments": "валерий меладзе пожалуйсста!"
+        },
+        {
+          "date": "2024-12-01",
+          "restaurantName": "Meal",
+          "restaurantLocation": "Литейный пр-т, 17-19",
+          "people": "2",
+          "name": "Иванов Иван",
+          "phone": "+78121234567",
+          "email": "cool@gmail.com",
+          "comments": "ёлка"
+        },
+        {
+          "date": "2024-12-28",
+          "restaurantName": "My Asiatique",
+          "restaurantLocation": "ул.Разъезжая, д.3",
+          "people": "5",
+          "name": "Иванов Иван",
+          "phone": "+78121234567",
+          "email": "cool@gmail.com",
+          "comments": "караоке"
+        },
+        {
+          "date": "2024-11-23",
+          "restaurantName": "My Asiatique",
+          "restaurantLocation": "⟟ ул.Разъезжая, д.3",
+          "people": "6",
+          "name": "Иванов Иван",
+          "phone": "+78121234567",
+          "email": "jackson@gmail.com",
+          "comments": ""
+        }
+      ]
+    },
+    {
+      "id": "736f",
+      "username": "Михаил",
+      "surname": "Сидоров",
+      "email": "sidorov@gmail.com",
+      "password": "sidorov",
+      "favorites": [],
+      "bookings": []
+    },
+    {
+      "id": "f68e",
+      "username": "Анна",
+      "surname": "Ахматова",
+      "email": "annaa@gmail.com",
+      "password": "anna12345",
+      "favorites": [
+        {
+          "id": "2",
+          "name": "My Asiatique",
+          "details": "ул.Разъезжая, д.3",
+          "cuisine": "Китайская, Японская, Индийская"
+        },
+        {
+          "id": "5",
+          "name": "Тбилисо",
+          "details": "ул.Сытнинская, д.10",
+          "cuisine": "Грузинская, Кавказская"
+        }
+      ],
+      "bookings": [
+        {
+          "date": "2024-12-28",
+          "restaurantName": "Название ресторана",
+          "restaurantLocation": "Адрес ресторана",
+          "people": 3,
+          "name": "Анна Ахматова",
+          "phone": "+78123456789",
+          "email": "anna@gmail.com",
+          "comments": ""
+        },
+        {
+          "date": "2025-02-01",
+          "restaurantName": "Название ресторана",
+          "restaurantLocation": "Адрес ресторана",
+          "people": 5,
+          "name": "Анна Ахматова",
+          "phone": "+78123456789",
+          "email": "anna@gmail.com",
+          "comments": ""
+        },
+        {
+          "date": "2024-12-25",
+          "restaurantName": "Название ресторана",
+          "restaurantLocation": "Адрес ресторана",
+          "people": 1,
+          "name": "Анна Ахматова",
+          "phone": "+78123456789",
+          "email": "anna@gmail.com",
+          "comments": ""
+        }
+      ]
+    },
+    {
+      "id": "b434",
+      "username": "Григорий",
+      "surname": "Остер",
+      "email": "grig@gmail.com",
+      "password": "grigoster",
+      "favorites": [
+        {
+          "id": "2",
+          "name": "My Asiatique",
+          "details": "ул.Разъезжая, д.3",
+          "cuisine": "Китайская, Японская, Индийская"
+        }
+      ],
+      "bookings": []
+    }
+  ]
+}

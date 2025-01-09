@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1% 3% 1% 3%;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+  background-color: #333333;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.navbar a:hover {
+  background-color: #555555;
+}
+
+.main-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3% 0 3%;
+  height: 100vh;
+  background-color: #000;
+  gap: 20px;
+}
+
+.main-banner-content {
+  max-width: 40%;
+}
+
+.main-banner-content h1 {
+  font-size: 60px;
+  color: #fff;
+}
+
+.main-banner-content p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #bbb;
+}
+
+.button-green {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.button-black {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.main-banner-image {
+  max-width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main-banner-image img {
+  width: 100%;
+  height: auto;
+}
+
+.popular-exercises {
+  margin: 50px 3% 50px 3%;
+}
+
+.popular-exercises h1 {
+  font-size: 60px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.exercise-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.trainer-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.video-title:hover {
+  color: #28a745;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.final-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 0 3% 50px 3%;
+  height: 80vh;
+  background-color: #000;
+  gap: 20px;
+}
+
+.final-info-content {
+  max-width: 40%;
+}
+
+.final-info-content h2 {
+  font-size: 60px;
+  color: #fff;
+}
+
+.final-info-content p {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #bbb;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.main-banner-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+hr {
+  border: none;
+  background-color: #333;
+  height: 3px;
+}
+
+.semi-hr {
+  margin: 0 3% 0 3%;
+  background-color: #333333;
+  width: 94%
+}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.video-modal-close-button {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+}
+
+.login-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.login-modal h2 {
+  font-size: 40px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.login-modal h3 {
+  font-size: 20px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.login-modal-content {
+  position: relative;
+  background-color: #333333;
+  border-radius: 5px;
+  padding: 40px;
+  width: 60%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.login-modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.login-button-green {
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 30%;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-info img {
+  width: 10%;
+  height: 10%;
+  object-fit: contain;
+}

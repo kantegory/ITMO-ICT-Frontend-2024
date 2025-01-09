@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация и Регистрация</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .theme-dark {
+      background-color: #1a001a; /* Тёмно-фиолетовый фон */
+      color: #e0d4ff; /* Светлый текст */
+    }
+    .theme-light {
+      background-color: #f5e8ff; /* Светло-фиолетовый фон */
+      color: #4d004d; /** Тёмно-фиолетовый текст */
+    }
+    .hidden {
+      display: none;
+    }
+    #theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000; /* Чтобы кнопка была поверх других элементов */
+    }
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      fill: currentColor;
+      width: 16px;
+      height: 16px;
+    }
+    .input-group .icon {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body class="theme-dark">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Иконка пользователя -->
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM12 12c-4.411 0-8 1.79-8 4v2h16v-2c0-2.21-3.589-4-8-4z"></path>
+  </symbol>
+  <!-- Иконка замка -->
+  <symbol id="icon-lock" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17 8V6c0-3.314-2.686-6-6-6S5 2.686 5 6v2H3v16h18V8h-4zm-6 3c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z"></path>
+  </symbol>
+  <!-- Иконка темы -->
+  <symbol id="icon-theme" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"></path>
+  </symbol>
+</svg>
+<div class="container mt-5">
+  <!-- Форма для входа -->
+  <form id="loginForm">
+    <h2>Авторизация</h2>
+    <button id="theme-toggle" class="btn btn-sm btn-outline-light theme-toggle">
+      <svg class="icon">
+        <use xlink:href="#icon-theme"></use>
+      </svg>
+      Тёмная тема
+    </button>
+    <div class="mb-3">
+      <label for="loginUsername" class="form-label">Имя пользователя</label>
+      <div class="input-group">
+          <span class="input-group-text">
+            <svg class="icon">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+          </span>
+        <input type="text" class="form-control" id="loginUsername" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="loginPassword" class="form-label">Пароль</label>
+      <div class="input-group">
+          <span class="input-group-text">
+            <svg class="icon">
+              <use xlink:href="#icon-lock"></use>
+            </svg>
+          </span>
+        <input type="password" class="form-control" id="loginPassword" required>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+    <p class="mt-3">
+      Нет аккаунта? <a href="#" id="switchToRegister">Зарегистрироваться</a>
+    </p>
+  </form>
+  <div id="loginErrorMessage" class="text-danger mb-3"></div>
+
+  <!-- Форма для регистрации -->
+  <form id="registerForm" class="hidden">
+    <h2>Регистрация</h2>
+    <div class="mb-3">
+      <label for="registerUsername" class="form-label">Имя пользователя</label>
+      <div class="input-group">
+          <span class="input-group-text">
+            <svg class="icon">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+          </span>
+        <input type="text" class="form-control" id="registerUsername" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="registerPassword" class="form-label">Пароль</label>
+      <div class="input-group">
+          <span class="input-group-text">
+            <svg class="icon">
+              <use xlink:href="#icon-lock"></use>
+            </svg>
+          </span>
+        <input type="password" class="form-control" id="registerPassword" required>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+    <p class="mt-3">
+      Уже есть аккаунт? <a href="#" id="switchToLogin">Войти</a>
+    </p>
+  </form>
+  <div id="registerMessage" class="text-success mt-3"></div>
+</div>
+
+<script>
+  // Переключение между формами
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  const switchToRegister = document.getElementById('switchToRegister');
+  const switchToLogin = document.getElementById('switchToLogin');
+
+  switchToRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+  });
+
+  switchToLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+  });
+
+  // Логика входа
+  const loginErrorMessage = document.getElementById('loginErrorMessage');
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    try {
+      const response = await fetch('http://localhost:3000/users');
+      if (!response.ok) {
+        throw new Error('Ошибка подключения к базе данных.');
+      }
+
+      const users = await response.json();
+      const user = users.find((u) => u.username === username && u.password === password);
+
+      if (!user) {
+        throw new Error('Неверный логин или пароль.');
+      }
+
+      // Сохраняем токен в localStorage
+      localStorage.setItem('userToken', user.token);
+
+      alert('Вход выполнен успешно!');
+      console.log('Ваш токен:', user.token);
+      window.location.href = 'profile.html';  // Переходим на страницу профиля
+    } catch (error) {
+      loginErrorMessage.textContent = error.message;
+    }
+  });
+
+  // Логика регистрации
+  const registerMessage = document.getElementById('registerMessage');
+
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('registerUsername').value;
+    const password = document.getElementById('registerPassword').value;
+
+    try {
+      const response = await fetch('http://localhost:3000/users');
+      if (!response.ok) {
+        throw new Error('Ошибка подключения к базе данных.');
+      }
+
+      const users = await response.json();
+      const existingUser = users.find((u) => u.username === username);
+
+      if (existingUser) {
+        throw new Error('Пользователь с таким именем уже существует.');
+      }
+
+      const newUser = {
+        username: username,
+        password: password,
+        token: `token-${Date.now()}`
+      };
+
+      const createResponse = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      if (!createResponse.ok) {
+        throw new Error('Ошибка при создании пользователя.');
+      }
+
+      // Сохраняем токен в localStorage
+      localStorage.setItem('userToken', newUser.token);
+
+      registerMessage.textContent = 'Регистрация успешна! Теперь вы можете войти.';
+      registerMessage.classList.add('text-success');
+    } catch (error) {
+      registerMessage.textContent = error.message;
+      registerMessage.classList.remove('text-success');
+      registerMessage.classList.add('text-danger');
+    }
+  });
+
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  themeToggleButton.addEventListener('click', () => {
+    if (body.classList.contains('theme-dark')) {
+      body.classList.replace('theme-dark', 'theme-light');
+      themeToggleButton.textContent = 'Светлая тема';
+    } else {
+      body.classList.replace('theme-light', 'theme-dark');
+      themeToggleButton.textContent = 'Тёмная тема';
+    }
+  });
+</script>
+</body>
+</html>

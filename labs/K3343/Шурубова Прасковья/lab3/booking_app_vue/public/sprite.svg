@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-theme" viewBox="0 0 24 24"></symbol>
+
+    <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </symbol>
+
+    <symbol id="icon-phone-handset" viewBox="0 0 24 24">
+        <path d="M21 15.46l-5-2a1 1 0 0 0-1 .09l-2.18 1.46a11.37 11.37 0 0 1-5.22-5.22L8 9a1 1 0 0 0 .09-1l-2-5A1 1 0 0 0 5 3a1 1 0 0 0-1 1.1 15.27 15.27 0 0 0 15 15 1 1 0 0 0 1.1-1 1 1 0 0 0-.1-.54z"></path>
+    </symbol>
+
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+        <path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm1-15h-2v6l5 3 1-1.73-4-2.27z"></path>
+    </symbol>
+
+    <symbol id="icon-location-pin" viewBox="0 0 24 24">
+        <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z"></path>
+    </symbol>
+
+    <symbol id="icon-fork-knife" viewBox="0 0 24 24">
+        <path d="M8 2v20H6V2zm4 0h2v9l2-1V2h2v8l-2 1v11h-2V9l-2 1z"></path>
+    </symbol>
+
+    <symbol id="icon-trash" viewBox="0 0 24 24">
+        <path d="M3 6h18v2H3V6zm2 3h14l-1 13H6L5 9zm5-7h4v2h-4V2z"></path>
+    </symbol>
+</svg>
