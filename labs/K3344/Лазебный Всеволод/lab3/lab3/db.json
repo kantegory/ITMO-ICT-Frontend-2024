@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "0dcb",
+      "name": "Gabriel",
+      "email": "test@mail.com",
+      "password": "12345"
+    },
+    {
+      "id": "b093",
+      "name": "Vsevolod",
+      "email": "vllazebnyi@gmail.com",
+      "password": "qwerty12345"
+    }
+  ],
+  "apartments": [
+    {
+      "id": 1,
+      "title": "Уютная квартира в Москве",
+      "description": "Идеальная квартира для работы из дома",
+      "image": "https://via.placeholder.com/150",
+      "price": 75000
+    },
+    {
+      "id": 2,
+      "title": "Студия в Сочи",
+      "description": "Вид на море и свежий воздух",
+      "image": "https://via.placeholder.com/150",
+      "price": 50000
+    },
+    {
+      "id": 3,
+      "title": "Апартаменты в Санкт-Петербурге",
+      "description": "Бывший особняк, высокий потолок",
+      "image": "https://via.placeholder.com/150",
+      "price": 120000
+    }
+  ]
+}
