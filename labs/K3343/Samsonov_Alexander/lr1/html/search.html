@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website - Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Recipe Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown"
+                            style="width: 350px; z-index: 200">
+                            <li>
+                                <form class="px-4 py-3">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="email"
+                                               placeholder="email@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password"
+                                               placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </form>
+                            </li>
+
+                            <li><a class="dropdown-item" href="register.html">New around here? <strong>Register</strong></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="container my-4">
+    <form class="d-flex" action="search.html" method="get">
+        <input class="form-control me-2 search-custom" type="search" name="search" id="form-global-search"
+               placeholder="Search for recipes..."
+               aria-label="Search" required>
+        <button class="btn btn-outline-success search-custom" type="submit">Search</button>
+    </form>
+</section>
+
+<main class="container-fluid">
+    <p id="search-result" class="text-center"></p>
+    <div class="row">
+        <!-- Filter Column -->
+        <div class="col-md-2 col-xxl-1 p-3 accent-background h-25" style="height: 100vh">
+            <div class="filter-column">
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#priceRangeCollapse" role="button"
+                        aria-expanded="false" aria-controls="priceRangeCollapse">
+                        Price Range <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="priceRangeCollapse">
+                        <div class="p-2">
+                            <div class="form-check form-check-inline">
+                                <input class="list-group-numbered" type="number" id="priceRange1">
+                                <label class="form-check-label" for="priceRange1">from</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="list-group-numbered" type="number" id="priceRange2">
+                                <label class="form-check-label" for="priceRange2">to</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#productsCollapse" role="button"
+                        aria-expanded="false" aria-controls="productsCollapse">
+                        Products <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="productsCollapse">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product1">
+                                <label class="form-check-label" for="product1">Vegan</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product2">
+                                <label class="form-check-label" for="product2">Halal</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="product3">
+                                <label class="form-check-label" for="product3">Gluten-free</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="product4">Allergens</label>
+                                <input class="select-input" type="text" id="product4"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h6 class="filter-title" data-bs-toggle="collapse" href="#cuisineCollapse" role="button"
+                        aria-expanded="false" aria-controls="cuisineCollapse">
+                        Cuisine <span class="arrow">&#9660;</span>
+                    </h6>
+                    <div class="collapse" id="cuisineCollapse">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine1">
+                                <label class="form-check-label" for="cuisine1">Cuisine 1</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine2">
+                                <label class="form-check-label" for="cuisine2">Cuisine 2</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cuisine3">
+                                <label class="form-check-label" for="cuisine3">Cuisine 3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col">
+            <div class="row my-5 border-top">
+                <h1>Best fit</h1>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-md-none d-lg-block">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 border-top">
+                <h1>Other results</h1>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-md-none d-lg-block">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-md-none d-lg-block">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-md-none d-lg-block">
+                        <div class="card h-100" style="max-height: 200px; overflow: hidden;">
+                            <img src="https://placehold.co/300x400" class="card-img-top" alt="Card image"
+                                 style="max-height: 100px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Recipie title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    commodo
+                                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                    parturient
+                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <small><a>see more</a></small>
+        </div>
+
+    </div>
+</main>
+
+<div class="container">
+    <footer class="row row-cols-5 py-5 my-5 border-top">
+        <div class="col">
+            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <p class="text-muted">© 2021</p>
+        </div>
+
+        <div class="col">
+
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script src="../js/substitute_search_bar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

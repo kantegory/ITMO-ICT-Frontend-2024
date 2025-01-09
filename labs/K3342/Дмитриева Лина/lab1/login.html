@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход / Регистрация</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1a001a; /* Тёмно-фиолетовый фон */
+      color: #e0d4ff; /* Светлый текст с фиолетовым оттенком */
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <!-- Форма входа -->
+  <div id="loginFormContainer">
+    <h2>Вход</h2>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="emailLogin" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailLogin" placeholder="Введите email" required>
+      </div>
+      <div class="mb-3">
+        <label for="passwordLogin" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="passwordLogin" placeholder="Введите пароль" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Войти</button>
+    </form>
+    <p class="mt-3">Нет аккаунта? <a href="#" id="showRegisterForm">Зарегистрироваться</a></p>
+  </div>
+
+  <!-- Форма регистрации (скрыта по умолчанию) -->
+  <div id="registerFormContainer" style="display: none;">
+    <h2>Регистрация</h2>
+    <form id="registerForm">
+      <div class="mb-3">
+        <label for="nameRegister" class="form-label">Имя</label>
+        <input type="text" class="form-control" id="nameRegister" placeholder="Введите ваше имя" required>
+      </div>
+      <div class="mb-3">
+        <label for="emailRegister" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailRegister" placeholder="Введите email" required>
+      </div>
+      <div class="mb-3">
+        <label for="passwordRegister" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="passwordRegister" placeholder="Введите пароль" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmPasswordRegister" class="form-label">Подтвердите пароль</label>
+        <input type="password" class="form-control" id="confirmPasswordRegister" placeholder="Повторите пароль" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+    <p class="mt-3">Уже есть аккаунт? <a href="#" id="showLoginForm">Войти</a></p>
+  </div>
+</div>
+
+<script>
+  // Переключение между формами входа и регистрации
+  document.getElementById('showRegisterForm').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('loginFormContainer').style.display = 'none';
+    document.getElementById('registerFormContainer').style.display = 'block';
+  });
+
+  document.getElementById('showLoginForm').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('registerFormContainer').style.display = 'none';
+    document.getElementById('loginFormContainer').style.display = 'block';
+  });
+
+  // Логика для входа
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert("Вход выполнен");
+    window.location.href = 'index.html'
+  });
+
+  // Логика для регистрации
+  document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const password = document.getElementById('passwordRegister').value;
+    const confirmPassword = document.getElementById('confirmPasswordRegister').value;
+
+    if (password !== confirmPassword) {
+      alert("Пароли не совпадают. Попробуйте снова.");
+      return;
+    }
+
+    // Дальнейшая логика регистрации
+    alert("Регистрация прошла успешно!");
+  });
+</script>
+</body>
+</html>

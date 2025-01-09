@@ -1,0 +1,111 @@
+/* Светлая тема */
+:root {
+    --bg-color: #ffffff;        
+    --text-color: #35342f;        
+    --link-color: #35342f;        
+    --hero-text-color: #35342f;   
+    --button-hover-bg: #f8f9fa;   
+    --property-price-color: #0b0b0b; 
+}
+
+/* Тёмная тема */
+.dark-theme {
+    --bg-color: #121212;    
+    --bs-body-bg: var(--bg-color);
+    --bs-body-color: var(--bg-color);
+    --text-color: #e1e0dd;        
+    --link-color: #e1e0dd;        
+    --hero-text-color: #e1e0dd;   
+    --button-hover-bg: #1f1f1f;   
+    --property-price-color: #5cc5ff; 
+}
+
+/* Общие стили */
+
+header, footer {
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+}
+main {
+    background-color: var(--bg-color); 
+}
+.hero {
+    background-color: var(--bg-color); 
+}
+
+body {
+    margin: 0;
+    font-size: 30px;
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif !important;
+    background-color: var(--bg-color);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+.back-button {
+    border: none;
+}
+
+.back-button img {
+    width: 20px; 
+    height: 20px;
+    transform: scale(-1, -1);
+}
+
+.back-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+/* index.html */
+
+.hero-text {
+    color: var(--hero-text-color);
+}
+
+.hero-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 300px;
+}
+
+/* sign-in.html */
+
+.sign-up-image {
+    height: 200px;
+    width: auto;
+}
+
+/* account.html */
+
+.form-label {
+    color: var(--text-color);
+}
+
+.text-check-label {
+    color: var(--text-color);
+}
+
+/* property-page.html */
+
+.property-desc {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.property-price {
+    color: var(--property-price-color);
+    font-size: 24px;
+}
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сервис предсказаний</title>
+  <!-- Подключение CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Подключение Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-color: #1a001a; /* Тёмно-фиолетовый фон */
+      color: #e0d4ff; /* Светлый текст с фиолетовым оттенком */
+    }
+    .hero {
+      background-size: cover; /* Заполнение фона */
+      background-position: center; /* Центрирование фона */
+      height: 60vh; /* Высота секции */
+      display: flex; /* Используем Flexbox для центрирования содержимого */
+      align-items: center; /* Вертикальное центрирование */
+      justify-content: center; /* Горизонтальное центрирование */
+      text-align: center; /* Выравнивание текста по центру */
+      border-radius: 10px; /* Закругление углов */
+      padding: 20px; /* Внутренние отступы */
+      position: relative; /* Для абсолютного позиционирования текста */
+      opacity: 0; /* Начальное состояние для анимации */
+      animation: fadeIn 1s forwards; /* Анимация плавного появления */
+    }
+    .hero::before {
+      content: ''; /* Псевдоэлемент для затемнения фона */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+      border-radius: 10px; /* Закругление углов */
+    }
+    .hero h1, .hero p {
+      position: relative; /* Чтобы текст был над фоном */
+      z-index: 1; /* Текст выше фона */
+    }
+    /* Анимация для плавного появления */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    /* Эффект наведения для навигации */
+    .nav-link {
+      transition: color 0.3s ease, transform 0.3s ease; /* Плавное изменение цвета и масштабирования */
+    }
+    .nav-link:hover {
+      color: #f39c12; /* Изменение цвета при наведении */
+      transform: scale(1.1); /* Увеличение размера при наведении */
+    }
+  </style>
+</head>
+<body>
+  <!-- Навигационная панель -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">🔮 Пророчества</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Личный кабинет</a></li>
+          <li class="nav-item"><a class="nav-link" href="arcans.html">Арканы</a></li>
+          <li class="nav-item"><a class="nav-link" href="natal.html">Натальная карта</a></li>
+          <li class="nav-item"><a class="nav-link" href="destiny_matrix.html">Матрица судьбы</a></li>
+          <li class="nav-item"><a class="nav-link" href="compatibility_matrix.html">Совместимость</a></li>
+          <li class="nav-item"><a class="nav-link" href="info.html">О сервисе</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Контент страницы -->
+  <div class="hero">
+    <div>
+      <h1>Добро пожаловать на сервис предсказаний!</h1>
+      <p>Исследуйте свою натальную карту, откройте тайны арканов и узнайте больше о своей судьбе и совместимости с другими людьми.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

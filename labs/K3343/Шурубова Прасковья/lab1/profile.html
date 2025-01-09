@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Личный кабинет</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Бронирование столиков</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#registration" data-toggle="modal">Регистрация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#login" data-toggle="modal">Вход</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Личный кабинет
+                </a>
+                <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="profile.html">Профиль</a>
+                    <a class="dropdown-item" href="order-history.html">История заказов</a>
+                    <a class="dropdown-item" href="favorites.html">Избранное</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center">Профиль пользователя</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <form>
+                    <div class="form-group">
+                        <label for="surname">Фамилия</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Введите фамилию">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name" placeholder="Введите имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Почта</label>
+                        <input type="email" class="form-control" id="email" placeholder="Введите почту">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-danger" id="button-logout">Выйти</button>
+                        <button type="submit" id="button-save">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="footer3 cid-seI3I6s46u" id="footer3-r">
+    <div class="footer-line"></div>
+    <div class="container">
+        <div class="media-container-row align-center">
+            <div class="row row-links justify-content-center">
+                <ul class="foot-menu">
+                    <li class="foot-menu-item"><a href="#" class="text-dark">О проекте</a></li>
+                    <li class="foot-menu-item"><a href="#" class="text-dark">Ресторанам/партнёрам</a></li>
+                    <li class="foot-menu-item"><a href="#" class="text-dark">Свяжитесь с нами</a></li>
+                </ul>
+            </div>
+            <div class="row row-copyright justify-content-center">
+                <p class="mbr-text mb-0 align-center text-dark">
+                    Last updated on
+                    <time itemprop="dateModified" datetime="2024-10-23T15:16:13.003Z">2024-10-23</time><br>
+                    © Copyright 2024 Бронирование столиков. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
