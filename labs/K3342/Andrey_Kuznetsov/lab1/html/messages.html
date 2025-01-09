@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/messages.css">
+    <script defer src="../js/layout.js"></script>
+</head>
+
+<body>
+    <div id="header-container">
+        <h1>Messages</h1>
+    </div>
+
+    <div class="container">
+        <div class="dialog-list">
+            <!-- TBD: list dialogs gonna be dynamic -->
+            <h2>Dialogs</h2>
+            <div class="dialog-item" onclick="openChat('owner1')">Owner 1</div>
+            <div class="dialog-item" onclick="openChat('owner2')">Owner 2</div>
+            <div class="dialog-item" onclick="openChat('owner3')">Owner 3</div>
+            <div class="dialog-item" onclick="openChat('owner4')">Owner 4</div>
+        </div>
+
+        <div class="message-container" id="message-container">
+            <h2>Chat with <span id="chat-owner">Select a dialog</span></h2>
+            <div class="messages" id="messages">
+                <!-- TBD: messages gonna be dynamic -->
+                <div class="message owner">Здравствуйте! Как ваши дела?</div>
+                <div class="message user">Привет! У меня всё хорошо, спасибо. Как насчет квартиры?</div>
+                <div class="message owner">Квартира все еще доступна. Хотите назначить просмотр?</div>
+            </div>
+
+            <div class="message-input">
+                <input type="text" placeholder="Type your message here..." id="message-input">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

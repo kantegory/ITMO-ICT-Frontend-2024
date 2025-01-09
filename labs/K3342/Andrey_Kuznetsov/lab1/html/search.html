@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Search</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script defer src="../js/layout.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <div class="container">
+        <h1 class="text-center">Real Estate Search</h1>
+        <div class="row">
+            <aside class="search-sidebar">
+                <form id="searchForm">
+
+                    <div class="form-group">
+                        <label for="propertyType" class="form-label">Property Type</label>
+                        <select id="propertyType" class="form-select">
+                            <option value="">All</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="condo">Condominium</option>
+                            <option value="land">Land</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purchaseRent" class="form-label">Transaction Type</label>
+                        <select id="purchaseRent" class="form-select">
+                            <option value="rent">Rent</option>
+                            <option value="buy">Buy</option>
+                            <option value="lease">Lease</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" id="location" class="form-control" placeholder="Enter city or area">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Number of Rooms</label>
+                        <div class="checkbox-group">
+                            <div>
+                                <input type="checkbox" id="room0" value="0">
+                                <label for="room0">Studio</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="room1" value="1">
+                                <label for="room1">1</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="room2" value="2">
+                                <label for="room2">2</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="room3" value="3">
+                                <label for="room3">3</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="room4" value="4">
+                                <label for="room4">4+</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Amenities</label>
+                        <div class="checkbox-group">
+                            <div>
+                                <input type="checkbox" id="amenityPool" value="pool">
+                                <label for="amenityPool">Swimming Pool</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="amenityGym" value="gym">
+                                <label for="amenityGym">Gym</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="amenityGarage" value="garage">
+                                <label for="amenityGarage">Garage</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="amenityGarden" value="garden">
+                                <label for="amenityGarden">Garden</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group range-container">
+                        <label class="form-label">Price Range</label>
+                        <div class="range">
+                            <input type="text" id="minPrice" placeholder="Min" class="form-control mt-2" readonly>
+                            <input type="text" id="maxPrice" placeholder="Max" class="form-control mt-2" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group range-container">
+                        <label class="form-label">Area Range</label>
+                        <div class="range">
+                            <input type="text" id="minArea" placeholder="Min" class="form-control mt-2" readonly>
+                            <input type="text" id="maxArea" placeholder="Max" class="form-control mt-2" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sortBy" class="form-label">Sort By</label>
+                        <select id="sortBy" class="form-select">
+                            <option value="default">Default</option>
+                            <option value="priceAsc">Price (Low to High)</option>
+                            <option value="priceDesc">Price (High to Low)</option>
+                            <option value="roomsAsc">Rooms (Low to High)</option>
+                            <option value="roomsDesc">Rooms (High to Low)</option>
+                            <option value="newest">Newest Listings</option> <!-- New Option -->
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </aside>
+            
+            <main class="col-md-9 results-container">
+                <div id="searchResults" class="mt-5"></div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
