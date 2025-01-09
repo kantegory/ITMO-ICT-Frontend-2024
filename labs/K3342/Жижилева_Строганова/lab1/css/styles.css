@@ -1,0 +1,374 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Общие переменные */
+:root {
+  --light-background: #fafafa;
+  --dark-background: #121212;
+  --light-text-color: #333;
+  --dark-text-color: #E0E0E0;
+  --primary-color: #556B2F; /* Зеленый */
+  --secondary-color: #c5a16f; /* Золотистый */
+  --highlight-color: #8FBC8F; /* Светло-оливковый */
+  --focus-color: #98FB98; /* Светло-зеленый для фокуса */
+  --hover-color: #7b9e6e; /* Зеленый при наведении */
+  --border-color: #B0C4DE; /* Голубой при фокусе */
+  --danger-color: #f082b5; /* Розовый */
+  --danger-hover-color: #ff0000; /* Красный при наведении */
+  --dark-background-color: #1E1E1E; /* Темный фон для секций */
+  --comment-border-color: #8FBC8F;
+  --graphite-gray: #2B2B2B; /* Графитово-серый для фона модальных окон */
+}
+
+/* Общий стиль документа */
+html.light-theme, body.light-theme {
+  background-color: var(--light-background);
+  color: var(--light-text-color);
+  font-family: 'Lora', serif;
+  min-height: 100vh;
+  background: url('blur.jpg') no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll;
+}
+
+body.light-theme h2 {
+  color: var(--primary-color);
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+
+body.light-theme .container {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.light-theme .form-group label {
+  color: var(--primary-color);
+}
+
+body.light-theme .form-control {
+  border: 2px solid var(--secondary-color);
+}
+
+body.light-theme .form-control:focus {
+  border-color: var(--border-color);
+  box-shadow: 0 0 10px rgba(107, 142, 35, 0.3);
+}
+
+body.light-theme .btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+
+body.light-theme .btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+body.light-theme a {
+  color: var(--primary-color);
+}
+
+body.light-theme a:hover {
+  color: #2F4F4F;
+}
+
+body.light-theme #commentsSection {
+  background-color: #f9f9f9;
+}
+
+body.light-theme .comment {
+  border-left: 3px solid var(--secondary-color);
+}
+
+
+body.light-theme #theme-toggle {
+  background-color: rgba(0, 186, 214, 0);
+  border-color: rgba(0, 186, 214, 0) ;
+  color: #fff;
+}
+
+body.light-theme .btn-custom-like, .btn-custom-subscribe {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+
+body.light-theme .btn-custom-like:hover {
+  background-color: var(--hover-color); /* Темнее при наведении */
+}
+
+body.light-theme .btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+/* Темная тема */
+html.dark-theme, body.dark-theme {
+  background-color: var(--dark-background);
+  color: var(--dark-text-color);
+  font-family: 'Lora', serif;
+  min-height: 100vh;
+  background: url('freepik-export-20241128175843OGCn.jpeg') no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll;
+}
+
+body.dark-theme h2 {
+  color: var(--highlight-color);
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+body.dark-theme .container {
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.dark-theme .form-group label {
+  color: var(--focus-color);
+}
+
+body.dark-theme .form-control {
+  border: 2px solid #555555;
+  background-color: #1E1E1E;
+  color: var(--dark-text-color);
+}
+
+body.dark-theme .form-control:focus {
+  border-color: var(--focus-color);
+  box-shadow: 0 0 10px rgba(152, 251, 152, 0.5);
+}
+
+body.dark-theme .btn-primary {
+  background-color: var(--highlight-color);
+  border-color: var(--highlight-color);
+  color: #121212;
+}
+
+body.dark-theme .btn-primary:hover {
+  background-color: #6B8E23;
+}
+
+body.dark-theme a {
+  color: var(--highlight-color);
+}
+
+body.dark-theme a:hover {
+  color: #ADFF2F;
+}
+
+body.dark-theme #commentsSection {
+  background-color: var(--dark-background-color);
+}
+
+body.dark-theme .comment {
+  border-left: 3px solid var(--highlight-color);
+  background-color: var(--dark-background-color);
+  color: #2B2B2B;
+}
+
+body.dark-theme .card {
+  background-color: #2B2B2B; /* Графитово-серый, светлее подложки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: var(--dark-text-color);
+}
+
+body.dark-theme .card-title {
+  color: var(--highlight-color);
+}
+
+body.light-theme .card-title {
+  color: #556B2F;
+}
+
+body.dark-theme .btn-custom-like, .btn-custom-subscribe {
+  background-color: #6B8E23; /* Насыщенный зеленый, вместо светло-зеленого */
+  color: #121212;
+}
+
+body.dark-theme .btn-custom-like:hover {
+  background-color: #556B2F; /* Темнее при наведении */
+}
+
+body.dark-theme .btn-custom-comment {
+  background-color: #555555;
+  color: var(--dark-text-color);
+}
+
+body.dark-theme .btn-danger {
+  background-color: #D9534F;
+  border-color: #D9534F;
+}
+
+body.dark-theme .btn-danger:hover {
+  background-color: #C9302C;
+  border-color: #C12E2A;
+}
+
+/* Модальное окно */
+body.dark-theme .modal-content {
+  background-color: var(--graphite-gray); /* Графитово-серый фон для модальных окон */
+  color: var(--dark-text-color); /* Текст в светлом цвете для контраста */
+  border-radius: 10px;
+}
+body.light-theme .modal-content {
+  background-color: #FFFFFFF2; /* Графитово-серый фон для модальных окон */
+  color: var(--light-text-color); /* Текст в светлом цвете для контраста */
+  border-radius: 10px;
+}
+body.dark-theme .modal-header {
+  border-bottom: 1px solid var(--focus-color);
+}
+
+
+body.dark-theme .modal-body {
+  background-color: var(--graphite-gray); /* Темный фон для модальной части */
+  color: var(--dark-text-color);
+}
+
+body.light-theme .modal-body {
+  background-color: #FFFFFFF2; /* Графитово-серый фон для модальных окон */
+  color: var(--light-text-color);
+}
+
+/* Стиль для текста в placeholder в модальном окне */
+body.dark-theme .modal-body .form-control::placeholder {
+  color: #fff; /* Белый цвет текста в placeholder */
+}
+
+body.light-theme .modal-body .form-control::placeholder {
+  color: #000000; /* Белый цвет текста в placeholder */
+}
+
+/* Анимация для плавного появления контента */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+body.onload .fade-in {
+  opacity: 1;
+}
+
+/* Дополнительные стили */
+.input-group-text i {
+  font-size: 1.1rem;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.text-uniform {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Стиль для кнопок */
+.btn-custom-comment {
+  background-color: #555555;
+  color: var(--dark-text-color);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+  padding-left: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #B0B0B0;
+}
+
+.author-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+body.dark-theme .form-select {
+  background-color: #1E1E1E; /* Тот же фон, что и для других полей ввода */
+  border: 2px solid #555555;  /* Темный бордер */
+  color: var(--dark-text-color); /* Светлый текст */
+}
+
+body.dark-theme .form-select:focus {
+  border-color: var(--focus-color);
+  box-shadow: 0 0 10px rgba(152, 251, 152, 0.5);
+}
+
+/* Изменения для placeholder текста внутри полей ввода */
+body.dark-theme .form-control::placeholder,
+body.dark-theme .form-select::placeholder {
+  color: #fff; /* Белый текст для placeholder */
+}
+
+/* Изменения для всех полей ввода в темной теме */
+body.dark-theme .form-control {
+  background-color: #1E1E1E; /* Тот же фон для всех полей ввода */
+  border: 2px solid #555555;
+  color: var(--dark-text-color); /* Светлый текст */
+}
+
+/* Адаптация для других компонентов */
+body.dark-theme .form-control:focus {
+  border-color: var(--focus-color);
+  box-shadow: 0 0 10px rgba(152, 251, 152, 0.5);
+}
+
+    body.dark-theme .icon {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    body.light-theme .icon {
+      width: 24px;
+      height: 24px;
+      fill: #000000;
+    }
+
+.theme-toggle-link {
+      position: fixed;
+      bottom: 20px; /* Помещаем снизу */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Эффект при наведении */
+    .theme-toggle-link:hover {
+      color: #0056b3;
+
