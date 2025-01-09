@@ -1,0 +1,157 @@
+/* Светлая тема */
+
+:root {
+    --background-color: #f7f9fc;
+    --header-text-color: #4a6a8c;
+    --card-bg-color: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --btn-primary-bg-color: #7da8c6;
+    --btn-primary-border-color: transparent;
+    --btn-primary-hover-bg-color: #5a8fa4;
+    --btn-primary-hover-border-color: #4e6c82;
+    --success-bg-color: #a3c9d3;
+    --success-text-color: #1e4e6e;
+    --error-bg-color: #f0c0c0;
+    --error-text-color: #9f3b3b;
+    --container-bg-color: #ffffff;
+    --container-box-shadow: rgba(0, 0, 0, 0.05);
+    --link-color: #6e8f9f;
+    --link-hover-color: #4b6b7d;
+    --input-bg-color: #f7f9fc;
+    --input-border-color: #d1d1d1;
+    --footer-bg-color: #f7f9fc;
+    --footer-text-color: #4a6a8c;
+    --navbar-bg-color: #e1e9f0;
+    --navbar-text-color: #4a6a8c;
+    --navbar-border-color: #d1d1d1;
+    --header-bg-color: #4b6b7d;
+    --header-btn-bg-color: #ffffff;
+    --header-btn-text-color: #4b6b7d;
+    --card-title-color: #3a4e5d;
+    --card-text-color: #4a6a8c;
+    --form-label-color: #4a6a8c;
+    --h1-text-color: #3a4e5d;
+    --h1-font-size: 2.5rem;
+}
+
+/* Темная тема */
+
+.dark-theme {
+    --background-color: #2c3e50;
+    --header-text-color: #ffffff;
+    --card-bg-color: #34495e;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --btn-primary-bg-color: #5a8fa4;
+    --btn-primary-border-color: transparent;
+    --btn-primary-hover-bg-color: #4e6c82;
+    --btn-primary-hover-border-color: #3d5564;
+    --success-bg-color: #1e4e6e;
+    --success-text-color: #e1f4f8;
+    --error-bg-color: #a03b3b;
+    --error-text-color: #f0e1e1;
+    --container-bg-color: #34495e;
+    --container-box-shadow: rgba(0, 0, 0, 0.3);
+    --link-color: #8a9ba9;
+    --link-hover-color: #6e7f87;
+    --input-bg-color: #34495e;
+    --input-border-color: #6c7c7f;
+    --footer-bg-color: #2c3e50;
+    --footer-text-color: #aab4b9;
+    --navbar-bg-color: #2c3e50;
+    --navbar-text-color: #ffffff;
+    --navbar-border-color: #3d5564;
+    --header-bg-color: #1f2b35;
+    --header-btn-bg-color: #5a8fa4;
+    --header-btn-text-color: #34495e;
+    --card-title-color: #ffffff;
+    --card-text-color: #ffffff;
+    --form-label-color: #e1e9f0;
+    --h1-text-color: #ffffff;
+    --h1-font-size: 2.5rem;
+}
+
+#navbar {
+    background-color: var(--navbar-bg-color);
+    border-bottom: 1px solid var(--navbar-border-color);
+}
+
+#navbar .navbar-brand, #navbar .nav-link {
+    color: var(--navbar-text-color);
+}
+
+#navbar .navbar-toggler {
+    background-color: var(--navbar-text-color);
+}
+
+#navbar .navbar-toggler-icon {
+    background-color: var(--navbar-text-color);
+}
+
+#navbar .btn-outline-secondary {
+    color: var(--header-btn-text-color);
+    background-color: var(--header-btn-bg-color);
+    border-color: var(--navbar-text-color);
+}
+
+#navbar .btn-outline-secondary:hover {
+    color: var(--navbar-text-color);
+    background-color: var(--header-bg-color);
+    border-color: var(--navbar-text-color);
+}
+
+#navbar a:hover {
+    color: var(--link-hover-color);
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--btn-primary-border-color);
+    background-color: var(--btn-primary-bg-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--btn-primary-hover-bg-color);
+    border-color: var(--btn-primary-hover-border-color);
+}
+
+.navbar-text-color, .nav-link {
+    color: var(--navbar-text-color);
+}
+
+h1.text-center {
+    color: var(--h1-text-color);
+    font-size: var(--h1-font-size);
+}
+
+.card {
+    height: 350px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-img-top {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.form-label {
+    color: var(--form-label-color);
+}
+
+.card-title {
+    color: var(--card-title-color);
+}
+
+.card-text {
+    color: var(--card-text-color);
+}
