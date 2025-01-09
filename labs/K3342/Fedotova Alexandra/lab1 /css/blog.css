@@ -1,0 +1,17 @@
+body {
+    background-color: #fbeaff; 
+}
+.blog-container {
+    padding: 20px;
+}
+.card-article {
+    background-color: #fff; 
+    border-radius: 15px;
+}
+h1, .card-title {
+    color: #6a0dad; 
+}
+.btn-primary {
+    background-color: #ff85c0; 
+    border-color: #ff85c0;
+}
