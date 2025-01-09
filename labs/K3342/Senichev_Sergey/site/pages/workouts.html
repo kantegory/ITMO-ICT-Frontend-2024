@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировки</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/workouts.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container mt-5" role="main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+                <li class="breadcrumb-item active">Тренировки</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-4">Тренировки</h1>
+
+        <div class="workout-filters mb-4">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control workout-search" placeholder="Поиск тренировок...">
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h6>Уровень сложности:</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="difficulty" value="Все уровни" id="diffAll" checked>
+                        <label class="form-check-label" for="diffAll">Все уровни</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="difficulty" value="Начальный" id="diffBeginner">
+                        <label class="form-check-label" for="diffBeginner">Начальный</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="difficulty" value="Средний" id="diffIntermediate">
+                        <label class="form-check-label" for="diffIntermediate">Средний</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="difficulty" value="Продвинутый" id="diffAdvanced">
+                        <label class="form-check-label" for="diffAdvanced">Продвинутый</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h6>Тип тренировки:</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" value="Все типы" id="typeAll" checked>
+                        <label class="form-check-label" for="typeAll">Все типы</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" value="Кардио" id="typeCardio">
+                        <label class="form-check-label" for="typeCardio">Кардио</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" value="Силовые" id="typeStrength">
+                        <label class="form-check-label" for="typeStrength">Силовые</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" value="Йога" id="typeYoga">
+                        <label class="form-check-label" for="typeYoga">Йога</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 filter-section">
+                    <h6>Длительность:</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="duration" value="Любая длительность" id="durAll" checked>
+                        <label class="form-check-label" for="durAll">Любая длительность</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="duration" value="15-30 минут" id="dur1530">
+                        <label class="form-check-label" for="dur1530">15-30 минут</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="duration" value="30-60 минут" id="dur3060">
+                        <label class="form-check-label" for="dur3060">30-60 минут</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="duration" value="60+ минут" id="dur60plus">
+                        <label class="form-check-label" for="dur60plus">60+ минут</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="workoutsList" class="row">
+            <!-- загрузка данных из БД -->
+        </div>
+
+        <div class="text-center mt-4 mb-5">
+            <button class="btn btn-primary">Загрузить ещё</button>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+    <div id="modals"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/workouts.js"></script>
+    <script src="../js/header.js"></script>
+
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        fetch('../components/modals.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modals').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

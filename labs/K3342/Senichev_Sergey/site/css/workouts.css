@@ -1,0 +1,18 @@
+.workout-filters {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.workout-card {
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section h6 {
+    margin-bottom: 10px;
+}
