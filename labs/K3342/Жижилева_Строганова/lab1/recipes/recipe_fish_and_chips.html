@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe | Recipe App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+    <h2 class="text-center my-4">Fish and Chips</h2>
+    </header>
+
+    <section aria-labelledby="recipeTitle">
+      <h2 id="recipeTitle" class="visually-hidden">Recipe Details</h2>
+
+      <div class="author-section d-flex align-items-center mb-4">
+        <p class="me-3 mb-0">
+          <strong>Author:</strong> <span id="authorName">John Doe</span>
+        </p>
+        <button class="btn btn-primary" id="subscribeBtn" aria-label="Subscribe to Author">
+          Subscribe to Author
+        </button>
+      </div>
+
+      <article class="recipe-content">
+        <figure class="text-center">
+          <img src="../img/fish-chips-bowl-with-lemon-clipboard.jpg" class="img-fluid mb-3" alt="Top view of apple pie with coffee">
+          <figcaption>You have to try it!</figcaption>
+        </figure>
+
+        <section aria-labelledby="ingredientsHeading">
+          <h3 id="ingredientsHeading">Ingredients</h3>
+          <ul>
+            <li>Fish</li>
+            <li>Potatoes</li>
+            <li>Batter</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="stepsHeading">
+          <h3 id="stepsHeading">Steps</h3>
+          <ol>
+            <li>Prepare potatoes: Cut potatoes into fries. Soak in water, then dry and fry at 325°F until soft. Set aside.</li>
+            <li>Make batter: Mix flour, baking powder, salt, and cold beer (or sparkling water) into a thick batter.</li>
+            <li>Prepare fish: Season fish fillets (cod or haddock) with salt and pepper, then dip in the batter.</li>
+            <li>Fry fish: Deep-fry battered fish in hot oil (350°F) until golden and crispy, about 4-5 minutes.</li>
+            <li>Double-fry chips: Fry the potatoes again at 375°F until crispy.</li>
+            <li>Serve: Plate the fish and chips with tartar sauce and lemon wedges.</li>
+          </ol>
+        </section>
+
+        <div class="mt-4 d-flex align-items-center" role="region" aria-label="Recipe actions">
+          <button class="btn btn-custom-beige me-2" id="likeBtn" aria-pressed="false" aria-label="Like this recipe">
+            Like <span id="likeCount">0</span>
+          </button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#commentModal" aria-label="Add a comment">
+            Comment
+          </button>
+        </div>
+
+        <section aria-labelledby="commentsHeading" class="mt-4">
+          <h3 id="commentsHeading">Comments</h3>
+          <div id="commentsList" class="border p-3" tabindex="0" aria-live="polite"></div>
+        </section>
+      </article>
+    </section>
+
+    <!-- Модальное окно для комментариев -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="commentModalLabel">Add Comment</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="commentAuthor" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="commentAuthor" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="commentText" class="form-label">Comment</label>
+                <textarea class="form-control" id="commentText" rows="3" placeholder="Enter your comment" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitCommentBtn">Submit Comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/recipe.js"></script>
+</body>
+</html>

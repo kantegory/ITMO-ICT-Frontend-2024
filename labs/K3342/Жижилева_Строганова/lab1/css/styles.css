@@ -1,0 +1,199 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Общий стиль документа */
+body, html {
+  background-color: #fafafa;
+  font-family: 'Lora', serif;
+  color: #333;
+  min-height: 100vh;
+  background: url('blur.jpg') no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll;
+}
+
+/* Заголовки */
+h2 {
+  color: #556B2F; /* Зеленый для заголовков */
+  font-family: 'Dancing Script', cursive; /* Рукописный шрифт */
+  font-weight: bold;
+  font-size: 3em;
+}
+
+/* Полупрозрачный белый квадрат для фона */
+.container {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-group label {
+  color: #6B8E23; /* Зеленый для текста меток */
+}
+
+.form-control {
+  border: 2px solid #D2B48C; /* Золотистый цвет границ */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: #B0C4DE; /* Голубой при фокусе */
+  box-shadow: 0 0 10px rgba(107, 142, 35, 0.3);
+}
+
+.btn-primary {
+  background-color: #D2B48C; /* Приглушенный золотистый */
+  border-color: #D2B48C;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.btn-primary:hover {
+  background-color: #C0A080; /* Темнее при наведении */
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+a {
+  color: #556B2F; /* Зеленый для ссылок */
+}
+
+a:hover {
+  color: #2F4F4F; /* Темно-серый для ссылок при наведении */
+}
+
+/* Анимация для кнопки при наведении */
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #7b9e6e; /* Зеленый цвет */
+  transition: all 0.3s ease;
+}
+
+/* Золотой для фокуса полей ввода*/
+input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
+  transition: all 0.3s ease;
+}
+
+/* Анимация для плавного появления контента */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+body.onload .fade-in {
+  opacity: 1;
+}
+
+#commentsSection {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+#commentsSection div {
+  margin-bottom: 10px;
+  border-left: 3px solid #007bff;
+  padding-left: 10px;
+}
+
+#likeBtn {
+  background-color: #D2B48C;
+  color: white;
+}
+
+#likeBtn:hover {
+  background-color: #7b9e6e;
+}
+
+#subscribeBtn {
+  background-color: #D2B48C;
+  color: white;
+}
+
+#subscribeBtn:hover {
+  background-color: #7b9e6e;
+}
+.author-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.btn-custom-like, .btn-custom-subscribe {
+  background-color: #D2B48C; /* Бежевый */
+  color: #fff;
+}
+.btn-custom-comment {
+  background-color: #6c757d; /* Серый */
+  color: #fff;
+}
+
+.comment {
+  margin-bottom: 10px;
+  border-left: 3px solid #D2B48C;
+  padding-left: 10px;
+  font-size: 0.9em;
+}
+.comment-author {
+  font-weight: bold;
+  color: #556B2F; /* Зеленый цвет для автора */
+}
+/* Пример стилей для улучшения внешнего вида */
+.card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding-left: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #f082b5;
+  border-color: #f082b5;
+}
+
+.btn-danger:hover {
+  background-color: #ff0000 ;
+  border-color: #f80000 ;
+}
+
+    /* Дополнительный стиль для иконок рядом с полями */
+.input-group-text i {
+  font-size: 1.1rem; /* Размер иконок */
+  color: #556B2F; /* Зеленый цвет для иконок */
+}
+    /* Центровка кнопки Login */
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.text-uniform {
+  font-family: Arial, sans-serif; /* Выберите желаемый шрифт */
+  font-size: 16px; /* Настройте размер шрифта под общий стиль */
+  color: #333; /* Единый цвет текста */
+}
