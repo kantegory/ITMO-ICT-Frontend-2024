@@ -1,0 +1,64 @@
+:root {
+    --background-color: #fbeaff; 
+    --text-color: #333; 
+    --card-background: #fff; 
+    --heading-color: #6a0dad; 
+    --button-background: #ff85c0; 
+    --button-border: #ff85c0;
+}
+
+/* Альтернативная голубая тема */
+.blue-theme {
+    --background-color: #e0f7fa; 
+    --text-color: #333; 
+    --card-background: #ffffff; 
+    --heading-color: #00796b; 
+    --button-background: #00acc1; 
+    --button-border: #00acc1;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.blog-container {
+    padding: 20px;
+}
+
+.card-article {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+h1, .card-title {
+    color: var(--heading-color);
+}
+
+.btn-primary {
+    background-color: var(--button-background);
+    border-color: var(--button-border);
+    color: var(--text-color);
+}
+
+/* Переключатель темы */
+.theme-switcher {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.theme-switcher i {
+    font-size: 2rem;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.theme-switcher:hover i {
+    color: #00796b;
+}

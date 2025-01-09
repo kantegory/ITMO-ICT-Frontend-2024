@@ -1,0 +1,88 @@
+/* Основные переменные для темы */
+:root {
+    --background-color: #fbeaff;
+    --text-color: #333;
+    --container-background: #fff;
+    --input-background: #f3e5f5;
+    --button-background: #ff85c0;
+    --button-border: #ff85c0;
+    --link-color: #ff2d55;
+}
+
+/* Альтернативная голубая тема */
+.blue-theme {
+    --background-color: #e0f7fa;
+    --text-color: #333;
+    --container-background: #ffffff;
+    --input-background: #b2ebf2;
+    --button-background: #00acc1;
+    --button-border: #00acc1; 
+    --link-color: #00796b; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    position: relative; 
+}
+
+.registration-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: var(--container-background);
+    border-radius: 15px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.form-control {
+    background-color: var(--input-background);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: var(--button-background);
+    border-color: var(--button-border);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.theme-switcher i {
+    font-size: 2rem;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.theme-switcher:hover i {
+    color: #00796b; 
+}
