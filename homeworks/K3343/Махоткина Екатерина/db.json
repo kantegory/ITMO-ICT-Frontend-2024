@@ -1,0 +1,216 @@
+{
+  "users": [
+    {
+      "id": "18rt",
+      "email": "example@example.com",
+      "password": "password123",
+      "dateRegistration": "2024-05-21",
+      "name": "Michael Wilson",
+      "gender": "male",
+      "age": 25,
+      "startWeight": 80,
+      "currentWeight": 76,
+      "goalWeight": 65,
+      "completedWorkouts": 10,
+      "frequentWorkouts": [
+        "Running",
+        "Yoga",
+        "Weight Lifting"
+      ],
+      "weightProgress": [
+        80,
+        78,
+        76,
+        74,
+        72,
+        70,
+        73,
+        76
+      ],
+      "waistCircumference": 87,
+      "hipCircumference": 120,
+      "chestCircumference": 99
+    },
+    {
+      "id": "bed0",
+      "email": "masha1234@ynadex.ru",
+      "password": "M1234",
+      "dateRegistration": "2024-10-17",
+      "name": "Anastasia",
+      "gender": "female",
+      "age": 21,
+      "currentWeight": 91,
+      "goalWeight": 67,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        91
+      ],
+      "waistCircumference": 100,
+      "hipCircumference": 130,
+      "chestCircumference": 110
+    },
+    {
+      "id": "5eb6",
+      "email": "rrr@gmail.com",
+      "password": "1234567890",
+      "dateRegistration": "2023-10-11",
+      "name": "Alex",
+      "gender": "male",
+      "age": 31,
+      "startWeight": 120,
+      "currentWeight": 120,
+      "goalWeight": 85,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        120
+      ],
+      "waistCircumference": 130,
+      "hipCircumference": 126,
+      "chestCircumference": 101
+    },
+    {
+      "id": "7255",
+      "email": "petr1@gmail.com",
+      "password": "Petr111",
+      "dateRegistration": "2024-11-14T22:05:19.008Z",
+      "name": "Petr 1",
+      "gender": "male",
+      "age": 37,
+      "startWeight": 95,
+      "currentWeight": 95,
+      "goalWeight": 80,
+      "completedWorkouts": 0,
+      "frequentWorkouts": [],
+      "weightProgress": [
+        95
+      ],
+      "waistCircumference": 0,
+      "hipCircumference": 0,
+      "chestCircumference": 0
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Top-10 life hacks for fast running",
+      "authorId": "18rt",
+      "content": "Fast running is great for cardiovascular health. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Running",
+        "Stretching"
+      ],
+      "date": "2024-01-23"
+    },
+    {
+      "id": "2",
+      "title": "Exercise In The Morning Vs. Evening: Benefits, Drawbacks, And Optimal Timing",
+      "authorId": "bed0",
+      "content": "Whether performed in the day or night, exercise indeed does good for our body. However, we always find it difficult to decide whether to go to the gym in the morning or evening. There can be many reasons behind it, like a busy work schedule and social life among others. The debate, Exercise in morning vs evening, is ever going. Nonetheless, let’s just try to make things simple here!  \n\nThere is no denying the fact that exercise is essential for every individual. It improves our cardiovascular health, develops muscle mass, boosts the immune system, decreases stress, improves sleep, and impacts our overall well-being positively. As per research, a person should engage themselves in vigorous exercise for about 75 to 150 minutes and if doing moderate exercise, then they should indulge in 150 to 300 minutes each week. Not only does this help us get fit physically, but physical exercise indeed boosts our mental health and well-being.  ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "3",
+      "title": "How Creatine Transforms Your Gym Results ?",
+      "authorId": "18rt",
+      "content": "Creatine is a “legal steroid” that we all have heard of! It is a polarizing topic in the health and fitness industry. Creatine for muscle gain is one of the most researched supplements these days and everyone has some diverse opinions about it. Many people claim that they feel much better after they include creatine in their diets and believe that this supplement helps them get fit and build muscle.  \n\nGenerally, creatine is the best to opt for muscle gain. However, we understand that there can be lots of questions regarding creatine transformation. So, let us discuss this vast topic in detail! ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "4",
+      "title": "Energize, Recover, Repeat: Expert Tips On Pre & Post Workout Meal Nutrition",
+      "authorId": "bed0",
+      "content": "Keeping up with your exercise regime is good but what we need along with the workout is proper nutrition. What we eat before and after our workout makes a huge impact on our body, we can say that the pre & post workout meal is important to optimize the performance of our body. Let us dig deeper into this!  \n\nAt the most basic level, nutrition is all about having a regular and balanced diet. Whether you are an avid gym goer or someone who is just attempting to maintain their fitness, nutrition is the building block. Talking fundamentally, nutrients are substances found in foods that our bodies use to grow, reproduce, and survive.\n\nThe concept of nutrition includes having proper calories, units of energy, and important nutrients such as water, carbohydrates, vitamins, protein, fats, and minerals. Now, coming to its significance in pre- and pose-workout routines, here’s a detailed overview for you.  ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    },
+    {
+      "id": "5",
+      "title": "Sticking to an Exercise Program: 25 Tips to Achieve Exercise Success",
+      "authorId": "bed0",
+      "content": "This article describes effective fitness techniques. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Lifting",
+        "Push up"
+      ],
+      "date": "2024-10-02"
+    },
+    {
+      "id": "6",
+      "title": "Training Secrets of Olympians to Help You Stay Fit",
+      "authorId": "18rt",
+      "content": "Olympians share their secrets to staying fit. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-01-07"
+    },
+    {
+      "id": "7",
+      "title": "Green Exercise: The Benefits of Outdoor Exercise and How to Get Started",
+      "authorId": "bed0",
+      "content": "Studies have found that green exercise—or exercise performed in natural environments—can yield benefits beyond those seen with performing the same exercise indoors. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it.",
+      "sports": [
+        "Treadmill"
+      ],
+      "date": "2024-09-17"
+    },
+    {
+      "id": "8",
+      "title": "What Is Behavior Change and How Does It Relate to Physical Activity?",
+      "authorId": "5eb6",
+      "content": "Humans are capable of, and familiar with, change. As we experience life, we grow and change—not just physically, but mentally, emotionally, socially, intellectually and spiritually, as well. At first glance, the idea of changing a behavior may seem simplistic because humans are adaptable and change frequently, even when we aren’t conscious of it. ",
+      "sports": [
+        "Stretching"
+      ],
+      "date": "2024-10-06"
+    }
+  ],
+  "comments": [
+    {
+      "id": "b692",
+      "postId": 1,
+      "userId": "1",
+      "text": "Great tips!"
+    },
+    {
+      "id": "wq4",
+      "postId": 1,
+      "userId": "1",
+      "text": "Thanks for sharing!"
+    },
+    {
+      "id": "v61d",
+      "postId": 3,
+      "userId": "bed0",
+      "text": "Thanks!"
+    },
+    {
+      "id": "rt53",
+      "postId": 2,
+      "userId": "bed0",
+      "text": "Nice info"
+    },
+    {
+      "id": "5bc9",
+      "postId": 1,
+      "userId": "7255",
+      "text": "quite interesting! thanks for post!"
+    },
+    {
+      "id": "85d0",
+      "postId": 1,
+      "userId": "7255",
+      "text": "good job!"
+    }
+  ]
+}
