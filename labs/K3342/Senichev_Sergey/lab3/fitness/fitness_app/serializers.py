@@ -1,0 +1,79 @@
+from rest_framework import serializers
+from django.contrib.auth import get_user_model
+from .models import Trainer, Workout, BlogPost, UserWorkout
+from django.contrib.auth.password_validation import validate_password
+from django.core import exceptions as django_exceptions
+from djoser.serializers import UserCreateSerializer as BaseUserCreateSerializer
+
+User = get_user_model()
+
+
+class CustomUserCreateSerializer(BaseUserCreateSerializer):
+    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
+    re_password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'password', 're_password', 'email', 'imageUrl', 'level')
+        extra_kwargs = {
+            'imageUrl': {'required': False},
+            'level': {'required': False}
+        }
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'imageUrl', 'level')
+        read_only_fields = ('id',)
+
+
+class TrainerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trainer
+        fields = '__all__'
+
+
+class WorkoutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Workout
+        fields = '__all__'
+
+class WorkoutGetSerializer(serializers.ModelSerializer):
+    trainer = TrainerSerializer(read_only=True)
+    class Meta:
+        model = Workout
+        fields = '__all__'
+
+
+class BlogPostSerializer(serializers.ModelSerializer):
+    author = CustomUserSerializer(read_only=True)
+
+    class Meta:
+        model = BlogPost
+        fields = '__all__'
+
+    def create(self, validated_data):
+        validated_data['author'] = self.context['request'].user
+        return super().create(validated_data)
+
+
+class UserWorkoutGetSerializer(serializers.ModelSerializer):
+    user = CustomUserSerializer(read_only=True)
+    workout = WorkoutSerializer(read_only=True)
+
+    class Meta:
+        model = UserWorkout
+        fields = '__all__'
+
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)
+    
+class UserWorkoutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserWorkout
+        fields = '__all__'
+
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)
