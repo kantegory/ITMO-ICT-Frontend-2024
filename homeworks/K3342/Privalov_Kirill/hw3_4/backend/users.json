@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "firstName": "Тест",
+    "lastName": "Тестов",
+    "sex": "Мужской",
+    "birthDate": "01.01.2000",
+    "phone": "79000000000",
+    "email": "test@test.ru",
+    "password": "$2y$10$HIbURCDQEpe7GUzs.WlEnumTz7F1XN0V9EaPl45f6bRTzJc/pEsJG",
+    "doctorVisits": [
+      {
+        "date": "01.01.2024 13:30",
+        "doctor": "Врач И.И.",
+        "service": "Удаление кариеса"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "kirill",
+    "lastName": "test",
+    "sex": "Мужской",
+    "birthDate": "01.01.2000",
+    "phone": "7923235235",
+    "email": "dff@f.e",
+    "password": "$2a$10$qx7tGMwxpJ/4KbLyY7320u.UVrzQC9hKlsChlfSaayboLkSrnOxLm",
+    "doctorVisits": [
+      {
+        "date": "01.01.2024 13:30",
+        "doctor": "Врач И.И.",
+        "service": "Удаление кариеса"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "кирилл",
+    "lastName": "лапкер",
+    "sex": "Женский",
+    "birthDate": "1223-01-21",
+    "phone": "89897951199",
+    "email": "ryang@mail.ru",
+    "password": "$2a$10$UoC73Frh/rZ2pBC5CJohluWghOkWKJHHuYDaIR3wub9p1kUsDGwJe"
+  },
+  {
+    "id": 4,
+    "firstName": "мария",
+    "lastName": "бахарева",
+    "sex": "Женский",
+    "birthDate": "2000-07-21",
+    "phone": "89897951199",
+    "email": "astapenkova2002@mail.ru",
+    "password": "$2a$10$btnB5yNmrZQfE2g/ESx4VuHaY75qrEoONX90KfR6e3E0urz5aF8JS"
+  }
+]

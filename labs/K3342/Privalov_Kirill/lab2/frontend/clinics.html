@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиники Санкт-Петербурга</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/clinics.css">
+</head>
+<body>
+
+<header id="header"></header>
+
+<main class="container mt-4" role="main">
+    <h1 class="text-center mb-4">Клиники Санкт-Петербурга</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <label for="districtFilter" class="form-label">Выберите район:</label>
+            <select id="districtFilter" class="form-select" aria-label="Фильтр по районам">
+                <option value="all">Все районы</option>
+                <option value="Центральный район">Центральный район</option>
+                <option value="Василеостровский район">Василеостровский район</option>
+                <option value="Адмиралтейский район">Адмиралтейский район</option>
+                <option value="Петроградский район">Петроградский район</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row" id="clinics-list" role="list">
+        <div class="col-12 text-center">
+            <p>Загрузка клиник...</p>
+        </div>
+    </div>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/include.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const clinicsList = document.getElementById('clinics-list');
+        const districtFilter = document.getElementById('districtFilter');
+
+        const fetchClinics = () => {
+            fetch('http://localhost:8080/api/v1/clinics')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayClinics(data);
+                })
+                .catch(error => {
+                    clinicsList.innerHTML = `<div class="col-12 text-center"><p>Ошибка загрузки клиник: ${error.message}</p></div>`;
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        };
+
+        const displayClinics = (clinics) => {
+            const selectedDistrict = districtFilter.value;
+            clinicsList.innerHTML = '';
+
+            const filteredClinics = selectedDistrict === 'all'
+                ? clinics
+                : clinics.filter(clinic =>
+                    clinic.district.trim().toLowerCase() === selectedDistrict.trim().toLowerCase()
+                );
+
+            if (filteredClinics.length === 0) {
+                clinicsList.innerHTML = `<div class="col-12 text-center"><p>Нет клиник в выбранном районе.</p></div>`;
+                return;
+            }
+
+            filteredClinics.forEach(clinic => {
+                const clinicCard = document.createElement('div');
+                clinicCard.classList.add('col-md-4', 'mb-4', 'clinic-card');
+                clinicCard.setAttribute('data-district', clinic.district);
+
+                clinicCard.innerHTML = `
+                        <div class="card h-100">
+                            <img src="images/${clinic.image}" class="card-img-top" alt="Изображение ${clinic.name}">
+                            <div class="card-body d-flex flex-column">
+                                <h2 class="card-title">${clinic.name}</h2>
+                                <p class="card-text">${clinic.district}, ${clinic.address}</p>
+                                <a href="${clinic.detailsUrl || '#'}" class="btn btn-primary mt-auto" role="button" aria-label="Подробнее о ${clinic.name}">Подробнее</a>
+                            </div>
+                        </div>
+                    `;
+
+                clinicsList.appendChild(clinicCard);
+            });
+        };
+
+        districtFilter.addEventListener('change', fetchClinics);
+
+        fetchClinics();
+    });
+</script>
+
+</body>
+</html>
