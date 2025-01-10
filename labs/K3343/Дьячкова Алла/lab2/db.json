@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "firstName": "drtfyguhj",
+      "lastName": "bjyk",
+      "dob": "2024-10-04",
+      "phone": "5656512345",
+      "email": "n@a.com",
+      "password": "$2a$10$KXsrCSqu0GoUv0rUIxaqDu2okm4gXSBuRmewVsXdC/kV0qp5GX/AO",
+      "id": "2775396a-5118-451f-8fe5-bd54e9bf2e6d"
+    },
+    {
+      "firstName": "ffftfkn",
+      "lastName": "Дьячков",
+      "dob": "2024-11-24",
+      "phone": "8965486375",
+      "email": "ag@a.com",
+      "password": "$2a$10$nUVzOHvS6hWcsbe7/lyv6.XHLVrgtKJlyGAKJaIUUFxPM4ZrTTyrO",
+      "id": "4ce989f5-6ee5-49e9-8d96-f2171c92d092"
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "title": "Квартира на ул. Пушкина",
+      "description": "",
+      "owner": "Петр Петров",
+      "price": 50000,
+      "location": "Москва",
+      "type": "apartment",
+      "rooms": 2,
+      "category": "rent",
+      "images": [
+        "apartment1.jpg",
+        "apartment2.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Дом в Подмосковье",
+      "description": "Просторный дом со всеми удобствами",
+      "owner": "Иван Иванов",
+      "price": 80000,
+      "location": "Подмосковье",
+      "type": "house",
+      "rooms": 4,
+      "category": "rent",
+      "images": [
+        "house.jpg"
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "1ded9344-6a3c-4002-8bad-68c8a897f828",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 1,
+      "content": "h",
+      "propertyTitle": "Квартира на ул. Пушкина",
+      "timestamp": "2024-12-21T18:13:25.866Z"
+    },
+    {
+      "id": "0c9afae6-567d-4200-a5c3-fd6814106ab9",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 1,
+      "content": "hiiii! pls help",
+      "propertyTitle": "Квартира на ул. Пушкина",
+      "timestamp": "2024-12-21T20:29:04.279Z"
+    },
+    {
+      "id": "05d1d4e0-abe7-4389-94eb-c5ccadb3d0ce",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 2,
+      "content": "j",
+      "propertyTitle": "Дом в Подмосковье",
+      "timestamp": "2024-12-22T13:29:53.141Z"
+    },
+    {
+      "id": "a39aa7f2-09eb-4812-8666-e52953c1d74c",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 2,
+      "content": "nnn",
+      "propertyTitle": "Дом в Подмосковье",
+      "timestamp": "2024-12-22T13:29:55.950Z"
+    },
+    {
+      "id": "11b246de-ee56-45d3-9f72-ca34b058ca4a",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 2,
+      "content": "nmnmnmnmnmmnmmn????????1234567898rerswdfghujiko987654321234567890-098321234567890-09721234567890098765421234567890",
+      "propertyTitle": "Дом в Подмосковье",
+      "timestamp": "2024-12-22T13:30:07.735Z"
+    },
+    {
+      "id": "0f3ba420-1799-45c2-9459-bc971b11331b",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": 2,
+      "content": "nkjnkjnkjnkjnkjkj",
+      "propertyTitle": "Дом в Подмосковье",
+      "timestamp": "2024-12-22T13:34:06.429Z"
+    }
+  ],
+  "rentalHistory": [
+    {
+      "id": "aa68a0fc-8ef0-43b1-ad01-3ede4594064c",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": "1",
+      "isApproved": false,
+      "creationDate": "2024-12-22T20:23:00.608Z",
+      "startOfRent": "2024-12-28",
+      "endOfRent": "2024-12-29"
+    },
+    {
+      "id": "e9fbe602-3c5c-4b23-893e-5bf15d5d79aa",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": "1",
+      "isApproved": false,
+      "creationDate": "2024-12-22T20:43:36.163Z",
+      "startOfRent": "2025-01-04",
+      "endOfRent": "2025-01-05"
+    },
+    {
+      "id": "e055aabf-7210-4bcf-b301-657db8343c49",
+      "userId": "4ce989f5-6ee5-49e9-8d96-f2171c92d092",
+      "propertyId": "1",
+      "isApproved": false,
+      "creationDate": "2024-12-22T20:43:42.143Z",
+      "startOfRent": "2025-01-29",
+      "endOfRent": "2025-01-30"
+    }
+  ]
+}

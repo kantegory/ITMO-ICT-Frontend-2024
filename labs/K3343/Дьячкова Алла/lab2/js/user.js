@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             });
         } catch (error) {
-            console.error("Error loading dialogs:", error);
+            console.error("Error loading:", error);
             document.getElementById("userDialogs").innerHTML = "<p>Ошибка при загрузке данных. Пожалуйста, попробуйте позже.</p>";
         }
     } else {
