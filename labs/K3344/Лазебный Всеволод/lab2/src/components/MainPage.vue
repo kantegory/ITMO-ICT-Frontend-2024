@@ -43,7 +43,7 @@
     <div class="d-flex justify-content-between mt-1 row mx-auto">
       <div class="col-12 col-xl-4 col-md-6 mb-4">
         <div class="card">
-          <img src="https://images.cdn-cian.ru/images/2307481931-4.jpg" class="card-img-top" alt="https://images.cdn-cian.ru/images/2307481931-4.jpg">
+          <img src="https://images.cdn-cian.ru/images/kvartira-sanktpeterburg-moskovskiy-prospekt-2304507956-1.jpg" class="card-img-top" alt="https://images.cdn-cian.ru/images/kvartira-sanktpeterburg-moskovskiy-prospekt-2304507956-1.jpg">
           <div class="card-body">
             <h5 class="card-title">1-комн. квартира, 48 м², 15/16 этаж</h5>
             <h5 class="price">45,000р/мес.</h5>

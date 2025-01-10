@@ -76,7 +76,7 @@ onMounted(() => {
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://images.cdn-cian.ru/images/2297254359-1.jpg" class="d-block w-100" alt="https://images.cdn-cian.ru/images/2297254359-1.jpg">
+              <img src="https://images.cdn-cian.ru/images/kvartira-sanktpeterburg-moskovskiy-prospekt-2304507956-1.jpg" class="d-block w-100" alt="https://images.cdn-cian.ru/images/2297254359-1.jpg">
             </div>
             <div class="carousel-item">
               <img src="https://images.cdn-cian.ru/images/2297254619-1.jpg" class="d-block w-100" alt="https://images.cdn-cian.ru/images/2297254619-1.jpg">
