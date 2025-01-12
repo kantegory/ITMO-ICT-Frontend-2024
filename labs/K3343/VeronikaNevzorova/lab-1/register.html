@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search | Регистрация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<section class="register-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <h2 class="text-center mb-4">Регистрация</h2>
+                        <!-- Обновленный тег form -->
+                        <form id="register-form">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Имя пользователя</label>
+                                <input type="text" class="form-control" id="username" placeholder="Введите ваше имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Введите ваш email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Пароль</label>
+                                <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirm-password" class="form-label">Подтвердите пароль</label>
+                                <input type="password" class="form-control" id="confirm-password" placeholder="Подтвердите пароль" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Зарегистрироваться</button>
+                        </form>
+                        <p class="text-center mt-4">
+                            Уже есть аккаунт? <a href="login.html">Войти</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для страницы регистрации */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f9f9f9;
+    }
+    .register-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .card {
+        border-radius: 15px;
+    }
+    .btn-success {
+        background: linear-gradient(to right, #56ab2f, #a8e063);
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .btn-success:hover {
+        background: linear-gradient(to right, #a8e063, #56ab2f);
+    }
+    a {
+        color: #56ab2f;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+<script src="js/register.js"></script>
+</body>
+</html>
