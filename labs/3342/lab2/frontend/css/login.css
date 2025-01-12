@@ -1,0 +1,49 @@
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    color: var(--header-text-color);
+}
+
+.container {
+    max-width: 400px;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--container-box-shadow);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--header-text-color);
+}
+
+.btn {
+    margin-top: 10px;
+    background-color: var(--btn-primary-bg-color);
+    border-color: var(--btn-primary-border-color);
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--btn-primary-hover-bg-color);
+    border-color: var(--btn-primary-hover-border-color);
+}
+
+.alert {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--error-bg-color);
+    border-color: var(--error-text-color);
+    color: var(--error-text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Успешное уведомление */
+.alert-success {
+    background-color: var(--success-bg-color);
+    border-color: var(--success-text-color);
+    color: var(--success-text-color);
+}
