@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search | Личный кабинет</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header class="hero-section">
+    <div class="container text-center">
+        <h1 class="hero-title">Личный кабинет</h1>
+        <p class="hero-subtitle">Управляйте своим профилем и резюме.</p>
+    </div>
+</header>
+
+<section class="dashboard-section py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Ваше резюме</h2>
+        <p class="section-subtitle text-center">Здесь вы можете редактировать своё резюме и просматривать отклики.</p>
+
+        <div class="resume-card mt-4 p-4 bg-light rounded shadow-sm">
+            <h3 class="mb-3">Информация о вас</h3>
+            <div id="resume-info">
+                <p><strong>Имя:</strong> <span id="name">Иван Иванов</span></p>
+                <p><strong>Email:</strong> <span id="email">ivan@example.com</span></p>
+                <p><strong>Навыки:</strong> <span id="skills">Веб-разработка, HTML, CSS, JavaScript</span></p>
+                <p><strong>Опыт:</strong> <span id="experience">3 года</span></p>
+            </div>
+            <button class="btn btn-primary mt-3" id="edit-btn">Редактировать резюме</button>
+        </div>
+
+        <!-- Отклики пользователя -->
+        <div class="applications mt-5">
+            <h3 class="section-title">Ваши отклики</h3>
+            <ul id="applied-jobs" class="list-group mt-3">
+                <!-- Отклики будут динамически добавляться сюда с помощью JS -->
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="action-buttons mt-4 text-center">
+    <a href="job-list.html" class="btn btn-primary" id="view-jobs-btn">Посмотреть вакансии</a>
+</section>
+
+<footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+    </div>
+</footer>
+
+<script src="js/navigation.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/userProfile.js"></script>
+</body>
+</html>
