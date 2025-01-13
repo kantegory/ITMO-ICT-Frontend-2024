@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя - Culinarity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/user_page_styles.css">
+</head>
+<body>
+
+<header class="header d-flex justify-content-between align-items-center">
+    <div class="brand d-flex align-items-center">
+        <a href="main_page.html" class="d-flex align-items-center logo-link" tabindex="0">
+            <img src="images/recipe-book.png" alt="Logo" class="logo me-2">
+            <span>Culinarity</span>
+        </a>
+    </div>
+    <nav aria-label="User actions" class="icons">
+        <a href="user_profile.html" class="icons" aria-label="Профиль пользователя">
+            <i class="bi bi-person-circle"></i>
+        </a>
+        <a href="notifications.html" class="icons" aria-label="Уведомления">
+            <i class="bi bi-bell"></i>
+        </a>
+    </nav>
+</header>
+
+<main class="container mt-4">
+    <article class="profile-section">
+        <h1 class="text-center profile-title">Профиль пользователя</h1>
+
+        <section class="row mt-4">
+            <div class="col-md-4">
+                <img id = "profile-image" src="images/profile.jpg" alt="Изображение профиля" class="profile-image img-fluid rounded-circle" role="img">
+            </div>
+
+            <div class="col-md-4 user-info">
+                <h3 class="h3">Личная информация</h3>
+                <p>
+                    <i class="bi bi-person-circle me-1"></i>
+                    <strong id="username">Имя пользователя</strong>
+                </p>
+                <p><strong>Email:</strong> <span id="email">example@example.com</span></p>
+                <p><strong>Дата регистрации:</strong> <span id="registration-date">2023-10-01</span></p>
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-warning" id="edit-profile-btn">Редактировать профиль</button>
+                <button class="btn btn-danger" id="delete-profile-btn">Удалить профиль</button>
+                <button id="logout-btn" class="btn btn-danger">Выйти</button>
+
+            </div>
+
+            <!-- Форма редактирования профиля -->
+            <section class="mt-4" id="edit-profile-section" style="display: none;">
+                <h3 class="h3">Редактировать профиль</h3>
+                <form id="edit-profile-form">
+                    <div class="mb-3">
+                        <label for="edit-username" class="form-label">Имя пользователя</label>
+                        <input type="text" id="edit-username" class="form-control" placeholder="Введите имя">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-email" class="form-label">Email</label>
+                        <input type="email" id="edit-email" class="form-control" placeholder="Введите email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-edit-btn">Отмена</button>
+                </form>
+            </section>
+
+            <div class="mt-4">
+                <h3 class="h3">Мои рецепты</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="recipe-card">
+                            <img src="images/pumpkin2.jpg" alt="Тыквенный суп-пюре" class="recipe-image img-fluid">
+                            <h5 class="recipe-title">Тыквенный суп-пюре</h5>
+                            <ul class="ingredient-list">
+                                <li>500 г тыквы</li>
+                                <li>1 морковь</li>
+                                <li>2 картофелины</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="recipe-card">
+                            <img src="images/recipe1.jpg" alt="Синнабоны с персиком" class="recipe-image img-fluid" aria-label="Перейти к рецепту">
+                            <h5 class="recipe-title">Синнабоны с персиком</h5>
+                            <ul class="ingredient-list">
+                                <li>250 г муки</li>
+                                <li>100 г сахара</li>
+                                <li>3 персика</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="recipe-card">
+                            <img src="images/recipe2.jpg" alt="Жюльен в хлебной корзинке" class="recipe-image img-fluid" aria-label="Перейти к рецепту">
+                            <h5 class="recipe-title">Жюльен в хлебной корзинке</h5>
+                            <ul class="ingredient-list">
+                                <li>300 г куриного филе</li>
+                                <li>100 г грибов</li>
+                                <li>1 луковица</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="h3 mt-4">Сохраненные рецепты</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="recipe-card">
+                            <a href="recipe_page.html">
+                                <img src="images/recipe10.jpg" alt="Шоколадный торт" class="recipe-image img-fluid" aria-label="Перейти к рецепту">
+                            </a>
+                            <h5 class="recipe-title">Шоколадный торт</h5>
+                            <ul class="ingredient-list">
+                                <li>200 г шоколада</li>
+                                <li>150 г сливочного масла</li>
+                                <li>3 яйца</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="recipe-card">
+                            <a href="recipe_page.html" aria-label="Перейти к рецепту">
+                                <img src="images/recipe3.jpg" alt="Панкейки" class="recipe-image img-fluid">
+                            </a>
+                            <h5 class="recipe-title">Панкейки с медом</h5>
+                            <ul class="ingredient-list">
+                                <li>100 г муки</li>
+                                <li>100 мл молока</li>
+                                <li>2 яйца</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="mt-4">
+            <h3 class="h3">Комментарии</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Отличный рецепт! - <strong>Евдокия</strong></li>
+                <li class="list-group-item">Очень вкусно, буду готовить еще раз! - <strong>Goddess</strong></li>
+            </ul>
+        </section>
+    </article>
+</main>
+<script src="javascript/profile.js"></script>
+</body>
+</html>
