@@ -15,25 +15,30 @@
 </head>
 
 <body>
-    <div id="header-container">
-        <h1>Messages</h1>
-    </div>
+    <header id="header-container" role="banner">
+        <h1 class="sr-only">Messages</h1>
+    </header>
 
-    <div class="container">
-        <div class="dialog-list">
-            <h2>Dialogs</h2>
-        </div>
+    <main role="main" class="container">
+        <section class="dialog-list" aria-labelledby="dialogSection">
+            <h2 id="dialogSection" class="sr-only">Dialogs</h2>
+            <ul id="dialogs" role="list" aria-live="polite">
+                <!-- Dynamic Content  -->
+            </ul>
+        </section>
 
-        <div class="message-container" id="message-container">
-            <h2>Chat with <span id="chat-owner">Select a dialog</span></h2>
-            <div class="messages" id="messages"></div>
+        <section class="message-container" id="message-container" aria-labelledby="chatHeader">
+            <h2 id="chatHeader" aria-live="polite">Chat with <span id="chat-owner">Select a dialog</span></h2>
+
+            <div class="messages" id="messages" role="region" aria-live="polite"></div>
 
             <div class="message-input">
-                <input type="text" placeholder="Type your message here..." id="message-input">
-                <button type="button" onclick="sendMessage(event)">Send</button>
+                <label for="message-input" class="sr-only"></label>
+                <input type="text" placeholder="Type your message here..." id="message-input" aria-label="Message input">
+                <button type="button" onclick="sendMessage(event)" aria-label="Send message">Send</button>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>

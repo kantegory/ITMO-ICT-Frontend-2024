@@ -15,35 +15,39 @@
 </head>
 
 <body>
-    <div id="header-container"></div>
+    <div id="header-container" role="banner"></div>
 
-    <div class="container">
+    <main role="main" class="container">
 
-        <div class="property-description">
+        <section class="property-description">
             <h2>Description</h2>
-        </div>
+        </section>
 
-        <div class="photo-slider">
-            <h2>Photo Gallery</h2>
-            <div class="slider"></div>
-            <div class="button-container">
-                <button id="prevBtn">Previous</button>
-                <button id="nextBtn">Next</button>
+        <section class="photo-slider" aria-labelledby="photoGalleryTitle">
+            <h2 id="photoGalleryTitle">Photo Gallery</h2>
+            <div class="slider" aria-live="polite" role="region">
+                <p class="sr-only">Navigate through photos using the Previous and Next buttons.</p>
             </div>
-        </div>
+            <div class="button-container">
+                <button id="prevBtn" aria-label="View the previous photo">Previous</button>
+                <button id="nextBtn" aria-label="View the next photo">Next</button>
+            </div>
+        </section>
 
-        <div class="property-features">
-            <h2>Features</h2>
-            <ul></ul>
-        </div>
+        <section class="property-features" aria-labelledby="featuresTitle">
+            <h2 id="featuresTitle">Features</h2>
+            <ul role="list">
+                <li aria-live="polite">Features will be dynamically loaded here.</li>
+            </ul>
+        </section>
 
-        <button class="contact-button">Contact Owner</button>
+        <button class="contact-button" aria-label="Contact the property owner">Contact Owner</button>
         <script>
             document.querySelector(".contact-button").addEventListener("click", function() {
                 window.location.href = "./messages.html";
             });
         </script>
-    </div>
+    </main>
 </body>
 
 </html>

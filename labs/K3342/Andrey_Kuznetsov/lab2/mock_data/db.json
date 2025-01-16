@@ -254,6 +254,12 @@
       "dialogId": "1",
       "sender": "user",
       "text": "привет! "
+    },
+    {
+      "id": "edd9",
+      "dialogId": "3",
+      "sender": "user",
+      "text": "hi!"
     }
   ]
 }

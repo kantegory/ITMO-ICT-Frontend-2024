@@ -19,12 +19,14 @@
     <div class="container">
         <h1 class="text-center">Real Estate Search</h1>
         <div class="row">
-            <aside class="search-sidebar">
-                <form id="searchForm">
+
+            <aside class="search-sidebar" aria-labelledby="searchTitle" role="complementary">
+
+                <form id="searchForm" aria-describedby="searchTitle">
 
                     <div class="form-group">
                         <label for="propertyType" class="form-label">Property Type</label>
-                        <select id="propertyType" class="form-select">
+                        <select id="propertyType" class="form-select" aria-describedby="propertyTypeDesc">
                             <option value="">All</option>
                             <option value="apartment">Apartment</option>
                             <option value="house">House</option>
@@ -113,13 +115,13 @@
 
                     <div class="form-group">
                         <label for="sortBy" class="form-label">Sort By</label>
-                        <select id="sortBy" class="form-select">
+                        <select id="sortBy" class="form-select" aria-label="Sort results by criteria">
                             <option value="default">Default</option>
                             <option value="priceAsc">Price (Low to High)</option>
                             <option value="priceDesc">Price (High to Low)</option>
                             <option value="roomsAsc">Rooms (Low to High)</option>
                             <option value="roomsDesc">Rooms (High to Low)</option>
-                            <option value="newest">Newest Listings</option> <!-- New Option -->
+                            <option value="newest">Newest Listings</option>
                         </select>
                     </div>
 
@@ -127,9 +129,12 @@
                 </form>
             </aside>
             
-            <main class="col-md-9 results-container">
-                <div id="searchResults" class="mt-5"></div>
+            <main class="col-md-9 results-container" role="main">
+                <div id="searchResults" class="mt-5" aria-live="polite" aria-busy="false">
+                    <!-- Search results will load here -->
+                </div>
             </main>
+            
         </div>
     </div>
 </body>

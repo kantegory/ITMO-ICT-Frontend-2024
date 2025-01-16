@@ -13,21 +13,28 @@
 </head>
 
 <body>
-    <div id="header-container"></div>
-    <div class="form-container">
-        <i class="uil uil-times form-close"></i>
+    <header id="header-container" role="banner">
+        <h1 class="sr-only">Authentication Form</h1>
+    </header>
 
-        <div class="form login-form">
-            <form action="#">
-                <h2>Login</h2>
+    <main role="main" class="form-container">
+
+        <button class="form-close" aria-label="Close Authentication Form">
+            <i class="uil uil-times"></i>
+        </button>
+
+        <section class="form login-form" aria-labelledby="loginFormTitle">
+
+            <form action="#" aria-labelledby="loginFormTitle">
+                <h2 id="loginFormTitle">Login</h2>
 
                 <div class="input-box">
-                    <input type="email" name="email" placeholder="Enter your email" required />
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required aria-required="true" />
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Enter your password" required />
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required aria-required="true" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw-hide"></i>
                 </div>
@@ -37,51 +44,52 @@
                         <input type="checkbox" id="check" />
                         <label for="check">Remember me</label>
                     </span>
-                    <a href="#" class="forgot-pw">Forgot password?</a>
+                    <a href="#" class="forgot-pw" aria-label="Forgot your password?">Forgot password?</a>
                 </div>
 
-                <button class="button login">Login Now</button>
+                <button type="submit" class="button login" aria-label="Login now">Login Now</button>
 
-                <div class="login-signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                <div class="login-signup">Don't have an account? <a href="#" id="signup" aria-label="Go to Signup form">Signup</a></div>
             </form>
-        </div>
+        </section>
 
-        <div class="form signup-form">
-            <form action="#">
-                <h2>Signup</h2>
+        <section class="form signup-form" aria-labelledby="signupFormTitle">
+
+            <form action="#" aria-labelledby="signupFormTitle">
+                <h2 id="signupFormTitle">Signup</h2>
 
                 <div class="input-box">
-                    <input type="email" name="reg-email" placeholder="Enter your email" required />
+                    <input type="email" id="reg-email" name="reg-email" placeholder="Enter your email" required aria-required="true" />
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" name="reg-password" placeholder="Create password" required />
+                    <input type="password" id="reg-password" name="reg-password" placeholder="Create password" required aria-required="true" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw-hide"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" name="reg-confirm-password" placeholder="Confirm password" required />
+                    <input type="password" id="reg-confirm-password" name="reg-confirm-password" placeholder="Confirm password" required aria-required="true" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw-hide"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" name="reg-name" placeholder="Enter your full name" required />
+                    <input type="text" id="reg-name" name="reg-name" placeholder="Enter your full name" required aria-required="true" />
                     <i class="uil uil-user name"></i>
                 </div>
         
                 <div class="input-box">
-                    <input type="text" name="reg-status" placeholder="Enter your status (e.g., Photographer)" required />
+                    <input type="text" id="reg-status" name="reg-status" placeholder="Enter your status (e.g., Photographer)" required aria-required="true" />
                     <i class="uil uil-info-circle status"></i>
                 </div>
 
-                <button class="button signup">Signup Now</button>
+                <button type="submit" class="button signup" aria-label="Signup now">Signup Now</button>
                 
-                <div class="login-signup">Already have an account? <a href="#" id="login">Login</a></div>
+                <div class="login-signup">Already have an account? <a href="#" id="login" aria-label="Go to Login form">Login</a></div>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
