@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Info</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/property.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script defer src="../js/layout.js"></script>
+    <script type="module" src="../js/config.js"></script>
+    <script type="module" src="../js/property.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <div class="container">
+
+        <div class="property-description">
+            <h2>Description</h2>
+        </div>
+
+        <div class="photo-slider">
+            <h2>Photo Gallery</h2>
+            <div class="slider"></div>
+            <div class="button-container">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <div class="property-features">
+            <h2>Features</h2>
+            <ul></ul>
+        </div>
+
+        <button class="contact-button">Contact Owner</button>
+        <script>
+            document.querySelector(".contact-button").addEventListener("click", function() {
+                window.location.href = "./messages.html";
+            });
+        </script>
+    </div>
+</body>
+
+</html>

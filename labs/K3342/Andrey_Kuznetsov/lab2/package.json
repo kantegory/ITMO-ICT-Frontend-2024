@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "json-server": "^1.0.0-beta.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "scripts": {
+    "start": "node js/server.js",
+    "db": "json-server --watch mock_data/db.json --port 3001"
+  }
+}

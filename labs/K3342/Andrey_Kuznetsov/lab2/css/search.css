@@ -1,0 +1,191 @@
+.container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 70px;
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.search-sidebar {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.search-sidebar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-sidebar .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Темный цвет текста для видимости */
+    background-color: transparent; /* Без фона */
+    padding: 0;
+    text-align: left;
+    font-size: 1em;
+}
+
+#searchForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 20px; 
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-select, 
+.form-control {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.range-container .range {
+    margin-block: 15px;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: #333;
+    outline: none; 
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.2); 
+}
+
+.search-sidebar .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-block: 20px;
+}
+
+.search-sidebar input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#searchForm .btn {
+    grid-column: span 2; 
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center; 
+}
+
+#searchForm .btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.results-container {
+    margin-top: 30px;
+}
+
+.results-container #searchResults {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Стили для каждой карточки */
+.property-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property-item:hover {
+    transform: translateY(-5px);
+}
+
+.property-image {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    background-color: #ddd;
+}
+
+.property-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.property-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property-details h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.property-details p {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.property-details button.view-details {
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.property-details button.view-details:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

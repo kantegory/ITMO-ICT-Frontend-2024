@@ -1,0 +1,98 @@
+.container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 70px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+.dialog-list {
+    margin-bottom: 20px;
+}
+
+.dialog-item {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px; 
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.dialog-item:hover {
+    background-color: black;
+    color: white;
+}
+
+.message-container {
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+
+.message-container h2 {
+    margin-bottom: 15px;
+}
+
+.messages {
+    max-height: 300px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px;
+    background-color: #fafafa; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.message {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 80%; 
+    display: inline-block;
+}
+
+.message.owner {
+    background-color: #e0e0e0;
+    align-self: flex-start; 
+}
+
+.message.user {
+    background-color: #3585d1;
+    color: white; 
+    align-self: flex-end;
+}
+
+.message-input {
+    display: flex;
+    margin-top: 15px;
+}
+
+.message-input input {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    margin-right: 10px; 
+}
+
+.message-input button {
+    background-color: black; 
+    color: white; 
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.message-input button:hover {
+    background-color: #444;
+}
