@@ -1,3 +1,5 @@
+@import url('./themes.css');
+
 * {
   box-sizing: border-box;
 }
@@ -17,13 +19,13 @@ body {
     left: 50%;
     border-radius: 15px;
     transform: translate(-50%, -50%) scale(1.2);
-    background: white;
+    background: var(--primary-color);
     padding: 25px;
 }
 
 .form-container .button {
-    background-color: black;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     margin-top: 30px;
     width: 100%;
     padding: 10px 0;
@@ -31,18 +33,18 @@ body {
 }
 
 .form-container .button:hover {
-    background-color: white;
-    color: black; 
+    background-color: var(--primary-color);
+    color: var(--secondary-color); 
 }
 
 .form-container h2 {
     font-size: 22px;
-    color: black;
+    color: var(--secondary-color);
     text-align: center;
 }
 
 .form-container a {
-    color: #000000;
+    color: var(--secondary-color);
     font-size: 12px;
 }
 
@@ -65,14 +67,14 @@ body {
 }
 
 .checkbox input {
-    accent-color: black;
+    accent-color: var(--secondary-color);
 }
 
 .checkbox label {
     font-size: 12px;
     cursor: pointer;
     user-select: none;
-    color: black;
+    color: var(--secondary-color);
 }
 
 .signup-form {
@@ -91,7 +93,7 @@ body {
     position: absolute;
     top: 10px;
     right: 20px;
-    color: #0b0217;
+    color: var(--secondary-color);
     font-size: 22px;
     opacity: 0.7;
     cursor: pointer;
@@ -116,13 +118,13 @@ body {
     border: none;
     outline: none;
     padding: 0 30px;
-    color: #333;
+    color: var(--text-color);
     transition: all 0.2s ease;
-    border-bottom: 1.5px solid #aaaaaa;
+    border-bottom: 1.5px solid var(--hover-color);
 }
 
 .input-box input:focus {
-    border-color: black;
+    border-color: var(--secondary-color);
 }
 
 .input-box i {
@@ -130,7 +132,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    color: #707070;
+    color: var(--accent-color);
 }
 
 .input-box i.email,
@@ -140,7 +142,7 @@ body {
 
 .input-box input:focus ~ i.email,
 .input-box input:focus ~ i.password {
-    color: black;
+    color: var(--secondary-color);
 }
 
 .input-box i.pw_hide {

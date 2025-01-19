@@ -1,3 +1,5 @@
+@import url('./themes.css');
+
 .container {
     max-width: 1200px;
     padding: 20px;
@@ -6,7 +8,7 @@
     top: 70px; 
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -18,7 +20,8 @@
 
 .dialog-item {
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 5px; 
     margin-bottom: 10px;
     cursor: pointer;
@@ -26,8 +29,8 @@
 }
 
 .dialog-item:hover {
-    background-color: black;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .message-container {
@@ -42,10 +45,10 @@
 .messages {
     max-height: 300px; 
     overflow-y: auto; 
-    border: 1px solid #ddd; 
+    border: 1px solid var(--hover-color); 
     border-radius: 5px; 
     padding: 10px;
-    background-color: #fafafa; 
+    background-color: var(--background-color); 
     display: flex; 
     flex-direction: column; 
     gap: 10px; 
@@ -60,13 +63,13 @@
 }
 
 .message.owner {
-    background-color: #e0e0e0;
+    background-color: var(--primary-color);
     align-self: flex-start; 
 }
 
 .message.user {
-    background-color: #3585d1;
-    color: white; 
+    background-color: var(--messages-color);
+    color: var(--primary-color); 
     align-self: flex-end;
 }
 
@@ -78,14 +81,14 @@
 .message-input input {
     flex: 1; 
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--hover-color);
     border-radius: 5px; 
     margin-right: 10px; 
 }
 
 .message-input button {
-    background-color: black; 
-    color: white; 
+    background-color: var(--secondary-color); 
+    color: var(--primary-color); 
     border: none;
     padding: 10px 15px; 
     border-radius: 5px;
@@ -94,5 +97,5 @@
 }
 
 .message-input button:hover {
-    background-color: #444;
+    background-color: var(--accent-color);
 }

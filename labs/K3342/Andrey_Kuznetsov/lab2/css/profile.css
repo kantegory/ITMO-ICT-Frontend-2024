@@ -1,3 +1,5 @@
+@import url('./themes.css');
+
 .profile-header {
     position: relative;
     top: 70px;
@@ -21,7 +23,7 @@
 }
 
 .profile-header-content {
-    color: white;
+    color: var(--primary-back);
     position: absolute;
     display: flex;
     align-items: center; 
@@ -33,7 +35,7 @@
     display: flex;
     width: 120px;
     height: 120px;
-    background: white;
+    background: var(--primary-back);
     padding: 1px;
     overflow: hidden;
 }
@@ -50,28 +52,28 @@
 
 .profile-header-info h4,
 .profile-header-info p {
-    color: white;
-    background-color: black;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     padding-inline: 10px;
 }
 
 .profile-header-info button {
     padding-inline: 10px;
     background-color: transparent;
-    color: white;
+    color: var(--primary-color);
     text-transform: lowercase;
     border: 0px solid;
 }
 
 .profile-header-info button:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* profile history */ 
 .profile-content {
     padding: 20px;
-    background-color: white;
+    background-color: var(--primary-color);
 }
 
 .timeline {
@@ -89,7 +91,7 @@
 .timeline-time {
     width: 150px;
     font-size: 0.9em;
-    color: #888;
+    color: var(--accent-color);
     text-align: right;
     margin-right: 15px;
 }
@@ -101,7 +103,7 @@
 
 .timeline-body {
     flex: 1;
-    background-color: white;
+    background-color: var(--primary-color);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -129,24 +131,24 @@
 
 .username {
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
 }
 
 .text-muted {
     margin-left: auto;
     font-size: 0.85em;
-    color: #888;
+    color: var(--accent-color);
 }
 
 .timeline-content p {
     margin: 0;
-    color: #555;
+    color: var(--accent-color);
     line-height: 1.5;
     font-size: 0.95em;
 }
 
 .timeline-content a {
-    color: black;
+    color: var(--primary-color);
     text-decoration: none;
 }
 

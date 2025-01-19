@@ -1,11 +1,12 @@
-// Загружаем заголовок
-fetch('../html/components/header.html')
+setTimeout(() => {
+    fetch('../html/components/header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
         
         const menuItems = document.querySelectorAll('.menu li a');
-        const currentPath = window.location.pathname;
+        const str =  window.location.pathname; 
+        const currentPath = str.substring(str.indexOf('/html'));
         const authPath = '/html/auth.html'
         const profilePath = '/html/profile.html'
 
@@ -24,3 +25,4 @@ fetch('../html/components/header.html')
         });
     })
     .catch(error => console.error('Error loading header:', error));
+}, 0);
