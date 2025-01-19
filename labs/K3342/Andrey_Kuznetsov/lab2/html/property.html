@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Info</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/property.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script defer src="../js/layout.js"></script>
+    <script defer src="../js/theme-switch.js"></script> 
+    <script type="module" src="../js/config.js"></script>
+    <script type="module" src="../js/property.js"></script>
+</head>
+
+<body>
+    <div id="header-container" role="banner"></div>
+
+    <main role="main" class="container">
+
+        <section class="property-description">
+            <h2>Description</h2>
+        </section>
+
+        <section class="photo-slider" aria-labelledby="photoGalleryTitle">
+            <h2 id="photoGalleryTitle">Photo Gallery</h2>
+            <div class="slider" aria-live="polite" role="region">
+                <p class="sr-only">Navigate through photos using the Previous and Next buttons.</p>
+            </div>
+            <div class="button-container">
+                <button id="prevBtn" aria-label="View the previous photo">Previous</button>
+                <button id="nextBtn" aria-label="View the next photo">Next</button>
+            </div>
+        </section>
+
+        <section class="property-features" aria-labelledby="featuresTitle">
+            <h2 id="featuresTitle">Features</h2>
+            <ul role="list">
+                <li aria-live="polite">Features will be dynamically loaded here.</li>
+            </ul>
+        </section>
+
+        <button class="contact-button" aria-label="Contact the property owner">Contact Owner</button>
+        <script>
+            document.querySelector(".contact-button").addEventListener("click", function() {
+                window.location.href = "./messages.html";
+            });
+        </script>
+    </main>
+</body>
+
+</html>

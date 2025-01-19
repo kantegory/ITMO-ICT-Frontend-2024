@@ -1,0 +1,124 @@
+/* general style */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('./themes.css');
+
+html {
+    background-color: var(--primary-color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', serif;
+}
+
+header{
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+}
+
+.top-bar {
+    background-color: var(--secondary-color);
+    height: 100%;
+}
+
+.menu {  
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+.menu li{
+    display: inline-block;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 5px 20px;
+    transition: 0.6s ease;
+}
+
+.menu li a:hover{
+    background-color: var(--primary-color);
+    color: var(--primary-back);
+}
+
+.menu li.active a{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.logo {
+    position: absolute;
+    margin-top: 12px;
+    float: left;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    stroke: var(--primary-color);
+}
+
+.theme-switch-container {
+    display: inline-block;
+    margin-left: 60px;
+    position: absolute; 
+    height: 100%; 
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.theme-switch input {
+    opacity: 0; 
+    position: absolute; 
+    z-index: 2; 
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.theme-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hover-color);
+    transition: 0.4s;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.theme-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--text-color);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(24px);
+}
