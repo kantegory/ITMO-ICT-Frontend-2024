@@ -1,10 +1,13 @@
 setTimeout(() => {
-    fetch('../html/components/header.html')
+    fetch('../html/components/header.html?t=' + Date.now())
     .then(response => response.text())
     .then(data => {
+        console.log('Header HTML:', data); // Выводим загруженный HTML
         document.getElementById('header-container').innerHTML = data;
+        console.log(document.getElementById('header-container'));
         
         const menuItems = document.querySelectorAll('.menu li a');
+        console.log(menuItems);
         const str =  window.location.pathname; 
         const currentPath = str.substring(str.indexOf('/html'));
         const authPath = '/html/auth.html'
@@ -25,4 +28,4 @@ setTimeout(() => {
         });
     })
     .catch(error => console.error('Error loading header:', error));
-}, 0);
+}, 10);

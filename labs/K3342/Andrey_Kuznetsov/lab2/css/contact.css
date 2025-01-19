@@ -1,8 +1,55 @@
 @import url('./themes.css');
 
-.contact-title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.contact-content {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 70px;
+}
+
+.contact-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+.contact-content h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+.contact-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.contact-icon-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 150px; 
+}
+
+.contact-icon {
+    width: 100px;
+    height: 100px; 
+    fill: var(--secondary-color); 
+}
+
+.contact-content .map iframe {
+    display: block;
+    margin: 0 auto; 
+    border-radius: 5%; 
+    width: 80%; 
+    height: 500px; 
+    border: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 15px;
 }

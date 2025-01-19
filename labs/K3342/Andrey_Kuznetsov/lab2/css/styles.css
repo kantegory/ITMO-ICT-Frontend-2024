@@ -54,16 +54,21 @@ header{
     color: var(--secondary-color);
 }
 
-.logo img{
+.logo {
+    position: absolute;
     margin-top: 12px;
     float: left;
+}
+
+.logo-icon {
     width: 50px;
-    height: auto;
+    height: 50px;
+    stroke: var(--primary-color);
 }
 
 .theme-switch-container {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 60px;
     position: absolute; 
     height: 100%; 
 }
