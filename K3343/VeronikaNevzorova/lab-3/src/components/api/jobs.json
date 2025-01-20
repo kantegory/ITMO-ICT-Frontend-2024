@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1737385324879,
+    "title": "ghjkl",
+    "company": "bnm,",
+    "salary": 1111,
+    "location": "ghj",
+    "isDeleted": true
+  },
+  {
+    "id": 1737385335503,
+    "title": "ghjk",
+    "company": "ghjkl",
+    "salary": 293482,
+    "location": "frnkej",
+    "isDeleted": true
+  },
+  {
+    "id": 1737386299522,
+    "title": "аипив",
+    "company": "вапиваи",
+    "salary": 12324,
+    "location": "амам",
+    "isDeleted": false
+  },
+  {
+    "id": 1737388025606,
+    "title": "Product",
+    "company": "SWIP",
+    "salary": 2823498274,
+    "location": "SPB",
+    "isDeleted": false
+  }
+]
