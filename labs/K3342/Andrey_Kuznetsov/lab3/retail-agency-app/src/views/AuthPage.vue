@@ -1,14 +1,15 @@
 <template>
   <HeaderLoader :currentPath="currentPath" />
+  <div class="index-background">
+    <main role="main" class="form-container auth-page">
+      <button class="form-close" aria-label="Close Authentication Form" @click="closeForm">
+          <i class="uil uil-times"></i>
+      </button>
 
-  <main role="main" class="form-container auth-page">
-    <button class="form-close" aria-label="Close Authentication Form" @click="closeForm">
-        <i class="uil uil-times"></i>
-    </button>
-
-    <LoginForm v-show="currentForm === 'login'" @switch-form="switchForm" />
-    <SignupForm v-show="currentForm === 'signup'" @switch-form="switchForm" />
-  </main>
+      <LoginForm v-show="currentForm === 'login'" @switch-form="switchForm" />
+      <SignupForm v-show="currentForm === 'signup'" @switch-form="switchForm" />
+    </main>
+  </div>
 </template>
 
 <script>

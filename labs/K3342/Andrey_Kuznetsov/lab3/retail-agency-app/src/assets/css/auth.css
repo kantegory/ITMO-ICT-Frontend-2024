@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
-body {
+.index-background{
+    position: fixed;
+    width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/index/brooklyn.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
     background-position: center;
 }
+
 
 .form-container {
     position: fixed;

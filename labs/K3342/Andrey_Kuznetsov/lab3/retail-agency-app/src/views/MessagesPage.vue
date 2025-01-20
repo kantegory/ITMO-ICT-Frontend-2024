@@ -69,6 +69,11 @@ export default {
   },
   async created() {
     await this.loadDialogs();
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
+    if (!isAuthenticated) {
+      this.$router.push({ name: 'Auth' }); 
+      return;
+    }
   },
   methods: {
     async loadDialogs() {

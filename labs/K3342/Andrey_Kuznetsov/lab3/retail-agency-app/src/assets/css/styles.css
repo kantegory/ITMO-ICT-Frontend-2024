@@ -11,14 +11,6 @@ html {
     font-family: 'Poppins', serif;
 }
 
-body {
-    background: none !important;
-    background-color: var(--primary-color); /* Или установи свой базовый цвет */
-    height: auto; /* Убедись, что высота тела автоматически подстраивается */
-    margin: 0; /* Сбрасываем любые отступы */
-    padding: 0; /* Сбрасываем любые внутренние отступы */
-}
-
 .content {
     max-width: 1200px;
     padding: 20px;
