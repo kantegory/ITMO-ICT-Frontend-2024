@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "username": "Taisiia",
+      "email": "u2@mail.ru",
+      "password": "$2b$10$pZkVK.mRwBsBq1NPFsoVHOLU44WQD9KXW9uOEHF7VGIF6xRKw2sES",
+      "id": 1
+    },
+    {
+      "username": "Anya",
+      "email": "u1@mail.ru",
+      "password": "$2b$10$bcgSD4C9o1IsuEu.BYPkWuYlinT1o.Mt4pfqLva0L20bsgVcVfGIq",
+      "id": 2
+    },
+    {
+      "username": "Cook",
+      "email": "cook@yandex",
+      "password": "$2b$10$jJHjuKHwmlpckb89P09RgO1ei2OhZuFE1SyJlqfH3572/5je4dzae",
+      "id": 3
+    },
+    {
+      "username": "bkb",
+      "email": "bjkhnj@cvg",
+      "password": "$2b$10$GC4K3qkId4CvutEmC8o8hOVpx7ANmcrfH34x7/oekSZXBYSULcdza",
+      "id": 4
+    },
+    {
+      "username": "dwe",
+      "email": "dq@dw",
+      "password": "$2b$10$QtzcWcaajF79t45LfR6v/uq02y56L92233O/Jre/NYsrFLBqZnQpW",
+      "id": 5
+    },
+    {
+      "username": "User1",
+      "email": "user1@mail.ru",
+      "password": "$2b$10$6S5W8edkNF.c6NLd04dGguZVmFlvorONFA9xgTB4QXcr8HOrDWYXy",
+      "id": 6
+    },
+    {
+      "username": "User2",
+      "email": "user2@mail.ru",
+      "password": "$2b$10$2yTkHSVeP.9jvV0K1ajbkewqOxKHcXIvhSjC7z7XV23vpLWuTr73y",
+      "id": 7
+    },
+    {
+      "username": "user3",
+      "email": "user3@mail.ru",
+      "password": "123test",
+      "id": 8
+    },
+    {
+      "username": "User4",
+      "email": "user4@mail.ru",
+      "password": "test4444",
+      "id": 9
+    }
+  ]
+}

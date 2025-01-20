@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.icon {
+    stroke: currentColor;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.icon--rotate {
+    transform: rotate(90deg);
+}
+
+.icon--fill {
+    fill: currentColor;
+}
+
+/* Кнопки */
+#saveButton, #login-btn, #register-btn {
+    background-color: #556B2F;
+    border-color: #556B2F;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#saveButton:hover, #login-btn:hover, #register-btn:hover {
+    background-color: #90EE90;
+    border-color: #90EE90;
+    color: #222;
+}
+
+#editButton {
+    background-color: #8FBC8F;
+    border-color: #8FBC8F;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#editButton:hover {
+    background-color: #90EE90;
+    border-color: #90EE90;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+    #editButton {
+        margin-bottom: 20px;
+    }
+}
+
+#toggle-ingredients-btn {
+    background-color: #fff;
+    border-color: #198754;
+    color: #198754;
+    transition: all 0.3s ease;
+}
+
+#toggle-ingredients-btn:hover {
+    background-color: #198754;
+    border-color: #198754;
+    color: #fff;
+}
+
+/* Навигация */
+.navbar-custom {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+}
+
+.navbar-nav li {
+    padding: 0 15px;
+}
+
+.navbar .nav-link.active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+#logoutButton {
+    margin-right: 20px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#logoutButton:hover {
+    background-color: #ff4b4b;
+}
+
+/* Контейнеры */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ссылки */
+#chef-link, #meal-link {
+    color: #28a745;
+    text-decoration: none;
+}
+
+#chef-link:hover, #meal-link:hover {
+    color: #006400;
+}
+
+/* Карточки и кнопки */
+.btn-recipe, .btn-back-to-recipe, .btn-chef, .btn-back-to-chefs {
+    background-color: #6B8E23;
+    color: #fff;
+    margin-bottom: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-recipe:hover, .btn-back-to-recipe:hover, .btn-chef:hover, .btn-back-to-chefs:hover {
+    background-color: #556B2F;
+}
+
+.btn-comment {
+    background-color: #fff;
+    border: 1px solid #6B8E23;
+    color: #000;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-comment:hover {
+    background-color: #6B8E23;
+    color: #fff;
+}
+
+#commentSection, 
+#likeButton, 
+#commentButton, 
+#submitComment {
+    text-align: left;
+}
+
+#likeButton, #commentButton, .btn-primary {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Сетка */
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#recipes-content {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+#savedRecipes, #saved_recipes_header {
+    margin: 0 70px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.large-card {
+    grid-column: span 2;
+}
+
+.medium-card, .small-card {
+    grid-column: span 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Форма логина и регистрации */
+.login_register a {
+    color: #808080;
+    text-decoration: none;
+}
+
+.login_register a:hover {
+    color: #333;
+}
