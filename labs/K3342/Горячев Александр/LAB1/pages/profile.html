@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - FitLife</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Профиль пользователя</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 id="userName">Имя пользователя</h3>
+                <p>Проведено тренировок: <span id="workoutCount"></span></p>
+                <p>Запланировано тренировок: <span id="workoutGoal"></span></p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>Предыдущие тренировки</h4>
+                <ul id="previousWorkouts" class="list-group">
+                    <!-- Previous workouts will be dynamically loaded here -->
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>Прогресс тренировок</h4>
+                <div class="progress">
+                    <div id="workoutProgress" class="progress-bar bg-success" role="progressbar" 
+                         style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        0%
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="dashboard.html" class="btn btn-secondary">К панели управления</a>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/navbar.js"></script>
+
+
+</body>
+</html>
