@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали тренировки - FitLife</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Детали тренировки</h2>
+        <div id="workoutDetail" class="card">
+            <div class="card-body">
+                <h3 class="card-title" id="workoutTitle">Название тренировки</h3>
+                <p class="card-text" id="workoutDescription">Описание тренировки...</p>
+                <h5>Инструкции:</h5>
+                <ul id="workoutInstructions">
+                    <li>Шаг 1: ...</li>
+                    <li>Шаг 2: ...</li>
+                </ul>
+                <h5>Уровень подготовки:</h5>
+                <p><strong></strong> <span id="workoutLevel"></span></strong></p>
+                <h5>Тип тренировки:</h5>
+                <p><strong></strong> <span id="workoutType"></span></strong></p>
+                <h5>Длительность:</h5>
+                <p><strong></strong> <span id="workoutDuration"></span></strong></p>
+                <h5>Видео:</h5>
+                <video id="workoutVideo" controls>
+                    <source src="path/to/video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="workouts.html" class="btn btn-secondary">Назад к тренировкам</a>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/workout.js"></script>
+    <script src="../js/workout-detail.js"></script>
+
+</body>
+</html>
