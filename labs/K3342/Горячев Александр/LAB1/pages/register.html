@@ -17,24 +17,24 @@
             <form id="registerForm">
                 <div class="mb-3">
                     <label class="form-label">Имя</label>
-                    <input type="text" class="form-control" name="name" required>
+                    <input type="text" class="form-control" name="name" aria-label="Your name" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" aria-label="Your email" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Пароль</label>
-                    <input type="password" class="form-control" name="password" required>
+                    <input type="password" class="form-control" name="password" aria-label="Your password" required>
                     <small class="text-muted">Минимум 8 символов, включая буквы и цифры</small>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Подтверждение пароля</label>
-                    <input type="password" class="form-control" name="confirmPassword" required>
+                    <input type="password" class="form-control" name="confirmPassword" aria-label="Confirm Password" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Уровень подготовки</label>
-                    <select class="form-select" name="fitnessLevel">
+                    <select class="form-select" name="fitnessLevel" aria-label="Select your fitness level" required>
                         <option value="beginner">Начинающий</option>
                         <option value="intermediate">Средний</option>
                         <option value="advanced">Продвинутый</option>

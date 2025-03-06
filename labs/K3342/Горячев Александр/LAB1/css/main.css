@@ -65,3 +65,15 @@ a:hover {
 .superheader {
     color: #ffffff;
 }
+.theme-toggle {
+    all: unset;
+    cursor: pointer;  /* Add a pointer cursor to indicate it's clickable */
+    font-size: xx-large; 
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    margin-right: -3px;
+    fill: currentColor;
+}
