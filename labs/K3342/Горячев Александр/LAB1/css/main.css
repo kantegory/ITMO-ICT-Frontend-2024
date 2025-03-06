@@ -1,0 +1,79 @@
+/* Main styles for the fitness platform */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.auth-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.form-select {
+    border-radius: 5px;
+}
+.superheader {
+    color: #ffffff;
+}
+.theme-toggle {
+    all: unset;
+    cursor: pointer;  /* Add a pointer cursor to indicate it's clickable */
+    font-size: xx-large; 
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    margin-right: -3px;
+    fill: currentColor;
+}
