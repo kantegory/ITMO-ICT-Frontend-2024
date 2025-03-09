@@ -1,0 +1,23 @@
+/* custom-theme.css */
+
+/* Light Theme (Default) */
+:root {
+    --bs-primary: #0d6efd; /* Bootstrap default blue */
+    --bs-body-bg: #ffffff; /* White background */
+    --bs-body-color: #212529; /* Dark text */
+    --bs-navbar-bg: #f8f9fa; /* Light navbar */
+    
+}
+
+/* Dark Theme */
+[data-bs-theme="dark"] {
+    --bs-primary: #4CAF50; /* Custom green */
+    --bs-body-bg: #121212; /* Dark background */
+    --bs-body-color: #f8f9fa; /* Light text */
+    --bs-navbar-bg: #1e1e1e; /* Dark navbar */
+}
+
+/* Ensure navbar adapts to the theme */
+.navbar {
+    background-color: var(--bs-navbar-bg) !important;
+}

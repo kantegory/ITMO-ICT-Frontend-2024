@@ -1,0 +1,63 @@
+/* Dashboard styles for the fitness platform */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.dashboard-container {
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.progress-tracker {
+    margin-top: 30px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.workout-plans {
+    margin-top: 40px;
+}
+
+.workout-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.workout-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.workout-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.workout-description {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.btn-view {
+    margin-top: 10px;
+}
