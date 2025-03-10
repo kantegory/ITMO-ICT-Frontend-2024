@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.account-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+h1 {
+    text-align: center;
+}
+

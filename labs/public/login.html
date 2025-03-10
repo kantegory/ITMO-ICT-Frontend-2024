@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Вход</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="labs/css/login-style.css"> 
+    <link rel="stylesheet" href="labs/css/theme-style.css">
+</head> 
+<body> 
+
+<div class="login-container"> 
+    <h1 class="mt-5">Вход</h1> 
+    <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+
+    <form id="loginForm"> 
+        <div class="form-group">
+            <label for="email">Почта</label> 
+            <input type="email" id="email" name="email" required class="form-control" placeholder="Введите почту"> 
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль</label> 
+            <input type="password" id="password" name="password" required class="form-control" placeholder="Введите пароль"> 
+        </div>
+
+        <p id="errorMessage" class="text-danger" style="display: none;"></p>
+
+        <input type="submit" value="Войти" class="btn btn-primary"> 
+    </form> 
+
+    <div class="no-account"> 
+        <p>У меня нет аккаунта <a href="signup.html">Регистрация</a></p> 
+    </div> 
+</div> 
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        try {
+            const response = await fetch("http://localhost:5502/users?email=" + email);
+            const users = await response.json();
+
+            if (users.length === 0 || users[0].password !== password) {
+                errorMessage.textContent = "Неверный email или пароль!";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            localStorage.setItem("user", JSON.stringify(users[0]));
+            localStorage.setItem("userId", users[0].id); 
+            window.location.href = "account.html";
+        } catch (error) {
+            errorMessage.textContent = "Ошибка сервера!";
+            errorMessage.style.display = "block";
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        } else {
+            body.classList.add("light-theme");
+        }
+
+        themeToggle.addEventListener("click", function() {
+            if (body.classList.contains("light-theme")) {
+                body.classList.remove("light-theme");
+                body.classList.add("dark-theme");
+                localStorage.setItem("theme", "dark-theme");
+            } else {
+                body.classList.remove("dark-theme");
+                body.classList.add("light-theme");
+                localStorage.setItem("theme", "light-theme");
+            }
+        });
+    });
+</script>
+
+</body> 
+</html>
