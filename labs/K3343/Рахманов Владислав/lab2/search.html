@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поиск тренировок</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Поиск тренировок</h2>
-        <form id="searchForm">
+    <label class="switch" for="theme-toggle" aria-label="Переключатель темы">
+        <input type="checkbox" id="theme-toggle" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
+    <div class="container mt-5" role="main">
+        <svg class="search_icon">
+            <use xlink:href="sprite.svg#search"></use>
+        </svg>
+        
+        <!-- Добавлен tabindex для заголовка, чтобы улучшить доступность -->
+        <h2 tabindex="0">Поиск тренировок</h2>
+        <form id="searchForm" aria-labelledby="formTitle">
+            <h3 id="formTitle" class="sr-only">Форма поиска тренировок</h3> <!-- Добавлен скрытый заголовок для формы -->
             <div class="form-group">
                 <label for="level">Уровень</label>
-                <select class="form-control" id="level">
+                <select class="form-control" id="level" aria-label="Выберите уровень">
                     <option value="новичок">Новичок</option>
                     <option value="средний">Средний</option>
                     <option value="продвинутый">Продвинутый</option>
@@ -20,22 +32,24 @@
             </div>
             <div class="form-group">
                 <label for="type">Тип</label>
-                <select class="form-control" id="type">
+                <select class="form-control" id="type" aria-label="Выберите тип тренировки">
                     <option value="кардио">Кардио</option>
                     <option value="силовые">Силовые</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="duration">Продолжительность</label>
-                <select class="form-control" id="duration">
+                <select class="form-control" id="duration" aria-label="Выберите продолжительность тренировки">
                     <option value="15">15 минут</option>
                     <option value="30">30 минут</option>
                     <option value="45">45 минут</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary" id="searchButton">Искать</button>
+            <button type="button" class="btn btn-primary" id="searchButton" aria-label="Нажмите для поиска тренировок">Искать</button>
         </form>
     </div>
+    
+
 
     <!-- Модальное окно для поиска -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -43,14 +57,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="searchModalLabel">Результаты поиска</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" id="searchResults">
+                <div class="modal-body" id="searchResults" aria-live="polite">
                     По вашему запросу ничего не найдено. Попробуйте изменить параметры поиска.
                 </div>
                 <div class="modal-footer">
+
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
@@ -63,5 +78,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/search.js"></script>
+    <script src="scripts/switch.js"></script>
 </body>
 </html>

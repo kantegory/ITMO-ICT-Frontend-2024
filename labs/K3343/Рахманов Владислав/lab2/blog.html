@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог о здоровье и питании</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Блог о здоровье и питании</h2>
-        
+    <label class="switch" for="theme-toggle" aria-label="Переключатель темы">
+        <input type="checkbox" id="theme-toggle" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
+    <div class="container mt-5" role="main">
+        <h2 tabindex="0">Блог о здоровье и питании</h2>
+        <svg class="blog_icon">
+            <use xlink:href="sprite.svg#blog"></use>
+        </svg>
+       
         <!-- Форма для добавления новой статьи -->
-        <form id="addArticleForm" class="mb-5">
+        <form id="addArticleForm" class="mb-5" aria-labelledby="formTitle">
+            <h3 id="formTitle">Добавить новую статью</h3>
             <div class="form-group">
                 <label for="title">Название статьи</label>
-                <input type="text" class="form-control" id="title" placeholder="Введите название статьи">
+                <input type="text" class="form-control" id="title" placeholder="Введите название статьи" required>
             </div>
             <div class="form-group">
                 <label for="content">Описание статьи</label>
-                <textarea class="form-control" id="content" rows="3" placeholder="Введите описание статьи"></textarea>
+                <textarea class="form-control" id="content" rows="3" placeholder="Введите описание статьи" required></textarea>
             </div>
             <div class="form-group">
                 <label for="fullContent">Полный текст статьи</label>
-                <textarea class="form-control" id="fullContent" rows="6" placeholder="Введите полный текст статьи"></textarea>
+                <textarea class="form-control" id="fullContent" rows="6" placeholder="Введите полный текст статьи" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Добавить статью</button>
         </form>
+        
 
         <!-- Статьи будут добавлены сюда динамически -->
-        <div id="articlesContainer"></div>
+        <div id="articlesContainer" aria-live="polite"></div>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/blog.js"></script>
+    <script src="scripts/switch.js"></script>
 </body>
 </html>

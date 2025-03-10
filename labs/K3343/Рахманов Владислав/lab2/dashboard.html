@@ -8,37 +8,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Личный кабинет</h2>
+    <label class="switch" for="theme-toggle" aria-label="Переключатель темы">
+        <input type="checkbox" id="theme-toggle" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
+    <div class="container mt-5" role="main">
+        <!-- Добавлен tabindex для заголовка, чтобы улучшить доступность -->
+        <svg class="profile_icon">
+            <use xlink:href="sprite.svg#profile"></use>
+        </svg>
+        <h2 tabindex="0">Личный кабинет</h2>
+        
         <div class="dashboard-container">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Трекинг прогресса</h5>
-                    <p class="card-text" id="progressContainer">Кардио: 0/0, Силовые: 0/0</p>
+                    <!-- Добавлен aria-live для динамического контента -->
+                    <p class="card-text" id="progressContainer" aria-live="polite">Кардио: 0/0, Силовые: 0/0</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Планы тренировок</h5>
-                    <p class="card-text" id="plansContainer">Ваши тренировочные планы...</p>
+                    <!-- Добавлен aria-live для динамического контента -->
+                    <p class="card-text" id="plansContainer" aria-live="polite">Ваши тренировочные планы...</p>
                     <form id="plansForm">
                         <div class="form-group">
                             <label for="cardioCount">Количество кардио тренировок за месяц:</label>
-                            <input type="number" class="form-control" id="cardioCount" min="0">
+                            <input type="number" class="form-control" id="cardioCount" min="0" aria-label="Количество кардио тренировок за месяц">
                         </div>
                         <div class="form-group">
                             <label for="completedCardio">Завершенные кардио тренировки:</label>
-                            <input type="number" class="form-control" id="completedCardio" min="0">
+                            <input type="number" class="form-control" id="completedCardio" min="0" aria-label="Завершенные кардио тренировки">
                         </div>
                         <div class="form-group">
                             <label for="strengthCount">Количество силовых тренировок за месяц:</label>
-                            <input type="number" class="form-control" id="strengthCount" min="0">
+                            <input type="number" class="form-control" id="strengthCount" min="0" aria-label="Количество силовых тренировок за месяц">
                         </div>
                         <div class="form-group">
                             <label for="completedStrength">Завершенные силовые тренировки:</label>
-                            <input type="number" class="form-control" id="completedStrength" min="0">
+                            <input type="number" class="form-control" id="completedStrength" min="0" aria-label="Завершенные силовые тренировки">
                         </div>
-                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                        <button type="submit" class="btn btn-primary" aria-label="Сохранить тренировочные планы">Сохранить</button>
                     </form>
                 </div>
             </div>
@@ -47,5 +59,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/dashboard.js"></script>
+    <script src="scripts/switch.js"></script>
 </body>
 </html>

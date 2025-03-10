@@ -1,56 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Platform</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Навигационное меню -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" aria-label="Главное меню">
         <a class="navbar-brand" href="index.html">Fitness Platform</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg class="gym_icon">
+            <use xlink:href="sprite.svg#gym"></use>
+        </svg>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Вход</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Регистрация</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="dashboard.html">Личный кабинет</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">Поиск тренировок</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Блог</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                <li class="nav-item"><a class="nav-link" href="search.html">Поиск тренировок</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
             </ul>
         </div>
     </nav>
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
 
     <!-- Основное содержимое -->
-    <div class="container">
-        <div class="jumbotron mt-4">
+    <main class="container" role="main">
+        
+        <section class="jumbotron mt-4">
+        
             <h1 class="display-4">Добро пожаловать на платформу для фитнеса и здоровья!</h1>
             <p class="lead">Тренируйтесь с нами, следите за своим прогрессом и улучшайте свое здоровье.</p>
             <hr class="my-4">
             <p>Зарегистрируйтесь сегодня и начните свою фитнес-приключение.</p>
             <a class="btn btn-primary btn-lg" href="register.html" role="button">Зарегистрироваться</a>
-        </div>
-    </div>
+        </section>
+    </main>
 
+    
     <!-- Bootstrap и скрипты -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/switch.js"></script>
 </body>
 </html>

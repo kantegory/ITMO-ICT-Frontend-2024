@@ -23,35 +23,49 @@
       "username": "rufbe",
       "email": "huisd@mail.ru",
       "password": "qwerty123"
+    },
+    {
+      "id": "184f",
+      "username": "dfsdf",
+      "email": "",
+      "password": "fdsdfs"
+    },
+    {
+      "id": "2661",
+      "username": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "c580",
+      "username": "",
+      "email": "",
+      "password": ""
     }
   ],
   "articles": [
     {
-      "id": "1",
-      "title": "Название статьи",
-      "content": "Краткое описание статьи..."
+      "id": "3eaa",
+      "title": "dsa",
+      "content": "sadasd",
+      "fullContent": "dsada"
     },
     {
-      "id": "2",
-      "title": "Ещё одна статья",
-      "content": "Описание другой статьи..."
+      "id": "98bb",
+      "title": "bdvksjd",
+      "content": "vdsjkbv",
+      "fullContent": "svdjkbvs"
     },
     {
-      "id": "2c24",
-      "title": "иошощт",
-      "content": "олдот",
-      "fullContent": "толжлтолжо"
-    },
-    {
-      "id": "59bd",
-      "title": "спорт дома",
-      "content": "ыврсиы",
-      "fullContent": ""
+      "id": "24c7",
+      "title": "Полезная статья о похудении",
+      "content": "методы похудения",
+      "fullContent": "что-то на умном..."
     }
   ],
   "workouts": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Кардио тренировка 15 минут",
       "type": "кардио",
       "level": "новичок",
@@ -60,7 +74,7 @@
       "videoUrl": "https://rutube.ru/video/323abdb700d0102fba48bbbc163ac472/"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Силовая тренировка 30 минут",
       "type": "силовые",
       "level": "средний",

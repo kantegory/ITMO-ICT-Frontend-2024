@@ -3,35 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Поиск тренировок</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Регистрация</h2>
-        <form id="registerForm">
+    <label class="switch" for="theme-toggle" aria-label="Переключатель темы">
+        <input type="checkbox" id="theme-toggle" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
+    <div class="container mt-5" role="main">
+        <!-- Добавлен tabindex для заголовка, чтобы улучшить доступность -->
+        <h2 tabindex="0" id="search-heading">Поиск тренировок</h2>
+        <form id="searchForm" aria-labelledby="search-heading">
+            <h3 id="formTitle" class="sr-only">Форма поиска тренировок</h3> <!-- Добавлен скрытый заголовок для формы -->
             <div class="form-group">
-                <label for="username">Имя пользователя</label>
-                <input type="text" class="form-control" id="username" placeholder="Введите имя пользователя">
+                <label for="level">Уровень</label>
+                <select class="form-control" id="level" aria-label="Выберите уровень" aria-required="true">
+                    <option value="новичок">Новичок</option>
+                    <option value="средний">Средний</option>
+                    <option value="продвинутый">Продвинутый</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Введите email">
+                <label for="type">Тип</label>
+                <select class="form-control" id="type" aria-label="Выберите тип тренировки" aria-required="true">
+                    <option value="кардио">Кардио</option>
+                    <option value="силовые">Силовые</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="password">Пароль</label>
-                <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+                <label for="duration">Продолжительность</label>
+                <select class="form-control" id="duration" aria-label="Выберите продолжительность тренировки" aria-required="true">
+                    <option value="15">15 минут</option>
+                    <option value="30">30 минут</option>
+                    <option value="45">45 минут</option>
+                </select>
             </div>
-            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <button type="button" class="btn btn-primary" id="searchButton" aria-label="Нажмите для поиска тренировок">Искать</button>
         </form>
     </div>
 
+    <!-- Модальное окно для поиска -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Результаты поиска</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="searchResults" aria-live="polite">
+                    По вашему запросу ничего не найдено. Попробуйте изменить параметры поиска.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap и скрипты -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap.com/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="scripts/register.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/switch.js"></script>
 </body>
 </html>
