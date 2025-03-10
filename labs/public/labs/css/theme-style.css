@@ -1,0 +1,122 @@
+/* Светлая тема (по умолчанию) */
+body.light-theme {
+    background-color: #f9ba9a;
+    color: #291201;
+}
+
+.light-theme .account-container {
+    background-color: #f9ba9a;
+}
+
+.light-theme .login-container {
+    background-color: #f9ba9a;
+}
+
+.light-theme header {
+    background-color: #c77557;
+    color: #291201;
+}
+
+.light-theme .modal-header {
+    background-color: #c77557;
+    color: #291201;
+}
+
+.light-theme h1 {
+    color: #291201;
+}
+
+.light-theme h2 {
+    color: #291201;
+}
+
+.light-theme h3 {
+    color: #291201;
+}
+
+.light-theme a {
+    color: #fff;
+}
+
+.light-theme .btn-primary {
+    background-color: #291201;
+    border-color: #291201;
+}
+
+.light-theme #restaurant-details .btn-primary {
+    background-color: #291201;
+    color: #fff;
+}
+
+.light-theme input[type="submit"] {
+    background-color: #291201;
+    color: #fff;
+}
+
+body.light-theme .btn-primary {
+    background-color: #291201;
+    border-color: #291201;
+    color: #fff;
+}
+
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #291201;
+    color: #c77557;
+}
+
+.dark-theme .account-container {
+    background-color: #291201;
+}
+
+.dark-theme .login-container {
+    background-color: #291201;
+}
+
+.dark-theme header {
+    background-color: #130800;
+    color: #c77557;
+}
+
+.dark-theme .modal-header {
+    background-color: #130800;
+    color: #c77557;
+}
+
+.dark-theme h1 {
+    color: #c77557;
+}
+
+.dark-theme h2 {
+    color: #c77557;
+}
+
+.dark-theme h3 {
+    color: #c77557;
+}
+
+.dark-theme a {
+    color: #fff;
+}
+
+.dark-theme .btn-primary {
+    background-color: #c77557;
+    border-color: #c77557;
+}
+
+.dark-theme #restaurant-details .btn-primary {
+    background-color: #c77557;
+    color: #fff;
+}
+
+.dark-theme input[type="submit"] {
+    background-color: #c77557;
+    color: #fff;
+}
+
+body.dark-theme .btn-primary {
+    background-color: #c77557;
+    border-color: #c77557;
+    color: #fff;
+}

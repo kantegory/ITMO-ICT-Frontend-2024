@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="labs/css/login-style.css">
+    <link rel="stylesheet" href="labs/css/theme-style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="mt-5">Регистрация</h1>
+        <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="text" class="form-control" placeholder="Введите имя" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Введите почту" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Телефон</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Введите телефон (например, +79991234567)" required pattern="^\+?\d{10,15}$">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Введите пароль (мин. 6 символов)" required>
+            </div>
+
+            <p id="error-message" class="text-danger" style="display: none;"></p>
+
+            <input type="submit" value="Создать аккаунт" class="btn btn-primary">
+        </form>
+
+        <div class="no-account">
+            <p>У меня уже есть аккаунт <a href="login.html">Войти</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telephone = document.getElementById("telephone").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMessage = document.getElementById("error-message");
+    
+            if (password.length < 6) {
+                errorMessage.textContent = "Пароль должен быть не менее 6 символов!";
+                errorMessage.style.display = "block";
+                return;
+            }
+    
+            const phoneRegex = /^\+?\d{10,15}$/;
+            if (!phoneRegex.test(telephone)) {
+                errorMessage.textContent = "Введите корректный номер телефона!";
+                errorMessage.style.display = "block";
+                return;
+            }
+    
+            errorMessage.style.display = "none";
+    
+            const newUser = {
+                name: name,
+                email: email,
+                telephone: telephone,
+                password: password
+            };
+    
+            fetch("http://localhost:5502/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newUser)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Пользователь успешно зарегистрирован:", data);
+                alert("Регистрация успешна! 🎉");
+    
+                document.getElementById("signupForm").reset();
+    
+                window.location.href = "login.html";
+            })
+            .catch(error => {
+                console.error("Ошибка при регистрации:", error);
+                alert("Что-то пошло не так. Попробуйте еще раз!");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const themeToggle = document.getElementById("themeToggle");
+            const body = document.body;
+
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            } else {
+                body.classList.add("light-theme");
+            }
+
+            themeToggle.addEventListener("click", function() {
+                if (body.classList.contains("light-theme")) {
+                    body.classList.remove("light-theme");
+                    body.classList.add("dark-theme");
+                    localStorage.setItem("theme", "dark-theme");
+                } else {
+                    body.classList.remove("dark-theme");
+                    body.classList.add("light-theme");
+                    localStorage.setItem("theme", "light-theme");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

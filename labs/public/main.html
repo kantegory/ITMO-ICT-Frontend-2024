@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск ресторана</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="labs/css/main-style.css">
+    <link rel="stylesheet" href="labs/css/theme-style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="main">
+            <a href="main.html">Бронь столиков Букин</a>
+            <button id="logoutBtn" class="btn btn-primary">Выйти</button>
+            <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+            <div id="userGreeting" class="text-right mb-3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="search">
+        <div class="main-container">
+            <h2 class="text-center mb-4">Поиск ресторана</h2>
+            <form id="searchForm">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label for="cuisineSelect">Кухня</label>
+                        <select class="form-control" id="cuisineSelect">
+                            <option value="">Все кухни</option>
+                            <option value="итальянская">Итальянская</option>
+                            <option value="японская">Японская</option>
+                            <option value="русская">Русская</option>
+                            <option value="мексиканская">Мексиканская</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="locationSelect">Город</label>
+                        <select class="form-control" id="locationSelect">
+                            <option value="">Все города</option>
+                            <option value="Москва">Москва</option>
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Казань">Казань</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="priceSelect">Цена</label>
+                        <select class="form-control" id="priceSelect">
+                            <option value="">Любая цена</option>
+                            <option value="1000">До 1000 руб.</option>
+                            <option value="2000">До 2000 руб.</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Найти</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="restaurants">
+        <div class="container">
+            <h2 class="text-center mb-4">Результаты поиска</h2>
+            <div class="row" id="restaurantList">
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    const restaurants = [
+        { id: 1, name: "La Piazza", cuisine: "итальянская", city: "Москва", price: 1500, image: "images/italy.jpg" },
+        { id: 2, name: "Сайко", cuisine: "японская", city: "Санкт-Петербург", price: 1800, image: "images/japan.jpg" },
+        { id: 3, name: "Тройка", cuisine: "русская", city: "Казань", price: 1200, image: "images/russia.jpg" },
+        { id: 4, name: "El Mexicano", cuisine: "мексиканская", city: "Москва", price: 900, image: "images/mexico.jpg" }
+    ];
+
+    function displayRestaurants(filteredRestaurants) {
+        const container = document.getElementById("restaurantList");
+        container.innerHTML = "";
+        filteredRestaurants.forEach(restaurant => {
+            container.innerHTML += `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="${restaurant.image}" class="card-img-top" alt="${restaurant.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${restaurant.name}</h5>
+                            <p class="card-text">${restaurant.cuisine} кухня, ${restaurant.city}, Средний чек: ${restaurant.price} руб.</p>
+                            <a href="restaurant.html?id=${restaurant.id}" class="btn btn-primary">Узнать больше</a> <!-- Ссылка на страницу ресторана -->
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const cuisine = document.getElementById("cuisineSelect").value;
+        const city = document.getElementById("locationSelect").value;
+        const price = document.getElementById("priceSelect").value;
+
+        const filtered = restaurants.filter(r =>
+            (cuisine === "" || r.cuisine === cuisine) &&
+            (city === "" || r.city === city) &&
+            (price === "" || r.price <= parseInt(price))
+        );
+
+        displayRestaurants(filtered);
+    });
+
+    displayRestaurants(restaurants);
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function() {
+        const userId = localStorage.getItem("userId");
+        if (!userId) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        const response = await fetch(`${API_URL}/users/${userId}`);
+        const user = await response.json();
+        document.getElementById("userGreeting").innerHTML = `Здравствуйте, <strong>${user.name}</strong>!`;
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+        localStorage.removeItem("userId");
+        window.location.href = "login.html";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        } else {
+            body.classList.add("light-theme");
+        }
+
+        themeToggle.addEventListener("click", function() {
+            if (body.classList.contains("light-theme")) {
+                body.classList.remove("light-theme");
+                body.classList.add("dark-theme");
+                localStorage.setItem("theme", "dark-theme");
+            } else {
+                body.classList.remove("dark-theme");
+                body.classList.add("light-theme");
+                localStorage.setItem("theme", "light-theme");
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="labs/css/account-style.css">
+    <link rel="stylesheet" href="labs/css/theme-style.css">
+</head>
+
+<body>
+
+<div class="account-container">
+    <h1 class="text-center mb-4">Мой профиль</h1> 
+    <a href="main.html" class="btn btn-primary">На главную</a> 
+    <button id="logoutBtn" class="btn btn-primary">Выйти</button>
+    <button id="themeToggle" class="btn btn-primary">Переключить тему</button>
+
+    
+
+
+    <div class="account-info" id="accountInfo">
+
+    </div>
+
+    <div class="booking-tables-history">
+        <h2 class="text-center mb-4">История бронирований</h2>
+        <ul id="bookingHistory">
+        </ul>
+    </div>
+</div>
+
+<script>
+    const API_URL = "http://localhost:5502";
+
+    async function loadProfile() {
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (!user) {
+            alert("Вы не авторизованы!");
+            window.location.href = "login.html";
+            return;
+        }
+
+        const accountInfoDiv = document.getElementById("accountInfo");
+        accountInfoDiv.innerHTML = `
+            <strong>Имя:</strong> ${user.name}<br>
+            <strong>Почта:</strong> ${user.email}<br>
+            <strong>Телефон:</strong> ${user.telephone}
+        `;
+
+        try {
+            const response = await fetch(`${API_URL}/bookings?userId=${user.id}`);
+            const bookings = await response.json();
+
+            const bookingHistoryDiv = document.getElementById("bookingHistory");
+            if (bookings.length === 0) {
+                bookingHistoryDiv.innerHTML = "<li>У вас нет истории бронирований.</li>";
+                return;
+            }
+
+            for (const booking of bookings) {
+                const restaurantResponse = await fetch(`${API_URL}/restaurants/${booking.restaurantId}`);
+                const restaurant = await restaurantResponse.json();
+                booking.restaurantName = restaurant.name || "Неизвестный ресторан";
+            }
+
+            bookingHistoryDiv.innerHTML = bookings.map(b => `
+                <li>
+                    <h3>${b.date}, ${b.time}</h3>
+                    <p>Ресторан: <i>${b.restaurantName}</i></p>
+                    <p>Количество гостей: <i>${b.guests}</i></p>
+                    <p>Статус бронирования: <i>${b.status}</i></p>
+                </li>
+            `).join("");
+
+        } catch (error) {
+            console.error("Ошибка загрузки бронирований:", error);
+            document.getElementById("bookingHistory").innerHTML = "<li>Ошибка загрузки данных.</li>";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadProfile);
+
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+        localStorage.removeItem("user");
+        localStorage.removeItem("userId");
+        window.location.href = "login.html";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        } else {
+            body.classList.add("light-theme");
+        }
+
+        themeToggle.addEventListener("click", function() {
+            if (body.classList.contains("light-theme")) {
+                body.classList.remove("light-theme");
+                body.classList.add("dark-theme");
+                localStorage.setItem("theme", "dark-theme");
+            } else {
+                body.classList.remove("dark-theme");
+                body.classList.add("light-theme");
+                localStorage.setItem("theme", "light-theme");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
