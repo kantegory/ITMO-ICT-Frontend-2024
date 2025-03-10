@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог о здоровье и питании</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Блог о здоровье и питании</h2>
+        
+        <!-- Форма для добавления новой статьи -->
+        <form id="addArticleForm" class="mb-5">
+            <div class="form-group">
+                <label for="title">Название статьи</label>
+                <input type="text" class="form-control" id="title" placeholder="Введите название статьи">
+            </div>
+            <div class="form-group">
+                <label for="content">Описание статьи</label>
+                <textarea class="form-control" id="content" rows="3" placeholder="Введите описание статьи"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fullContent">Полный текст статьи</label>
+                <textarea class="form-control" id="fullContent" rows="6" placeholder="Введите полный текст статьи"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить статью</button>
+        </form>
+
+        <!-- Статьи будут добавлены сюда динамически -->
+        <div id="articlesContainer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/blog.js"></script>
+</body>
+</html>
