@@ -1,0 +1,141 @@
+/* Определение светлой темы */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007bff;
+    --jumbotron-bg: #f8f9fa;
+    --container-bg: #ffffff;
+    --container-text-color: #000000;
+    --modal-bg: #ffffff;
+    --modal-text-color: #000000;
+    --modal-header-bg: #f8f9fa;
+    --modal-header-text-color: #000000;
+}
+
+/* Определение тёмной темы */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #1e90ff;
+    --jumbotron-bg: #333;
+    --container-bg: #1c1c1c;
+    --container-text-color: #ffffff;
+    --modal-bg: #333;
+    --modal-text-color: #ffffff;
+    --modal-header-bg: #444;
+    --modal-header-text-color: #ffffff;
+}
+
+/* Применение CSS-переменных */
+body {
+    padding-top: 56px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Добавление фокуса для клавиатурной навигации */
+    outline: none;
+}
+
+body:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+/* Стили для jumbotron */
+.jumbotron {
+    background-color: var(--jumbotron-bg);
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Стили для navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Цвет ссылок */
+.nav-link {
+    color: var(--primary-color) !important;
+    /* Добавление подчеркивания для ссылок для улучшения доступности */
+    text-decoration: underline;
+}
+
+/* Стили для модального окна */
+.modal-body {
+    background-color: var(--modal-bg);
+    color: var(--modal-text-color);
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: var(--modal-header-bg);
+    color: var(--modal-header-text-color);
+}
+
+.modal-footer {
+    background-color: var(--modal-bg);
+    color: var(--modal-text-color);
+}
+
+/* Стили для контейнеров */
+/* Стили для контейнеров */
+.container {
+    background-color: var(--container-bg);
+    color: var(--container-text-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Плавный переход */
+}
+
+/* Обновленный стиль для текста внутри контейнера */
+.container h1,
+.container p,
+.container a {
+    color: var(--container-text-color);
+}
+
+
+/* Обновленные стили для карточек */
+.card {
+    background-color: var(--container-bg);
+    color: var(--container-text-color);
+}
+
+.search_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    float: right;
+}
+
+.search_icon:hover {
+    fill: #007bff;
+}
+
+.profile_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    float: right;
+}
+
+.profile_icon:hover {
+    fill: #007bff;
+}
+
+.gym_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    float: right;
+}
+
+.gym_icon:hover {
+    fill: #007bff;
+}
+
+.blog_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    float: right;
+}
+
+.blog_icon:hover {
+    fill: #007bff;
+}

@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "John Doe",
+      "email": "john@example.com",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "username": "Jane Doe",
+      "email": "jane@example.com",
+      "password": "abcde"
+    },
+    {
+      "id": "fde5",
+      "username": "kachok",
+      "email": "opop@gmail.com",
+      "password": "qwerty3000"
+    },
+    {
+      "id": "ad31",
+      "username": "rufbe",
+      "email": "huisd@mail.ru",
+      "password": "qwerty123"
+    },
+    {
+      "id": "184f",
+      "username": "dfsdf",
+      "email": "",
+      "password": "fdsdfs"
+    },
+    {
+      "id": "2661",
+      "username": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "c580",
+      "username": "",
+      "email": "",
+      "password": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": "3eaa",
+      "title": "dsa",
+      "content": "sadasd",
+      "fullContent": "dsada"
+    },
+    {
+      "id": "98bb",
+      "title": "bdvksjd",
+      "content": "vdsjkbv",
+      "fullContent": "svdjkbvs"
+    },
+    {
+      "id": "24c7",
+      "title": "Полезная статья о похудении",
+      "content": "методы похудения",
+      "fullContent": "что-то на умном..."
+    }
+  ],
+  "workouts": [
+    {
+      "id": "1",
+      "name": "Кардио тренировка 15 минут",
+      "type": "кардио",
+      "level": "новичок",
+      "duration": 15,
+      "description": "Кардио тренировка для новичков на 15 минут",
+      "videoUrl": "https://rutube.ru/video/323abdb700d0102fba48bbbc163ac472/"
+    },
+    {
+      "id": "2",
+      "name": "Силовая тренировка 30 минут",
+      "type": "силовые",
+      "level": "средний",
+      "duration": 30,
+      "description": "Силовая тренировка для среднего уровня на 30 минут",
+      "videoUrl": "https://www.youtube.com/watch?v=example"
+    }
+  ],
+  "progress": [
+    {
+      "id": "1",
+      "userId": 1,
+      "cardioCompleted": 0,
+      "strengthCompleted": 0,
+      "cardioGoal": 8,
+      "strengthGoal": 8
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "cardioCompleted": 0,
+      "strengthCompleted": 0,
+      "cardioGoal": 8,
+      "strengthGoal": 8
+    }
+  ]
+}

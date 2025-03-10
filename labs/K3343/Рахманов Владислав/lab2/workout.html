@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <label class="switch" for="theme-toggle" aria-label="Переключатель темы">
+        <input type="checkbox" id="theme-toggle" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+        <span class="ml-2">Тёмная тема</span>
+    </label>
+    <div class="container mt-5" role="main">
+        <h2 id="workoutTitle" tabindex="0">Название тренировки</h2>
+        <div class="embed-responsive embed-responsive-16by9 mb-4" role="region" aria-labelledby="workoutVideo">
+            <iframe id="workoutVideo" class="embed-responsive-item" src="https://rutube.ru/video/323abdb700d0102fba48bbbc163ac472/" allowfullscreen title="Видео тренировки"></iframe>
+        </div>
+        <h3>Описание</h3>
+        <p id="workoutDescription">Тренировка для кардио с продолжительностью 15 минут для новичков.</p> <!-- Добавлено описание -->
+        <h3>Длительность: <span id="workoutDuration">15 минут</span></h3>
+        <h3>Уровень: <span id="workoutLevel">Новичок</span></h3>
+        <h3>Тип: <span id="workoutType">Кардио</span></h3>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/workout.js"></script>
+    <script src="scripts/switch.js"></script>
+</body>
+</html>
