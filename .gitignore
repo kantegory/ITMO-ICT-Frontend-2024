@@ -1,0 +1,11 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/labs/K3343/Рахманов Владислав/lab3/fitness_platform_web/.venv/Lib/site-packages
+/labs/K3343/Рахманов Владислав/lab3/fitness_platform_web/.venv/Scripts
+/labs/K3343/Рахманов Владислав/lab3/fitness_platform_web/fitness_platform_frontend/.vscode
+*.env
+/labs/K3343/Рахманов Владислав/lab3/fitness_platform_web/.vs/fitness_platform_web/FileContentIndex
+/labs/K3343/Рахманов Владислав/lab3/fitness_platform_web/.vs
+/.vs
