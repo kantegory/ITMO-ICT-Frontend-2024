@@ -1,0 +1,9 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
